@@ -1,0 +1,137 @@
+    <!-- Progress Bar -->
+    <div class="w-full bg-slate-200 h-2">
+        <div id="timerBar" class="bg-orange-500 h-2 w-full timer-bar"></div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="p-8 min-h-[300px] flex flex-col justify-center items-center text-center">
+        <div id="displayArea">
+            <p class="text-slate-500 text-sm mb-2 uppercase tracking-widest font-semibold">Dịch sang tiếng Anh:</p>
+            <h2 id="vietnameseTxt" class="text-2xl font-bold text-slate-800 leading-tight mb-6">Nhấn "Bắt đầu" để luyện tập</h2>
+            
+            <div id="answerArea" class="hidden">
+                <hr class="my-4">
+                <p class="text-slate-500 text-sm mb-2 italic">Đáp án đúng:</p>
+                <p id="englishTxt" class="text-2xl font-bold text-indigo-600 mb-2"></p>
+                <button onclick="speakAnswer()" class="text-indigo-500 hover:text-indigo-700 flex items-center justify-center w-full gap-2 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                    Nghe phát âm mẫu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="p-6 bg-slate-50 border-t border-slate-200 flex flex-col gap-3">
+        <button id="mainBtn" onclick="nextQuestion()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-200 transition-all active:scale-95">
+            BẮT ĐẦU
+        </button>
+        <button id="revealBtn" onclick="revealAnswer()" class="hidden w-full bg-white border-2 border-indigo-600 text-indigo-600 font-bold py-4 rounded-xl transition-all">
+            XEM ĐÁP ÁN (PHÍM SPACE)
+        </button>
+    </div>
+    
+    <div class="p-4 text-center">
+        <p class="text-xs text-slate-400">Gợi ý: Dùng Micro trên bàn phím để kiểm tra phát âm của bạn.</p>
+    </div>
+</div>
+
+<script>
+    const data = [
+        { vn: "Bạn có anh chị em nào không?", en: "Do you have any siblings?" },
+        { vn: "Tôi có một anh trai và một em gái.", en: "I have one older brother and one younger sister." },
+        { vn: "Bạn có hòa thuận với họ không?", en: "Do you get along well with them?" },
+        { vn: "Dĩ nhiên, chúng tôi rất hòa thuận.", en: "Of course we get along fine." },
+        { vn: "Đến giờ ăn rồi.", en: "It's time to eat." },
+        { vn: "Đến giờ đi rồi.", en: "It's time to go." },
+        { vn: "Đến giờ đi ngủ rồi.", en: "It's time to go to bed." },
+        { vn: "Mấy giờ rồi?", en: "What time is it?" },
+        { vn: "Bạn có con chưa?", en: "Have you got any children?" },
+        { vn: "Tôi có hai con, một trai và một gái.", en: "I have two children, one boy and one girl." },
+        { vn: "Con của bạn bao nhiêu tuổi rồi?", en: "How old are your children?" },
+        { vn: "Bé gái 5 tuổi và bé trai 2 tuổi.", en: "The girl is five and the boy is two." },
+        { vn: "Con trai bạn bao nhiêu tuổi?", en: "How old is your son?" },
+        { vn: "Con gái bạn bao nhiêu tuổi?", en: "How old is your daughter?" },
+        { vn: "Bây giờ chúng ở đâu?", en: "Where are they now?" },
+        { vn: "Chúng đang chơi bên ngoài.", en: "They're playing outside." },
+        { vn: "Bạn có bút không?", en: "Do you have a pen?" },
+        { vn: "Vâng, tôi có.", en: "Yes, I do." },
+        { vn: "Tôi có thể mượn nó một lát không?", en: "May I borrow it for a while?" },
+        { vn: "Vâng, của bạn đây.", en: "Yes, here you are." },
+        { vn: "Hôm nay bạn có làm việc không?", en: "Are you working today?" },
+        { vn: "Bạn có thấy điện thoại của tôi không?", en: "Have you seen my phone?" },
+        { vn: "Tôi có thể ngồi đây không?", en: "May I sit here?" },
+        { vn: "Tôi cần một chiếc xe hơi.", en: "I need a car." },
+        { vn: "Làm ơn khóa cửa lại.", en: "Lock the door please." },
+        { vn: "Cuộc đời ngắn ngủi.", en: "Life is short." },
+        { vn: "Không có gì trên bàn cả.", en: "There's nothing on the table." },
+        { vn: "Tôi phải đi rồi.", en: "I have to go." },
+        { vn: "Hãy giữ liên lạc nhé.", en: "Let's keep in touch." },
+        { vn: "Tôi xin lỗi về chuyện đó.", en: "I'm sorry about that." },
+        { vn: "Bạn có dùng Facebook không?", en: "Do you have Facebook?" }
+    ];
+
+    let currentIndex = -1;
+    let timer;
+    let timeLeft = 7;
+
+    function nextQuestion() {
+        currentIndex = Math.floor(Math.random() * data.length);
+        document.getElementById('vietnameseTxt').innerText = data[currentIndex].vn;
+        document.getElementById('englishTxt').innerText = data[currentIndex].en;
+        
+        document.getElementById('answerArea').classList.add('hidden');
+        document.getElementById('mainBtn').classList.add('hidden');
+        document.getElementById('revealBtn').classList.remove('hidden');
+        
+        startTimer();
+    }
+
+    function startTimer() {
+        clearInterval(timer);
+        timeLeft = 7;
+        const bar = document.getElementById('timerBar');
+        bar.style.width = '100%';
+        bar.classList.remove('bg-red-500');
+        bar.classList.add('bg-orange-500');
+
+        timer = setInterval(() => {
+            timeLeft--;
+            bar.style.width = (timeLeft / 7 * 100) + '%';
+            
+            if (timeLeft <= 2) bar.classList.replace('bg-orange-500', 'bg-red-500');
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                revealAnswer();
+            }
+        }, 1000);
+    }
+
+    function revealAnswer() {
+        clearInterval(timer);
+        document.getElementById('answerArea').classList.remove('hidden');
+        document.getElementById('revealBtn').classList.add('hidden');
+        document.getElementById('mainBtn').classList.remove('hidden');
+        document.getElementById('mainBtn').innerText = "CÂU TIẾP THEO";
+    }
+
+    function speakAnswer() {
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = data[currentIndex].en;
+        msg.lang = 'en-US';
+        window.speechSynthesis.speak(msg);
+    }
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            if (!document.getElementById('revealBtn').classList.contains('hidden')) {
+                revealAnswer();
+            } else {
+                nextQuestion();
+            }
+            e.preventDefault();
+        }
+    });
+</script>
