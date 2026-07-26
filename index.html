@@ -747,11 +747,14 @@
         // Keyboard Shortcut Handler for Spacebar
         window.addEventListener('keydown', (e) => {
             if (e.code === 'Space') {
-                // Prevent scrolling
-                e.preventDefault();
+                // If user is typing in an input field, do not prevent default space action!
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                    return;
+                }
                 
                 // Only trigger Space shortcut in Flashcard mode
                 if (activeMode === 'flashcard') {
+                    e.preventDefault(); // Prevent scrolling only here
                     if (!document.getElementById('revealBtn').classList.contains('hidden')) {
                         revealAnswer();
                     } else if (!document.getElementById('mainBtn').classList.contains('hidden')) {
