@@ -81,7 +81,7 @@ const lessonsData = {
         ]
     },
     "2": {
-        "title": "GIA ĐÌNH, THỜI GIAN VÀ ĐỜI SỐNG",
+        "title": "GIA ĐÌNH VÀ THÓI QUEN HẰNG NGÀY",
         "sentences": [
             {
                 "en": "Do you have any siblings?",
@@ -96,8 +96,40 @@ const lessonsData = {
                 "vn": "Bạn có hòa thuận với họ không?"
             },
             {
-                "en": "Of course, we get along fine.",
-                "vn": "Dĩ nhiên rồi, chúng tôi rất hòa thuận."
+                "en": "Of course we get along fine.",
+                "vn": "Dĩ nhiên chúng tôi rất hòa thuận."
+            },
+            {
+                "en": "Have you got any children?",
+                "vn": "Bạn có đứa con nào chưa?"
+            },
+            {
+                "en": "I have two children, one boy and one girl.",
+                "vn": "Tôi có hai đứa con, một trai và một gái."
+            },
+            {
+                "en": "How old are your children?",
+                "vn": "Các con của bạn bao nhiêu tuổi?"
+            },
+            {
+                "en": "The girl is five and the boy is two.",
+                "vn": "Bé gái năm tuổi và bé trai hai tuổi."
+            },
+            {
+                "en": "How old is your son?",
+                "vn": "Con trai bạn bao nhiêu tuổi?"
+            },
+            {
+                "en": "How old is your daughter?",
+                "vn": "Con gái bạn bao nhiêu tuổi?"
+            },
+            {
+                "en": "Where are they now?",
+                "vn": "Bây giờ chúng ở đâu?"
+            },
+            {
+                "en": "They're playing outside.",
+                "vn": "Chúng đang chơi ở ngoài trời."
             },
             {
                 "en": "It's time to eat.",
@@ -105,7 +137,7 @@ const lessonsData = {
             },
             {
                 "en": "It's time to go.",
-                "vn": "Đến lúc phải đi rồi."
+                "vn": "Đến giờ đi rồi."
             },
             {
                 "en": "It's time to go to bed.",
@@ -116,36 +148,20 @@ const lessonsData = {
                 "vn": "Mấy giờ rồi?"
             },
             {
-                "en": "Have you got any children?",
-                "vn": "Bạn có con chưa?"
-            },
-            {
-                "en": "I have two children, one boy and one girl.",
-                "vn": "Tôi có hai con, một trai và một gái."
-            },
-            {
-                "en": "How old are your children?",
-                "vn": "Các con bạn bao nhiêu tuổi?"
-            },
-            {
-                "en": "The girl is five and the boy is two.",
-                "vn": "Bé gái 5 tuổi và bé trai 2 tuổi."
-            },
-            {
-                "en": "Where are they now?",
-                "vn": "Giờ chúng đang ở đâu?"
-            },
-            {
-                "en": "They're playing outside.",
-                "vn": "Chúng đang chơi bên ngoài."
-            },
-            {
                 "en": "Do you have a pen?",
                 "vn": "Bạn có bút không?"
             },
             {
+                "en": "Yes, I do.",
+                "vn": "Vâng, tôi có."
+            },
+            {
                 "en": "May I borrow it for a while?",
                 "vn": "Tôi có thể mượn nó một lát không?"
+            },
+            {
+                "en": "Yes, here you are.",
+                "vn": "Vâng, của bạn đây."
             },
             {
                 "en": "Are you working today?",
@@ -156,17 +172,45 @@ const lessonsData = {
                 "vn": "Bạn có thấy điện thoại của tôi không?"
             },
             {
+                "en": "May I sit here?",
+                "vn": "Tôi ngồi đây được không?"
+            },
+            {
+                "en": "I need a car.",
+                "vn": "Tôi cần một chiếc xe hơi."
+            },
+            {
+                "en": "Lock the door, please.",
+                "vn": "Làm ơn khóa cửa lại."
+            },
+            {
                 "en": "Life is short.",
-                "vn": "Cuộc đời ngắn ngủi."
+                "vn": "Cuộc sống thật ngắn ngủi."
+            },
+            {
+                "en": "There's nothing on the table.",
+                "vn": "Không có gì ở trên bàn."
+            },
+            {
+                "en": "I have to go.",
+                "vn": "Tôi phải đi đây."
             },
             {
                 "en": "Let's keep in touch.",
                 "vn": "Hãy giữ liên lạc nhé."
+            },
+            {
+                "en": "I'm sorry about that.",
+                "vn": "Tôi xin lỗi về chuyện đó."
+            },
+            {
+                "en": "Do you have Facebook?",
+                "vn": "Bạn có Facebook không?"
             }
         ]
     },
     "3": {
-        "title": "45 CÂU GIAO TIẾP THÔNG DỤNG",
+        "title": "GIAO TIẾP VÀ TƯƠNG TÁC CƠ BẢN",
         "sentences": [
             {
                 "en": "What do you mean?",
@@ -210,15 +254,143 @@ const lessonsData = {
             },
             {
                 "en": "Are you ready?",
-                "vn": "Bạn đã sẵn sàng chưa? 12. Ready for what? - Sẵn sàng cho cái gì? 13. What are you looking for? - Bạn đang tìm cái gì? 14. I'm looking for my key. - Tôi đang tìm chìa khóa của tôi. 15. Wait for me, please. - Làm ơn đợi tôi với. 16. Everyone is waiting for you. - Mọi người đang đợi bạn đó. 17. Do you have a minute? - Bạn có rảnh một lát không? 18. I'm sorry, I'm in a hurry. - Tôi xin lỗi, tôi đang vội. 19. Drink some water. - Uống chút nước đi. 20. Don't stop here. - Đừng dừng lại ở đây. 21. Would you like a taste? - Bạn có muốn nếm thử không? 22. This tastes good. - Cái này ngon đấy."
+                "vn": "Bạn đã sẵn sàng chưa?"
+            },
+            {
+                "en": "Ready for what?",
+                "vn": "Sẵn sàng cho cái gì?"
+            },
+            {
+                "en": "What are you looking for?",
+                "vn": "Bạn đang tìm cái gì thế?"
+            },
+            {
+                "en": "I'm looking for my key.",
+                "vn": "Tôi đang tìm chìa khóa của tôi."
+            },
+            {
+                "en": "Wait for me, please.",
+                "vn": "Làm ơn đợi tôi với."
+            },
+            {
+                "en": "Everyone is waiting for you.",
+                "vn": "Mọi người đang đợi bạn đó."
+            },
+            {
+                "en": "Do you have a minute?",
+                "vn": "Bạn có rảnh một lát không?"
+            },
+            {
+                "en": "I'm sorry, I'm in a hurry.",
+                "vn": "Tôi xin lỗi, tôi đang vội."
+            },
+            {
+                "en": "Drink some water.",
+                "vn": "Uống chút nước đi."
+            },
+            {
+                "en": "Don't stop here.",
+                "vn": "Đừng dừng lại ở đây."
+            },
+            {
+                "en": "Would you like a taste?",
+                "vn": "Bạn có muốn nếm thử không?"
+            },
+            {
+                "en": "This tastes good.",
+                "vn": "Cái này ngon đấy."
             },
             {
                 "en": "Think before you act.",
-                "vn": "Hãy suy nghĩ kỹ trước khi hành động. 24. Just sit and relax. - Chỉ cần ngồi xuống và thư giãn. 25. I want to lie down. - Tôi muốn nằm nghỉ một lát. 26. Would you like something to eat? - Bạn có muốn ăn chút gì không? 27. Would you like something to drink? - Bạn có muốn uống chút gì không? 28. Drink this, it will help you relax. - Uống cái này đi, nó sẽ giúp bạn thư giãn. 29. I like it a lot. - Tôi thích nó rất nhiều. 30. My pen is out of ink. - Bút của tôi hết mực rồi. 31. It cannot write anymore. - Nó không viết được nữa. 32. I'm out of money. - Tôi hết tiền rồi. 33. I need a new pen. - Tôi cần một cây bút mới."
+                "vn": "Hãy suy nghĩ kỹ trước khi hành động."
+            },
+            {
+                "en": "Just sit and relax.",
+                "vn": "Chỉ cần ngồi xuống và thư giãn."
+            },
+            {
+                "en": "I want to lie down.",
+                "vn": "Tôi muốn nằm nghỉ một lát."
+            },
+            {
+                "en": "Would you like something to eat?",
+                "vn": "Bạn có muốn ăn chút gì không?"
+            },
+            {
+                "en": "Would you like something to drink?",
+                "vn": "Bạn có muốn uống chút gì không?"
+            },
+            {
+                "en": "Drink this, it will help you relax.",
+                "vn": "Uống cái này đi, nó sẽ giúp bạn thư giãn."
+            },
+            {
+                "en": "I like it a lot.",
+                "vn": "Tôi thích nó rất nhiều."
+            },
+            {
+                "en": "My pen is out of ink.",
+                "vn": "Bút của tôi hết mực rồi."
+            },
+            {
+                "en": "It cannot write anymore.",
+                "vn": "Nó không viết được nữa."
+            },
+            {
+                "en": "I'm out of money.",
+                "vn": "Tôi hết tiền rồi."
+            },
+            {
+                "en": "I need a new pen.",
+                "vn": "Tôi cần một cây bút mới."
             },
             {
                 "en": "It looks very nice.",
-                "vn": "Nó trông rất đẹp. 35. Can you translate this for me? - Bạn có thể dịch cái này giúp tôi không? 36. Turn around. - Quay người lại đi. 37. Move back. - Lùi lại đi. 38. Speak louder, please. - Làm ơn nói to hơn. 39. Please stand up. - Làm ơn đứng lên. 40. I'm trying to open this jar. - Tôi đang cố mở cái hũ này. 41. It's too tight. - Nó chặt quá. 42. Can you help me? - Bạn có thể giúp tôi không? 43. Certainly. - Chắc chắn rồi. 44. No problem. - Không vấn đề gì. 45. I'm sorry, I can't. - Tôi xin lỗi, tôi không thể."
+                "vn": "Nó trông rất đẹp."
+            },
+            {
+                "en": "Can you translate this for me?",
+                "vn": "Bạn có thể dịch cái này giúp tôi không?"
+            },
+            {
+                "en": "Turn around.",
+                "vn": "Quay người lại đi."
+            },
+            {
+                "en": "Move back.",
+                "vn": "Lùi lại đi."
+            },
+            {
+                "en": "Speak louder, please.",
+                "vn": "Làm ơn nói to hơn."
+            },
+            {
+                "en": "Please stand up.",
+                "vn": "Làm ơn đứng lên."
+            },
+            {
+                "en": "I'm trying to open this jar.",
+                "vn": "Tôi đang cố mở cái hũ này."
+            },
+            {
+                "en": "It's too tight.",
+                "vn": "Nó chặt quá."
+            },
+            {
+                "en": "Can you help me?",
+                "vn": "Bạn có thể giúp tôi không?"
+            },
+            {
+                "en": "Certainly.",
+                "vn": "Chắc chắn rồi / Dĩ nhiên rồi."
+            },
+            {
+                "en": "No problem.",
+                "vn": "Không vấn đề gì."
+            },
+            {
+                "en": "I'm sorry, I can't.",
+                "vn": "Tôi xin lỗi, tôi không thể."
             }
         ]
     },
