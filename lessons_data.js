@@ -394,12 +394,12 @@ const lessonsData = {
             }
         ]
     },
-    "4": {
-        "title": "AN TOÀN VÀ LỜI KHUYÊN TRONG SINH HOẠT",
+        "4": {
+        "title": "HÀNH ĐỘNG HẰNG NGÀY VÀ THÓI QUEN",
         "sentences": [
             {
                 "en": "It's dangerous to run indoors.",
-                "vn": "Chạy trong nhà rất nguy hiểm."
+                "vn": "Thật nguy hiểm khi chạy trong nhà."
             },
             {
                 "en": "You could trip and fall.",
@@ -407,19 +407,35 @@ const lessonsData = {
             },
             {
                 "en": "The floor may be slippery.",
-                "vn": "Sàn nhà có thể bị trơn."
+                "vn": "Sàn nhà có thể bị trơn trượt."
             },
             {
                 "en": "Always watch where you're going.",
-                "vn": "Luôn quan sát nơi bạn đang đi."
+                "vn": "Luôn chú ý nhìn đường."
             },
             {
                 "en": "Please remember to lock the door before you leave.",
                 "vn": "Làm ơn nhớ khóa cửa trước khi rời đi."
             },
             {
+                "en": "Why did you lock the door?",
+                "vn": "Tại sao bạn lại khóa cửa?"
+            },
+            {
+                "en": "Why did you slam the door in my face?",
+                "vn": "Tại sao bạn lại đóng sầm cửa vào mặt tôi?"
+            },
+            {
+                "en": "Did you lock the door?",
+                "vn": "Bạn đã khóa cửa chưa?"
+            },
+            {
                 "en": "Don't eat too much candy.",
                 "vn": "Đừng ăn quá nhiều kẹo."
+            },
+            {
+                "en": "It's bad for you.",
+                "vn": "Nó không tốt cho bạn đâu."
             },
             {
                 "en": "Candy is full of sugar.",
@@ -430,25 +446,169 @@ const lessonsData = {
                 "vn": "Nó có thể gây sâu răng."
             },
             {
+                "en": "Eating candy in moderation is okay.",
+                "vn": "Ăn kẹo ở mức độ vừa phải thì không sao."
+            },
+            {
+                "en": "But too much can harm you.",
+                "vn": "Nhưng quá nhiều có thể gây hại cho bạn."
+            },
+            {
+                "en": "Step forward.",
+                "vn": "Bước lên phía trước."
+            },
+            {
+                "en": "This is frustrating me.",
+                "vn": "Điều này làm tôi bực bội."
+            },
+            {
+                "en": "Everyone knows it.",
+                "vn": "Mọi người đều biết điều đó."
+            },
+            {
+                "en": "Everything is expensive here.",
+                "vn": "Mọi thứ ở đây đều đắt đỏ."
+            },
+            {
+                "en": "It's too expensive.",
+                "vn": "Nó quá đắt."
+            },
+            {
+                "en": "It isn't expensive.",
+                "vn": "Nó không đắt."
+            },
+            {
+                "en": "Everything is ready.",
+                "vn": "Mọi thứ đã sẵn sàng."
+            },
+            {
                 "en": "Take your time.",
-                "vn": "Cứ thong thả."
+                "vn": "Cứ từ từ / Thong thả thôi."
             },
             {
                 "en": "Don't waste time.",
                 "vn": "Đừng lãng phí thời gian."
+            },
+            {
+                "en": "Let me think about it.",
+                "vn": "Để tôi suy nghĩ về điều đó."
+            },
+            {
+                "en": "How do you know?",
+                "vn": "Làm sao bạn biết?"
+            },
+            {
+                "en": "Do you know why?",
+                "vn": "Bạn có biết tại sao không?"
+            },
+            {
+                "en": "Do you prefer eating out or eating at home?",
+                "vn": "Bạn thích ăn ngoài hay ăn ở nhà hơn?"
+            },
+            {
+                "en": "Do you have her phone number?",
+                "vn": "Bạn có số điện thoại của cô ấy không?"
+            },
+            {
+                "en": "Would you mind if I opened the window?",
+                "vn": "Bạn có phiền nếu tôi mở cửa sổ không?"
+            },
+            {
+                "en": "Would you mind if I took this chair?",
+                "vn": "Bạn có phiền nếu tôi lấy chiếc ghế này không?"
+            },
+            {
+                "en": "No, of course not.",
+                "vn": "Không, dĩ nhiên là không phiền rồi."
+            },
+            {
+                "en": "Would you mind if I sat here?",
+                "vn": "Bạn có phiền nếu tôi ngồi đây không?"
+            },
+            {
+                "en": "No, not at all.",
+                "vn": "Không, không phiền chút nào."
+            },
+            {
+                "en": "I'm afraid you can't.",
+                "vn": "Tôi e là bạn không thể."
+            },
+            {
+                "en": "I'm sorry, that's not possible.",
+                "vn": "Tôi xin lỗi, điều đó là không thể."
+            },
+            {
+                "en": "Everyone is here except you.",
+                "vn": "Mọi người đều ở đây ngoại trừ bạn."
             }
         ]
     },
     "5": {
-        "title": "SỨC KHỎE, DỊ ỨNG VÀ TRẠNG THÁI CÁ NHÂN",
+        "title": "ĐỐI THOẠI HẰNG NGÀY VÀ KHẢ NĂNG",
         "sentences": [
             {
-                "en": "Are you allergic to anything?",
-                "vn": "Bạn có dị ứng với cái gì không?"
+                "en": "Excuse me, is this seat taken?",
+                "vn": "Xin lỗi, chỗ này đã có ai ngồi chưa?"
             },
             {
-                "en": "I'm allergic to cats/seafood/peanuts.",
-                "vn": "Tôi bị dị ứng với mèo/hải sản/đậu phộng."
+                "en": "I'm sorry, it's taken.",
+                "vn": "Xin lỗi, chỗ này có người ngồi rồi."
+            },
+            {
+                "en": "No, it's not taken.",
+                "vn": "Không, chỗ này chưa có ai ngồi."
+            },
+            {
+                "en": "Are you talking to me?",
+                "vn": "Bạn đang nói chuyện với tôi hả?"
+            },
+            {
+                "en": "I'll be right back.",
+                "vn": "Tôi sẽ quay lại ngay."
+            },
+            {
+                "en": "Leave it to me.",
+                "vn": "Cứ để đó cho tôi."
+            },
+            {
+                "en": "Don't lie to me.",
+                "vn": "Đừng nói dối tôi."
+            },
+            {
+                "en": "I don't know why.",
+                "vn": "Tôi không biết tại sao."
+            },
+            {
+                "en": "Which do you prefer?",
+                "vn": "Bạn thích cái nào hơn?"
+            },
+            {
+                "en": "Are you allergic to anything?",
+                "vn": "Bạn có bị dị ứng với cái gì không?"
+            },
+            {
+                "en": "I'm allergic to cats.",
+                "vn": "Tôi bị dị ứng với mèo."
+            },
+            {
+                "en": "I like cats, but unfortunately I'm allergic to them.",
+                "vn": "Tôi thích mèo nhưng không may tôi lại bị dị ứng với chúng."
+            },
+            {
+                "en": "I'm allergic to peanuts.",
+                "vn": "Tôi bị dị ứng với đậu phộng."
+            },
+            {
+                "en": "I'm allergic to seafood.",
+                "vn": "Tôi bị dị ứng với hải sản."
+            },
+            {
+                "en": "No, I'm not allergic to anything.",
+                "vn": "Không, tôi không bị dị ứng với bất cứ thứ gì cả."
+            },
+            {
+                "en": "Are you ready to go?",
+                "vn": "Bạn đã sẵn sàng đi chưa?"
             },
             {
                 "en": "Are you ready to order?",
@@ -459,37 +619,149 @@ const lessonsData = {
                 "vn": "Bạn đã xong chưa?"
             },
             {
+                "en": "Yes, I have.",
+                "vn": "Vâng, tôi xong rồi."
+            },
+            {
+                "en": "No, I haven't.",
+                "vn": "Chưa, tôi chưa xong."
+            },
+            {
+                "en": "Have you done your homework yet?",
+                "vn": "Bạn đã làm bài tập về nhà chưa?"
+            },
+            {
                 "en": "Have you taken your medicine yet?",
                 "vn": "Bạn đã uống thuốc chưa?"
             },
             {
-                "en": "You look so handsome/beautiful.",
-                "vn": "Trông bạn thật đẹp trai/xinh đẹp."
+                "en": "Can you swim?",
+                "vn": "Bạn biết bơi không?"
+            },
+            {
+                "en": "How far can you swim?",
+                "vn": "Bạn bơi được bao xa?"
+            },
+            {
+                "en": "Can you drive?",
+                "vn": "Bạn biết lái xe không?"
+            },
+            {
+                "en": "Yes, I can.",
+                "vn": "Có, tôi lái được."
+            },
+            {
+                "en": "No, I can't.",
+                "vn": "Không, tôi không lái được."
+            },
+            {
+                "en": "You look so handsome.",
+                "vn": "Trông bạn thật đẹp trai."
+            },
+            {
+                "en": "You look so beautiful.",
+                "vn": "Trông bạn thật xinh đẹp."
             },
             {
                 "en": "Why do you look so sad?",
-                "vn": "Tại sao trông bạn buồn vậy?"
+                "vn": "Sao trông bạn buồn thế?"
+            },
+            {
+                "en": "Are you sick?",
+                "vn": "Bạn bị bệnh hả?"
+            },
+            {
+                "en": "No, I'm not sick, I'm just tired.",
+                "vn": "Không, tôi không bị bệnh, tôi chỉ mệt thôi."
+            },
+            {
+                "en": "Who told you?",
+                "vn": "Ai nói với bạn thế?"
+            },
+            {
+                "en": "You look so pale.",
+                "vn": "Trông bạn thật nhợt nhạt."
+            },
+            {
+                "en": "You look so tired.",
+                "vn": "Trông bạn thật mệt mỏi."
+            },
+            {
+                "en": "Did you get any sleep?",
+                "vn": "Bạn có ngủ được tí nào không?"
+            },
+            {
+                "en": "Are you cold?",
+                "vn": "Bạn có lạnh không?"
+            },
+            {
+                "en": "Do you need a jacket?",
+                "vn": "Bạn có cần áo khoác không?"
+            },
+            {
+                "en": "Are you excited?",
+                "vn": "Bạn có hào hứng không?"
+            },
+            {
+                "en": "Who are you?",
+                "vn": "Bạn là ai?"
             },
             {
                 "en": "Are you lost?",
-                "vn": "Bạn bị lạc đường à?"
+                "vn": "Bạn bị lạc đường hả?"
             },
             {
-                "en": "You look so pale/tired.",
-                "vn": "Trông bạn thật nhợt nhạt/mệt mỏi."
+                "en": "Where are we?",
+                "vn": "Chúng ta đang ở đâu thế này?"
+            },
+            {
+                "en": "I don't see it that way.",
+                "vn": "Tôi không nghĩ như vậy / Tôi không nhìn nhận theo cách đó."
             },
             {
                 "en": "Do you need any help?",
-                "vn": "Bạn có cần giúp gì không?"
+                "vn": "Bạn có cần giúp đỡ gì không?"
             }
         ]
     },
     "6": {
-        "title": "DI CHUYỂN, ĂN UỐNG VÀ ĐỊA ĐIỂM",
+        "title": "DU LỊCH VÀ ĐỜI SỐNG HẰNG NGÀY",
         "sentences": [
             {
-                "en": "I fell off my bike.",
-                "vn": "Tôi bị ngã xe đạp."
+                "en": "Are you hungry?",
+                "vn": "Bạn có đói không?"
+            },
+            {
+                "en": "You're shivering, do you want to go indoors?",
+                "vn": "Bạn đang run kìa, bạn có muốn vào nhà không?"
+            },
+            {
+                "en": "Why are you here?",
+                "vn": "Tại sao bạn lại ở đây?"
+            },
+            {
+                "en": "Hold on, I forgot something.",
+                "vn": "Chờ chút, tôi quên mất một thứ."
+            },
+            {
+                "en": "That's a good question.",
+                "vn": "Đó là một câu hỏi hay."
+            },
+            {
+                "en": "Who do you like?",
+                "vn": "Bạn thích ai?"
+            },
+            {
+                "en": "Do you need anything else?",
+                "vn": "Bạn có cần gì nữa không?"
+            },
+            {
+                "en": "I told you so.",
+                "vn": "Tôi đã bảo bạn thế rồi mà."
+            },
+            {
+                "en": "Where are you going?",
+                "vn": "Bạn đang đi đâu thế?"
             },
             {
                 "en": "I'm going to the supermarket.",
@@ -500,12 +772,60 @@ const lessonsData = {
                 "vn": "Có bệnh viện nào gần đây không?"
             },
             {
-                "en": "I ate before I came here.",
-                "vn": "Tôi đã ăn trước khi đến đây."
+                "en": "Is there a bank near here?",
+                "vn": "Có ngân hàng nào gần đây không?"
+            },
+            {
+                "en": "I fell off my bike.",
+                "vn": "Tôi bị ngã xe đạp."
+            },
+            {
+                "en": "Did you find your phone?",
+                "vn": "Bạn đã tìm thấy điện thoại chưa?"
+            },
+            {
+                "en": "Don't drink the water, it's dirty.",
+                "vn": "Đừng uống nước đó, nó bẩn lắm."
+            },
+            {
+                "en": "Where is it?",
+                "vn": "Nó ở đâu thế?"
+            },
+            {
+                "en": "Are you crazy?",
+                "vn": "Bạn bị điên à?"
+            },
+            {
+                "en": "There's something in my eye.",
+                "vn": "Có cái gì đó trong mắt tôi."
+            },
+            {
+                "en": "Who are you looking for?",
+                "vn": "Bạn đang tìm ai thế?"
+            },
+            {
+                "en": "Do you like to travel?",
+                "vn": "Bạn có thích đi du lịch không?"
+            },
+            {
+                "en": "I don't trust the weather forecast, it's often wrong.",
+                "vn": "Tôi không tin dự báo thời tiết, nó hay sai lắm."
+            },
+            {
+                "en": "Where did you find it?",
+                "vn": "Bạn đã tìm thấy nó ở đâu?"
+            },
+            {
+                "en": "I couldn't agree more.",
+                "vn": "Tôi hoàn toàn đồng ý."
+            },
+            {
+                "en": "Where should I go next?",
+                "vn": "Tôi nên đi đâu tiếp theo?"
             },
             {
                 "en": "How did you get here?",
-                "vn": "Bạn đến đây bằng cách nào?"
+                "vn": "Làm sao bạn đến được đây?"
             },
             {
                 "en": "I came here by car.",
@@ -513,36 +833,84 @@ const lessonsData = {
             },
             {
                 "en": "Where did you go?",
-                "vn": "Bạn đã đi đâu?"
+                "vn": "Bạn đã đi đâu thế?"
             },
             {
                 "en": "I went to the beach.",
                 "vn": "Tôi đã đi biển."
             },
             {
+                "en": "What did you eat?",
+                "vn": "Bạn đã ăn cái gì?"
+            },
+            {
                 "en": "What did you eat this morning?",
-                "vn": "Sáng nay bạn đã ăn gì?"
+                "vn": "Sáng nay bạn đã ăn gì thế?"
+            },
+            {
+                "en": "Did you go shopping?",
+                "vn": "Bạn có đi mua sắm không?"
+            },
+            {
+                "en": "I ate before I came here.",
+                "vn": "Tôi đã ăn trước khi đến đây rồi."
             },
             {
                 "en": "Is the hotel far from here?",
                 "vn": "Khách sạn có xa đây không?"
+            },
+            {
+                "en": "It's about 5 minutes away by car.",
+                "vn": "Khoảng 5 phút đi bằng xe hơi."
+            },
+            {
+                "en": "Should I go wake him?",
+                "vn": "Tôi có nên đi đánh thức anh ấy dậy không?"
+            },
+            {
+                "en": "Good idea.",
+                "vn": "Ý kiến hay đó."
+            },
+            {
+                "en": "He's coming soon.",
+                "vn": "Anh ấy sắp đến rồi."
+            },
+            {
+                "en": "What do you need?",
+                "vn": "Bạn cần cái gì?"
+            },
+            {
+                "en": "What do you need it for?",
+                "vn": "Bạn cần nó để làm gì?"
+            },
+            {
+                "en": "I don't know what to do.",
+                "vn": "Tôi không biết phải làm sao/làm gì nữa."
             }
         ]
     },
     "7": {
-        "title": "TỰ TIN, CÔNG VIỆC VÀ CẢM XÚC",
+        "title": "GIAO TIẾP VÀ CẢM XÚC ĐỜI SỐNG",
         "sentences": [
             {
-                "en": "I owe everything to my parents.",
-                "vn": "Tôi nợ cha mẹ tôi tất cả mọi thứ."
+                "en": "Speak up, I can't hear you.",
+                "vn": "Nói to lên, tôi không nghe rõ bạn nói."
             },
             {
-                "en": "The clock is ticking.",
-                "vn": "Thời gian đang trôi đi."
+                "en": "If I remember correctly, she's Spanish.",
+                "vn": "Nếu tôi nhớ không lầm, cô ấy là người Tây Ban Nha."
             },
             {
-                "en": "I'll give it a shot.",
-                "vn": "Tôi sẽ thử xem sao."
+                "en": "Are you confident?",
+                "vn": "Bạn có tự tin không?"
+            },
+            {
+                "en": "Absolutely, it's always been my dream.",
+                "vn": "Chắc chắn rồi, đó luôn là ước mơ của tôi."
+            },
+            {
+                "en": "Just my luck.",
+                "vn": "Đúng là số tôi xui xẻo / Chỉ là vận may của tôi thôi."
             },
             {
                 "en": "I'm glad you like it.",
@@ -557,135 +925,583 @@ const lessonsData = {
                 "vn": "Tôi không muốn làm phiền bạn."
             },
             {
-                "en": "Are you confident?",
-                "vn": "Bạn có tự tin không?"
+                "en": "Is the meeting over?",
+                "vn": "Cuộc họp kết thúc chưa?"
             },
             {
-                "en": "It's a sacrifice but I'm willing to make it.",
-                "vn": "Đó là một sự hy sinh nhưng tôi sẵn sàng thực hiện."
+                "en": "Can we talk now or are you still busy?",
+                "vn": "Bây giờ chúng ta nói chuyện được chưa hay bạn vẫn đang bận?"
+            },
+            {
+                "en": "Are we nearly there yet?",
+                "vn": "Chúng ta sắp đến nơi chưa?"
+            },
+            {
+                "en": "What time are we meeting?",
+                "vn": "Chúng ta gặp nhau lúc mấy giờ?"
+            },
+            {
+                "en": "Are you full?",
+                "vn": "Bạn no chưa?"
+            },
+            {
+                "en": "I'm still hungry.",
+                "vn": "Tôi vẫn còn đói."
+            },
+            {
+                "en": "What's your favorite food?",
+                "vn": "Món ăn yêu thích của bạn là gì?"
+            },
+            {
+                "en": "What's your favorite season?",
+                "vn": "Mùa yêu thích của bạn là gì?"
+            },
+            {
+                "en": "How do we get there?",
+                "vn": "Làm sao chúng ta đến được đó?"
+            },
+            {
+                "en": "How do I know you're not lying now?",
+                "vn": "Làm sao tôi biết bây giờ bạn không nói dối chứ?"
+            },
+            {
+                "en": "Do you think I talk too much?",
+                "vn": "Bạn có nghĩ tôi nói hơi nhiều không?"
+            },
+            {
+                "en": "It's the least I can do.",
+                "vn": "Đó là điều tối thiểu tôi có thể làm."
+            },
+            {
+                "en": "Why do you say that?",
+                "vn": "Tại sao bạn lại nói thế?"
+            },
+            {
+                "en": "I'm not sure, let me check.",
+                "vn": "Tôi không chắc chắn lắm, để tôi kiểm tra lại."
+            },
+            {
+                "en": "What do you do?",
+                "vn": "Bạn làm nghề gì?"
+            },
+            {
+                "en": "Is the injury serious?",
+                "vn": "Vết thương có nghiêm trọng không?"
+            },
+            {
+                "en": "The flavor is rich.",
+                "vn": "Hương vị thật đậm đà."
+            },
+            {
+                "en": "At first it was strange.",
+                "vn": "Lúc đầu thì thấy hơi lạ."
+            },
+            {
+                "en": "Sure, I can do that.",
+                "vn": "Chắc chắn rồi, tôi có thể làm việc đó."
+            },
+            {
+                "en": "I have to work this weekend.",
+                "vn": "Tôi phải làm việc cuối tuần này."
+            },
+            {
+                "en": "I'll give it a shot.",
+                "vn": "Tôi sẽ thử xem sao."
+            },
+            {
+                "en": "It's a sacrifice, but I'm willing to make it.",
+                "vn": "Đó là một sự hy sinh nhưng tôi sẵn sàng đánh đổi."
+            },
+            {
+                "en": "I owe everything to my parents.",
+                "vn": "Tôi nợ cha mẹ tôi mọi thứ / Tôi có được mọi thứ là nhờ cha mẹ tôi."
             },
             {
                 "en": "My mother is a warrior.",
                 "vn": "Mẹ tôi là một chiến binh."
             },
             {
+                "en": "The clock is ticking.",
+                "vn": "Thời gian đang trôi đi / Đồng hồ đang tích tắc chạy."
+            },
+            {
+                "en": "Is the dog aggressive?",
+                "vn": "Con chó đó có hung dữ không?"
+            },
+            {
+                "en": "I think you should see a doctor.",
+                "vn": "Tôi nghĩ bạn nên đi khám bác sĩ."
+            },
+            {
+                "en": "Why is it so slow?",
+                "vn": "Tại sao nó lại chậm thế?"
+            },
+            {
+                "en": "Look at that photo, is that you?",
+                "vn": "Nhìn bức ảnh kia kìa, có phải bạn không?"
+            },
+            {
+                "en": "Is that so?",
+                "vn": "Có thật vậy không?"
+            },
+            {
+                "en": "What do you see?",
+                "vn": "Bạn nhìn thấy gì?"
+            },
+            {
+                "en": "I see a rabbit.",
+                "vn": "Tôi nhìn thấy một con thỏ."
+            },
+            {
+                "en": "Why is the door open?",
+                "vn": "Tại sao cửa lại mở thế?"
+            },
+            {
+                "en": "What's on the menu today?",
+                "vn": "Hôm nay thực đơn có món gì thế?"
+            },
+            {
                 "en": "Don't forget to practice every day.",
-                "vn": "Đừng quên luyện tập mỗi ngày."
+                "vn": "Đừng quên luyện tập mỗi ngày nhé."
+            },
+            {
+                "en": "Don't forget to feed the cat.",
+                "vn": "Đừng quên cho mèo ăn nhé."
             }
         ]
     },
     "8": {
-        "title": "SINH HOẠT HẰNG NGÀY VÀ THÓI QUEN",
+        "title": "SINH HOẠT VÀ THÓI QUEN THƯỜNG NHẬT",
         "sentences": [
+            {
+                "en": "I'll believe that when I see it.",
+                "vn": "Mắt thấy tai nghe tôi mới tin / Tôi sẽ tin khi tôi nhìn thấy nó."
+            },
+            {
+                "en": "What would you like to know?",
+                "vn": "Bạn muốn biết điều gì?"
+            },
+            {
+                "en": "What's the date today?",
+                "vn": "Hôm nay ngày mấy?"
+            },
             {
                 "en": "Did you wash your hands?",
                 "vn": "Bạn đã rửa tay chưa?"
+            },
+            {
+                "en": "May I see the menu, please?",
+                "vn": "Tôi có thể xem thực đơn được không?"
+            },
+            {
+                "en": "Are you serious?",
+                "vn": "Bạn nói thật à? / Bạn nghiêm túc đấy chứ?"
+            },
+            {
+                "en": "It's time to have breakfast.",
+                "vn": "Đến giờ ăn sáng rồi."
+            },
+            {
+                "en": "It's time to have lunch.",
+                "vn": "Đến giờ ăn trưa rồi."
+            },
+            {
+                "en": "It's time to have dinner.",
+                "vn": "Đến giờ ăn tối rồi."
+            },
+            {
+                "en": "Would you like a receipt?",
+                "vn": "Bạn có muốn lấy hóa đơn không?"
+            },
+            {
+                "en": "Where can I park my car?",
+                "vn": "Tôi có thể đậu xe hơi ở đâu?"
+            },
+            {
+                "en": "I had a terrible dream last night.",
+                "vn": "Đêm qua tôi đã mơ thấy một cơn ác mộng kinh hoàng."
+            },
+            {
+                "en": "This is my first time.",
+                "vn": "Đây là lần đầu tiên của tôi."
+            },
+            {
+                "en": "What did you do today?",
+                "vn": "Hôm nay bạn đã làm gì?"
+            },
+            {
+                "en": "I went to a shoe store.",
+                "vn": "Tôi đã đi đến một cửa hàng giày."
+            },
+            {
+                "en": "What did I do to upset you?",
+                "vn": "Tôi đã làm gì khiến bạn khó chịu/giận thế?"
+            },
+            {
+                "en": "Did I say something wrong?",
+                "vn": "Tôi có nói điều gì sai không?"
+            },
+            {
+                "en": "Are you studying?",
+                "vn": "Bạn đang học bài hả?"
+            },
+            {
+                "en": "How do you feel about it?",
+                "vn": "Bạn cảm thấy thế nào về chuyện đó?"
+            },
+            {
+                "en": "I have to work tomorrow, so I can't get drunk.",
+                "vn": "Ngày mai tôi phải đi làm nên tôi không được say xỉn."
+            },
+            {
+                "en": "I think I have a fever.",
+                "vn": "Tôi nghĩ tôi bị sốt rồi."
             },
             {
                 "en": "Today is my day off.",
                 "vn": "Hôm nay là ngày nghỉ của tôi."
             },
             {
-                "en": "Mind your own business.",
-                "vn": "Hãy lo chuyện của bạn đi."
-            },
-            {
-                "en": "I hate to argue with you.",
-                "vn": "Tôi ghét phải tranh cãi với bạn."
-            },
-            {
-                "en": "I'll believe that when I see it.",
-                "vn": "Tôi sẽ tin điều đó khi tôi tận mắt thấy nó."
-            },
-            {
-                "en": "It's time to have breakfast/lunch/dinner.",
-                "vn": "Đã đến giờ ăn sáng/trưa/tối."
-            },
-            {
-                "en": "I had a terrible dream last night.",
-                "vn": "Đêm qua tôi đã có một giấc mơ khủng khiếp."
-            },
-            {
-                "en": "I like home",
-                "vn": "cooked meals. - Tôi thích những bữa cơm nấu tại nhà."
+                "en": "Get well soon.",
+                "vn": "Sớm khỏe lại nhé!"
             },
             {
                 "en": "What time did you get up this morning?",
                 "vn": "Sáng nay bạn thức dậy lúc mấy giờ?"
             },
             {
+                "en": "I'm sleepy.",
+                "vn": "Tôi buồn ngủ quá."
+            },
+            {
+                "en": "Did I snore?",
+                "vn": "Tôi có ngáy không?"
+            },
+            {
                 "en": "See you tomorrow.",
                 "vn": "Hẹn gặp lại vào ngày mai."
+            },
+            {
+                "en": "You did it.",
+                "vn": "Bạn đã làm được rồi!"
+            },
+            {
+                "en": "Can I borrow your car?",
+                "vn": "Tôi có thể mượn xe hơi của bạn không?"
+            },
+            {
+                "en": "Do you eat out often?",
+                "vn": "Bạn có thường xuyên ăn ngoài không?"
+            },
+            {
+                "en": "Not very often.",
+                "vn": "Không thường xuyên lắm."
+            },
+            {
+                "en": "I like home-cooked meals.",
+                "vn": "Tôi thích các món ăn nấu ở nhà."
+            },
+            {
+                "en": "I'm very busy with my work and I don't like cooking.",
+                "vn": "Tôi bận rộn ngập đầu với công việc và tôi không thích nấu ăn."
+            },
+            {
+                "en": "It's delicious.",
+                "vn": "Nó rất ngon."
+            },
+            {
+                "en": "Mind your own business.",
+                "vn": "Hãy lo việc của bạn đi / Đừng xía vào chuyện của tôi."
+            },
+            {
+                "en": "I hate to argue with you.",
+                "vn": "Tôi ghét phải tranh cãi với bạn."
+            },
+            {
+                "en": "Here's my email address.",
+                "vn": "Đây là địa chỉ email của tôi."
+            },
+            {
+                "en": "What did you buy?",
+                "vn": "Bạn đã mua cái gì thế?"
+            },
+            {
+                "en": "Do you like coffee?",
+                "vn": "Bạn có thích cà phê không?"
+            },
+            {
+                "en": "He's my best friend.",
+                "vn": "Anh ấy là bạn thân nhất của tôi."
             }
         ]
     },
     "9": {
-        "title": "THÔNG TIN CÁ NHÂN VÀ GIA ĐÌNH",
+        "title": "THÔNG TIN CÁ NHÂN VÀ GIAO TIẾP GIA ĐÌNH",
         "sentences": [
             {
+                "en": "Are you there?",
+                "vn": "Bạn có đó không?"
+            },
+            {
+                "en": "This is my husband.",
+                "vn": "Đây là chồng tôi."
+            },
+            {
+                "en": "This is my wife.",
+                "vn": "Đây là vợ tôi."
+            },
+            {
                 "en": "How do you spell your first name?",
-                "vn": "Bạn đánh vần tên mình như thế nào?"
+                "vn": "Bạn đánh vần tên của mình thế nào?"
             },
             {
                 "en": "How do you spell your last name?",
-                "vn": "Họ của bạn đánh vần như thế nào?"
+                "vn": "Bạn đánh vần họ của mình thế nào?"
+            },
+            {
+                "en": "What's your full name?",
+                "vn": "Tên đầy đủ của bạn là gì?"
+            },
+            {
+                "en": "I'm going to visit my uncle.",
+                "vn": "Tôi chuẩn bị đi thăm chú/bác tôi."
+            },
+            {
+                "en": "Where's your house?",
+                "vn": "Nhà bạn ở đâu?"
+            },
+            {
+                "en": "What's up?",
+                "vn": "Có chuyện gì thế? / Dạo này thế nào?"
+            },
+            {
+                "en": "Is he your boyfriend?",
+                "vn": "Cậu ấy có phải là bạn trai của bạn không?"
+            },
+            {
+                "en": "Is she your girlfriend?",
+                "vn": "Cô ấy có phải là bạn gái của bạn không?"
+            },
+            {
+                "en": "How have you been?",
+                "vn": "Dạo này bạn thế nào? / Sức khỏe dạo này thế nào?"
             },
             {
                 "en": "What's your email address?",
                 "vn": "Địa chỉ email của bạn là gì?"
             },
             {
+                "en": "Are you free on Sunday?",
+                "vn": "Chủ nhật này bạn có rảnh không?"
+            },
+            {
+                "en": "Are you free tomorrow?",
+                "vn": "Ngày mai bạn có rảnh không?"
+            },
+            {
+                "en": "Is this your family?",
+                "vn": "Đây có phải là gia đình bạn không?"
+            },
+            {
                 "en": "He's a wonderful father.",
                 "vn": "Ông ấy là một người cha tuyệt vời."
             },
             {
-                "en": "This is my husband/wife.",
-                "vn": "Đây là chồng/vợ của tôi."
+                "en": "He's a bad father.",
+                "vn": "Ông ấy là một người cha tồi."
             },
             {
-                "en": "I'm going to visit my uncle.",
-                "vn": "Tôi sắp đi thăm chú của mình."
-            },
-            {
-                "en": "Are you free on Sunday?",
-                "vn": "Chủ nhật bạn có rảnh không?"
+                "en": "There is a man at the door.",
+                "vn": "Có một người đàn ông ở cửa."
             },
             {
                 "en": "Someone is knocking at the door.",
                 "vn": "Có ai đó đang gõ cửa."
             },
             {
+                "en": "Let me know if you need anything.",
+                "vn": "Hãy cho tôi biết nếu bạn cần bất cứ thứ gì."
+            },
+            {
                 "en": "I have no doubt of his ability.",
                 "vn": "Tôi không nghi ngờ gì về khả năng của anh ấy."
             },
             {
+                "en": "You're right.",
+                "vn": "Bạn đúng rồi."
+            },
+            {
+                "en": "She's very annoying.",
+                "vn": "Cô ấy rất phiền phức / khó chịu."
+            },
+            {
+                "en": "Is this your first time here?",
+                "vn": "Đây là lần đầu tiên bạn đến đây phải không?"
+            },
+            {
+                "en": "What are your plans for the weekend?",
+                "vn": "Kế hoạch cuối tuần của bạn là gì?"
+            },
+            {
+                "en": "Do you sell batteries?",
+                "vn": "Ở đây có bán pin không?"
+            },
+            {
+                "en": "Do you sell sunglasses?",
+                "vn": "Ở đây có bán kính râm không?"
+            },
+            {
+                "en": "How's work going?",
+                "vn": "Công việc thế nào rồi?"
+            },
+            {
+                "en": "Did you catch the latest movie?",
+                "vn": "Bạn có xem bộ phim mới nhất gần đây không?"
+            },
+            {
+                "en": "Can I have a glass of water, please?",
+                "vn": "Làm ơn cho tôi xin một cốc nước được không?"
+            },
+            {
+                "en": "Hurry up.",
+                "vn": "Nhanh lên nào."
+            },
+            {
+                "en": "Don't do that.",
+                "vn": "Đừng làm thế."
+            },
+            {
+                "en": "He's very famous.",
+                "vn": "Anh ấy rất nổi tiếng."
+            },
+            {
+                "en": "I ate already.",
+                "vn": "Tôi đã ăn rồi."
+            },
+            {
                 "en": "I'd like to go for a walk.",
-                "vn": "Tôi muốn đi dạo."
+                "vn": "Tôi muốn đi dạo bộ."
+            },
+            {
+                "en": "I don't know how to use it.",
+                "vn": "Tôi không biết dùng cái này thế nào."
+            },
+            {
+                "en": "I don't like him.",
+                "vn": "Tôi không thích anh ta."
+            },
+            {
+                "en": "I don't like her.",
+                "vn": "Tôi không thích cô ta."
+            },
+            {
+                "en": "I don't like it.",
+                "vn": "Tôi không thích nó."
             }
         ]
     },
     "10": {
-        "title": "VẤN ĐỀ CÔNG NGHỆ VÀ GIA VỊ XÃ HỘI",
+        "title": "GIAO TIẾP ĐỜI SỐNG & VẤN ĐỀ HẰNG NGÀY",
         "sentences": [
+            {
+                "en": "Talk to you later.",
+                "vn": "Nói chuyện với bạn sau nhé."
+            },
+            {
+                "en": "Where's your girlfriend?",
+                "vn": "Bạn gái của bạn ở đâu?"
+            },
+            {
+                "en": "Where's your jacket?",
+                "vn": "Áo khoác của bạn ở đâu?"
+            },
+            {
+                "en": "Do you have any questions?",
+                "vn": "Bạn có câu hỏi nào không?"
+            },
+            {
+                "en": "Let's go to the mall.",
+                "vn": "Hãy đi đến trung tâm mua sắm."
+            },
+            {
+                "en": "I'm having trouble with my computer.",
+                "vn": "Tôi đang gặp rắc rối với máy tính của mình."
+            },
+            {
+                "en": "Why didn't you say so?",
+                "vn": "Sao bạn không nói thế?"
+            },
             {
                 "en": "The printer isn't working.",
                 "vn": "Máy in không hoạt động."
+            },
+            {
+                "en": "I'm starving.",
+                "vn": "Tôi chết đói rồi / Tôi rất đói."
+            },
+            {
+                "en": "Would you like some chocolate cake?",
+                "vn": "Bạn có muốn một ít bánh sô-cô-la không?"
+            },
+            {
+                "en": "Would you like some coffee?",
+                "vn": "Bạn có muốn một ít cà phê không?"
+            },
+            {
+                "en": "I don't want it.",
+                "vn": "Tôi không muốn nó."
+            },
+            {
+                "en": "I'm all right.",
+                "vn": "Tôi ổn."
+            },
+            {
+                "en": "I don't speak English very well.",
+                "vn": "Tôi không nói tiếng Anh giỏi lắm."
+            },
+            {
+                "en": "Why didn't you wake me?",
+                "vn": "Tại sao bạn không đánh thức tôi?"
             },
             {
                 "en": "Let's talk about something else.",
                 "vn": "Hãy nói về chuyện khác đi."
             },
             {
-                "en": "Could you do me a favor?",
-                "vn": "Bạn có thể giúp tôi một việc không?"
+                "en": "I can't wait.",
+                "vn": "Tôi không thể chờ đợi được nữa / Tôi rất háo hức."
             },
             {
-                "en": "I'm having trouble with my computer.",
-                "vn": "Máy tính của tôi đang gặp trục trặc."
+                "en": "I leave work at 5:00 p.m.",
+                "vn": "Tôi tan làm lúc 5 giờ chiều."
+            },
+            {
+                "en": "Is this it?",
+                "vn": "Là cái này phải không?"
+            },
+            {
+                "en": "What do you like to do in your free time?",
+                "vn": "Bạn thích làm gì vào thời gian rảnh?"
+            },
+            {
+                "en": "That's crazy.",
+                "vn": "Thật điên rồ."
+            },
+            {
+                "en": "I have a headache.",
+                "vn": "Tôi bị đau đầu."
             },
             {
                 "en": "My computer has a virus.",
                 "vn": "Máy tính của tôi bị nhiễm virus."
+            },
+            {
+                "en": "Can we talk later?",
+                "vn": "Chúng xuất nói chuyện sau được không?"
+            },
+            {
+                "en": "Could you do me a favor?",
+                "vn": "Bạn có thể giúp tôi một việc được không?"
             },
             {
                 "en": "Certainly, what can I do for you?",
@@ -693,52 +1509,128 @@ const lessonsData = {
             },
             {
                 "en": "I'm sorry, I'm quite busy right now.",
-                "vn": "Xin lỗi, hiện tại tôi khá bận."
+                "vn": "Tôi xin lỗi, hiện tại tôi khá bận."
             },
             {
                 "en": "Can you fix it?",
                 "vn": "Bạn có thể sửa nó không?"
             },
             {
+                "en": "Can you help me carry this, please?",
+                "vn": "Bạn có thể giúp tôi mang cái này được không?"
+            },
+            {
+                "en": "This isn't right.",
+                "vn": "Điều này không đúng."
+            },
+            {
                 "en": "My car won't start.",
-                "vn": "Xe của tôi không khởi động được."
+                "vn": "Xe hơi của tôi không khởi động được."
             },
             {
                 "en": "Could you pass me the hammer?",
-                "vn": "Bạn có thể đưa cho tôi cây búa không?"
+                "vn": "Bạn có thể đưa cho tôi cái búa được không?"
             }
         ]
     },
     "11": {
-        "title": "THỜI TIẾT, ĐẶT PHÒNG VÀ GIỚI THIỆU",
+        "title": "THỜI TIẾT, ĐẶT CHỖ & ĐIỆN THOẠI",
         "sentences": [
             {
-                "en": "I'll call the restaurant and make a reservation.",
-                "vn": "Tôi sẽ gọi nhà hàng và đặt chỗ."
-            },
-            {
-                "en": "The moon is full tonight.",
-                "vn": "Đêm nay trăng tròn."
-            },
-            {
-                "en": "Hi, let me introduce you.",
-                "vn": "Chào, để tôi giới thiệu bạn."
-            },
-            {
                 "en": "It's boiling outside.",
-                "vn": "Ngoài trời đang nóng như thiêu đốt."
+                "vn": "Bên ngoài trời nóng như đổ lửa."
+            },
+            {
+                "en": "It looks like it's going to rain.",
+                "vn": "Trông có vẻ như trời sắp mưa."
+            },
+            {
+                "en": "Do you think it's going to rain?",
+                "vn": "Bạn có nghĩ trời sẽ mưa không?"
+            },
+            {
+                "en": "Do you think it's going to rain tomorrow?",
+                "vn": "Bạn có nghĩ ngày mai trời sẽ mưa không?"
+            },
+            {
+                "en": "I'll call the restaurant and make a reservation.",
+                "vn": "Tôi sẽ gọi cho nhà hàng và đặt chỗ."
+            },
+            {
+                "en": "Can I have your name, please?",
+                "vn": "Làm ơn cho tôi biết tên của bạn được không?"
+            },
+            {
+                "en": "My name is Jenny and I have a reservation.",
+                "vn": "Tên tôi là Jenny và tôi đã đặt chỗ."
+            },
+            {
+                "en": "The hotel is full tonight.",
+                "vn": "Khách sạn đêm nay đã kín chỗ rồi."
+            },
+            {
+                "en": "Do you have a reservation for me?",
+                "vn": "Bạn có thông tin đặt chỗ của tôi không?"
+            },
+            {
+                "en": "She's not here.",
+                "vn": "Cô ấy không có ở đây."
+            },
+            {
+                "en": "I'll ask her to call you as soon as possible.",
+                "vn": "Tôi sẽ bảo cô ấy gọi lại cho bạn sớm nhất có thể."
+            },
+            {
+                "en": "Who's this?",
+                "vn": "Ai đó? (Dùng khi nghe điện thoại)."
             },
             {
                 "en": "I'd like you to meet my friend.",
                 "vn": "Tôi muốn bạn gặp bạn của tôi."
             },
             {
-                "en": "Look at the sky, it's so beautiful.",
-                "vn": "Nhìn lên bầu trời kìa, thật đẹp quá."
+                "en": "Why didn't you call me?",
+                "vn": "Tại sao bạn không gọi cho tôi?"
+            },
+            {
+                "en": "Look at the sky.",
+                "vn": "Nhìn bầu trời kìa."
+            },
+            {
+                "en": "The moon is full tonight.",
+                "vn": "Đêm nay trăng tròn."
+            },
+            {
+                "en": "It's so beautiful.",
+                "vn": "Nó thật đẹp."
             },
             {
                 "en": "Your room is very messy.",
                 "vn": "Phòng của bạn rất bừa bộn."
+            },
+            {
+                "en": "I don't see anything here.",
+                "vn": "Tôi không thấy bất cứ thứ gì ở đây."
+            },
+            {
+                "en": "I hate it.",
+                "vn": "Tôi ghét nó."
+            },
+            {
+                "en": "I'm sorry, I can't talk right now.",
+                "vn": "Tôi xin lỗi, bây giờ tôi không thể nói chuyện."
+            },
+            {
+                "en": "I'm in a meeting.",
+                "vn": "Tôi đang trong một cuộc họp."
+            },
+            {
+                "en": "It's okay, I'll call back.",
+                "vn": "Không sao, tôi sẽ gọi lại sau."
+            },
+            {
+                "en": "Hi, let me introduce you.",
+                "vn": "Xin chào, để tôi giới thiệu bạn."
             },
             {
                 "en": "This is your new boss.",
@@ -749,33 +1641,105 @@ const lessonsData = {
                 "vn": "Bạn có nhớ tôi không?"
             },
             {
+                "en": "Yes, I remember you.",
+                "vn": "Vâng, tôi nhớ bạn."
+            },
+            {
+                "en": "I'm sorry, I don't remember you.",
+                "vn": "Tôi xin lỗi, tôi không nhớ bạn."
+            },
+            {
                 "en": "How's everything?",
-                "vn": "Mọi chuyện thế nào rồi?"
+                "vn": "Mọi thứ thế nào rồi?"
+            },
+            {
+                "en": "Everything's good, how about you?",
+                "vn": "Mọi thứ đều tốt, còn bạn thì sao?"
+            },
+            {
+                "en": "I'm returning your call.",
+                "vn": "Tôi đang gọi lại cho bạn đây."
+            },
+            {
+                "en": "I've heard great things about you.",
+                "vn": "Tôi đã nghe những điều tuyệt vời về bạn."
+            },
+            {
+                "en": "Is your boss young?",
+                "vn": "Sếp của bạn có trẻ không?"
+            },
+            {
+                "en": "He's in his 30s.",
+                "vn": "Anh ấy đang ở độ tuổi 30."
+            },
+            {
+                "en": "How long is it?",
+                "vn": "Nó dài bao nhiêu? / Bao lâu?"
+            },
+            {
+                "en": "It's quite long.",
+                "vn": "Nó khá dài."
             }
         ]
     },
     "12": {
-        "title": "ĐẠI CHỈ, TUỔI TÁC VÀ NGHỀ NGHIỆP",
+        "title": "THÔNG TIN CÁ NHÂN & NƠI SỐNG",
         "sentences": [
             {
+                "en": "The weather is beautiful today.",
+                "vn": "Hôm nay thời tiết thật đẹp."
+            },
+            {
+                "en": "Where do you live?",
+                "vn": "Bạn sống ở đâu?"
+            },
+            {
+                "en": "I live in New York.",
+                "vn": "Tôi sống ở New York."
+            },
+            {
+                "en": "Have you been here before?",
+                "vn": "Bạn đã từng đến đây chưa?"
+            },
+            {
+                "en": "Yes, I have been here before.",
+                "vn": "Vâng, tôi đã từng đến đây rồi."
+            },
+            {
+                "en": "No, I haven't been here before.",
+                "vn": "Không, tôi chưa từng đến đây."
+            },
+            {
+                "en": "Have you been there before?",
+                "vn": "Bạn đã từng đến đó chưa?"
+            },
+            {
+                "en": "How long have you been here?",
+                "vn": "Bạn đã ở đây bao lâu rồi?"
+            },
+            {
+                "en": "I've been here for 10 years.",
+                "vn": "Tôi đã ở đây được 10 năm rồi."
+            },
+            {
                 "en": "Where were you born?",
-                "vn": "Bạn được sinh ra ở đâu?"
+                "vn": "Bạn sinh ra ở đâu?"
             },
             {
-                "en": "How long have you been married?",
-                "vn": "Bạn kết hôn được bao lâu rồi?"
-            },
-            {
-                "en": "I start work at 8:00 a.m.",
-                "vn": "Tôi bắt đầu làm việc lúc 8 giờ sáng."
+                "en": "I was born in America.",
+                "vn": "Tôi sinh ra ở Mỹ."
             },
             {
                 "en": "What's your address?",
                 "vn": "Địa chỉ của bạn là gì?"
             },
             {
-                "en": "I've been here for 10 years.",
-                "vn": "Tôi đã ở đây được 10 năm."
+                "en": "My address is 88 Main Street.",
+                "vn": "Địa chỉ của tôi là số 88 đường Main."
+            },
+            {
+                "en": "My number is 0919 429 246.",
+                "vn": "Số điện thoại của tôi là 0919 429 246."
             },
             {
                 "en": "How old are you?",
@@ -786,98 +1750,358 @@ const lessonsData = {
                 "vn": "Tôi 30 tuổi."
             },
             {
+                "en": "When were you born?",
+                "vn": "Bạn sinh năm nào?"
+            },
+            {
+                "en": "I was born in 1980.",
+                "vn": "Tôi sinh năm 1980."
+            },
+            {
+                "en": "What is your son's name?",
+                "vn": "Con trai bạn tên là gì?"
+            },
+            {
+                "en": "His name is John.",
+                "vn": "Tên của cậu ấy là John."
+            },
+            {
+                "en": "What is your daughter's name?",
+                "vn": "Con gái bạn tên là gì?"
+            },
+            {
+                "en": "Her name is Sam.",
+                "vn": "Tên của cô bé là Sam."
+            },
+            {
+                "en": "How long have you been married?",
+                "vn": "Bạn đã kết hôn bao lâu rồi?"
+            },
+            {
+                "en": "I have been married for six years.",
+                "vn": "Tôi đã kết hôn được 6 năm."
+            },
+            {
                 "en": "Do you like your job?",
                 "vn": "Bạn có thích công việc của mình không?"
             },
             {
-                "en": "Do you have any pets?",
-                "vn": "Bạn có nuôi thú cưng không?"
+                "en": "Yes, I love my job.",
+                "vn": "Vâng, tôi yêu công việc của mình."
             },
             {
-                "en": "I have a dog.",
-                "vn": "Tôi có một chú chó."
+                "en": "What time do you start work?",
+                "vn": "Bạn bắt đầu làm việc lúc mấy giờ?"
+            },
+            {
+                "en": "I start work at 8:00 a.m.",
+                "vn": "Tôi bắt đầu làm việc lúc 8 giờ sáng."
+            },
+            {
+                "en": "Do you have a house?",
+                "vn": "Bạn có nhà không?"
+            },
+            {
+                "en": "Yes, I have a house.",
+                "vn": "Vâng, tôi có một ngôi nhà."
+            },
+            {
+                "en": "No, I don't have a house.",
+                "vn": "Không, tôi không có nhà."
+            },
+            {
+                "en": "Do you have a car?",
+                "vn": "Bạn có xe hơi không?"
+            },
+            {
+                "en": "Yes, I have a car.",
+                "vn": "Vâng, tôi có một chiếc xe hơi."
+            },
+            {
+                "en": "No, I don't have a car.",
+                "vn": "Không, tôi không có xe hơi."
+            },
+            {
+                "en": "Do you have any pets?",
+                "vn": "Bạn có thú cưng nào không?"
+            },
+            {
+                "en": "Yes, I have a dog.",
+                "vn": "Vâng, tôi có một con chó."
+            },
+            {
+                "en": "Do you like animals?",
+                "vn": "Bạn có thích động vật không?"
+            },
+            {
+                "en": "Yes, I love animals.",
+                "vn": "Vâng, tôi yêu động vật."
             }
         ]
     },
     "13": {
-        "title": "SỞ THÍCH, MÀU SẮC VÀ GIA ĐÌNH",
+        "title": "SỞ THÍCH VÀ THÔNG TIN CÁ NHÂN",
         "sentences": [
+            {
+                "en": "Do you like to eat out?",
+                "vn": "Bạn có thích ăn ngoài không?"
+            },
+            {
+                "en": "What food do you like?",
+                "vn": "Bạn thích thức ăn gì?"
+            },
+            {
+                "en": "I like Vietnamese food.",
+                "vn": "Tôi thích thức ăn Việt Nam."
+            },
+            {
+                "en": "What's your favorite drink?",
+                "vn": "Thức uống yêu thích của bạn là gì?"
+            },
+            {
+                "en": "My favorite drink is lemon juice.",
+                "vn": "Thức uống yêu thích của tôi là nước chanh."
+            },
             {
                 "en": "What's your favorite color?",
                 "vn": "Màu sắc yêu thích của bạn là gì?"
             },
             {
-                "en": "What sports do you play?",
-                "vn": "Bạn chơi môn thể thao nào?"
+                "en": "My favorite color is white.",
+                "vn": "Màu yêu thích của tôi là màu trắng."
             },
             {
-                "en": "How many people are there in your family?",
-                "vn": "Gia đình bạn có bao nhiêu người?"
+                "en": "Do you like to watch movies?",
+                "vn": "Bạn có thích xem phim không?"
             },
             {
-                "en": "What food do you like?",
-                "vn": "Bạn thích món ăn nào?"
-            },
-            {
-                "en": "What's your favorite drink?",
-                "vn": "Đồ uống yêu thích của bạn là gì?"
+                "en": "Yes, I love watching movies.",
+                "vn": "Vâng, tôi rất thích xem phim."
             },
             {
                 "en": "What type of movies do you like?",
-                "vn": "Bạn thích thể loại phim nào?"
+                "vn": "Bạn thích thể loại phim gì?"
+            },
+            {
+                "en": "I like action movies.",
+                "vn": "Tôi thích phim hành động."
             },
             {
                 "en": "Do you have any hobbies?",
                 "vn": "Bạn có sở thích nào không?"
             },
             {
+                "en": "Yes, I like to play sports.",
+                "vn": "Vâng, tôi thích chơi thể thao."
+            },
+            {
+                "en": "What sports do you play?",
+                "vn": "Bạn chơi môn thể thao nào?"
+            },
+            {
+                "en": "I like to play football.",
+                "vn": "Tôi thích chơi bóng đá."
+            },
+            {
+                "en": "Do you like to read books?",
+                "vn": "Bạn có thích đọc sách không?"
+            },
+            {
+                "en": "Yes, I love reading books.",
+                "vn": "Vâng, tôi rất thích đọc sách."
+            },
+            {
+                "en": "What's your favorite book?",
+                "vn": "Cuốn sách yêu thích của bạn là gì?"
+            },
+            {
+                "en": "My favorite book is Harry Potter.",
+                "vn": "Cuốn sách yêu thích của tôi là Harry Potter."
+            },
+            {
+                "en": "What countries have you been to?",
+                "vn": "Bạn đã từng đến những quốc gia nào?"
+            },
+            {
+                "en": "I've been to France and Japan.",
+                "vn": "Tôi đã đến Pháp và Nhật Bản."
+            },
+            {
+                "en": "Do you like to go out with friends?",
+                "vn": "Bạn có thích đi chơi với bạn bè không?"
+            },
+            {
+                "en": "Yes, I like going out with my friends.",
+                "vn": "Vâng, tôi thích đi chơi với bạn bè."
+            },
+            {
+                "en": "Not really, I prefer staying at home.",
+                "vn": "Không hẳn, tôi thích ở nhà hơn."
+            },
+            {
                 "en": "Who is your best friend?",
-                "vn": "Ai là người bạn thân nhất của bạn?"
+                "vn": "Ai là bạn thân nhất của bạn?"
+            },
+            {
+                "en": "My best friend is John.",
+                "vn": "Bạn thân nhất của tôi là John."
+            },
+            {
+                "en": "Do you like the snow?",
+                "vn": "Bạn có thích tuyết không?"
+            },
+            {
+                "en": "Yes, I love to make snowmen.",
+                "vn": "Vâng, tôi thích đắp người tuyết."
             },
             {
                 "en": "What color is it?",
                 "vn": "Nó màu gì?"
             },
             {
+                "en": "It's red.",
+                "vn": "Nó màu đỏ."
+            },
+            {
+                "en": "How old is she?",
+                "vn": "Cô ấy bao nhiêu tuổi?"
+            },
+            {
+                "en": "She is 17 years old.",
+                "vn": "Cô ấy 17 tuổi."
+            },
+            {
+                "en": "How old is he?",
+                "vn": "Cậu ấy bao nhiêu tuổi?"
+            },
+            {
+                "en": "He is 11 years old.",
+                "vn": "Cậu ấy 11 tuổi."
+            },
+            {
+                "en": "How many people are there in your family?",
+                "vn": "Gia đình bạn có bao nhiêu người?"
+            },
+            {
                 "en": "There are four people in my family.",
-                "vn": "Có 4 người trong gia đình tôi."
+                "vn": "Gia đình tôi có 4 người."
             }
         ]
     },
     "14": {
-        "title": "NGOẠI HÌNH, SINH NHẬT VÀ LỐI SỐNG",
+        "title": "MIÊU TẢ NGOẠI HÌNH VÀ SINH NHẬT",
         "sentences": [
             {
                 "en": "What does your boyfriend look like?",
                 "vn": "Bạn trai của bạn trông như thế nào?"
             },
             {
-                "en": "When is your birthday?",
-                "vn": "Sinh nhật của bạn là khi nào?"
+                "en": "What does your mother look like?",
+                "vn": "Mẹ của bạn trông như thế nào?"
             },
             {
-                "en": "I live with my family.",
-                "vn": "Tôi sống cùng gia đình."
+                "en": "What does your cousin look like?",
+                "vn": "Anh/chị họ của bạn trông như thế nào?"
+            },
+            {
+                "en": "What does the wallet look like?",
+                "vn": "Cái ví trông như thế nào?"
             },
             {
                 "en": "He is tall and muscular.",
                 "vn": "Anh ấy cao và vạm vỡ."
             },
             {
+                "en": "She's short and slim.",
+                "vn": "Cô ấy thấp và thon thả."
+            },
+            {
+                "en": "He has curly hair.",
+                "vn": "Anh ấy có mái tóc xoăn."
+            },
+            {
                 "en": "She is very pretty.",
                 "vn": "Cô ấy rất xinh đẹp."
             },
             {
+                "en": "She has long hair.",
+                "vn": "Cô ấy có mái tóc dài."
+            },
+            {
                 "en": "Everybody likes her.",
-                "vn": "Mọi người đều quý cô ấy."
+                "vn": "Mọi người đều thích cô ấy."
+            },
+            {
+                "en": "She is an actress.",
+                "vn": "Cô ấy là một diễn viên."
+            },
+            {
+                "en": "I'd like to meet her.",
+                "vn": "Tôi muốn gặp cô ấy."
+            },
+            {
+                "en": "It's my little boy.",
+                "vn": "Đó là cậu con trai nhỏ của tôi."
+            },
+            {
+                "en": "We were looking for some pants for my husband.",
+                "vn": "Chúng tôi đang tìm vài cái quần cho chồng tôi."
+            },
+            {
+                "en": "Now I can't find him.",
+                "vn": "Bây giờ tôi không thể tìm thấy anh ấy."
+            },
+            {
+                "en": "I'm going to work.",
+                "vn": "Tôi đang đi làm."
+            },
+            {
+                "en": "Why do you go to work early?",
+                "vn": "Sao bạn đi làm sớm vậy?"
+            },
+            {
+                "en": "I have to take a bus.",
+                "vn": "Tôi phải bắt xe buýt."
+            },
+            {
+                "en": "When is your birthday?",
+                "vn": "Sinh nhật của bạn là khi nào?"
+            },
+            {
+                "en": "My birthday is on May 10th.",
+                "vn": "Sinh nhật của tôi là vào ngày 10 tháng 5."
+            },
+            {
+                "en": "Would you like to join us?",
+                "vn": "Bạn có muốn tham gia cùng chúng tôi không?"
             },
             {
                 "en": "What party is it?",
-                "vn": "Đó là bữa tiệc gì vậy?"
+                "vn": "Đó là bữa tiệc gì thế?"
             },
             {
                 "en": "It's my birthday party.",
                 "vn": "Đó là tiệc sinh nhật của tôi."
+            },
+            {
+                "en": "Okay, I will come.",
+                "vn": "Được rồi, tôi sẽ đến."
+            },
+            {
+                "en": "When is his birthday?",
+                "vn": "Sinh nhật của anh ấy là khi nào?"
+            },
+            {
+                "en": "Do you know your parents' birthday?",
+                "vn": "Bạn có biết sinh nhật của ba mẹ bạn không?"
+            },
+            {
+                "en": "Do you like birthday parties?",
+                "vn": "Bạn có thích các bữa tiệc sinh nhật không?"
+            },
+            {
+                "en": "What do you usually do on your birthday?",
+                "vn": "Bạn thường làm gì vào ngày sinh nhật của mình?"
             },
             {
                 "en": "Do you live alone or with your family?",
@@ -886,23 +2110,23 @@ const lessonsData = {
             {
                 "en": "I live alone.",
                 "vn": "Tôi sống một mình."
+            },
+            {
+                "en": "I live with my family.",
+                "vn": "Tôi sống cùng gia đình."
             }
         ]
     },
     "15": {
-        "title": "NHÀ CỬA, PHƯƠNG TIỆN VÀ DU LỊCH",
+        "title": "NHÀ CỬA, THÀNH PHỐ VÀ ĐI LẠI",
         "sentences": [
             {
-                "en": "How far is it from your house to work?",
-                "vn": "Từ nhà bạn đến chỗ làm bao xa?"
+                "en": "What rooms do you have in your house?",
+                "vn": "Trong nhà bạn có những phòng nào?"
             },
             {
-                "en": "How much is a round trip ticket?",
-                "vn": "Vé khứ hồi giá bao nhiêu?"
-            },
-            {
-                "en": "I'm on my way.",
-                "vn": "Tôi đang trên đường đến."
+                "en": "I have a living room, a kitchen and two bedrooms.",
+                "vn": "Tôi có một phòng khách, một nhà bếp và hai phòng ngủ."
             },
             {
                 "en": "What is your city like?",
@@ -917,90 +2141,286 @@ const lessonsData = {
                 "vn": "Nó yên tĩnh và thanh bình."
             },
             {
+                "en": "Do you like your city?",
+                "vn": "Bạn có thích thành phố của bạn không?"
+            },
+            {
+                "en": "Yes, I like my city.",
+                "vn": "Vâng, tôi thích thành phố của tôi."
+            },
+            {
+                "en": "What do you like most about your city?",
+                "vn": "Bạn thích điều gì nhất ở thành phố của bạn?"
+            },
+            {
+                "en": "Do you like a quiet city or a crowded city?",
+                "vn": "Bạn thích một thành phố yên tĩnh hay một thành phố đông đúc?"
+            },
+            {
+                "en": "Do you usually go to the supermarket?",
+                "vn": "Bạn có thường xuyên đi siêu thị không?"
+            },
+            {
+                "en": "Yes, I go to the supermarket once a week.",
+                "vn": "Vâng, tôi đi siêu thị mỗi tuần một lần."
+            },
+            {
+                "en": "I hope you and your wife have a nice trip.",
+                "vn": "Tôi hy vọng bạn và vợ có một chuyến đi vui vẻ."
+            },
+            {
+                "en": "I like her.",
+                "vn": "Tôi thích cô ấy."
+            },
+            {
+                "en": "I'll call you when I leave.",
+                "vn": "Tôi sẽ gọi cho bạn khi tôi rời đi."
+            },
+            {
+                "en": "I'll come back later.",
+                "vn": "Tôi sẽ quay lại sau."
+            },
+            {
                 "en": "How do you go to work?",
                 "vn": "Bạn đi làm bằng phương tiện gì?"
             },
             {
-                "en": "I go to work by bus/motorbike/on foot.",
-                "vn": "Tôi đi làm bằng xe buýt/xe máy/đi bộ."
+                "en": "I go to work by bus.",
+                "vn": "Tôi đi làm bằng xe buýt."
+            },
+            {
+                "en": "I go to work on foot.",
+                "vn": "Tôi đi bộ đi làm."
+            },
+            {
+                "en": "I go to work by motorbike.",
+                "vn": "Tôi đi làm bằng xe máy."
+            },
+            {
+                "en": "How far is it from your house to work?",
+                "vn": "Từ nhà bạn đến chỗ làm bao xa?"
             },
             {
                 "en": "How far is it from here to your house?",
-                "vn": "Từ đây về nhà bạn bao xa?"
+                "vn": "Từ đây đến nhà bạn bao xa?"
+            },
+            {
+                "en": "It's about 5 km.",
+                "vn": "Khoảng 5 km."
+            },
+            {
+                "en": "I'll take it.",
+                "vn": "Tôi sẽ lấy nó."
+            },
+            {
+                "en": "I'll take you to the bus stop.",
+                "vn": "Tôi sẽ đưa bạn đến trạm xe buýt."
+            },
+            {
+                "en": "Okay, don't worry, I'll take care of the business for you.",
+                "vn": "Được rồi, đừng lo lắng, tôi sẽ lo liệu công việc kinh doanh giúp bạn."
             },
             {
                 "en": "I'm in my office.",
-                "vn": "Tôi đang ở văn phòng."
+                "vn": "Tôi đang ở trong văn phòng của tôi."
+            },
+            {
+                "en": "I'm on my way.",
+                "vn": "Tôi đang trên đường tới."
+            },
+            {
+                "en": "How much is a round trip ticket?",
+                "vn": "Vé khứ hồi giá bao nhiêu?"
+            },
+            {
+                "en": "How much is a one-way ticket?",
+                "vn": "Vé một chiều giá bao nhiêu?"
             }
         ]
     },
     "16": {
-        "title": "ĐỀ XUẤT, GIÁ CẢ VÀ GIAO TIẾP TẠI NHÀ HÀNG",
+        "title": "HỎI ĐƯỜNG VÀ CÁC HOẠT ĐỘNG THƯỜNG NGÀY",
         "sentences": [
             {
-                "en": "Can you recommend a good restaurant?",
-                "vn": "Bạn có thể giới thiệu một nhà hàng ngon không?"
+                "en": "I lost my watch.",
+                "vn": "Tôi đã mất đồng hồ của mình."
             },
             {
-                "en": "Can it be cheaper?",
-                "vn": "Có thể rẻ hơn không?"
+                "en": "I lost my cool.",
+                "vn": "Tôi mất bình tĩnh."
             },
             {
-                "en": "Do you have enough money?",
-                "vn": "Bạn có đủ tiền không?"
+                "en": "I'm cleaning my room.",
+                "vn": "Tôi đang dọn phòng của mình."
             },
             {
-                "en": "I'm coming to pick you up.",
-                "vn": "Tôi đang đến đón bạn đây."
+                "en": "I'm cold.",
+                "vn": "Tôi lạnh."
             },
             {
-                "en": "Does anyone here speak English?",
-                "vn": "Ở đây có ai nói tiếng Anh không?"
+                "en": "Are you going to help her?",
+                "vn": "Bạn có định giúp cô ấy không?"
             },
             {
-                "en": "Am I pronouncing it correctly?",
-                "vn": "Tôi phát âm có đúng không?"
+                "en": "It was a long time ago.",
+                "vn": "Chuyện đó đã xảy ra từ rất lâu rồi."
             },
             {
-                "en": "Can we have a menu, please?",
-                "vn": "Làm ơn cho chúng tôi xem thực đơn."
+                "en": "Can you throw that away for me?",
+                "vn": "Bạn có thể vứt cái đó đi giúp tôi được không?"
             },
             {
-                "en": "Can we have a word outside?",
-                "vn": "Chúng ta có thể ra ngoài nói chuyện một lát không?"
+                "en": "I'm going to leave.",
+                "vn": "Tôi chuẩn bị rời đi."
+            },
+            {
+                "en": "Bring me my shirt, please.",
+                "vn": "Làm ơn mang cho tôi chiếc áo sơ mi của tôi."
+            },
+            {
+                "en": "Bring me two glasses, please.",
+                "vn": "Làm ơn mang cho tôi hai cái ly."
+            },
+            {
+                "en": "Does this road go to New York?",
+                "vn": "Đường này có đi đến New York không?"
+            },
+            {
+                "en": "Does this bus go to the airport?",
+                "vn": "Xe buýt này có đi đến sân bay không?"
+            },
+            {
+                "en": "Can I make an appointment for next Wednesday?",
+                "vn": "Tôi có thể đặt lịch hẹn vào thứ Tư tuần sau được không?"
             },
             {
                 "en": "Can I bring my friend?",
                 "vn": "Tôi có thể dẫn bạn tôi theo không?"
             },
             {
+                "en": "Can I bring my sister?",
+                "vn": "Tôi có thể dẫn chị/em gái tôi theo không?"
+            },
+            {
+                "en": "I'm hungry.",
+                "vn": "Tôi đói."
+            },
+            {
+                "en": "Can you recommend a good restaurant?",
+                "vn": "Bạn có thể giới thiệu một nhà hàng ngon không?"
+            },
+            {
+                "en": "Can you recommend a good hotel?",
+                "vn": "Bạn có thể giới thiệu một khách sạn tốt không?"
+            },
+            {
                 "en": "Can you show me?",
                 "vn": "Bạn có thể chỉ cho tôi không?"
+            },
+            {
+                "en": "Can you show me where you found it?",
+                "vn": "Bạn có thể chỉ cho tôi nơi bạn đã tìm thấy nó không?"
+            },
+            {
+                "en": "Across from the post office.",
+                "vn": "Đối diện bưu điện."
+            },
+            {
+                "en": "How far is it?",
+                "vn": "Nó cách bao xa?"
+            },
+            {
+                "en": "About 2 hours.",
+                "vn": "Khoảng 2 giờ."
+            },
+            {
+                "en": "At what time?",
+                "vn": "Lúc mấy giờ?"
+            },
+            {
+                "en": "At 10:00.",
+                "vn": "Lúc 10 giờ."
+            },
+            {
+                "en": "I'm coming to pick you up.",
+                "vn": "Tôi đang đến đón bạn."
+            },
+            {
+                "en": "Are you here alone?",
+                "vn": "Bạn ở đây một mình à?"
+            },
+            {
+                "en": "Are they coming this evening?",
+                "vn": "Tối nay họ có đến không?"
+            },
+            {
+                "en": "Does anyone here speak English?",
+                "vn": "Có ai ở đây nói tiếng Anh không?"
+            },
+            {
+                "en": "Am I pronouncing it correctly?",
+                "vn": "Tôi phát âm thế này có đúng không?"
+            },
+            {
+                "en": "Can we have a menu, please?",
+                "vn": "Cho chúng tôi xin thực đơn được không?"
+            },
+            {
+                "en": "Are there any questions?",
+                "vn": "Có câu hỏi nào không?"
+            },
+            {
+                "en": "Do you have enough money?",
+                "vn": "Bạn có đủ tiền không?"
+            },
+            {
+                "en": "Can it be cheaper?",
+                "vn": "Có thể rẻ hơn được không?"
+            },
+            {
+                "en": "Can we have a word outside?",
+                "vn": "Chúng ta có thể ra ngoài nói chuyện một lát được không?"
             }
         ]
     },
     "17": {
-        "title": "TRẠNG THÁI, NẤU ĂN VÀ ĐẶT PHÒNG",
+        "title": "GIAO TIẾP VÀ TRẠNG THÁI CÁ NHÂN",
         "sentences": [
             {
-                "en": "Do you know how to cook?",
-                "vn": "Bạn có biết nấu ăn không?"
-            },
-            {
-                "en": "I'd like a single room.",
-                "vn": "Tôi muốn một phòng đơn."
-            },
-            {
-                "en": "I'm sorry, we're sold out.",
-                "vn": "Xin lỗi, chúng tôi đã hết hàng/hết phòng."
-            },
-            {
                 "en": "Can I have a receipt, please?",
-                "vn": "Làm ơn cho tôi xin hóa đơn."
+                "vn": "Cho tôi xin hóa đơn được không?"
+            },
+            {
+                "en": "Do you like to watch TV?",
+                "vn": "Bạn có thích xem tivi không?"
+            },
+            {
+                "en": "Who turned on the TV?",
+                "vn": "Ai đã bật tivi?"
+            },
+            {
+                "en": "Who turned off the TV?",
+                "vn": "Ai đã tắt tivi?"
             },
             {
                 "en": "How tall are you?",
                 "vn": "Bạn cao bao nhiêu?"
+            },
+            {
+                "en": "How tall is she?",
+                "vn": "Cô ấy cao bao nhiêu?"
+            },
+            {
+                "en": "I'm happy.",
+                "vn": "Tôi đang hạnh phúc / Tôi vui."
+            },
+            {
+                "en": "He said you like to watch movies.",
+                "vn": "Anh ấy nói bạn thích xem phim."
+            },
+            {
+                "en": "Do you want to go to the movies?",
+                "vn": "Bạn có muốn đi xem phim không?"
             },
             {
                 "en": "Are you waiting for someone?",
@@ -1011,6 +2431,26 @@ const lessonsData = {
                 "vn": "Bạn đã xem bộ phim này chưa?"
             },
             {
+                "en": "Do you believe that?",
+                "vn": "Bạn có tin điều đó không?"
+            },
+            {
+                "en": "Do you believe her?",
+                "vn": "Bạn có tin cô ấy không?"
+            },
+            {
+                "en": "He's in the kitchen.",
+                "vn": "Anh ấy đang ở trong bếp."
+            },
+            {
+                "en": "I'm married.",
+                "vn": "Tôi đã kết hôn."
+            },
+            {
+                "en": "I'm not married.",
+                "vn": "Tôi chưa kết hôn."
+            },
+            {
                 "en": "Do you know her?",
                 "vn": "Bạn có biết cô ấy không?"
             },
@@ -1019,49 +2459,209 @@ const lessonsData = {
                 "vn": "Đi thẳng về phía trước."
             },
             {
+                "en": "Have you arrived?",
+                "vn": "Bạn đã đến nơi chưa?"
+            },
+            {
+                "en": "I'm not ready yet.",
+                "vn": "Tôi vẫn chưa sẵn sàng."
+            },
+            {
+                "en": "Do you smell that?",
+                "vn": "Bạn có ngửi thấy mùi đó không?"
+            },
+            {
+                "en": "Do you hear something?",
+                "vn": "Bạn có nghe thấy gì không?"
+            },
+            {
+                "en": "Are you comfortable?",
+                "vn": "Bạn có thoải mái không?"
+            },
+            {
+                "en": "I'm not busy.",
+                "vn": "Tôi không bận."
+            },
+            {
+                "en": "Do you know how to cook?",
+                "vn": "Bạn có biết nấu ăn không?"
+            },
+            {
+                "en": "Do you like your boss?",
+                "vn": "Bạn có thích sếp của mình không?"
+            },
+            {
                 "en": "Can you hold this for me?",
-                "vn": "Bạn có thể giữ cái này giúp tôi không?"
+                "vn": "Bạn có thể cầm cái này giúp tôi được không?"
+            },
+            {
+                "en": "I'm sorry, we're sold out.",
+                "vn": "Xin lỗi, chúng tôi đã bán hết rồi."
+            },
+            {
+                "en": "Do you know what this says?",
+                "vn": "Bạn có biết cái này viết gì không?"
+            },
+            {
+                "en": "I'd like a single room.",
+                "vn": "Tôi muốn một phòng đơn."
+            },
+            {
+                "en": "Are your children with you?",
+                "vn": "Các con của bạn có đi cùng bạn không?"
+            },
+            {
+                "en": "Do you want me to come and pick you up?",
+                "vn": "Bạn có muốn tôi đến đón bạn không?"
+            },
+            {
+                "en": "It's near the supermarket.",
+                "vn": "Nó ở gần siêu thị."
+            },
+            {
+                "en": "Can I help you?",
+                "vn": "Tôi có thể giúp gì cho bạn không?"
             }
         ]
     },
     "18": {
-        "title": "TIỀN BẠC, NGHỀ NGHIỆP VÀ MUA SẮM",
+        "title": "TIỀN BẠC, THỜI GIAN VÀ CÔNG VIỆC",
         "sentences": [
             {
-                "en": "Do you take credit cards?",
-                "vn": "Bạn có nhận thanh toán bằng thẻ tín dụng không?"
+                "en": "How much money do you have?",
+                "vn": "Bạn có bao nhiêu tiền?"
+            },
+            {
+                "en": "I have $10.",
+                "vn": "Tôi có 10 đô la."
+            },
+            {
+                "en": "When did it happen?",
+                "vn": "Chuyện đó đã xảy ra khi nào?"
+            },
+            {
+                "en": "Two days ago.",
+                "vn": "Hai ngày trước."
+            },
+            {
+                "en": "Do you know how much it costs?",
+                "vn": "Bạn có biết nó giá bao nhiêu không?"
+            },
+            {
+                "en": "Have you eaten at that restaurant?",
+                "vn": "Bạn đã ăn ở nhà hàng đó chưa?"
+            },
+            {
+                "en": "Do you smoke?",
+                "vn": "Bạn có hút thuốc không?"
+            },
+            {
+                "en": "Is there a movie theater nearby?",
+                "vn": "Có rạp chiếu phim nào gần đây không?"
+            },
+            {
+                "en": "What time does the movie start?",
+                "vn": "Phim bắt đầu lúc mấy giờ?"
+            },
+            {
+                "en": "What time does the party start?",
+                "vn": "Bữa tiệc bắt đầu lúc mấy giờ?"
+            },
+            {
+                "en": "Would you like to have dinner with me?",
+                "vn": "Bạn có muốn ăn tối cùng tôi không?"
+            },
+            {
+                "en": "Have you ever tried sushi?",
+                "vn": "Bạn đã từng thử sushi chưa?"
+            },
+            {
+                "en": "Do you speak English?",
+                "vn": "Bạn có nói tiếng Anh không?"
             },
             {
                 "en": "How do you pronounce that?",
                 "vn": "Từ đó phát âm như thế nào?"
             },
             {
-                "en": "Can I try it on?",
-                "vn": "Tôi có thể mặc thử nó không?"
-            },
-            {
-                "en": "How much money do you have?",
-                "vn": "Bạn có bao nhiêu tiền?"
+                "en": "He's an engineer.",
+                "vn": "Anh ấy là một kỹ sư."
             },
             {
                 "en": "He's very hardworking.",
                 "vn": "Anh ấy rất chăm chỉ."
             },
             {
+                "en": "Who is your teacher?",
+                "vn": "Ai là giáo viên của bạn?"
+            },
+            {
+                "en": "How do you say it in English?",
+                "vn": "Cái đó nói bằng tiếng Anh như thế nào?"
+            },
+            {
                 "en": "I can't hear you clearly.",
-                "vn": "Tôi không nghe rõ bạn nói."
+                "vn": "Tôi không thể nghe rõ bạn nói."
+            },
+            {
+                "en": "I can't remember exactly.",
+                "vn": "Tôi không thể nhớ chính xác."
+            },
+            {
+                "en": "I don't mind.",
+                "vn": "Tôi không phiền đâu."
+            },
+            {
+                "en": "How long have you worked here?",
+                "vn": "Bạn đã làm việc ở đây bao lâu rồi?"
             },
             {
                 "en": "How many hours a week do you work?",
-                "vn": "Một tuần bạn làm bao nhiêu giờ?"
+                "vn": "Bạn làm việc bao nhiêu giờ một tuần?"
+            },
+            {
+                "en": "Do you have any coffee?",
+                "vn": "Bạn có cà phê không?"
+            },
+            {
+                "en": "How are you paying?",
+                "vn": "Bạn thanh toán bằng hình thức nào?"
+            },
+            {
+                "en": "Do you take credit cards?",
+                "vn": "Bạn có nhận thẻ tín dụng không?"
             },
             {
                 "en": "Do you have anything cheaper?",
                 "vn": "Bạn có cái nào rẻ hơn không?"
             },
             {
+                "en": "How much are these earrings?",
+                "vn": "Đôi bông tai này giá bao nhiêu?"
+            },
+            {
+                "en": "Call the police.",
+                "vn": "Gọi cảnh sát đi."
+            },
+            {
                 "en": "Can I see your passport, please?",
-                "vn": "Làm ơn cho tôi xem hộ chiếu."
+                "vn": "Cho tôi xem hộ chiếu của bạn được không?"
+            },
+            {
+                "en": "Did you come with your family?",
+                "vn": "Bạn có đến cùng gia đình không?"
+            },
+            {
+                "en": "Can I sit over there?",
+                "vn": "Tôi có thể ngồi đằng kia được không?"
+            },
+            {
+                "en": "Are you busy?",
+                "vn": "Bạn có bận không?"
+            },
+            {
+                "en": "Can I try it on?",
+                "vn": "Tôi có thể mặc thử nó được không?"
             },
             {
                 "en": "Where can I try it on?",
@@ -1070,31 +2670,95 @@ const lessonsData = {
         ]
     },
     "19": {
-        "title": "ĂN UỐNG, THÓI QUEN VÀ NIỀM TIN",
+        "title": "GIAO TIẾP VÀ HỎI ĐÁP HẰNG NGÀY",
         "sentences": [
+            {
+                "en": "I want to ask you a question.",
+                "vn": "Tôi muốn hỏi bạn một câu."
+            },
+            {
+                "en": "Sure, go ahead.",
+                "vn": "Chắc chắn rồi, cứ tự nhiên / cứ hỏi đi."
+            },
+            {
+                "en": "I'm very busy, I don't have time now.",
+                "vn": "Tôi rất bận, bây giờ tôi không có thời gian."
+            },
+            {
+                "en": "I'll do it tomorrow.",
+                "vn": "Tôi sẽ làm nó vào ngày mai."
+            },
+            {
+                "en": "I'm thirsty.",
+                "vn": "Tôi khát nước."
+            },
+            {
+                "en": "Do you have any money?",
+                "vn": "Bạn có tiền không?"
+            },
+            {
+                "en": "Yes, I have some.",
+                "vn": "Vâng, tôi có một ít."
+            },
+            {
+                "en": "Sorry, I'm broke.",
+                "vn": "Xin lỗi, tôi cháy túi rồi."
+            },
+            {
+                "en": "Here is your salad.",
+                "vn": "Salad của bạn đây."
+            },
+            {
+                "en": "Can we have some more bread, please?",
+                "vn": "Làm ơn cho chúng tôi thêm một ít bánh mì được không?"
+            },
+            {
+                "en": "I only want a snack.",
+                "vn": "Tôi chỉ muốn một món ăn nhẹ."
+            },
+            {
+                "en": "How does it taste?",
+                "vn": "Mùi vị nó thế nào?"
+            },
+            {
+                "en": "How long will you stay here?",
+                "vn": "Bạn sẽ ở lại đây bao lâu?"
+            },
+            {
+                "en": "I'll stay here for a week.",
+                "vn": "Tôi sẽ ở đây một tuần."
+            },
             {
                 "en": "I need to change clothes.",
                 "vn": "Tôi cần thay quần áo."
             },
             {
-                "en": "How long does it take to learn a new language?",
-                "vn": "Mất bao lâu để học một ngôn ngữ mới?"
+                "en": "I think you have too many clothes.",
+                "vn": "Tôi nghĩ bạn có quá nhiều quần áo."
             },
             {
-                "en": "Do you trust me?",
-                "vn": "Bạn có tin tôi không?"
+                "en": "I don't think so.",
+                "vn": "Tôi không nghĩ vậy."
             },
             {
-                "en": "Can we have some more bread, please?",
-                "vn": "Làm ơn cho chúng tôi thêm ít bánh mì."
+                "en": "Is there a fan in the room?",
+                "vn": "Trong phòng có quạt không?"
             },
             {
-                "en": "How does it taste?",
-                "vn": "Nó có vị như thế nào?"
+                "en": "Yes, there is.",
+                "vn": "Vâng, có."
             },
             {
-                "en": "I'll stay here for a week.",
-                "vn": "Tôi sẽ ở lại đây một tuần."
+                "en": "No, there isn't.",
+                "vn": "Không, không có."
+            },
+            {
+                "en": "I need to go home.",
+                "vn": "Tôi cần về nhà."
+            },
+            {
+                "en": "I don't want to be here.",
+                "vn": "Tôi không muốn ở đây."
             },
             {
                 "en": "I don't understand what you are saying.",
@@ -1105,66 +2769,282 @@ const lessonsData = {
                 "vn": "Bộ phim thế nào?"
             },
             {
+                "en": "It was great, I really enjoyed it.",
+                "vn": "Nó rất tuyệt, tôi thực sự thích nó."
+            },
+            {
+                "en": "Why don't you try another way?",
+                "vn": "Tại sao bạn không thử cách khác?"
+            },
+            {
+                "en": "How long does it take by car?",
+                "vn": "Đi bằng xe hơi mất bao lâu?"
+            },
+            {
+                "en": "How long does it take to learn a new language?",
+                "vn": "Học một ngôn ngữ mới mất bao lâu?"
+            },
+            {
                 "en": "It takes about 2 hours.",
-                "vn": "Mất khoảng 2 tiếng."
+                "vn": "Mất khoảng 2 giờ."
+            },
+            {
+                "en": "Do you trust me?",
+                "vn": "Bạn có tin tôi không?"
+            },
+            {
+                "en": "I trust you.",
+                "vn": "Tôi tin bạn."
+            },
+            {
+                "en": "Do you have a swimming pool?",
+                "vn": "Bạn có hồ bơi không?"
             },
             {
                 "en": "Have you been waiting long?",
-                "vn": "Bạn đã đợi lâu chưa?"
+                "vn": "Bạn đợi lâu chưa?"
+            },
+            {
+                "en": "No, I just got here.",
+                "vn": "Không, tôi mới đến thôi."
+            },
+            {
+                "en": "Here's your order.",
+                "vn": "Món bạn gọi đây / Đơn hàng của bạn đây."
+            },
+            {
+                "en": "Here's your key.",
+                "vn": "Chìa khóa của bạn đây."
             }
         ]
     },
     "20": {
-        "title": "KINH DOANH, TÂM TRẠNG VÀ SINH HOẠT",
+        "title": "CÔNG VIỆC, CẢM XÚC VÀ KẾ HOẠCH",
         "sentences": [
             {
                 "en": "How's business?",
                 "vn": "Việc kinh doanh thế nào?"
             },
             {
-                "en": "I'm not in the mood to talk to anyone.",
-                "vn": "Tôi không có tâm trạng để nói chuyện với bất cứ ai."
-            },
-            {
-                "en": "I'm willing to say sorry when I'm wrong.",
-                "vn": "Tôi sẵn lòng nói lời xin lỗi khi tôi sai."
-            },
-            {
                 "en": "Business is good.",
-                "vn": "Việc kinh doanh ổn."
+                "vn": "Công việc kinh doanh rất tốt."
             },
             {
                 "en": "Are you free tonight?",
                 "vn": "Tối nay bạn có rảnh không?"
             },
             {
+                "en": "Unfortunately, I have plans tonight.",
+                "vn": "Thật không may, tối nay tôi có kế hoạch rồi."
+            },
+            {
+                "en": "Who would you like to speak to?",
+                "vn": "Bạn muốn nói chuyện với ai?"
+            },
+            {
+                "en": "I would like to speak to Tom, please.",
+                "vn": "Tôi muốn nói chuyện với Tom, làm ơn."
+            },
+            {
                 "en": "When will he be back?",
-                "vn": "Khi nào anh ấy quay lại?"
+                "vn": "Khi nào anh ấy sẽ quay lại?"
+            },
+            {
+                "en": "He'll be back in an hour.",
+                "vn": "Anh ấy sẽ quay lại trong một giờ nữa."
+            },
+            {
+                "en": "I'm not sure exactly when he'll be back.",
+                "vn": "Tôi không chắc chính xác khi nào anh ấy sẽ quay lại."
+            },
+            {
+                "en": "Can I take a message?",
+                "vn": "Tôi có thể nhận lời nhắn giúp không?"
+            },
+            {
+                "en": "How many languages do you speak?",
+                "vn": "Bạn nói được bao nhiêu ngôn ngữ?"
+            },
+            {
+                "en": "I speak two languages.",
+                "vn": "Tôi nói được hai ngôn ngữ."
+            },
+            {
+                "en": "Are you American?",
+                "vn": "Bạn có phải là người Mỹ không?"
+            },
+            {
+                "en": "Did it rain yesterday?",
+                "vn": "Hôm qua trời có mưa không?"
+            },
+            {
+                "en": "Yes, it did.",
+                "vn": "Vâng, có mưa."
+            },
+            {
+                "en": "No, it didn't.",
+                "vn": "Không, không mưa."
+            },
+            {
+                "en": "Can I trust you?",
+                "vn": "Tôi có thể tin bạn không?"
             },
             {
                 "en": "I like traveling by train.",
                 "vn": "Tôi thích đi du lịch bằng tàu hỏa."
             },
             {
+                "en": "Can you tell me where it is?",
+                "vn": "Bạn có thể cho tôi biết nó ở đâu không?"
+            },
+            {
+                "en": "It's on the left.",
+                "vn": "Nó ở bên trái."
+            },
+            {
+                "en": "It's on the right.",
+                "vn": "Nó ở bên phải."
+            },
+            {
+                "en": "Are you working tomorrow?",
+                "vn": "Ngày mai bạn có làm việc không?"
+            },
+            {
+                "en": "I think you should tell me straight.",
+                "vn": "Tôi nghĩ bạn nên nói thẳng với tôi."
+            },
+            {
+                "en": "I'm not in the mood to talk to anyone.",
+                "vn": "Tôi không có tâm trạng để nói chuyện với ai."
+            },
+            {
                 "en": "I'm not in the mood to argue.",
-                "vn": "Tôi không có tâm trạng để tranh cãi."
+                "vn": "Tôi không có tâm trạng để cãi nhau."
+            },
+            {
+                "en": "I'm willing to say sorry when I'm wrong.",
+                "vn": "Tôi sẵn sàng nói lời xin lỗi khi tôi sai."
+            },
+            {
+                "en": "If you need someone to talk to, I'm willing to listen.",
+                "vn": "Nếu bạn cần ai đó để trò chuyện, tôi sẵn sàng lắng nghe."
+            },
+            {
+                "en": "What are you doing?",
+                "vn": "Bạn đang làm gì thế?"
             },
             {
                 "en": "I'm cooking dinner.",
                 "vn": "Tôi đang nấu bữa tối."
             },
             {
+                "en": "What time do you usually go to bed?",
+                "vn": "Bạn thường đi ngủ lúc mấy giờ?"
+            },
+            {
+                "en": "I usually go to bed at 10 p.m.",
+                "vn": "Tôi thường đi ngủ lúc 10 giờ tối."
+            },
+            {
+                "en": "Why are you late?",
+                "vn": "Tại sao bạn lại đến muộn?"
+            },
+            {
                 "en": "I'm sorry, I missed the bus.",
-                "vn": "Xin lỗi, tôi bị lỡ chuyến xe buýt."
+                "vn": "Tôi xin lỗi, tôi đã lỡ chuyến xe buýt."
+            },
+            {
+                "en": "I'm sorry, I overslept.",
+                "vn": "Tôi xin lỗi, tôi đã ngủ quên."
+            },
+            {
+                "en": "I'm sorry, it won't happen again.",
+                "vn": "Tôi xin lỗi, điều đó sẽ không lặp lại nữa."
             }
         ]
     },
     "21": {
-        "title": "KHÁCH SẠN, TÀI CHÍNH VÀ GIẢI THÍCH",
+        "title": "TÌNH HUỐNG BẤT NGỜ VÀ GIAO TIẾP CƠ BẢN",
         "sentences": [
+            {
+                "en": "Is there a restaurant in the hotel?",
+                "vn": "Có nhà hàng nào trong khách sạn không?"
+            },
+            {
+                "en": "Yes, it's on the ground floor.",
+                "vn": "Vâng, nó ở tầng trệt."
+            },
             {
                 "en": "How much do I owe you?",
                 "vn": "Tôi nợ bạn bao nhiêu?"
+            },
+            {
+                "en": "You owe me $7.",
+                "vn": "Bạn nợ tôi 7 đô la."
+            },
+            {
+                "en": "You don't owe me anything.",
+                "vn": "Bạn không nợ tôi bất cứ thứ gì."
+            },
+            {
+                "en": "Let me check and get back to you.",
+                "vn": "Để tôi kiểm tra và báo lại cho bạn sau."
+            },
+            {
+                "en": "Do you have a girlfriend?",
+                "vn": "Bạn có bạn gái không?"
+            },
+            {
+                "en": "I don't have a girlfriend.",
+                "vn": "Tôi không có bạn gái."
+            },
+            {
+                "en": "Where is the library?",
+                "vn": "Thư viện ở đâu?"
+            },
+            {
+                "en": "It's on the second floor.",
+                "vn": "Nó ở trên tầng hai."
+            },
+            {
+                "en": "What time do you get up every day?",
+                "vn": "Mỗi ngày bạn thức dậy lúc mấy giờ?"
+            },
+            {
+                "en": "I get up at 7:00 a.m. every day.",
+                "vn": "Tôi thức dậy lúc 7 giờ sáng mỗi ngày."
+            },
+            {
+                "en": "How long is the flight?",
+                "vn": "Chuyến bay dài bao lâu?"
+            },
+            {
+                "en": "I'd like to buy a bottle of water.",
+                "vn": "Tôi muốn mua một chai nước."
+            },
+            {
+                "en": "Why do you trust me?",
+                "vn": "Tại sao bạn lại tin tôi?"
+            },
+            {
+                "en": "I trust you because you always keep your promises.",
+                "vn": "Tôi tin bạn vì bạn luôn giữ lời hứa."
+            },
+            {
+                "en": "What happened?",
+                "vn": "Chuyện gì đã xảy ra vậy?"
+            },
+            {
+                "en": "Nothing happened.",
+                "vn": "Không có chuyện gì xảy ra cả."
+            },
+            {
+                "en": "I don't know what happened.",
+                "vn": "Tôi không biết chuyện gì đã xảy ra."
+            },
+            {
+                "en": "There was an accident.",
+                "vn": "Đã có một tai nạn xảy ra."
             },
             {
                 "en": "The power went out.",
@@ -1175,114 +3055,310 @@ const lessonsData = {
                 "vn": "Không có thời gian để giải thích đâu."
             },
             {
-                "en": "Is there a restaurant in the hotel?",
-                "vn": "Trong khách sạn có nhà hàng không?"
-            },
-            {
-                "en": "I get up at 7:00 a.m. every day.",
-                "vn": "Tôi thức dậy lúc 7 giờ sáng mỗi ngày."
-            },
-            {
-                "en": "Nothing happened.",
-                "vn": "Không có chuyện gì xảy ra cả."
-            },
-            {
-                "en": "There was an accident.",
-                "vn": "Đã có một vụ tai nạn."
-            },
-            {
                 "en": "I won't let you down, trust me.",
-                "vn": "Tôi sẽ không làm bạn thất vọng đâu, hãy tin tôi."
+                "vn": "Tôi sẽ không làm bạn thất vọng đâu, tin tôi đi."
+            },
+            {
+                "en": "Why didn't you go to work yesterday?",
+                "vn": "Tại sao hôm qua bạn không đi làm?"
+            },
+            {
+                "en": "I wasn't feeling well yesterday.",
+                "vn": "Hôm qua tôi cảm thấy không được khỏe."
+            },
+            {
+                "en": "What do you want to eat?",
+                "vn": "Bạn muốn ăn gì?"
+            },
+            {
+                "en": "I want to eat fried chicken.",
+                "vn": "Tôi muốn ăn gà rán."
+            },
+            {
+                "en": "Anything is fine with me.",
+                "vn": "Bất cứ món gì cũng được."
             },
             {
                 "en": "There's no need to rush.",
-                "vn": "Không việc gì phải vội cả."
+                "vn": "Không cần phải vội."
+            },
+            {
+                "en": "There's no need to shout.",
+                "vn": "Không cần phải hét lên đâu."
+            },
+            {
+                "en": "What do you think about the idea?",
+                "vn": "Bạn nghĩ sao về ý tưởng đó?"
+            },
+            {
+                "en": "I think it's very good.",
+                "vn": "Tôi nghĩ nó rất hay."
+            },
+            {
+                "en": "Are you scared?",
+                "vn": "Bạn có sợ không?"
+            },
+            {
+                "en": "I'm a little scared.",
+                "vn": "Tôi hơi sợ một chút."
             },
             {
                 "en": "Don't be scared.",
                 "vn": "Đừng sợ."
+            },
+            {
+                "en": "Don't worry, everything will be fine.",
+                "vn": "Đừng lo lắng, mọi chuyện rồi sẽ ổn thôi."
             }
         ]
     },
     "22": {
-        "title": "THỦ TỤC, THƯ GIÃN VÀ PHẢN HỒI",
+        "title": "GIAO TIẾP VÀ HOẠT ĐỘNG THƯỜNG NGÀY",
         "sentences": [
             {
+                "en": "Have you ever seen this before?",
+                "vn": "Bạn đã từng thấy cái này trước đây chưa?"
+            },
+            {
+                "en": "I have never seen this before.",
+                "vn": "Tôi chưa bao giờ thấy cái này trước đây."
+            },
+            {
+                "en": "Let's have lunch together.",
+                "vn": "Chúng ta cùng đi ăn trưa nhé."
+            },
+            {
+                "en": "Sure, that sounds great. Where should we go?",
+                "vn": "Chắc chắn rồi, nghe tuyệt đấy. Chúng ta nên đi đâu?"
+            },
+            {
+                "en": "I'd love to, but I already have plans for lunch.",
+                "vn": "Tôi rất muốn nhưng tôi đã có kế hoạch cho bữa trưa rồi."
+            },
+            {
+                "en": "Maybe next time.",
+                "vn": "Có lẽ để lần sau."
+            },
+            {
+                "en": "Nonsense.",
+                "vn": "Thật vô lý / Vớ vẩn."
+            },
+            {
                 "en": "Please fill out this form.",
-                "vn": "Làm ơn điền vào mẫu này."
-            },
-            {
-                "en": "Yes, I feel so refreshed.",
-                "vn": "Vâng, tôi cảm thấy thật sảng khoái."
-            },
-            {
-                "en": "You're stronger than you think.",
-                "vn": "Bạn mạnh mẽ hơn bạn nghĩ đấy."
+                "vn": "Vui lòng điền vào mẫu này."
             },
             {
                 "en": "Thanks for everything.",
                 "vn": "Cảm ơn vì tất cả."
             },
             {
+                "en": "That's enough.",
+                "vn": "Đủ rồi đó."
+            },
+            {
                 "en": "I'm coming right now.",
-                "vn": "Tôi đến ngay đây."
+                "vn": "Tôi đang đến ngay đây."
             },
             {
                 "en": "What are you going to do today?",
                 "vn": "Hôm nay bạn định làm gì?"
             },
             {
+                "en": "I'm going to go shopping.",
+                "vn": "Tôi định đi mua sắm."
+            },
+            {
+                "en": "I have to clean my house.",
+                "vn": "Tôi phải dọn dẹp nhà cửa."
+            },
+            {
+                "en": "That's not fair.",
+                "vn": "Thế là không công bằng."
+            },
+            {
+                "en": "Where is the remote?",
+                "vn": "Cái điều khiển ở đâu?"
+            },
+            {
+                "en": "It's under the table.",
+                "vn": "Nó ở dưới bàn."
+            },
+            {
                 "en": "Are they the same?",
                 "vn": "Chúng có giống nhau không?"
+            },
+            {
+                "en": "Yes, they are the same.",
+                "vn": "Vâng, chúng giống nhau."
             },
             {
                 "en": "What's the difference?",
                 "vn": "Sự khác biệt là gì?"
             },
             {
+                "en": "The color is different.",
+                "vn": "Màu sắc khác nhau."
+            },
+            {
+                "en": "Would you like to order now?",
+                "vn": "Bạn có muốn gọi món bây giờ không?"
+            },
+            {
+                "en": "Yes, I'm ready to order.",
+                "vn": "Vâng, tôi đã sẵn sàng gọi món."
+            },
+            {
+                "en": "Not yet, I need more time.",
+                "vn": "Chưa, tôi cần thêm chút thời gian."
+            },
+            {
+                "en": "Yes, I'd like a glass of Coke.",
+                "vn": "Vâng, tôi muốn một ly Coca."
+            },
+            {
                 "en": "Did you sleep well?",
-                "vn": "Bạn ngủ ngon chứ?"
+                "vn": "Bạn ngủ ngon không?"
+            },
+            {
+                "en": "Yes, I slept very well.",
+                "vn": "Vâng, tôi ngủ rất ngon."
+            },
+            {
+                "en": "Yes, I feel so refreshed.",
+                "vn": "Vâng, tôi cảm thấy rất sảng khoái."
+            },
+            {
+                "en": "No, I didn't sleep much.",
+                "vn": "Không, tôi không ngủ được nhiều."
+            },
+            {
+                "en": "How was your day?",
+                "vn": "Ngày hôm nay của bạn thế nào?"
+            },
+            {
+                "en": "It was okay, nothing special.",
+                "vn": "Nó ổn, không có gì đặc biệt."
+            },
+            {
+                "en": "It was amazing, I had a lot of fun today.",
+                "vn": "Thật tuyệt vời, hôm nay tôi đã có rất nhiều niềm vui."
             },
             {
                 "en": "I'll be right here if you need me.",
-                "vn": "Tôi sẽ ở ngay đây nếu bạn cần."
+                "vn": "Tôi sẽ ở ngay đây nếu bạn cần tôi."
+            },
+            {
+                "en": "Do you trust yourself?",
+                "vn": "Bạn có tin tưởng vào bản thân mình không?"
+            },
+            {
+                "en": "You're stronger than you think.",
+                "vn": "Bạn mạnh mẽ hơn bạn nghĩ đấy."
             }
         ]
     },
     "23": {
-        "title": "CHỈ ĐƯỜNG, NGÂN HÀNG VÀ CHIÊU ĐÃI",
+        "title": "HƯỚNG DẪN, THỜI GIAN VÀ THÓI QUEN",
         "sentences": [
+            {
+                "en": "This doesn't work.",
+                "vn": "Cái này không hoạt động / Cái này hỏng rồi."
+            },
             {
                 "en": "Please take me to this address.",
                 "vn": "Làm ơn đưa tôi đến địa chỉ này."
             },
             {
-                "en": "When does the bank close?",
-                "vn": "Khi nào ngân hàng đóng cửa?"
+                "en": "Sure, I'll take you there.",
+                "vn": "Chắc chắn rồi, tôi sẽ đưa bạn đến đó."
             },
             {
-                "en": "Let me treat you to dinner.",
-                "vn": "Để tôi mời bạn ăn tối nhé."
+                "en": "Of course, I know where that is.",
+                "vn": "Dĩ nhiên, tôi biết nơi đó ở đâu."
+            },
+            {
+                "en": "Sorry, I don't know how to get there.",
+                "vn": "Xin lỗi, tôi không biết làm thế nào để đến đó."
+            },
+            {
+                "en": "It's very hard.",
+                "vn": "Nó rất khó."
+            },
+            {
+                "en": "I feel the same way.",
+                "vn": "Tôi cũng cảm thấy như vậy."
             },
             {
                 "en": "Don't give up, you can do it.",
-                "vn": "Đừng bỏ cuộc, bạn có thể làm được mà."
+                "vn": "Đừng bỏ cuộc, bạn có thể làm được."
+            },
+            {
+                "en": "You're very smart.",
+                "vn": "Bạn rất thông minh."
             },
             {
                 "en": "Please write it down.",
-                "vn": "Làm ơn viết nó ra."
+                "vn": "Vui lòng viết nó ra."
+            },
+            {
+                "en": "This doesn't fit.",
+                "vn": "Cái này không vừa."
+            },
+            {
+                "en": "There's nothing to be afraid of.",
+                "vn": "Không có gì phải sợ cả."
+            },
+            {
+                "en": "When will he arrive?",
+                "vn": "Khi nào anh ấy sẽ đến?"
+            },
+            {
+                "en": "He will be here soon.",
+                "vn": "Anh ấy sẽ có mặt ở đây sớm thôi."
             },
             {
                 "en": "When does the bank open?",
-                "vn": "Khi nào ngân hàng mở cửa?"
+                "vn": "Ngân hàng mở cửa lúc mấy giờ?"
+            },
+            {
+                "en": "The bank opens at 8:00 a.m.",
+                "vn": "Ngân hàng mở cửa lúc 8 giờ sáng."
+            },
+            {
+                "en": "When does the bank close?",
+                "vn": "Ngân hàng đóng cửa lúc mấy giờ?"
+            },
+            {
+                "en": "The bank closes at 5:00 p.m.",
+                "vn": "Ngân hàng đóng cửa lúc 5 giờ chiều."
+            },
+            {
+                "en": "Is the bank open today?",
+                "vn": "Hôm nay ngân hàng có mở cửa không?"
             },
             {
                 "en": "Where is the bathroom?",
-                "vn": "Nhà vệ sinh ở đâu?"
+                "vn": "Phòng tắm / Nhà vệ sinh ở đâu?"
+            },
+            {
+                "en": "It's down the hall to the right.",
+                "vn": "Đi dọc theo hành lang, nó ở bên phải."
+            },
+            {
+                "en": "Let me treat you to dinner.",
+                "vn": "Để tôi mời bạn bữa tối."
             },
             {
                 "en": "That sounds great, thank you.",
                 "vn": "Nghe tuyệt đấy, cảm ơn bạn."
+            },
+            {
+                "en": "Thanks, but I should treat you instead.",
+                "vn": "Cảm ơn nhưng thay vào đó tôi nên mời bạn."
+            },
+            {
+                "en": "I appreciate it, but maybe next time.",
+                "vn": "Tôi rất cảm kích nhưng có lẽ để lần sau."
             },
             {
                 "en": "Let me take you home.",
@@ -1290,81 +3366,181 @@ const lessonsData = {
             },
             {
                 "en": "Do you often stay up late?",
-                "vn": "Bạn có hay thức khuya không?"
+                "vn": "Bạn có thường thức khuya không?"
+            },
+            {
+                "en": "No, I don't. I prefer to go to bed early.",
+                "vn": "Không, tôi thích đi ngủ sớm hơn."
+            },
+            {
+                "en": "Yes, I often stay up late to finish my work.",
+                "vn": "Vâng, tôi thường thức khuya để hoàn thành công việc."
+            },
+            {
+                "en": "I often stay up late to watch movies.",
+                "vn": "Tôi thường thức khuya để xem phim."
             }
         ]
     },
     "24": {
-        "title": "NỖI SỢ, THANH TOÁN VÀ THỂ THAO",
+        "title": "CẢM XÚC, MUA SẮM VÀ ĐỊA ĐIỂM",
         "sentences": [
-            {
-                "en": "I'm afraid of spiders.",
-                "vn": "Tôi sợ nhện."
-            },
-            {
-                "en": "Sorry, we only accept cash.",
-                "vn": "Xin lỗi, chúng tôi chỉ nhận tiền mặt."
-            },
-            {
-                "en": "Did you watch the game?",
-                "vn": "Bạn có xem trận đấu không?"
-            },
             {
                 "en": "Please remind me.",
                 "vn": "Làm ơn nhắc tôi nhé."
             },
             {
                 "en": "Don't let me forget.",
-                "vn": "Đừng để tôi quên."
+                "vn": "Đừng để tôi quên nhé."
+            },
+            {
+                "en": "She's afraid of the dark.",
+                "vn": "Cô ấy sợ bóng tối."
+            },
+            {
+                "en": "Are you afraid of the dark?",
+                "vn": "Bạn có sợ bóng tối không?"
             },
             {
                 "en": "Are you afraid of anything?",
-                "vn": "Bạn có sợ cái gì không?"
+                "vn": "Bạn có sợ thứ gì không?"
+            },
+            {
+                "en": "I'm afraid of spiders.",
+                "vn": "Tôi sợ nhện."
             },
             {
                 "en": "There's nothing to worry about.",
                 "vn": "Không có gì phải lo lắng cả."
             },
             {
+                "en": "There's nothing to cry about.",
+                "vn": "Không có gì phải khóc cả."
+            },
+            {
+                "en": "Please forgive me.",
+                "vn": "Làm ơn tha thứ cho tôi."
+            },
+            {
                 "en": "Can I use my credit card to pay?",
                 "vn": "Tôi có thể dùng thẻ tín dụng để thanh toán không?"
+            },
+            {
+                "en": "Sorry, we only accept cash.",
+                "vn": "Xin lỗi, chúng tôi chỉ nhận tiền mặt."
+            },
+            {
+                "en": "That restaurant is not expensive.",
+                "vn": "Nhà hàng đó không đắt."
+            },
+            {
+                "en": "This banana is not ripe.",
+                "vn": "Quả chuối này chưa chín."
+            },
+            {
+                "en": "There are many people here.",
+                "vn": "Có rất nhiều người ở đây."
             },
             {
                 "en": "Where can I buy tickets?",
                 "vn": "Tôi có thể mua vé ở đâu?"
             },
             {
+                "en": "You can buy tickets at the ticket office.",
+                "vn": "Bạn có thể mua vé ở phòng bán vé."
+            },
+            {
+                "en": "Where would you like to meet?",
+                "vn": "Bạn muốn gặp nhau ở đâu?"
+            },
+            {
+                "en": "Let's meet at the coffee shop downstairs.",
+                "vn": "Hãy gặp nhau ở quán cà phê dưới nhà."
+            },
+            {
+                "en": "Anywhere is fine with me.",
+                "vn": "Bất cứ nơi nào cũng được."
+            },
+            {
+                "en": "Do you have any suggestions?",
+                "vn": "Bạn có gợi ý nào không?"
+            },
+            {
+                "en": "The dog is behind the bed.",
+                "vn": "Con chó ở đằng sau cái giường."
+            },
+            {
+                "en": "Where would you like to go?",
+                "vn": "Bạn muốn đi đâu?"
+            },
+            {
+                "en": "I'd like to go to the train station.",
+                "vn": "Tôi muốn đi đến ga tàu hỏa."
+            },
+            {
+                "en": "Did you watch the game?",
+                "vn": "Bạn có xem trận đấu không?"
+            },
+            {
+                "en": "Yes, it was an exciting game.",
+                "vn": "Vâng, đó là một trận đấu thú vị."
+            },
+            {
+                "en": "Yes, I watched it from start to finish.",
+                "vn": "Vâng, tôi đã xem nó từ đầu đến cuối."
+            },
+            {
+                "en": "No, I didn't have time.",
+                "vn": "Không, tôi đã không có thời gian."
+            },
+            {
                 "en": "Who won?",
                 "vn": "Ai đã thắng?"
+            },
+            {
+                "en": "The home team won.",
+                "vn": "Đội chủ nhà đã thắng."
             }
         ]
     },
     "25": {
-        "title": "ĐỊA ĐIỂM, SỨC KHỎE VÀ KHẢ NĂNG",
+        "title": "GIAO TIẾP CƠ BẢN VÀ ĐỊA ĐIỂM",
         "sentences": [
             {
                 "en": "Where is the airport?",
                 "vn": "Sân bay ở đâu?"
             },
             {
-                "en": "Where does it hurt?",
-                "vn": "Nó đau ở đâu?"
+                "en": "Go straight then turn left.",
+                "vn": "Đi thẳng sau đó rẽ trái."
             },
             {
-                "en": "Do you think it's possible?",
-                "vn": "Bạn có nghĩ điều đó khả thi không?"
-            },
-            {
-                "en": "Go straight, then turn left.",
-                "vn": "Đi thẳng, sau đó rẽ trái."
+                "en": "The moon is above the roof.",
+                "vn": "Mặt trăng ở trên mái nhà."
             },
             {
                 "en": "The floor is wet and slippery.",
                 "vn": "Sàn nhà ướt và trơn trượt."
             },
             {
+                "en": "Where does it hurt?",
+                "vn": "Nó đau ở đâu?"
+            },
+            {
+                "en": "It hurts here.",
+                "vn": "Nó đau ở đây."
+            },
+            {
                 "en": "How was your trip?",
-                "vn": "Chuyến đi của bạn thế nào?"
+                "vn": "Chuyến đi của bạn như thế nào?"
+            },
+            {
+                "en": "It was fun, I had a fantastic time.",
+                "vn": "Nó thật vui, tôi đã có một khoảng thời gian tuyệt vời."
+            },
+            {
+                "en": "It's too late.",
+                "vn": "Đã quá muộn rồi."
             },
             {
                 "en": "Can you give me an example?",
@@ -1375,53 +3551,153 @@ const lessonsData = {
                 "vn": "Bên ngoài có lạnh không?"
             },
             {
-                "en": "What are you two talking about?",
+                "en": "No, it's not cold at all.",
+                "vn": "Không, trời không lạnh chút nào."
+            },
+            {
+                "en": "Is it hot?",
+                "vn": "Nó có nóng không? / Trời có nóng không?"
+            },
+            {
+                "en": "Should I wait?",
+                "vn": "Tôi có nên đợi không?"
+            },
+            {
+                "en": "Yes, you should.",
+                "vn": "Vâng, bạn nên."
+            },
+            {
+                "en": "No, you should leave now.",
+                "vn": "Không, bạn nên rời đi ngay bây giờ."
+            },
+            {
+                "en": "What are you talking about?",
                 "vn": "Hai người đang nói về cái gì vậy?"
+            },
+            {
+                "en": "Oh, just some random stuff.",
+                "vn": "Ồ, chỉ là mấy chuyện ngẫu nhiên thôi."
+            },
+            {
+                "en": "There's nothing to do.",
+                "vn": "Không có gì để làm."
+            },
+            {
+                "en": "There's nothing to see here.",
+                "vn": "Không có gì để xem ở đây."
+            },
+            {
+                "en": "That room is not very large.",
+                "vn": "Căn phòng đó không rộng lắm."
+            },
+            {
+                "en": "Where can I sit?",
+                "vn": "Tôi có thể ngồi ở đâu?"
             },
             {
                 "en": "You can sit anywhere.",
                 "vn": "Bạn có thể ngồi bất cứ đâu."
+            },
+            {
+                "en": "Do you think it's possible?",
+                "vn": "Bạn có nghĩ điều đó khả thi không?"
+            },
+            {
+                "en": "Yes, I think it's possible.",
+                "vn": "Vâng, tôi nghĩ là có thể."
+            },
+            {
+                "en": "No, I don't think it's possible.",
+                "vn": "Không, tôi không nghĩ là có thể."
             }
         ]
     },
     "26": {
-        "title": "THỜI TIẾT VÀ HIỆN TƯỢNG TỰ NHIÊN",
+        "title": "THỜI TIẾT",
         "sentences": [
+            {
+                "en": "How's the weather?",
+                "vn": "Thời tiết như thế nào?"
+            },
             {
                 "en": "How's the weather in New York?",
                 "vn": "Thời tiết ở New York như thế nào?"
             },
             {
-                "en": "It's windy and chilly.",
-                "vn": "Trời có nhiều gió và se lạnh."
+                "en": "It's windy.",
+                "vn": "Trời gió mạnh."
             },
             {
-                "en": "It's raining cats and dogs.",
-                "vn": "Trời mưa to như trút nước."
+                "en": "It's rainy.",
+                "vn": "Trời có mưa."
             },
             {
                 "en": "It's sunny and hot.",
                 "vn": "Trời nắng và nóng."
             },
             {
-                "en": "It looks like it's going to rain.",
-                "vn": "Trông có vẻ như trời sắp mưa."
+                "en": "It's cloudy and warm.",
+                "vn": "Trời nhiều mây và ấm áp."
             },
             {
-                "en": "Don't forget your umbrella.",
-                "vn": "Đừng quên mang ô nhé."
+                "en": "It's windy and chilly.",
+                "vn": "Trời có nhiều gió và se lạnh."
             },
             {
-                "en": "It's cold and foggy outside.",
-                "vn": "Bên ngoài trời lạnh và có sương mù."
+                "en": "It's cloudy and breezy.",
+                "vn": "Trời nhiều mây và gió nhẹ."
             },
             {
-                "en": "The sky is dark and stormy.",
-                "vn": "Bầu trời tối sầm và có bão."
+                "en": "It's drizzly and cool.",
+                "vn": "Trời có mưa và mát mẻ."
+            },
+            {
+                "en": "It's snowing and freezing.",
+                "vn": "Trời có tuyết và lạnh cóng."
+            },
+            {
+                "en": "What's the weather like?",
+                "vn": "Thời tiết như thế nào?"
+            },
+            {
+                "en": "I think it's starting to rain.",
+                "vn": "Tôi nghĩ trời bắt đầu mưa rồi."
             },
             {
                 "en": "The weather is pleasant, perfect for a walk.",
-                "vn": "Thời tiết dễ chịu, thật tuyệt để đi dạo."
+                "vn": "Thời tiết dễ chịu, thật tuyệt vời để đi dạo."
+            },
+            {
+                "en": "It's raining, don't forget your umbrella.",
+                "vn": "Trời đang mưa, đừng quên ô của bạn nhé."
+            },
+            {
+                "en": "It's really dry today.",
+                "vn": "Hôm nay trời thực sự khô."
+            },
+            {
+                "en": "It's cold and foggy outside.",
+                "vn": "Trời lạnh và có sương mù bên ngoài."
+            },
+            {
+                "en": "I'm freezing.",
+                "vn": "Tôi đang lạnh cóng."
+            },
+            {
+                "en": "The weather is really bad today.",
+                "vn": "Thời tiết hôm nay thật tệ."
+            },
+            {
+                "en": "My hands are freezing.",
+                "vn": "Tay của tôi lạnh."
+            },
+            {
+                "en": "We should stay inside.",
+                "vn": "Chúng ta nên ở bên trong."
+            },
+            {
+                "en": "The sky is dark and stormy.",
+                "vn": "Bầu trời tối tăm và có bão."
             },
             {
                 "en": "I see lightning.",
@@ -1436,25 +3712,45 @@ const lessonsData = {
                 "vn": "Trời rất nóng và ẩm vào mùa hè."
             },
             {
+                "en": "Are you warm enough?",
+                "vn": "Bạn có đủ ấm không?"
+            },
+            {
                 "en": "It's freezing, turn off the AC.",
-                "vn": "Lạnh cóng rồi, tắt máy lạnh đi."
+                "vn": "Trời lạnh cóng, tắt máy lạnh đi."
             },
             {
                 "en": "The wind is really strong.",
-                "vn": "Gió thực sự rất mạnh."
+                "vn": "Gió rất mạnh."
             },
             {
-                "en": "What a beautiful day!",
-                "vn": "Thật là một ngày đẹp trời!"
+                "en": "It's sunny but cold.",
+                "vn": "Trời nắng nhưng lạnh."
             },
             {
-                "en": "Look! There's a rainbow.",
-                "vn": "Nhìn kìa! Có một cầu vồng."
+                "en": "It's cloudy but dry.",
+                "vn": "Trời nhiều mây nhưng khô."
+            },
+            {
+                "en": "What a beautiful day.",
+                "vn": "Thật là một ngày đẹp trời."
+            },
+            {
+                "en": "I love warm weather.",
+                "vn": "Tôi yêu thời tiết ấm áp."
+            },
+            {
+                "en": "Look, there's a rainbow.",
+                "vn": "Nhìn kìa, có một cầu vồng."
+            },
+            {
+                "en": "It's raining cats and dogs.",
+                "vn": "Trời mưa to như trút nước."
             }
         ]
     },
     "27": {
-        "title": "HỎI THĂM VÀ CÔNG VIỆC MỚI",
+        "title": "HỎI THĂM",
         "sentences": [
             {
                 "en": "Long time no see, how's life?",
@@ -1471,6 +3767,10 @@ const lessonsData = {
             {
                 "en": "Everyone's fine, thank you.",
                 "vn": "Mọi người đều ổn, cảm ơn bạn."
+            },
+            {
+                "en": "I'm pretty good, and you?",
+                "vn": "Tôi khá ổn, còn bạn thì sao?"
             },
             {
                 "en": "Same old, same old.",
@@ -1493,12 +3793,16 @@ const lessonsData = {
                 "vn": "Tôi rất vui khi nghe điều đó."
             },
             {
-                "en": "How's it going? You look stressed.",
-                "vn": "Mọi thứ thế nào? Bạn trông có vẻ căng thẳng."
+                "en": "How's it going, you look stressed?",
+                "vn": "Mọi thứ thế nào, bạn trông có vẻ căng thẳng?"
             },
             {
-                "en": "A little stressed but I'm okay.",
-                "vn": "Một chút căng thẳng nhưng tôi ổn."
+                "en": "A little stressed, but I'm okay.",
+                "vn": "Một chút căng thẳng, nhưng tôi ổn."
+            },
+            {
+                "en": "Oh, I know what you mean.",
+                "vn": "Ồ, tôi hiểu ý bạn."
             },
             {
                 "en": "What's your job now?",
@@ -1513,21 +3817,45 @@ const lessonsData = {
                 "vn": "Công việc mới của bạn thế nào?"
             },
             {
+                "en": "I like my job, it's really interesting.",
+                "vn": "Tôi thích công việc của mình, nó thực sự thú vị."
+            },
+            {
                 "en": "I meet lots of interesting people.",
                 "vn": "Tôi gặp nhiều người thú vị."
+            },
+            {
+                "en": "It's good for now, but I'm looking for something better.",
+                "vn": "Hiện tại thì nó tốt, nhưng tôi đang tìm kiếm điều gì đó tốt hơn."
             },
             {
                 "en": "Do you enjoy your new job?",
                 "vn": "Bạn có thích công việc mới của bạn không?"
             },
             {
-                "en": "It's exactly what I was looking for.",
-                "vn": "Nó đúng là thứ tôi đã tìm kiếm."
+                "en": "Yes, I love it, it's exactly what I was looking for.",
+                "vn": "Vâng, tôi yêu nó, nó đúng là thứ tôi đã tìm kiếm."
+            },
+            {
+                "en": "I like acting in front of lots of people.",
+                "vn": "Tôi thích diễn xuất trước nhiều người."
+            },
+            {
+                "en": "It's perfect for me.",
+                "vn": "Nó hoàn hảo đối với tôi."
+            },
+            {
+                "en": "One day I hope to write a book about my work.",
+                "vn": "Một ngày nào đó tôi hy vọng sẽ viết một cuốn sách về công việc của mình."
+            },
+            {
+                "en": "That's a wonderful goal.",
+                "vn": "Đó là một mục tiêu tuyệt vời."
             }
         ]
     },
     "28": {
-        "title": "NGOẠI HÌNH VÀ ĐẶC ĐIỂM CÁ NHÂN",
+        "title": "NGOẠI HÌNH",
         "sentences": [
             {
                 "en": "Is he tall?",
@@ -1542,12 +3870,24 @@ const lessonsData = {
                 "vn": "Không, anh ấy không cao lắm."
             },
             {
-                "en": "He looks about 17.",
-                "vn": "Anh ấy trông khoảng 17 tuổi."
+                "en": "Not really, he's a bit short.",
+                "vn": "Không hẳn, anh ấy hơi thấp."
             },
             {
-                "en": "He looks younger to me.",
-                "vn": "Anh ấy trông trẻ hơn (tuổi thật) đối với tôi."
+                "en": "He looks about 17.",
+                "vn": "Anh ấy trong khoảng 17 tuổi."
+            },
+            {
+                "en": "No, he's older than that, he's almost 25.",
+                "vn": "Không, anh ấy lớn tuổi hơn thế, anh ấy gần 25 tuổi rồi."
+            },
+            {
+                "en": "Are you sure? He looks younger to me.",
+                "vn": "Bạn chắc chứ? Đối với tôi anh ấy trông trẻ hơn."
+            },
+            {
+                "en": "No, I don't believe it. He doesn't look that old.",
+                "vn": "Không, tôi không tin điều đó. Anh ấy trông không già đến vậy."
             },
             {
                 "en": "How does she like to wear her hair?",
@@ -1562,36 +3902,68 @@ const lessonsData = {
                 "vn": "Nó thẳng hay xoăn?"
             },
             {
-                "en": "You can't miss her when you see her.",
-                "vn": "Bạn không thể không nhận ra cô ấy khi bạn nhìn thấy."
+                "en": "Really curly. You can't miss her when you see her.",
+                "vn": "Rất xoăn, bạn không thể không nhận ra cô ấy khi bạn nhìn thấy cô ấy."
             },
             {
-                "en": "She must stand out with that hair.",
-                "vn": "Cô ấy chắc hẳn nổi bật với mái tóc đó."
+                "en": "Oh, she must stand out with that hair.",
+                "vn": "Ồ, cô ấy chắc hẳn nổi bật với mái tóc đó."
             },
             {
-                "en": "She's really tall.",
-                "vn": "Cô ấy thực sự cao."
+                "en": "Is she short?",
+                "vn": "Cô ấy có thấp không?"
             },
             {
-                "en": "I think she's in her 20s.",
-                "vn": "Tôi nghĩ cô ấy đang ở tuổi đôi mươi."
+                "en": "No, she's really tall.",
+                "vn": "Không, cô ấy thực sự cao."
+            },
+            {
+                "en": "Is she in her teens or her 20s?",
+                "vn": "Cô ấy đang ở tuổi thiếu niên hay tuổi đôi mươi?"
+            },
+            {
+                "en": "I think she is in her 20s. She's really nice.",
+                "vn": "Tôi nghĩ cô ấy đang ở tuổi đôi mươi. Cô ấy thật sự dễ thương."
             },
             {
                 "en": "Do you want to meet her?",
                 "vn": "Bạn có muốn gặp cô ấy không?"
             },
             {
-                "en": "She has long black hair.",
-                "vn": "Cô ấy có mái tóc đen dài."
+                "en": "Is it long or short?",
+                "vn": "Nó dài hay ngắn?"
+            },
+            {
+                "en": "It's not really long, but it's very straight.",
+                "vn": "Nó không thật sự dài nhưng nó rất thẳng."
+            },
+            {
+                "en": "He sings in a rock band.",
+                "vn": "Anh ấy hát trong một ban nhạc rock."
+            },
+            {
+                "en": "What does your girlfriend look like?",
+                "vn": "Bạn gái của bạn trông như thế nào?"
+            },
+            {
+                "en": "She is tall and has long black hair.",
+                "vn": "Cô ấy cao và có mái tóc đen dài."
             },
             {
                 "en": "My girlfriend is really beautiful with big brown eyes.",
                 "vn": "Bạn gái tôi thật sự xinh đẹp với đôi mắt nâu to."
             },
             {
+                "en": "Tell me about your boyfriend.",
+                "vn": "Hãy kể cho tôi về bạn trai của bạn."
+            },
+            {
                 "en": "My boyfriend is funny and kind.",
                 "vn": "Bạn trai của tôi vui tính và tốt bụng."
+            },
+            {
+                "en": "What color is his hair?",
+                "vn": "Tóc của anh ấy màu gì?"
             },
             {
                 "en": "His hair is curly and blond.",
@@ -1600,69 +3972,105 @@ const lessonsData = {
         ]
     },
     "29": {
-        "title": "TÌM NGƯỜI LẠC VÀ MÔ TẢ ĐỐI TƯỢNG",
+        "title": "TÌM NGƯỜI LẠC",
         "sentences": [
             {
-                "en": "I've lost my little boy.",
-                "vn": "Tôi bị lạc mất con trai nhỏ của mình."
+                "en": "My little girl was here a minute ago, and now I can't find her.",
+                "vn": "Con gái bé nhỏ của tôi đã ở đây một phút trước và bây giờ tôi không thể tìm thấy cô ấy."
             },
             {
                 "en": "She's probably in the toy section.",
-                "vn": "Cô bé có lẽ đang ở trong khu đồ chơi."
+                "vn": "Cô ấy có lẽ đang ở trong khu đồ chơi."
             },
             {
                 "en": "Can you describe her?",
-                "vn": "Bạn có thể mô tả cô bé không?"
+                "vn": "Bạn có thể mô tả cô ấy không?"
             },
             {
                 "en": "She's wearing a blue dress and white sneakers.",
-                "vn": "Cô bé đang mặc một chiếc váy xanh dương và đi giày thể thao trắng."
+                "vn": "Cô ấy đang mặc một chiếc váy xanh dương và giày thể thao trắng."
             },
             {
                 "en": "What color hair does she have?",
-                "vn": "Cô bé có tóc màu gì?"
+                "vn": "Cô ấy có tóc màu gì?"
             },
             {
                 "en": "It's brown and very curly.",
                 "vn": "Nó màu nâu và rất xoăn."
             },
             {
+                "en": "Let's go to the toy section and see if she is there.",
+                "vn": "Hãy đi đến khu đồ chơi và xem thử cô ấy có ở đó không."
+            },
+            {
+                "en": "Has anyone seen a young kid?",
+                "vn": "Có ai nhìn thấy một đứa trẻ nhỏ không?"
+            },
+            {
                 "en": "He's always getting lost, drives me crazy.",
-                "vn": "Cậu ấy lúc nào cũng bị lạc, làm tôi phát điên lên."
+                "vn": "Cậu ấy lúc nào cũng bị lạc làm tôi phát điên lên."
             },
             {
                 "en": "Where did you last see him?",
-                "vn": "Lần cuối bạn thấy cậu bé là ở đâu?"
+                "vn": "Lần cuối bạn thấy anh ấy ở đâu?"
+            },
+            {
+                "en": "At the mall, about an hour ago.",
+                "vn": "Ở trung tâm thương mại khoảng một tiếng trước."
+            },
+            {
+                "en": "He is near the video equipment.",
+                "vn": "Anh ấy ở gần thiết bị video."
             },
             {
                 "en": "Don't worry, we'll find him for you.",
-                "vn": "Đừng lo, chúng tôi sẽ tìm cậu bé giúp bạn."
+                "vn": "Đừng lo, chúng tôi sẽ tìm anh ấy giúp bạn."
             },
             {
-                "en": "Calm down sir, can you describe him?",
-                "vn": "Bình tĩnh lại thưa ông, ông có thể mô tả cậu bé không?"
+                "en": "Excuse me, I've lost my little boy.",
+                "vn": "Xin lỗi, tôi bị lạc mất con trai nhỏ của tôi."
+            },
+            {
+                "en": "We were looking at some microwaves.",
+                "vn": "Chúng tôi đang xem một vài cái lò vi sóng."
+            },
+            {
+                "en": "Calm down, sir. Can you describe him?",
+                "vn": "Bình tĩnh lại, thưa ông. Ông có thể mô tả anh ấy không?"
             },
             {
                 "en": "Yes, he is eight, really cute.",
                 "vn": "Vâng, cậu ấy tám tuổi, rất dễ thương."
             },
             {
-                "en": "Just sit down and relax.",
-                "vn": "Chỉ cần ngồi xuống và thư giãn."
+                "en": "Okay, let's see where he is. Just sit down and relax.",
+                "vn": "Được rồi, hãy xem cậu ấy ở đâu. Chỉ cần ngồi xuống và thư giãn."
             },
             {
                 "en": "Help! I've lost my daughter.",
-                "vn": "Giúp với! Tôi bị lạc mất con gái tôi."
+                "vn": "Giúp với, tôi bị lạc mất con gái tôi."
             },
             {
-                "en": "She's looking for you over there.",
-                "vn": "Cô bé đang tìm bạn ở đằng kia."
+                "en": "Is she around 13 and about average height?",
+                "vn": "Có phải cô bé khoảng 13 tuổi và cao trung bình không?"
+            },
+            {
+                "en": "She's looking for you over there in the shoe department.",
+                "vn": "Cô bé đang tìm bạn ở đằng kia trong gian hàng giày dép."
+            },
+            {
+                "en": "Thanks a lot.",
+                "vn": "Cảm ơn rất nhiều (hoặc là cảm ơn nhiều lắm)."
             }
         ]
     },
     "30": {
-        "title": "MUA SẮM VÀ LỰA CHỌN TRANG PHỤC",
+        "title": "MUA SẮM",
         "sentences": [
+            {
+                "en": "I'm looking for a new pair of shoes.",
+                "vn": "Tôi đang tìm một đôi giày mới."
+            },
             {
                 "en": "What size do you need?",
                 "vn": "Bạn cần cỡ nào?"
@@ -1672,28 +4080,52 @@ const lessonsData = {
                 "vn": "Tôi cần cỡ 10."
             },
             {
-                "en": "Do you have a smaller pair?",
-                "vn": "Bạn có đôi nào nhỏ hơn không?"
+                "en": "I think these are too big. Do you have a smaller pair?",
+                "vn": "Tôi nghĩ đôi này quá to. Bạn có đôi nào nhỏ hơn không?"
+            },
+            {
+                "en": "Yes, we do. What size are those?",
+                "vn": "Vâng, chúng tôi có. Kích cỡ của đôi đó là bao nhiêu?"
+            },
+            {
+                "en": "These are size 10.",
+                "vn": "Đôi này là kích cỡ 10 (Hoặc là: Những cái này là cỡ 10)."
+            },
+            {
+                "en": "Let me find a smaller pair.",
+                "vn": "Để tôi tìm một đôi nhỏ hơn."
+            },
+            {
+                "en": "I'm afraid we don't have a smaller pair.",
+                "vn": "Tôi e là chúng tôi không có một đôi nhỏ hơn."
             },
             {
                 "en": "I'm sorry, we don't have your size.",
-                "vn": "Xin lỗi, chúng tôi không có cỡ của bạn."
+                "vn": "Tôi xin lỗi, chúng tôi không có cỡ của bạn."
             },
             {
-                "en": "Can you recommend something else?",
-                "vn": "Bạn có thể gợi ý thứ gì khác không?"
+                "en": "That's okay. Can you recommend something else?",
+                "vn": "Không sao đâu, bạn có thể gợi ý thứ gì khác không?"
+            },
+            {
+                "en": "Of course, let me show you some options.",
+                "vn": "Tất nhiên rồi, để tôi cho bạn xem một vài lựa chọn."
             },
             {
                 "en": "How much is this?",
                 "vn": "Cái này giá bao nhiêu?"
             },
             {
-                "en": "It's 399 dollars.",
+                "en": "It's $399.",
                 "vn": "Nó có giá 399 đô."
             },
             {
-                "en": "That's very expensive, you must be kidding.",
-                "vn": "Cái đó rất đắt, bạn chắc hẳn đang đùa."
+                "en": "That's very expensive.",
+                "vn": "Cái đó rất đắt."
+            },
+            {
+                "en": "You must be kidding.",
+                "vn": "Bạn chắc hẳn đang đùa."
             },
             {
                 "en": "You look amazing in that.",
@@ -1705,133 +4137,241 @@ const lessonsData = {
             },
             {
                 "en": "Would you like to try a bigger size?",
-                "vn": "Bạn có muốn thử một cỡ lớn hơn không?"
+                "vn": "Bạn có muốn thử một size lớn hơn không?"
             },
             {
-                "en": "It's only 8 dollars.",
+                "en": "Yes, please. Also, do you have this in blue?",
+                "vn": "Vâng, làm ơn. Ngoài ra, bạn có cái này màu xanh dương không?"
+            },
+            {
+                "en": "It's only $8.",
                 "vn": "Nó chỉ có 8 đô thôi."
             },
             {
-                "en": "Wow! That's a good price, I'll take it.",
-                "vn": "Wow! Đó là một giá tốt, tôi sẽ lấy nó."
+                "en": "Wow, that's a good price. I'll take it.",
+                "vn": "Wow, đó là một giá tốt. Tôi sẽ lấy nó."
             },
             {
                 "en": "This book looks interesting.",
                 "vn": "Cuốn sách này trông có vẻ thú vị."
             },
             {
-                "en": "It's just what I need.",
-                "vn": "Đúng thứ tôi cần."
+                "en": "Oh, I haven't read this. Is it good?",
+                "vn": "Ồ, tôi chưa đọc cái này. Nó có hay không?"
+            },
+            {
+                "en": "I think so.",
+                "vn": "Tôi nghĩ vậy."
+            },
+            {
+                "en": "Is it a mystery?",
+                "vn": "Nó có phải là một bí ẩn không?"
+            },
+            {
+                "en": "Well actually, I haven't read it, but I think so.",
+                "vn": "À thực ra, tôi chưa đọc nó nhưng tôi nghĩ vậy."
+            },
+            {
+                "en": "Just what I need, I'll take it.",
+                "vn": "Đúng thứ tôi cần, tôi sẽ lấy nó."
             }
         ]
     },
     "31": {
-        "title": "MUA SẮM, ĐỒ TƯƠI VÀ MẪU THIẾT KẾ",
+        "title": "MUA SẮM (PHẦN 2)",
         "sentences": [
             {
                 "en": "Are these fresh?",
                 "vn": "Những cái này có tươi không?"
             },
             {
+                "en": "Yes, they are.",
+                "vn": "Vâng, chúng tươi."
+            },
+            {
                 "en": "They look delicious.",
                 "vn": "Chúng trông có vẻ ngon."
             },
             {
-                "en": "Try one! Okay, let me try.",
-                "vn": "Thử một cái đi! Được rồi, để tôi thử."
+                "en": "Why don't you try one?",
+                "vn": "Sao bạn không thử một cái?"
+            },
+            {
+                "en": "Okay, let me try.",
+                "vn": "Được rồi, để tôi thử."
             },
             {
                 "en": "These are really good.",
                 "vn": "Những cái này thực sự ngon."
             },
             {
-                "en": "They'll be great for the beach.",
-                "vn": "Chúng sẽ rất tuyệt cho bãi biển."
+                "en": "I really like these sandals.",
+                "vn": "Tôi thực sự thích đôi xăng đan này."
             },
             {
-                "en": "Don't you think they're a little small?",
-                "vn": "Bạn không nghĩ rằng chúng hơi nhỏ sao?"
+                "en": "They'll be great for the beach. What do you think?",
+                "vn": "Chúng sẽ rất tuyệt cho bãi biển, bạn nghĩ sao?"
             },
             {
-                "en": "I didn't notice that before.",
-                "vn": "Trước đó tôi đã không để ý điều đó."
+                "en": "Yes, but don't you think they're a little small?",
+                "vn": "Vâng, nhưng bạn không nghĩ rằng chúng hơi nhỏ sao?"
+            },
+            {
+                "en": "I think you're right. I didn't notice that before.",
+                "vn": "Tôi nghĩ bạn nói đúng. Trước đó tôi đã không để ý điều đó."
             },
             {
                 "en": "Can I listen to this one?",
-                "vn": "Tôi có thể nghe thử cái này không?"
+                "vn": "Tôi có thể nghe cái này không?"
             },
             {
                 "en": "I'd like to listen to it before I buy it.",
-                "vn": "Tôi muốn nghe nó trước khi mua."
+                "vn": "Tôi muốn nghe nó trước khi tôi mua nó."
+            },
+            {
+                "en": "Yes, let me play that for you.",
+                "vn": "Vâng, để tôi bật cái đó cho bạn."
+            },
+            {
+                "en": "Could I help you with anything today, ma'am?",
+                "vn": "Tôi có thể giúp gì cho bà hôm nay không?"
+            },
+            {
+                "en": "Well, I really like this blouse.",
+                "vn": "À, tôi thực sự thích chiếc áo sơ mi nữ này."
             },
             {
                 "en": "Do you have it in another design?",
-                "vn": "Bạn có mẫu này với thiết kế khác không?"
+                "vn": "Bạn có cái này với thiết kế khác không?"
+            },
+            {
+                "en": "Yes, we do. Let me show you.",
+                "vn": "Vâng, chúng tôi có. Để tôi cho bạn xem."
+            },
+            {
+                "en": "Great, I'll take it then.",
+                "vn": "Tuyệt, vậy tôi sẽ lấy nó."
             },
             {
                 "en": "Do you need any help, sir?",
                 "vn": "Ông có cần giúp gì không?"
             },
             {
+                "en": "Yes, please. They are too small and tight.",
+                "vn": "Vâng, làm ơn. Chúng quá nhỏ và chật."
+            },
+            {
                 "en": "Do you have a medium?",
-                "vn": "Bạn có cỡ trung bình (size M) không?"
+                "vn": "Bạn có size trung bình không?"
+            },
+            {
+                "en": "Of course, here you go.",
+                "vn": "Tất nhiên, đây ạ."
+            },
+            {
+                "en": "Yes, we have a few left.",
+                "vn": "Vâng, chúng tôi còn vài cái."
             },
             {
                 "en": "Sorry, we're out of medium.",
-                "vn": "Xin lỗi, chúng tôi hết cỡ trung bình rồi."
+                "vn": "Xin lỗi, chúng tôi hết size trung bình rồi."
             },
             {
-                "en": "I'm just browsing.",
-                "vn": "Tôi chỉ đang xem thôi."
+                "en": "Hello, how can I help you?",
+                "vn": "Xin chào, tôi có thể giúp gì cho bạn?"
             },
             {
-                "en": "Let me know if you need any help.",
-                "vn": "Hãy cho tôi biết nếu bạn cần bất kỳ sự giúp đỡ nào."
+                "en": "No thanks, I'm just browsing.",
+                "vn": "Không cảm ơn, tôi chỉ đang xem thôi."
+            },
+            {
+                "en": "Okay, let me know if you need any help.",
+                "vn": "Được rồi, hãy cho tôi biết nếu bạn cần bất kỳ sự giúp đỡ nào nhé."
             }
         ]
     },
     "32": {
-        "title": "NHÀ HÀNG, ĐẶT MÓN VÀ VỊ KEM",
+        "title": "NHÀ HÀNG",
         "sentences": [
             {
                 "en": "Can I take your order?",
                 "vn": "Tôi có thể nhận đơn gọi món của bạn không?"
             },
             {
-                "en": "I'd like to start with the salad, please.",
-                "vn": "Tôi muốn bắt đầu với món salad."
+                "en": "Yes, I'd like to start with the salad, please.",
+                "vn": "Vâng, tôi muốn bắt đầu với món salad, làm ơn."
             },
             {
-                "en": "What would you like for your main dish?",
-                "vn": "Bạn muốn món chính là gì?"
+                "en": "Okay, and what would you like for your main dish?",
+                "vn": "Được rồi, và bạn muốn món chính là gì?"
             },
             {
                 "en": "I'll have the spaghetti. Is it good?",
                 "vn": "Tôi sẽ gọi món mì Ý. Nó có ngon không?"
             },
             {
-                "en": "Anything to drink? Tea, please.",
-                "vn": "Bạn có muốn uống gì không? Trà, làm ơn."
+                "en": "I've never tried it.",
+                "vn": "Tôi chưa bao giờ thử nó."
             },
             {
-                "en": "And how about dessert? Not today, thanks.",
-                "vn": "Còn món tráng miệng thì sao? Hôm nay thì không, cảm ơn."
+                "en": "Would you like anything to drink?",
+                "vn": "Bạn có muốn uống gì không?"
+            },
+            {
+                "en": "Tea, please.",
+                "vn": "Trà, làm ơn."
+            },
+            {
+                "en": "And how about dessert?",
+                "vn": "Và còn món tráng miệng thì sao?"
+            },
+            {
+                "en": "Not today, thanks.",
+                "vn": "Hôm nay thì không, cảm ơn."
+            },
+            {
+                "en": "What would you like to order?",
+                "vn": "Bạn muốn gọi món gì?"
+            },
+            {
+                "en": "Not yet, we need a few more minutes.",
+                "vn": "Chưa, chúng tôi cần thêm vài phút nữa."
+            },
+            {
+                "en": "Sure, let me know when you're ready.",
+                "vn": "Chắc rồi, hãy cho tôi biết khi bạn sẵn sàng."
             },
             {
                 "en": "What can I get you today?",
                 "vn": "Hôm nay tôi có thể lấy gì cho bạn?"
             },
             {
-                "en": "What's your special today?",
-                "vn": "Món đặc biệt hôm nay của nhà hàng là gì?"
+                "en": "Well, let me see. I'll just have some soup and a side salad.",
+                "vn": "À, để tôi xem nào. Tôi chỉ lấy một ít súp và một phần salad."
             },
             {
                 "en": "Our special today is grilled fish.",
                 "vn": "Món đặc biệt hôm nay của chúng tôi là cá nướng."
             },
             {
+                "en": "Sounds good, I'll have one.",
+                "vn": "Nghe ngon đấy, tôi sẽ lấy một phần."
+            },
+            {
+                "en": "Alright, anything else?",
+                "vn": "Được rồi, còn gì nữa không?"
+            },
+            {
+                "en": "Coffee and some water, please.",
+                "vn": "Cà phê và một ít nước, làm ơn."
+            },
+            {
                 "en": "Do you have ice cream?",
                 "vn": "Bạn có kem không?"
+            },
+            {
+                "en": "Yes, we do. What flavor would you like?",
+                "vn": "Vâng, chúng tôi có. Bạn muốn vị nào?"
             },
             {
                 "en": "What flavors do you have?",
@@ -1843,7 +4383,7 @@ const lessonsData = {
             },
             {
                 "en": "I'd like chocolate, please.",
-                "vn": "Tôi muốn vị socola."
+                "vn": "Tôi muốn socola, làm ơn."
             },
             {
                 "en": "Sorry, we're out of ice cream today.",
@@ -1852,11 +4392,19 @@ const lessonsData = {
         ]
     },
     "33": {
-        "title": "NHÀ HÀNG, ĐỘ CAY VÀ PHẢN HỒI MÓN ĂN",
+        "title": "NHÀ HÀNG (PHẦN 2)",
         "sentences": [
             {
+                "en": "Hi, have you decided yet?",
+                "vn": "Xin chào, bạn đã quyết định chưa?"
+            },
+            {
                 "en": "Is the beef stir fry very spicy?",
-                "vn": "Món bò xào có cay lắm không?"
+                "vn": "Món thịt bò xào có cay lắm không?"
+            },
+            {
+                "en": "Yes, it's really spicy.",
+                "vn": "Vâng, nó thực sự rất cay."
             },
             {
                 "en": "Not really, it's just a little spicy.",
@@ -1867,32 +4415,56 @@ const lessonsData = {
                 "vn": "Không, nó không cay chút nào."
             },
             {
-                "en": "I'm starving, I can't wait.",
-                "vn": "Tôi đói lả rồi, tôi không thể đợi được."
+                "en": "I think I'll have a hamburger and fries.",
+                "vn": "Tôi nghĩ tôi sẽ ăn hamburger và khoai tây chiên."
             },
             {
                 "en": "Anything for dessert?",
-                "vn": "Có dùng món tráng miệng gì không?"
+                "vn": "Bạn có muốn món tráng miệng không?"
             },
             {
                 "en": "The cheesecake is really good.",
-                "vn": "Món bánh phô mai thực sự rất ngon."
+                "vn": "Bánh phô mai thực sự rất ngon."
             },
             {
                 "en": "I'd love to, but I'm too full.",
-                "vn": "Tôi rất muốn, nhưng tôi no quá."
+                "vn": "Tôi rất muốn nhưng tôi no quá rồi."
             },
             {
                 "en": "There you are, sir.",
-                "vn": "Của ông đây ạ."
+                "vn": "Của ngài đây ạ."
             },
             {
-                "en": "How does it look? It looks great.",
-                "vn": "Trông nó thế nào? Trông thật tuyệt."
+                "en": "Two slices of pizza and a large cola.",
+                "vn": "Hai miếng pizza và một ly coca lớn."
+            },
+            {
+                "en": "How does it look?",
+                "vn": "Trông nó thế nào?"
+            },
+            {
+                "en": "Thanks, it looks great.",
+                "vn": "Cảm ơn, nó trông tuyệt lắm."
+            },
+            {
+                "en": "I'm starving. I can't wait.",
+                "vn": "Tôi chết đói rồi, tôi không thể chờ được nữa."
+            },
+            {
+                "en": "How is it?",
+                "vn": "Nó thế nào? / Có ngon không?"
+            },
+            {
+                "en": "Let me try. Oh, just perfect.",
+                "vn": "Để tôi thử xem. Ồ, thật hoàn hảo."
             },
             {
                 "en": "Sorry to keep you waiting.",
-                "vn": "Xin lỗi vì để bạn phải đợi."
+                "vn": "Xin lỗi vì đã để bạn phải chờ."
+            },
+            {
+                "en": "One order of fried chicken with broccoli.",
+                "vn": "Một phần gà rán với bông cải xanh."
             },
             {
                 "en": "This chicken looks pretty dry.",
@@ -1900,40 +4472,48 @@ const lessonsData = {
             },
             {
                 "en": "Would you like some more sauce?",
-                "vn": "Bạn có muốn thêm nước sốt không?"
+                "vn": "Bạn có muốn thêm một ít nước sốt không?"
+            },
+            {
+                "en": "Really? How does it taste?",
+                "vn": "Thật sao? Vị nó thế nào?"
             },
             {
                 "en": "I'm afraid it's not very fresh.",
-                "vn": "Tôi e là nó không được tươi cho lắm."
+                "vn": "Tôi e là nó không được tươi lắm."
             },
             {
                 "en": "I think it must have been frozen.",
-                "vn": "Tôi nghĩ chắc là nó đã bị đông lạnh."
+                "vn": "Tôi nghĩ chắc hẳn nó đã bị đông lạnh."
             },
             {
                 "en": "Can I send it back?",
-                "vn": "Tôi có thể gửi trả lại món này không?"
+                "vn": "Tôi có thể trả lại nó không?"
             },
             {
                 "en": "Of course, I'm really sorry about that.",
-                "vn": "Tất nhiên, tôi thực sự xin lỗi về chuyện đó."
+                "vn": "Tất nhiên rồi, tôi thực sự xin lỗi về điều đó."
             }
         ]
     },
     "34": {
-        "title": "GIẢI TRÍ VÀ LÊN KẾ HOẠCH CUỐI TUẦN",
+        "title": "GIẢI TRÍ",
         "sentences": [
             {
                 "en": "People say this movie is really good.",
                 "vn": "Mọi người nói bộ phim này thực sự hay."
             },
             {
-                "en": "Do you think we should go see it?",
-                "vn": "Bạn có nghĩ rằng chúng ta nên đi xem nó không?"
+                "en": "So do you think we should go see it?",
+                "vn": "Vậy bạn có nghĩ rằng chúng ta nên đi xem nó không?"
             },
             {
-                "en": "I hear it's very good.",
-                "vn": "Tôi nghe nói nó rất hay."
+                "en": "Yes, I think so. I hear it's very good.",
+                "vn": "Vâng, tôi nghĩ vậy. Tôi nghe nói nó rất hay."
+            },
+            {
+                "en": "My friend said the story was great.",
+                "vn": "Bạn tôi nói câu chuyện thì tuyệt vời."
             },
             {
                 "en": "His movies are always full of action.",
@@ -1944,6 +4524,10 @@ const lessonsData = {
                 "vn": "Bạn có biết khi nào nó bắt đầu không?"
             },
             {
+                "en": "It starts at 8:00.",
+                "vn": "Nó bắt đầu lúc 8:00."
+            },
+            {
                 "en": "Should we book the tickets now?",
                 "vn": "Chúng ta có nên đặt vé bây giờ không?"
             },
@@ -1952,20 +4536,44 @@ const lessonsData = {
                 "vn": "Chắc chắn rồi, tôi không muốn bỏ lỡ đâu."
             },
             {
-                "en": "The weather is perfect for swimming.",
-                "vn": "Thời tiết thật hoàn hảo để đi bơi."
+                "en": "How's the weather outside?",
+                "vn": "Thời tiết bên ngoài như thế nào?"
             },
             {
-                "en": "What time is the game? It's at 9:00.",
-                "vn": "Trận đấu lúc mấy giờ? Lúc 9 giờ."
+                "en": "Hot and sunny.",
+                "vn": "Nóng và nắng."
             },
             {
-                "en": "Are you playing? Not this time, I'm just watching.",
-                "vn": "Bạn có chơi không? Lần này thì không, tôi chỉ xem thôi."
+                "en": "Great, let's go. The weather is perfect for swimming.",
+                "vn": "Tuyệt vời đi thôi, thời tiết thì hoàn hảo để bơi lội."
+            },
+            {
+                "en": "But I just want to lie on the sand and sleep.",
+                "vn": "Nhưng tôi chỉ muốn nằm trên cát và ngủ."
+            },
+            {
+                "en": "What time is the game?",
+                "vn": "Trận đấu lúc mấy giờ?"
+            },
+            {
+                "en": "It's at 9:00.",
+                "vn": "Lúc 9:00."
+            },
+            {
+                "en": "Great, are you playing?",
+                "vn": "Tuyệt vời, bạn có chơi không?"
+            },
+            {
+                "en": "Not this time, I'm just watching.",
+                "vn": "Lần này thì không, tôi chỉ xem thôi."
             },
             {
                 "en": "What do you want to do this weekend?",
                 "vn": "Bạn muốn làm gì cuối tuần này?"
+            },
+            {
+                "en": "I want to go to the beach.",
+                "vn": "Tôi muốn đi biển."
             },
             {
                 "en": "Why don't we go camping?",
@@ -1980,8 +4588,12 @@ const lessonsData = {
                 "vn": "Tôi chỉ muốn ngủ nướng."
             },
             {
+                "en": "I'll read a book and drink coffee.",
+                "vn": "Tôi sẽ đọc sách và uống cà phê."
+            },
+            {
                 "en": "I'll spend time with my family.",
-                "vn": "Tôi sẽ dành thời gian cho gia đình."
+                "vn": "Tôi sẽ dành thời gian với gia đình tôi."
             },
             {
                 "en": "I'm going to hang out with my friends.",
@@ -1990,43 +4602,67 @@ const lessonsData = {
         ]
     },
     "35": {
-        "title": "GIẢI TRÍ, LỜI MỜI VÀ TỪ CHỐI",
+        "title": "GIẢI TRÍ (PHẦN 2)",
         "sentences": [
             {
                 "en": "What should we do this afternoon?",
-                "vn": "Chúng ta nên làm gì chiều nay?"
+                "vn": "Chiều nay chúng ta nên làm gì?"
             },
             {
                 "en": "I don't know, any ideas?",
-                "vn": "Tôi không biết, có ý kiến gì không?"
+                "vn": "Tôi không biết, bạn có ý tưởng nào không?"
             },
             {
                 "en": "How about watching a movie?",
-                "vn": "Hay là mình xem phim đi?"
+                "vn": "Xem một bộ phim thì sao?"
             },
             {
                 "en": "I'd rather do something else.",
-                "vn": "Tôi thà làm việc gì khác còn hơn."
+                "vn": "Tôi thích làm việc khác hơn."
+            },
+            {
+                "en": "Let's get the guys and go rollerblading.",
+                "vn": "Hãy rủ bọn con trai và đi trượt patin."
             },
             {
                 "en": "I'll let you decide.",
-                "vn": "Để bạn quyết định đó."
+                "vn": "Tôi sẽ để bạn quyết định."
             },
             {
                 "en": "What do you need to buy?",
                 "vn": "Bạn cần mua gì?"
             },
             {
+                "en": "Well, I need some new jeans.",
+                "vn": "À, tôi cần vài chiếc quần jeans mới."
+            },
+            {
+                "en": "And I need some shirts.",
+                "vn": "Và tôi cần vài chiếc áo sơ mi."
+            },
+            {
+                "en": "Okay, let's go on Saturday afternoon.",
+                "vn": "Được rồi, chúng ta hãy đi vào chiều thứ Bảy nhé."
+            },
+            {
                 "en": "Would you like to go to a movie on Friday night?",
                 "vn": "Bạn có muốn đi xem phim vào tối thứ Sáu không?"
+            },
+            {
+                "en": "I think I'm free on Friday night.",
+                "vn": "Tôi nghĩ tôi rảnh vào tối thứ Sáu."
             },
             {
                 "en": "What movie do you want to see?",
                 "vn": "Bạn muốn xem phim gì?"
             },
             {
+                "en": "I want to see the Batman.",
+                "vn": "Tôi muốn xem phim Người Dơi."
+            },
+            {
                 "en": "That sounds fun. What time?",
-                "vn": "Nghe có vẻ vui đấy. Mấy giờ vậy?"
+                "vn": "Nghe có vẻ vui đấy. Mấy giờ?"
             },
             {
                 "en": "I'd love to, but I have other plans.",
@@ -2034,40 +4670,48 @@ const lessonsData = {
             },
             {
                 "en": "Maybe another time.",
-                "vn": "Để khi khác nhé."
+                "vn": "Có lẽ để lần sau nhé."
             },
             {
-                "en": "Thanks for inviting me but I can't make it.",
-                "vn": "Cảm ơn vì đã mời tôi nhưng tôi không thể tham gia được."
+                "en": "Thanks for inviting me, but I can't make it.",
+                "vn": "Cảm ơn vì đã mời tôi, nhưng tôi không thể đến được."
             },
             {
                 "en": "I'm sorry, I'm busy that night.",
-                "vn": "Xin lỗi, tối đó tôi bận mất rồi."
+                "vn": "Tôi xin lỗi, tôi bận tối đó rồi."
+            },
+            {
+                "en": "Let's play tennis on Sunday afternoon.",
+                "vn": "Hãy chơi quần vợt vào chiều Chủ nhật."
+            },
+            {
+                "en": "I can't, I'm going away for the weekend.",
+                "vn": "Tôi không thể, tôi sẽ đi xa vào cuối tuần."
             }
         ]
     },
     "36": {
-        "title": "SỨC KHỎE VÀ CHẤN THƯƠNG",
+        "title": "SỨC KHỎE",
         "sentences": [
             {
                 "en": "What happened to your foot?",
-                "vn": "Chuyện gì đã xảy ra với chân của bạn vậy?"
+                "vn": "Chuyện gì đã xảy ra với chân của bạn?"
             },
             {
                 "en": "I hurt it when I was playing soccer.",
-                "vn": "Tôi bị thương khi đang chơi bóng đá."
+                "vn": "Tôi bị thương nó khi tôi đang chơi bóng đá."
             },
             {
                 "en": "Can you walk on it?",
-                "vn": "Bạn có thể đi lại trên cái chân đó không?"
+                "vn": "Bạn có thể đi lại trên nó không?"
             },
             {
                 "en": "Yes, but it's really difficult.",
-                "vn": "Có, nhưng nó thực sự khó khăn."
+                "vn": "Có nhưng nó thực sự khó khăn."
             },
             {
                 "en": "What happened to you?",
-                "vn": "Chuyện gì đã xảy ra với bạn vậy?"
+                "vn": "Chuyện gì đã xảy ra với bạn?"
             },
             {
                 "en": "I fell when I was running.",
@@ -2075,11 +4719,15 @@ const lessonsData = {
             },
             {
                 "en": "Are you okay? Tell me where it hurts.",
-                "vn": "Bạn ổn chứ? Nói cho tôi biết chỗ nào đau."
+                "vn": "Bạn ổn không, nói cho tôi biết chỗ nào đau."
             },
             {
                 "en": "My knee hurts.",
                 "vn": "Đầu gối của tôi bị đau."
+            },
+            {
+                "en": "That sounds bad.",
+                "vn": "Nghe có vẻ tệ."
             },
             {
                 "en": "Do you need to see a doctor?",
@@ -2090,53 +4738,85 @@ const lessonsData = {
                 "vn": "Tôi nghĩ tôi sẽ ổn thôi."
             },
             {
-                "en": "I walked into a door.",
-                "vn": "Tôi đã đi thẳng vào cánh cửa."
+                "en": "But I need to rest for a while.",
+                "vn": "Nhưng tôi cần nghỉ ngơi một lát."
+            },
+            {
+                "en": "What happened to your face?",
+                "vn": "Chuyện gì đã xảy ra với mặt bạn vậy?"
+            },
+            {
+                "en": "Did you fall?",
+                "vn": "Bạn bị ngã à?"
+            },
+            {
+                "en": "Oh, I didn't have my glasses on.",
+                "vn": "Ồ, tôi đã không đeo kính."
+            },
+            {
+                "en": "So I walked into a door.",
+                "vn": "Thế là tôi đi thẳng vào cánh cửa."
             },
             {
                 "en": "Are you kidding?",
-                "vn": "Bạn đang nói đùa hả?"
+                "vn": "Bạn đang nói chơi hả?"
             },
             {
-                "en": "I have a splitting headache.",
-                "vn": "Tôi bị đau đầu kinh khủng."
+                "en": "It's true, now I have a splitting headache.",
+                "vn": "Thật đấy, bây giờ tôi đau đầu kinh khủng."
             },
             {
-                "en": "How's your back? Terrible.",
-                "vn": "Lưng của bạn sao rồi? Khủng khiếp."
+                "en": "That must have hurt.",
+                "vn": "Chắc hẳn là đau lắm."
+            },
+            {
+                "en": "How's your back?",
+                "vn": "Lưng của bạn sao rồi?"
+            },
+            {
+                "en": "Terrible.",
+                "vn": "Khủng khiếp / Tồi tệ."
             },
             {
                 "en": "Why don't you lie down and rest?",
-                "vn": "Tại sao bạn không nằm xuống và nghỉ ngơi đi?"
+                "vn": "Sao bạn không nằm xuống và nghỉ ngơi?"
             },
             {
                 "en": "Would you like a massage?",
                 "vn": "Bạn có muốn massage không?"
+            },
+            {
+                "en": "Great idea, thanks.",
+                "vn": "Ý tưởng tuyệt vời, cảm ơn."
             }
         ]
     },
     "37": {
-        "title": "SỨC KHỎE, MẤT NGỦ VÀ ĐAU LƯNG",
+        "title": "SỨC KHỎE 2",
         "sentences": [
             {
                 "en": "I haven't been sleeping well lately.",
                 "vn": "Dạo này tôi ngủ không ngon."
             },
             {
-                "en": "I often can't fall asleep.",
-                "vn": "Tôi thường không thể chìm vào giấc ngủ."
+                "en": "I go to bed but I often can't fall asleep.",
+                "vn": "Tôi đi ngủ nhưng tôi thường không thể chìm vào giấc ngủ."
             },
             {
                 "en": "Do you ever have that problem?",
                 "vn": "Bạn có bao giờ gặp vấn đề đó không?"
             },
             {
-                "en": "I feel that way when I'm worried or stressed out.",
-                "vn": "Tôi cảm thấy như vậy khi tôi lo lắng hoặc bị căng thẳng."
+                "en": "Yeah, I sometimes do too.",
+                "vn": "Ừ, tôi cũng có lúc bị vậy."
+            },
+            {
+                "en": "I feel that way when I'm very worried or stressed out.",
+                "vn": "Tôi cảm thấy như vậy khi tôi rất lo lắng hoặc bị căng thẳng."
             },
             {
                 "en": "So what do you do for it?",
-                "vn": "Vậy bạn làm gì để giải quyết vấn đề đó?"
+                "vn": "Vậy bạn làm gì để đối phó với nó?"
             },
             {
                 "en": "Do you take sleeping pills?",
@@ -2144,23 +4824,39 @@ const lessonsData = {
             },
             {
                 "en": "I don't like the idea of sleeping pills.",
-                "vn": "Tôi không thích việc dùng thuốc ngủ."
+                "vn": "Tôi không thích ý tưởng về việc dùng thuốc ngủ."
+            },
+            {
+                "en": "I usually get out of bed and watch something until I'm sleepy.",
+                "vn": "Tôi thường ra khỏi giường và xem gì đó cho đến khi tôi buồn ngủ."
+            },
+            {
+                "en": "Then I go back to bed.",
+                "vn": "Sau đó tôi quay lại giường."
             },
             {
                 "en": "Why don't you try it?",
-                "vn": "Tại sao bạn không thử nó đi?"
+                "vn": "Sao bạn không thử nó đi?"
+            },
+            {
+                "en": "Yeah, I will.",
+                "vn": "Ừ, tôi sẽ thử."
             },
             {
                 "en": "I've been feeling very tired lately.",
-                "vn": "Gần đây tôi cảm thấy rất mệt mỏi."
+                "vn": "Gần đây tôi cảm thấy rất mệt."
             },
             {
                 "en": "I feel like I have no energy.",
                 "vn": "Tôi cảm thấy như tôi không có năng lượng."
             },
             {
+                "en": "Really? I used to have that problem.",
+                "vn": "Thật sao? Tôi đã từng có vấn đề đó."
+            },
+            {
                 "en": "Do you think I should see a doctor?",
-                "vn": "Bạn có nghĩ tôi nên đi khám bác sĩ không?"
+                "vn": "Bạn nghĩ tôi nên đi khám bác sĩ không?"
             },
             {
                 "en": "It may not be anything serious.",
@@ -2171,21 +4867,53 @@ const lessonsData = {
                 "vn": "Bạn đã thử uống vitamin chưa?"
             },
             {
-                "en": "I've been getting really bad back aches.",
+                "en": "No, I haven't.",
+                "vn": "Không, tôi chưa."
+            },
+            {
+                "en": "Taking vitamins always helps me when I'm tired.",
+                "vn": "Uống vitamin luôn giúp tôi khi tôi mệt."
+            },
+            {
+                "en": "I've been getting really bad backaches.",
                 "vn": "Tôi đang bị các cơn đau lưng rất nặng."
             },
             {
                 "en": "Sometimes it hurts so much I can't move.",
-                "vn": "Đôi khi nó đau đến mức tôi không thể cử động được."
+                "vn": "Đôi khi nó đau quá tôi không thể cử động được."
+            },
+            {
+                "en": "Do you spend a lot of time in front of a computer?",
+                "vn": "Bạn có dành nhiều thời gian trước máy tính không?"
+            },
+            {
+                "en": "Yes, I do.",
+                "vn": "Vâng, tôi có."
+            },
+            {
+                "en": "That could be the reason.",
+                "vn": "Đó có thể là lý do đấy."
+            },
+            {
+                "en": "So did you stop using the computer?",
+                "vn": "Vậy bạn đã ngừng sử dụng máy tính hả?"
+            },
+            {
+                "en": "No, I didn't need to.",
+                "vn": "Không, tôi không cần làm thế."
             },
             {
                 "en": "I changed the way I sat.",
-                "vn": "Tôi đã thay đổi cách ngồi của mình."
+                "vn": "Tôi đã thay đổi cách tôi ngồi."
+            },
+            {
+                "en": "Here, let me show you.",
+                "vn": "Đây, để tôi chỉ cho bạn."
             }
         ]
     },
     "38": {
-        "title": "GIA ĐÌNH VÀ MỐI QUAN HỆ ANH EM",
+        "title": "GIA ĐÌNH",
         "sentences": [
             {
                 "en": "How many people are there in your family?",
@@ -2205,7 +4933,7 @@ const lessonsData = {
             },
             {
                 "en": "Do you get along well with your siblings?",
-                "vn": "Bạn có hòa thuận với anh chị em của mình không?"
+                "vn": "Bạn có hòa thuận với anh chị em của bạn không?"
             },
             {
                 "en": "Yes, we get along very well.",
@@ -2213,23 +4941,35 @@ const lessonsData = {
             },
             {
                 "en": "Are you close to your family?",
-                "vn": "Bạn có thân thiết với gia đình không?"
+                "vn": "Bạn có thân thiết với gia đình bạn không?"
+            },
+            {
+                "en": "Yes, we are very close.",
+                "vn": "Có, chúng tôi rất thân thiết."
             },
             {
                 "en": "We always support each other.",
                 "vn": "Chúng tôi luôn luôn hỗ trợ lẫn nhau."
             },
             {
+                "en": "Not really, we don't talk much.",
+                "vn": "Không hẳn, chúng tôi không nói chuyện nhiều."
+            },
+            {
+                "en": "Do you live with your family?",
+                "vn": "Bạn có sống với gia đình của bạn không?"
+            },
+            {
+                "en": "Yes, I live with my parents.",
+                "vn": "Có, tôi sống với ba mẹ tôi."
+            },
+            {
                 "en": "Who are you closest to in your family?",
                 "vn": "Bạn thân thiết nhất với ai trong gia đình?"
             },
             {
-                "en": "I'm closest to my mom.",
-                "vn": "Tôi thân nhất với mẹ tôi."
-            },
-            {
-                "en": "We talk about everything.",
-                "vn": "Chúng tôi nói chuyện về mọi thứ."
+                "en": "I'm closest to my mom, we talk about everything.",
+                "vn": "Tôi thân nhất với mẹ tôi, chúng tôi nói chuyện về mọi thứ."
             },
             {
                 "en": "Are you the oldest or youngest child?",
@@ -2256,17 +4996,25 @@ const lessonsData = {
                 "vn": "Tôi muốn có hai đứa con."
             },
             {
+                "en": "Maybe just one.",
+                "vn": "Có lẽ chỉ một thôi."
+            },
+            {
                 "en": "My sister has twin sons.",
-                "vn": "Chị gái tôi có hai con trai sinh đôi."
+                "vn": "Chị gái của tôi có hai con trai sinh đôi."
             }
         ]
     },
     "39": {
-        "title": "BẠN BÈ VÀ GIAO TIẾP XÃ HỘI",
+        "title": "BẠN BÈ",
         "sentences": [
             {
                 "en": "Who is your best friend?",
                 "vn": "Ai là người bạn thân nhất của bạn?"
+            },
+            {
+                "en": "My best friend is Tom.",
+                "vn": "Bạn thân nhất của tôi là Tom."
             },
             {
                 "en": "How long have you known each other?",
@@ -2277,8 +5025,12 @@ const lessonsData = {
                 "vn": "Chúng tôi đã quen nhau hai năm rồi."
             },
             {
-                "en": "How did you meet? We met at a party.",
-                "vn": "Các bạn đã gặp nhau như thế nào? Chúng tôi gặp nhau tại một bữa tiệc."
+                "en": "How did you meet?",
+                "vn": "Các bạn đã gặp nhau như thế nào?"
+            },
+            {
+                "en": "We met at a party.",
+                "vn": "Chúng tôi đã gặp nhau tại một bữa tiệc."
             },
             {
                 "en": "What do you like to do together?",
@@ -2293,12 +5045,24 @@ const lessonsData = {
                 "vn": "Bạn thường đi chơi ở đâu?"
             },
             {
+                "en": "We usually hang out at the mall on weekends.",
+                "vn": "Chúng tôi thường đi chơi ở trung tâm thương mại vào cuối tuần."
+            },
+            {
+                "en": "We hang out at the coffee shop near my house.",
+                "vn": "Chúng tôi đi chơi ở quán cà phê gần nhà tôi."
+            },
+            {
                 "en": "Do you have many friends?",
                 "vn": "Bạn có nhiều bạn không?"
             },
             {
-                "en": "Just a few close friends.",
-                "vn": "Chỉ vài người bạn thân thôi."
+                "en": "Yes, I have a lot of friends.",
+                "vn": "Vâng, tôi có rất nhiều bạn."
+            },
+            {
+                "en": "No, not many. Just a few close friends.",
+                "vn": "Không, không nhiều. Chỉ vài người bạn thân thôi."
             },
             {
                 "en": "How often do you see your friends?",
@@ -2309,16 +5073,32 @@ const lessonsData = {
                 "vn": "Tôi gặp bạn bè của tôi một lần mỗi tuần."
             },
             {
+                "en": "Not very often. Maybe twice a week.",
+                "vn": "Không thường xuyên lắm. Có lẽ hai lần một tuần."
+            },
+            {
                 "en": "Do you make friends easily?",
                 "vn": "Bạn có kết bạn dễ dàng không?"
             },
             {
-                "en": "I'm pretty outgoing.",
-                "vn": "Tôi khá cởi mở."
+                "en": "Yes, I'm pretty outgoing.",
+                "vn": "Vâng, tôi khá cởi mở."
             },
             {
                 "en": "No, I'm a bit shy.",
                 "vn": "Không, tôi hơi nhút nhát."
+            },
+            {
+                "en": "Do you prefer to spend time alone or with friends?",
+                "vn": "Bạn thích dành thời gian một mình hay với bạn bè?"
+            },
+            {
+                "en": "I prefer to spend time with friends.",
+                "vn": "Tôi thích dành thời gian với bạn bè."
+            },
+            {
+                "en": "I prefer to spend time alone.",
+                "vn": "Tôi thích dành thời gian một mình."
             },
             {
                 "en": "How do you keep in touch with your friends?",
@@ -2331,15 +5111,15 @@ const lessonsData = {
         ]
     },
     "40": {
-        "title": "HỎI ĐƯỜNG VÀ PHƯƠNG TIỆN CÔNG CỘNG",
+        "title": "HỎI ĐƯỜNG",
         "sentences": [
             {
                 "en": "Could you tell me how to get to the hospital?",
-                "vn": "Bạn có thể chỉ cho tôi cách đến bệnh viện được không?"
+                "vn": "Có thể chỉ cho tôi cách đến bệnh viện được không?"
             },
             {
-                "en": "Go straight for two blocks, then turn left.",
-                "vn": "Đi thẳng hai dãy nhà, sau đó rẽ trái."
+                "en": "Sure, go straight for two blocks then turn left.",
+                "vn": "Chắc rồi, đi thẳng hai dãy nhà sau đó rẽ trái."
             },
             {
                 "en": "Where is the nearest subway station?",
@@ -2362,8 +5142,28 @@ const lessonsData = {
                 "vn": "Tôi có thể tìm thấy chỗ đón taxi ở đâu?"
             },
             {
+                "en": "Go straight and you will see it on your left.",
+                "vn": "Đi thẳng và bạn sẽ thấy nó ở bên tay trái của bạn."
+            },
+            {
+                "en": "How do I get to the bus stop?",
+                "vn": "Tôi đi đến trạm xe buýt bằng cách nào?"
+            },
+            {
+                "en": "Walk down this street and you will see it on your right.",
+                "vn": "Đi xuống con đường này và bạn sẽ thấy nó ở bên tay phải của bạn."
+            },
+            {
+                "en": "Could you tell me where the post office is?",
+                "vn": "Bạn có thể nói cho tôi biết bưu điện ở đâu không?"
+            },
+            {
                 "en": "It's next to the police station.",
                 "vn": "Nó nằm kế bên đồn cảnh sát."
+            },
+            {
+                "en": "Do you know where the public restroom is?",
+                "vn": "Bạn có biết nhà vệ sinh công cộng ở đâu không?"
             },
             {
                 "en": "It's across from the elevator.",
@@ -2371,7 +5171,7 @@ const lessonsData = {
             },
             {
                 "en": "Which bus goes to the airport?",
-                "vn": "Chuyến xe buýt nào đi đến s bay?"
+                "vn": "Xe buýt nào đi đến sân bay vậy?"
             },
             {
                 "en": "Bus 45 goes to the airport.",
@@ -2386,25 +5186,49 @@ const lessonsData = {
                 "vn": "Nó chạy mỗi 30 phút."
             },
             {
+                "en": "How do I get to the city center?",
+                "vn": "Tôi đi đến trung tâm thành phố bằng cách nào?"
+            },
+            {
                 "en": "You can take the tram from here.",
                 "vn": "Bạn có thể đi tàu điện từ đây."
             },
             {
-                "en": "It's next to the pharmacy.",
-                "vn": "Nó nằm kế bên tiệm thuốc."
+                "en": "It's the best way.",
+                "vn": "Đó là cách tốt nhất."
             },
             {
-                "en": "Turn left at the traffic lights.",
-                "vn": "Rẽ trái ở chỗ đèn giao thông."
+                "en": "Where's the tram stop?",
+                "vn": "Trạm dừng tàu điện ở đâu?"
             },
             {
-                "en": "Is it far from here? Just walk a few steps.",
-                "vn": "Nó có xa đây không? Chỉ đi bộ vài bước thôi."
+                "en": "It's across the street next to the pharmacy.",
+                "vn": "Nó ở bên kia đường kế bên tiệm thuốc."
+            },
+            {
+                "en": "Where is the bookstore?",
+                "vn": "Hiệu sách ở đâu vậy?"
+            },
+            {
+                "en": "Go straight and turn left at the traffic lights.",
+                "vn": "Đi thẳng và rẽ trái ở chỗ đèn giao thông."
+            },
+            {
+                "en": "Is it far from here?",
+                "vn": "Nó có xa từ đây không?"
+            },
+            {
+                "en": "No, it's not far.",
+                "vn": "Không, nó không xa."
+            },
+            {
+                "en": "Just walk a few steps.",
+                "vn": "Chỉ đi bộ vài bước thôi."
             }
         ]
     },
     "41": {
-        "title": "HỎI ĐƯỜNG, VỊ TRÍ VÀ BẢN ĐỒ",
+        "title": "HỎI ĐƯỜNG PHẦN 2",
         "sentences": [
             {
                 "en": "Is this the right way to the museum?",
@@ -2412,31 +5236,43 @@ const lessonsData = {
             },
             {
                 "en": "No, you need to turn back.",
-                "vn": "Không, bạn cần phải quay lại."
+                "vn": "Không, bạn cần quay lại."
             },
             {
                 "en": "That's not the right direction.",
-                "vn": "Đó không phải là hướng đi đúng."
+                "vn": "Đó không phải là hướng đúng."
             },
             {
-                "en": "Can I walk there from here?",
-                "vn": "Tôi có thể đi bộ từ đây đến đó không?"
+                "en": "Oh, I see. Can I walk there from here?",
+                "vn": "Ồ, tôi hiểu rồi. Tôi có thể đi bộ đến đó từ đây không?"
             },
             {
                 "en": "It's a bit far, so it's better to rent a bike.",
-                "vn": "Nó hơi xa, nên tốt hơn là thuê một chiếc xe đạp."
+                "vn": "Nó hơi xa, vì vậy tốt hơn là nên thuê một chiếc xe đạp."
             },
             {
                 "en": "Where can I rent a bike?",
                 "vn": "Tôi có thể thuê xe đạp ở đâu?"
             },
             {
-                "en": "Walk past the bakery.",
-                "vn": "Đi ngang qua cửa hàng bánh mì."
+                "en": "Walk past the bakery, you will see a bike rental.",
+                "vn": "Đi qua tiệm bánh mì, bạn sẽ thấy chỗ thuê xe đạp."
             },
             {
                 "en": "Can you show me on the map?",
-                "vn": "Bạn có thể chỉ cho tôi trên bản đồ không?"
+                "vn": "Bạn có thể chỉ cho tôi trên bản đồ được không?"
+            },
+            {
+                "en": "Yes, it's right here.",
+                "vn": "Vâng, nó ở ngay đây."
+            },
+            {
+                "en": "How long does it take to walk there?",
+                "vn": "Đi bộ đến đó mất bao lâu?"
+            },
+            {
+                "en": "Not too long, just 5 minutes.",
+                "vn": "Không quá lâu, chỉ 5 phút."
             },
             {
                 "en": "Is there a pet shop near here?",
@@ -2444,31 +5280,39 @@ const lessonsData = {
             },
             {
                 "en": "Keep going until you see a bridge.",
-                "vn": "Tiếp tục đi cho đến khi bạn thấy một cây cầu."
+                "vn": "Cứ đi tiếp cho đến khi bạn thấy một cây cầu."
             },
             {
                 "en": "It's opposite the cinema.",
-                "vn": "Nó đối diện với rạp chiếu phim."
+                "vn": "Nó đối diện rạp chiếu phim."
             },
             {
                 "en": "Turn right after the gas station.",
                 "vn": "Rẽ phải sau trạm xăng."
             },
             {
+                "en": "It's on your right.",
+                "vn": "Nó ở bên phải của bạn."
+            },
+            {
+                "en": "It's on your left.",
+                "vn": "Nó ở bên trái của bạn."
+            },
+            {
                 "en": "Cross the street and it's in front of you.",
                 "vn": "Băng qua đường và nó ở ngay trước mặt bạn."
             },
             {
-                "en": "Go down the hill.",
-                "vn": "Đi xuống đồi."
+                "en": "Go down the hill and it's behind the hotel.",
+                "vn": "Đi xuống đồi và nó ở phía sau khách sạn."
             },
             {
                 "en": "At the roundabout, take the second exit.",
-                "vn": "Tại bùng binh, đi theo lối ra thứ hai."
+                "vn": "Tại bùng binh, đi lối ra thứ hai."
             },
             {
                 "en": "You need to go through the tunnel.",
-                "vn": "Bạn cần phải đi xuyên qua hầm."
+                "vn": "Bạn cần đi qua đường hầm."
             },
             {
                 "en": "Use the escalator to go up.",
@@ -2477,11 +5321,27 @@ const lessonsData = {
             {
                 "en": "It's between the church and the bookstore.",
                 "vn": "Nó nằm giữa nhà thờ và hiệu sách."
+            },
+            {
+                "en": "Follow this street for 300 meters.",
+                "vn": "Đi theo con đường này 300 mét."
+            },
+            {
+                "en": "Could you say that again, please?",
+                "vn": "Bạn có thể nói lại lần nữa được không?"
+            },
+            {
+                "en": "I'm sorry, I don't live around here.",
+                "vn": "Tôi xin lỗi, tôi không sống quanh đây."
+            },
+            {
+                "en": "You can ask someone else.",
+                "vn": "Bạn có thể hỏi người khác."
             }
         ]
     },
     "42": {
-        "title": "THỜI GIAN VÀ CÁCH NÓI GIỜ",
+        "title": "THỜI GIAN",
         "sentences": [
             {
                 "en": "What time is it?",
@@ -2497,56 +5357,68 @@ const lessonsData = {
             },
             {
                 "en": "It's 7 o'clock.",
-                "vn": "Bây giờ là 7 giờ đúng."
+                "vn": "7 giờ đúng."
+            },
+            {
+                "en": "It's 10 o'clock.",
+                "vn": "10 giờ đúng."
+            },
+            {
+                "en": "It's 6:20.",
+                "vn": "6 giờ 20 phút."
+            },
+            {
+                "en": "It's 8:15.",
+                "vn": "8 giờ 15 phút."
             },
             {
                 "en": "It's 10:30.",
-                "vn": "Bây giờ là 10 giờ 30 phút."
+                "vn": "10 giờ 30 phút."
             },
             {
                 "en": "It's a quarter past one.",
-                "vn": "Bây giờ là một giờ mười lăm phút."
+                "vn": "1 giờ 15 phút."
             },
             {
                 "en": "It's a quarter past five.",
-                "vn": "Bây giờ là năm giờ mười lăm."
+                "vn": "5 giờ 15 phút."
             },
             {
                 "en": "It's a quarter to three.",
-                "vn": "Bây giờ là ba giờ kém mười lăm."
+                "vn": "3 giờ kém 15 phút."
             },
             {
                 "en": "It's a quarter to seven.",
-                "vn": "Bây giờ là bảy giờ kém mười lăm."
+                "vn": "7 giờ kém 15 phút."
             },
             {
                 "en": "It's half past two.",
-                "vn": "Bây giờ là hai giờ rưỡi."
+                "vn": "2 giờ 30 phút."
             },
             {
                 "en": "It's half past seven.",
-                "vn": "Bây giờ là bảy giờ rưỡi."
+                "vn": "7 giờ 30 phút."
             },
             {
                 "en": "It's 10 past 5.",
-                "vn": "Bây giờ là 5 giờ 10 phút."
+                "vn": "5 giờ 10 phút."
             },
             {
                 "en": "It's 25 past 5.",
-                "vn": "Bây giờ là 5 giờ 25 phút."
+                "vn": "5 giờ 25 phút."
             },
             {
                 "en": "It's 20 to 7.",
-                "vn": "Bây giờ là 7 giờ kém 20."
+                "vn": "7 giờ kém 20 phút."
             },
             {
-                "en": "It's 10 to 4.",
-                "vn": "Bây giờ là 4 giờ kém 10."
+                "en": "It's 10 to four.",
+                "vn": "4 giờ kém 10 phút."
             }
         ]
     },
     "43": {
-        "title": "SỨC KHỎE VÀ BỆNH TẬT CƠ BẢN",
+        "title": "BỆNH",
         "sentences": [
             {
                 "en": "How are you feeling?",
@@ -2569,12 +5441,28 @@ const lessonsData = {
                 "vn": "Tôi bị đau họng."
             },
             {
+                "en": "I have a cold.",
+                "vn": "Tôi bị cảm lạnh."
+            },
+            {
                 "en": "I have a headache.",
-                "vn": "Tôi bị đau đầu."
+                "vn": "Tôi bị nhức đầu."
+            },
+            {
+                "en": "I have a cough.",
+                "vn": "Tôi bị ho."
             },
             {
                 "en": "I have food poisoning.",
                 "vn": "Tôi bị ngộ độc thực phẩm."
+            },
+            {
+                "en": "I'm sick.",
+                "vn": "Tôi bị bệnh."
+            },
+            {
+                "en": "I cut my finger.",
+                "vn": "Tôi bị đứt tay."
             },
             {
                 "en": "I have a runny nose.",
@@ -2593,12 +5481,28 @@ const lessonsData = {
                 "vn": "Tôi bị đau lưng."
             },
             {
+                "en": "I feel tired.",
+                "vn": "Tôi cảm thấy mệt."
+            },
+            {
                 "en": "I feel dizzy.",
                 "vn": "Tôi cảm thấy chóng mặt."
             },
             {
                 "en": "I feel nauseous.",
                 "vn": "Tôi cảm thấy buồn nôn."
+            },
+            {
+                "en": "My arm hurts.",
+                "vn": "Cánh tay tôi bị đau."
+            },
+            {
+                "en": "My leg hurts.",
+                "vn": "Chân tôi bị đau."
+            },
+            {
+                "en": "I broke my leg.",
+                "vn": "Tôi đã gãy chân."
             },
             {
                 "en": "I'm not feeling well.",
@@ -2609,22 +5513,38 @@ const lessonsData = {
                 "vn": "Bạn có thuốc giảm đau không?"
             },
             {
-                "en": "Do you need a bandage?",
+                "en": "Do you need a band-aid?",
                 "vn": "Bạn có cần băng cá nhân không?"
             },
             {
+                "en": "Are you feeling any better?",
+                "vn": "Bạn cảm thấy đỡ hơn chút nào không?"
+            },
+            {
                 "en": "I hope you get well soon.",
-                "vn": "Tôi hy vọng bạn sớm khỏi bệnh."
+                "vn": "Tôi hy vọng bạn sẽ sớm khỏi bệnh."
+            },
+            {
+                "en": "Do you know a good doctor?",
+                "vn": "Bạn có biết bác sĩ nào giỏi không?"
             },
             {
                 "en": "How long have you been sick?",
                 "vn": "Bạn bị bệnh bao lâu rồi?"
+            },
+            {
+                "en": "Do you need to go to the hospital?",
+                "vn": "Bạn có cần đi bệnh viện không?"
             }
         ]
     },
     "44": {
-        "title": "NGHỀ NGHIỆP VÀ MÔI TRƯỜNG LÀM VIỆC",
+        "title": "NGHỀ NGHIỆP",
         "sentences": [
+            {
+                "en": "What do you do?",
+                "vn": "Bạn làm nghề gì?"
+            },
             {
                 "en": "What do you do for a living?",
                 "vn": "Bạn làm nghề gì để kiếm sống?"
@@ -2642,40 +5562,76 @@ const lessonsData = {
                 "vn": "Bạn làm việc toàn thời gian hay bán thời gian?"
             },
             {
+                "en": "I work full time.",
+                "vn": "Tôi làm việc toàn thời gian."
+            },
+            {
+                "en": "I work part time.",
+                "vn": "Tôi làm việc bán thời gian."
+            },
+            {
                 "en": "Do you work from home?",
                 "vn": "Bạn có làm việc tại nhà không?"
+            },
+            {
+                "en": "Do you like your job?",
+                "vn": "Bạn có thích công việc của bạn không?"
             },
             {
                 "en": "It's a bit boring.",
                 "vn": "Nó hơi chán."
             },
             {
+                "en": "What do you like about your job?",
+                "vn": "Bạn thích điều gì ở công việc của bạn?"
+            },
+            {
                 "en": "I like what I do every day.",
                 "vn": "Tôi thích những gì mình làm mỗi ngày."
+            },
+            {
+                "en": "Do you work on weekends?",
+                "vn": "Bạn có làm việc vào cuối tuần không?"
             },
             {
                 "en": "Are you looking for a new job?",
                 "vn": "Bạn đang tìm một công việc mới à?"
             },
             {
-                "en": "I'm looking for something better.",
-                "vn": "Tôi đang tìm một điều gì đó tốt hơn."
+                "en": "Yes, I'm looking for something better.",
+                "vn": "Vâng, tôi đang tìm một điều gì đó tốt hơn."
             },
             {
                 "en": "Is your job stressful?",
                 "vn": "Công việc của bạn có căng thẳng không?"
             },
             {
-                "en": "His boss is very supportive.",
-                "vn": "Sếp của anh ấy rất hay giúp đỡ."
+                "en": "How's your boss?",
+                "vn": "Sếp của bạn thế nào?"
+            },
+            {
+                "en": "He's very supportive.",
+                "vn": "Ông ấy rất hỗ trợ."
             },
             {
                 "en": "I have a permanent job.",
                 "vn": "Tôi có một công việc ổn định."
             },
             {
-                "en": "It's a well",
-                "vn": "paid job. - Đó là một công việc lương cao."
+                "en": "It's a well paid job.",
+                "vn": "Đó là một công việc lương cao."
+            },
+            {
+                "en": "I have a temporary job.",
+                "vn": "Tôi có một công việc tạm thời."
+            },
+            {
+                "en": "It's a low paid job.",
+                "vn": "Đó là một công việc lương thấp."
+            },
+            {
+                "en": "I work with clients every day.",
+                "vn": "Tôi làm việc với khách hàng mỗi ngày."
             },
             {
                 "en": "I often work overtime.",
@@ -2687,16 +5643,20 @@ const lessonsData = {
             },
             {
                 "en": "Why did you leave your job?",
-                "vn": "Tại sao bạn lại nghỉ việc?"
+                "vn": "Tại sao bạn nghỉ việc?"
             },
             {
                 "en": "I want to try something new.",
                 "vn": "Tôi muốn thử cái gì đó mới."
+            },
+            {
+                "en": "I'm looking for a better opportunity.",
+                "vn": "Tôi đang tìm một cơ hội tốt hơn."
             }
         ]
     },
     "45": {
-        "title": "VỊ TRÍ ĐỒ VẬT VÀ SẮP XẾS NHÀ CỬA",
+        "title": "VỊ TRÍ ĐỒ VẬT",
         "sentences": [
             {
                 "en": "Where is my backpack?",
@@ -2707,16 +5667,28 @@ const lessonsData = {
                 "vn": "Nó ở trong bếp kế bên cái bồn rửa."
             },
             {
-                "en": "I can't find them anywhere.",
-                "vn": "Tôi không thể tìm thấy chúng ở bất kỳ đâu."
+                "en": "And my headphones? I can't find them anywhere.",
+                "vn": "Còn tai nghe của tôi? Tôi không thể tìm thấy chúng ở bất kỳ đâu."
             },
             {
                 "en": "They're on the desk right beside your laptop.",
-                "vn": "Chúng ở trên bàn ngay bên cạnh máy tính xách tay của bạn."
+                "vn": "Chúng ở trên bàn ngay bên cạnh laptop của bạn."
             },
             {
-                "en": "You left it under the coffee table.",
-                "vn": "Bạn đã để nó dưới bàn cà phê."
+                "en": "Do you know where my magazine is?",
+                "vn": "Bạn có biết tạp chí của tôi ở đâu không?"
+            },
+            {
+                "en": "You left it under the coffee table in the living room.",
+                "vn": "Bạn đã để nó dưới bàn cà phê trong phòng khách."
+            },
+            {
+                "en": "Oh right, I forgot.",
+                "vn": "À đúng rồi, tôi quên mất."
+            },
+            {
+                "en": "Have you seen my water bottle?",
+                "vn": "Bạn có nhìn thấy chai nước của tôi không?"
             },
             {
                 "en": "It's behind the door in your bedroom.",
@@ -2727,42 +5699,90 @@ const lessonsData = {
                 "vn": "Tôi nên đặt cái gương này ở đâu?"
             },
             {
-                "en": "Put it in the corner.",
-                "vn": "Đặt nó vào góc."
+                "en": "Put it in the corner next to the small table.",
+                "vn": "Đặt nó vào góc kế bên cái bàn nhỏ."
+            },
+            {
+                "en": "What about the armchair?",
+                "vn": "Thế còn cái ghế bành thì sao?"
             },
             {
                 "en": "Should I put it near the window?",
                 "vn": "Tôi có nên đặt nó gần cửa sổ không?"
             },
             {
-                "en": "I think it's better in front of the sofa.",
-                "vn": "Tôi nghĩ nó ở trước ghế sofa sẽ hợp hơn."
+                "en": "No, I think it's better in front of the sofa.",
+                "vn": "Không, tôi nghĩ nó ở trước ghế sofa sẽ hợp hơn."
             },
             {
-                "en": "Put it beside the window so it gets more light.",
-                "vn": "Để nó cạnh cửa sổ để nó nhận nhiều ánh sáng hơn."
+                "en": "And this big plant? Maybe next to the TV.",
+                "vn": "Còn cái cây lớn này thì sao? Có lẽ để cạnh tivi nhé."
+            },
+            {
+                "en": "No, put it beside the window so it gets more light.",
+                "vn": "Không, để nó cạnh cửa sổ để nó nhận nhiều ánh sáng hơn."
+            },
+            {
+                "en": "What about the chair?",
+                "vn": "Còn cái ghế thì sao?"
             },
             {
                 "en": "Put it against the wall.",
-                "vn": "Hãy đặt nó sát tường."
+                "vn": "Đặt nó sát tường."
+            },
+            {
+                "en": "Should I put these documents on your desk?",
+                "vn": "Tôi có nên đặt những tài liệu này trên bàn làm việc của bạn không?"
+            },
+            {
+                "en": "Yes, put them on the desk next to the keyboard.",
+                "vn": "Vâng, đặt chúng lên bàn đi, kế bên bàn phím."
+            },
+            {
+                "en": "And this notebook?",
+                "vn": "Còn cuốn sổ này thì sao?"
             },
             {
                 "en": "Put it on top of the printer.",
                 "vn": "Đặt nó trên mặt máy in."
             },
             {
-                "en": "Hang it behind the door on the hook.",
-                "vn": "Hãy treo nó sau cửa trên cái móc."
+                "en": "Do you want this jacket on the chair?",
+                "vn": "Bạn có muốn để chiếc áo khoác này trên ghế không?"
             },
             {
-                "en": "Put them in the drawer.",
-                "vn": "Hãy để chúng vào ngăn kéo."
+                "en": "No, hang it behind the door on the hook.",
+                "vn": "Không, treo nó phía sau cửa trên cái móc."
+            },
+            {
+                "en": "What about the car keys?",
+                "vn": "Còn chìa khóa xe hơi thì sao?"
+            },
+            {
+                "en": "Put them in the drawer, the second one.",
+                "vn": "Để chúng vào ngăn kéo, ngăn thứ hai."
+            },
+            {
+                "en": "Where should I put this pillow?",
+                "vn": "Nên để cái gối này ở đâu?"
+            },
+            {
+                "en": "Just leave it there.",
+                "vn": "Cứ để nó ở đó đi."
             }
         ]
     },
     "46": {
-        "title": "THỂ THAO VÀ RÈN LUYỆN SỨC KHỎE",
+        "title": "THỂ THAO",
         "sentences": [
+            {
+                "en": "Do you like sports?",
+                "vn": "Bạn có thích thể thao không?"
+            },
+            {
+                "en": "Yes, I do, especially football.",
+                "vn": "Có, tôi có, đặc biệt là bóng đá."
+            },
             {
                 "en": "What's your favorite sport?",
                 "vn": "Môn thể thao yêu thích của bạn là gì?"
@@ -2776,12 +5796,24 @@ const lessonsData = {
                 "vn": "Bạn có đam mê thể thao không?"
             },
             {
+                "en": "Yes, I'm really into sports.",
+                "vn": "Có, tôi rất mê thể thao."
+            },
+            {
                 "en": "Do you play any sports?",
                 "vn": "Bạn có chơi môn thể thao nào không?"
             },
             {
-                "en": "How often do you play? Twice a week.",
-                "vn": "Bạn chơi bao lâu một lần? Hai lần một tuần."
+                "en": "Yes, I play tennis.",
+                "vn": "Có, tôi chơi quần vợt."
+            },
+            {
+                "en": "How often do you play?",
+                "vn": "Bạn chơi bao lâu một lần?"
+            },
+            {
+                "en": "Twice a week.",
+                "vn": "Hai lần một tuần."
             },
             {
                 "en": "Where do you usually work out?",
@@ -2792,53 +5824,85 @@ const lessonsData = {
                 "vn": "Tôi thường tập thể dục ở phòng gym."
             },
             {
+                "en": "Do you watch sports?",
+                "vn": "Bạn có xem thể thao không?"
+            },
+            {
+                "en": "Yes, I watch sports on TV.",
+                "vn": "Có, tôi xem thể thao trên TV."
+            },
+            {
+                "en": "Why do you like playing sports?",
+                "vn": "Tại sao bạn thích chơi thể thao?"
+            },
+            {
                 "en": "It helps me relax and keeps me healthy.",
-                "vn": "Nó giúp tôi thư giãn và giữ cho tôi khỏe mạnh."
+                "vn": "Nó giúp tôi thư giãn và giữ tôi khỏe mạnh."
             },
             {
                 "en": "Do you want to play table tennis this weekend?",
                 "vn": "Bạn có muốn chơi bóng bàn vào cuối tuần này không?"
             },
             {
-                "en": "What time works for you?",
-                "vn": "Thời gian nào phù hợp với bạn?"
+                "en": "Yes, I'm free this weekend.",
+                "vn": "Vâng, tôi rảnh cuối tuần này."
+            },
+            {
+                "en": "Great, what time works for you?",
+                "vn": "Tuyệt vời, thời gian nào phù hợp với bạn?"
             },
             {
                 "en": "Do you want to play with us?",
-                "vn": "Bạn có muốn chơi cùng chúng tôi không?"
+                "vn": "Bạn có muốn chơi với chúng tôi không?"
             },
             {
                 "en": "Sure, count me in.",
-                "vn": "Chắc chắn rồi, tính tôi vào nhé."
+                "vn": "Chắc rồi, tính tôi vào nhé."
             },
             {
                 "en": "Do you think sports are important?",
                 "vn": "Bạn có nghĩ thể thao là quan trọng không?"
             },
             {
-                "en": "They're important for our health.",
-                "vn": "Chúng quan trọng đối với sức khỏe của chúng ta."
+                "en": "Yes, they're important for our health.",
+                "vn": "Vâng, chúng quan trọng đối với sức khỏe của chúng ta."
             },
             {
                 "en": "How do you keep in shape?",
-                "vn": "Làm thế nào bạn giữ được vóc dáng?"
+                "vn": "Bạn giữ dáng bằng cách nào?"
+            },
+            {
+                "en": "Nothing much, I just work out regularly.",
+                "vn": "Không có gì nhiều, tôi chỉ tập luyện đều đặn thôi."
             }
         ]
     },
     "47": {
-        "title": "KỲ NGHỈ VÀ TRẢI NGHIỆM DU LỊCH",
+        "title": "KỲ NGHỈ",
         "sentences": [
             {
                 "en": "Are you going on vacation?",
-                "vn": "Bạn có định đi nghỉ mát không?"
+                "vn": "Bạn có dự định đi nghỉ mát không?"
+            },
+            {
+                "en": "Yes, next month.",
+                "vn": "Vâng, tháng sau."
             },
             {
                 "en": "Have a great vacation.",
                 "vn": "Chúc bạn một kỳ nghỉ tuyệt vời."
             },
             {
-                "en": "How was your vacation? It was amazing.",
-                "vn": "Kỳ nghỉ của bạn thế nào? Nó thật tuyệt vời."
+                "en": "How was your vacation?",
+                "vn": "Kỳ nghỉ của bạn thế nào?"
+            },
+            {
+                "en": "It was amazing, I had a great time.",
+                "vn": "Nó thật tuyệt vời, tôi đã có khoảng thời gian rất vui."
+            },
+            {
+                "en": "Overall it was good.",
+                "vn": "Nói chung thì nó ổn."
             },
             {
                 "en": "Where did you go on vacation?",
@@ -2866,44 +5930,80 @@ const lessonsData = {
             },
             {
                 "en": "I went sightseeing and tried local food.",
-                "vn": "Tôi đã đi tham quan và thử các món ăn địa phương."
+                "vn": "Tôi đi tham quan và thử đồ ăn địa phương."
+            },
+            {
+                "en": "What was your favorite part of the trip?",
+                "vn": "Bạn thích nhất phần nào của chuyến đi?"
             },
             {
                 "en": "The food was my favorite part.",
                 "vn": "Đồ ăn là phần tôi thích nhất."
             },
             {
-                "en": "I explored the city and took a lot of photos.",
-                "vn": "Tôi đã khám phá thành phố và chụp rất nhiều ảnh."
+                "en": "Did you do anything special?",
+                "vn": "Bạn có làm điều gì đặc biệt không?"
+            },
+            {
+                "en": "Yes, I explored the city and took a lot of photos.",
+                "vn": "Có, tôi đã khám phá thành phố và chụp rất nhiều ảnh."
             },
             {
                 "en": "How long was your vacation?",
                 "vn": "Kỳ nghỉ của bạn kéo dài bao lâu?"
             },
             {
+                "en": "It was about a week.",
+                "vn": "Nó khoảng một tuần."
+            },
+            {
+                "en": "Did you have a great vacation?",
+                "vn": "Bạn đã có một kỳ nghỉ tuyệt vời chưa?"
+            },
+            {
+                "en": "Really great but it was too short.",
+                "vn": "Rất tuyệt nhưng nó quá ngắn."
+            },
+            {
                 "en": "Would you go there again?",
                 "vn": "Bạn có muốn quay lại đó lần nữa không?"
             },
             {
-                "en": "I hope I can go back someday.",
-                "vn": "Tôi hy vọng tôi có thể quay lại vào một ngày nào đó."
+                "en": "Yes, I hope I can go back someday.",
+                "vn": "Vâng, tôi hy vọng tôi có thể quay lại vào một ngày nào đó."
             },
             {
-                "en": "I prefer traveling alone.",
-                "vn": "Tôi thích đi du lịch một mình hơn."
+                "en": "Do you prefer traveling or staying at home?",
+                "vn": "Bạn thích đi du lịch hay ở nhà hơn?"
+            },
+            {
+                "en": "I prefer traveling.",
+                "vn": "Tôi thích đi du lịch hơn."
+            },
+            {
+                "en": "I prefer staying at home.",
+                "vn": "Tôi thích ở nhà hơn."
+            },
+            {
+                "en": "Do you like traveling alone or with your family?",
+                "vn": "Bạn thích đi du lịch một mình hay với gia đình của bạn?"
+            },
+            {
+                "en": "I like traveling alone.",
+                "vn": "Tôi thích đi du lịch một mình."
             },
             {
                 "en": "I like traveling with my family.",
-                "vn": "Tôi thích đi du lịch với gia đình."
+                "vn": "Tôi thích đi du lịch với gia đình tôi."
             }
         ]
     },
     "48": {
-        "title": "MÔ TẢ ĐỒ VẬT VÀ CHẤT LIỆU",
+        "title": "MÔ TẢ ĐỒ VẬT",
         "sentences": [
             {
                 "en": "What did you buy yesterday?",
-                "vn": "Hôm qua bạn đã mua gì?"
+                "vn": "Bạn đã mua gì hôm qua?"
             },
             {
                 "en": "I bought a new speaker.",
@@ -2915,92 +6015,148 @@ const lessonsData = {
             },
             {
                 "en": "It looks pretty modern.",
-                "vn": "Trông nó khá hiện đại."
+                "vn": "Nó trông khá hiện đại."
+            },
+            {
+                "en": "Is it big?",
+                "vn": "Nó có to không?"
             },
             {
                 "en": "It's small but the sound is amazing.",
-                "vn": "Nó nhỏ nhưng âm thanh thật tuyệt vời."
+                "vn": "Nó nhỏ nhưng âm thanh rất tuyệt vời."
             },
             {
                 "en": "What is it made of?",
-                "vn": "Nó được làm từ gì?"
+                "vn": "Nó được làm bằng gì?"
             },
             {
                 "en": "It's made of leather and metal.",
-                "vn": "Nó được làm từ da và kim loại."
+                "vn": "Nó được làm bằng da và kim loại."
             },
             {
-                "en": "What shape is it? It's rectangular.",
-                "vn": "Nó hình gì? Nó hình chữ nhật."
+                "en": "What shape is it?",
+                "vn": "Nó có hình dáng gì?"
             },
             {
-                "en": "How does it work? You just press this button.",
-                "vn": "Nó hoạt động như thế nào? Bạn chỉ cần nhấn nút này."
+                "en": "It's rectangular.",
+                "vn": "Nó có hình chữ nhật."
+            },
+            {
+                "en": "How does it work?",
+                "vn": "Nó hoạt động như thế nào?"
+            },
+            {
+                "en": "You just press this button.",
+                "vn": "Bạn chỉ cần nhấn nút này."
+            },
+            {
+                "en": "Someone left something here.",
+                "vn": "Ai đó đã để quên thứ gì ở đây."
+            },
+            {
+                "en": "Can you describe it?",
+                "vn": "Bạn có thể mô tả nó không?"
             },
             {
                 "en": "It's square, dark green and hard.",
-                "vn": "Nó hình vuông, màu xanh đậm và cứng."
+                "vn": "Nó hình vuông, màu xanh lá cây đậm và cứng."
             },
             {
                 "en": "What does it feel like?",
-                "vn": "Cảm giác khi chạm vào nó như thế nào?"
+                "vn": "Cảm giác chạm vào nó thế nào?"
             },
             {
                 "en": "It feels soft and it's made of cotton.",
-                "vn": "Cảm giác mềm mại và nó làm bằng bông."
+                "vn": "Nó cho cảm giác mềm mại và được làm bằng bông."
             },
             {
                 "en": "Is it easy to use?",
                 "vn": "Nó có dễ sử dụng không?"
             },
             {
-                "en": "It's round, light blue and looks very elegant.",
-                "vn": "Nó tròn, màu xanh nhạt và trông rất trang nhã."
+                "en": "Yes, it's pretty simple.",
+                "vn": "Vâng, nó khá đơn giản."
             },
             {
-                "en": "Is it heavy? No, it's lightweight and practical.",
-                "vn": "Nó có nặng không? Không, nó nhẹ và tiện dụng."
+                "en": "It's round, light blue and looks very elegant.",
+                "vn": "Nó hình tròn, màu xanh nhạt và trông rất thanh lịch."
+            },
+            {
+                "en": "It's mostly smooth but some parts are rough.",
+                "vn": "Nó phần lớn là nhẵn nhưng vài chỗ thì nhám."
+            },
+            {
+                "en": "It's made of plastic and wood.",
+                "vn": "Nó được làm bằng nhựa và gỗ."
+            },
+            {
+                "en": "Is it heavy?",
+                "vn": "Nó có nặng không?"
+            },
+            {
+                "en": "No, it's lightweight and practical.",
+                "vn": "Không, nó nhẹ và thiết thực."
+            },
+            {
+                "en": "It has many compartments inside.",
+                "vn": "Nó có nhiều ngăn bên trong."
+            },
+            {
+                "en": "It's durable and waterproof.",
+                "vn": "Nó bền và chống nước."
             }
         ]
     },
     "49": {
-        "title": "ĐỊA ĐIỂM NƠI Ở VÀ MÔI TRƯỜNG SỐNG",
+        "title": "NƠI Ở",
         "sentences": [
             {
                 "en": "Do you like where you live?",
-                "vn": "Bạn có thích nơi bạn đang sống không?"
+                "vn": "Bạn có thích nơi bạn sống không?"
             },
             {
-                "en": "Oh, I love it! There's so much to do here.",
-                "vn": "Ồ, tôi yêu nó! Có rất nhiều việc để làm ở đây."
+                "en": "Oh, I love it. There's so much to do here.",
+                "vn": "Ồ, tôi yêu nó. Có rất nhiều thứ để làm ở đây."
             },
             {
                 "en": "The city has a very nice climate.",
-                "vn": "Thành phố có khí hậu rất dễ chịu."
+                "vn": "Thành phố có khí hậu rất tuyệt."
             },
             {
                 "en": "It's never too hot or too cold.",
-                "vn": "Trời không bao giờ quá nóng hoặc quá lạnh."
+                "vn": "Nó không bao giờ quá nóng hoặc quá lạnh."
             },
             {
                 "en": "It's pretty quiet and safe.",
                 "vn": "Nó khá yên tĩnh và an toàn."
             },
             {
-                "en": "Not really, it's too noisy and crowded.",
-                "vn": "Không hẳn, nó quá ồn ào và đông đúc."
+                "en": "Not really. It's too noisy and crowded.",
+                "vn": "Không hẳn. Nó quá ồn ào và đông đúc."
             },
             {
                 "en": "In general, it's not too bad.",
-                "vn": "Nhìn chung, nó không quá tệ."
+                "vn": "Nhìn chung thì nó không quá tệ."
             },
             {
-                "en": "What's your city like? It's small but very peaceful.",
-                "vn": "Thành phố của bạn thế nào? Nó nhỏ nhưng rất yên bình."
+                "en": "What's your city like?",
+                "vn": "Thành phố của bạn như thế nào?"
+            },
+            {
+                "en": "It's small but very peaceful.",
+                "vn": "Nó nhỏ nhưng rất thanh bình."
             },
             {
                 "en": "It's very comfortable and convenient.",
-                "vn": "Nó rất thoải mái và thuận tiện."
+                "vn": "Nó rất thoải mái và tiện lợi."
+            },
+            {
+                "en": "It's a good place for families.",
+                "vn": "Đó là một nơi tốt cho các gia đình."
+            },
+            {
+                "en": "Is it a good place to live?",
+                "vn": "Đó có phải là một nơi tốt để sống không?"
             },
             {
                 "en": "The air is polluted here.",
@@ -3008,11 +6164,23 @@ const lessonsData = {
             },
             {
                 "en": "The traffic is terrible.",
-                "vn": "Giao thông thật khủng khiếp."
+                "vn": "Giao thông thật tồi tệ."
+            },
+            {
+                "en": "That's why I don't like it.",
+                "vn": "Đó là lý do tại sao tôi không thích nó."
+            },
+            {
+                "en": "Do you like living here?",
+                "vn": "Bạn có thích sống ở đây không?"
             },
             {
                 "en": "To tell you the truth, I'm thinking about moving.",
-                "vn": "Thật lòng mà nói, tôi đang nghĩ đến việc chuyển đi."
+                "vn": "Thành thật mà nói, tôi đang nghĩ đến việc chuyển đi."
+            },
+            {
+                "en": "It's very hot in the summer.",
+                "vn": "Trời rất nóng vào mùa hè."
             },
             {
                 "en": "Is your house easy to find?",
@@ -3020,63 +6188,99 @@ const lessonsData = {
             },
             {
                 "en": "Yes, it's right next to a big supermarket.",
-                "vn": "Vâng, nó ngay cạnh một siêu thị lớn."
+                "vn": "Vâng, nó ở ngay cạnh một siêu thị lớn."
             },
             {
-                "en": "I live in the suburbs.",
-                "vn": "Tôi sống ở vùng ngoại ô."
+                "en": "Do you live near the city center?",
+                "vn": "Bạn có sống gần trung tâm thành phố không?"
+            },
+            {
+                "en": "No, I live in the suburbs.",
+                "vn": "Không, tôi sống ở vùng ngoại ô."
             },
             {
                 "en": "I live in the countryside.",
-                "vn": "Tôi sống ở vùng nông thôn."
+                "vn": "Tôi sống ở nông thôn."
+            },
+            {
+                "en": "Is your city modern or traditional?",
+                "vn": "Thành phố của bạn hiện đại hay truyền thống?"
+            },
+            {
+                "en": "It's more traditional.",
+                "vn": "Nó mang tính truyền thống hơn."
             }
         ]
     },
     "50": {
-        "title": "CHỦ ĐỀ PHIM ẢNH VÀ CẢM NHẬN",
+        "title": "PHIM",
         "sentences": [
             {
                 "en": "What kind of movies do you like?",
-                "vn": "Bạn thích loại phim nào?"
+                "vn": "Bạn thích thể loại phim nào?"
             },
             {
-                "en": "I'm a big fan of sci",
-                "vn": "fi movies. - Tôi là một người hâm mộ cuồng nhiệt phim khoa học viễn tưởng."
+                "en": "I like action movies.",
+                "vn": "Tôi thích phim hành động."
+            },
+            {
+                "en": "I'm a big fan of sci-fi movies.",
+                "vn": "Tôi là một fan hâm mộ lớn của phim khoa học viễn tưởng."
             },
             {
                 "en": "I love romantic comedies.",
-                "vn": "Tôi yêu thích phim hài lãng mạn."
+                "vn": "Tôi yêu phim hài lãng mạn."
             },
             {
                 "en": "What's your favorite movie?",
                 "vn": "Bộ phim yêu thích của bạn là gì?"
             },
             {
-                "en": "Who's your favorite actor/actress?",
-                "vn": "Nam/nữ diễn viên yêu thích của bạn là ai?"
+                "en": "My favorite movie is Titanic.",
+                "vn": "Bộ phim yêu thích của tôi là Titanic."
+            },
+            {
+                "en": "Who's your favorite actor?",
+                "vn": "Nam diễn viên yêu thích của bạn là ai?"
+            },
+            {
+                "en": "Who's your favorite actress?",
+                "vn": "Nữ diễn viên yêu thích của bạn là ai?"
             },
             {
                 "en": "Have you seen any good movies lately?",
-                "vn": "Dạo này bạn có xem bộ phim nào hay không?"
+                "vn": "Gần đây bạn có xem bộ phim nào hay không?"
+            },
+            {
+                "en": "Have you seen that new movie?",
+                "vn": "Bạn đã xem bộ phim mới đó chưa?"
+            },
+            {
+                "en": "How was the movie?",
+                "vn": "Bộ phim thế nào?"
             },
             {
                 "en": "It was better than I expected.",
-                "vn": "Nó tốt hơn tôi mong đợi."
+                "vn": "Nó hay hơn tôi mong đợi."
+            },
+            {
+                "en": "It was really good.",
+                "vn": "Nó thực sự rất hay."
             },
             {
                 "en": "It blew my mind.",
-                "vn": "Nó khiến tôi kinh ngạc."
+                "vn": "Nó làm tôi vô cùng ngạc nhiên."
             },
             {
                 "en": "The ending shocked me.",
-                "vn": "Cái kết làm tôi sốc."
+                "vn": "Kết thúc đã làm tôi bị sốc."
             },
             {
                 "en": "The acting was incredible.",
-                "vn": "Diễn xuất thật không thể tin nổi."
+                "vn": "Diễn xuất thật tuyệt vời."
             },
             {
-                "en": "The story line was very interesting.",
+                "en": "The storyline was very interesting.",
                 "vn": "Cốt truyện rất thú vị."
             },
             {
@@ -3084,49 +6288,77 @@ const lessonsData = {
                 "vn": "Đồ họa tuyệt đẹp."
             },
             {
+                "en": "It was super entertaining.",
+                "vn": "Nó siêu giải trí."
+            },
+            {
                 "en": "I couldn't stop watching it.",
                 "vn": "Tôi không thể ngừng xem nó."
             },
             {
+                "en": "It was boring, I didn't really like it.",
+                "vn": "Nó thật nhàm chán, tôi thực sự không thích nó."
+            },
+            {
                 "en": "It was too slow and confusing.",
-                "vn": "Nó quá chậm và gây khó hiểu."
+                "vn": "Nó quá chậm và khó hiểu."
             },
             {
                 "en": "The ending didn't make sense.",
-                "vn": "Cái kết không hợp lý."
+                "vn": "Kết thúc thật vô lý."
             },
             {
                 "en": "I fell asleep watching it.",
-                "vn": "Tôi đã ngủ quên khi đang xem nó."
+                "vn": "Tôi đã ngủ gật khi xem nó."
+            },
+            {
+                "en": "It was overrated.",
+                "vn": "Nó được đánh giá quá cao."
             }
         ]
     },
     "51": {
-        "title": "CHỦ ĐỀ PHIM ẢNH (PHẦN 2)",
+        "title": "PHIM (PHẦN 2)",
         "sentences": [
             {
                 "en": "Do you want to watch a movie tonight?",
-                "vn": "Bạn có muốn xem phim tối nay không?"
+                "vn": "Bạn có muốn xem một bộ phim tối nay không?"
             },
             {
-                "en": "What movie should we watch? You choose.",
-                "vn": "Chúng ta nên xem phim gì? Bạn chọn đi."
+                "en": "What movie should we watch?",
+                "vn": "Chúng ta nên xem phim gì?"
+            },
+            {
+                "en": "You choose.",
+                "vn": "Bạn chọn đi."
             },
             {
                 "en": "I'm in the mood for a horror movie.",
-                "vn": "Tôi đang có hứng xem phim kinh dị."
+                "vn": "Tôi đang có tâm trạng muốn xem phim kinh dị."
+            },
+            {
+                "en": "I'm in the mood for something funny.",
+                "vn": "Tôi đang có tâm trạng muốn xem cái gì đó hài hước."
             },
             {
                 "en": "Should we buy tickets online?",
-                "vn": "Chúng ta có nên đặt vé trực tuyến không?"
+                "vn": "Chúng ta có nên mua vé trực tuyến không?"
+            },
+            {
+                "en": "Do you want popcorn?",
+                "vn": "Bạn có muốn bắp rang bơ không?"
             },
             {
                 "en": "No spoilers please.",
-                "vn": "Làm ơn đừng tiết lộ nội dung phim."
+                "vn": "Làm ơn đừng tiết lộ nội dung phim nhé."
             },
             {
                 "en": "That movie made me cry.",
                 "vn": "Bộ phim đó đã làm tôi khóc."
+            },
+            {
+                "en": "That scene was funny.",
+                "vn": "Cảnh đó thật buồn cười."
             },
             {
                 "en": "I have seen it so many times.",
@@ -3134,31 +6366,39 @@ const lessonsData = {
             },
             {
                 "en": "I highly recommend it.",
-                "vn": "Tôi cực kỳ đề xuất bộ phim này."
+                "vn": "Tôi thực sự khuyên bạn nên xem nó."
             },
             {
                 "en": "Did you understand the movie?",
-                "vn": "Bạn có hiểu bộ phim đó không?"
+                "vn": "Bạn có hiểu bộ phim không?"
             },
             {
                 "en": "I watched it with subtitles.",
-                "vn": "Tôi đã xem phim với phụ đề."
+                "vn": "Tôi đã xem nó với phụ đề."
             },
             {
                 "en": "Why do you like that movie?",
-                "vn": "Tại sao bạn thích bộ phim đó?"
+                "vn": "Tại sao bạn lại thích bộ phim đó?"
             },
             {
                 "en": "Because the story is very emotional.",
                 "vn": "Bởi vì câu chuyện rất xúc động."
             },
             {
-                "en": "Titanic made me cry.",
-                "vn": "Phim Titanic đã làm tôi khóc."
+                "en": "Which movie made you cry?",
+                "vn": "Bộ phim nào đã làm bạn khóc?"
             },
             {
-                "en": "What's the movie about? It's about friendship.",
-                "vn": "Bộ phim nói về cái gì? Nó nói về tình bạn."
+                "en": "Titanic made me cry.",
+                "vn": "Titanic đã làm tôi khóc."
+            },
+            {
+                "en": "What's the movie about?",
+                "vn": "Bộ phim nói về cái gì?"
+            },
+            {
+                "en": "It's about friendship.",
+                "vn": "Nó nói về tình bạn."
             },
             {
                 "en": "It's based on a true story.",
@@ -3171,6 +6411,10 @@ const lessonsData = {
             {
                 "en": "Is anyone famous in it?",
                 "vn": "Có ai nổi tiếng đóng trong đó không?"
+            },
+            {
+                "en": "Have you seen it yet?",
+                "vn": "Bạn đã xem nó chưa?"
             }
         ]
     }
