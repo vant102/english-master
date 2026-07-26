@@ -108,20 +108,23 @@
         <!-- Right Panel: Practice Area -->
         <div class="flex-1 flex flex-col gap-6">
             <!-- Mode Selector Tabs -->
-            <div class="bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800/80 flex gap-2">
+            <div class="bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800/80 flex flex-wrap gap-2">
                 <button id="tab-flashcard" onclick="switchMode('flashcard')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-950/50">
-                    <span>🎴</span> Flashcard (7s)
+                    <span>🎴</span> Flashcard
                 </button>
                 <button id="tab-typing" onclick="switchMode('typing')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200">
-                    <span>⌨️</span> Chế độ Gõ
+                    <span>⌨️</span> Gõ
                 </button>
                 <button id="tab-speaking" onclick="switchMode('speaking')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200">
-                    <span>🎙️</span> Chế độ Nói
+                    <span>🎙️</span> Nói
+                </button>
+                <button id="tab-graphic" onclick="switchMode('graphic')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200">
+                    <span>🖼️</span> Bản Đồ Họa
                 </button>
             </div>
 
             <!-- Main Interactive Card -->
-            <div class="glass-card rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[480px] relative border border-slate-800">
+            <div id="mainPracticeCard" class="glass-card rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[480px] relative border border-slate-800">
                 
                 <!-- Card Header -->
                 <div class="px-6 py-4 bg-slate-900/40 border-b border-slate-800/50 flex justify-between items-center text-sm font-medium">
@@ -196,6 +199,26 @@
                 </div>
             </div>
 
+            <!-- Graphic Mode Screen (Hidden by default) -->
+            <div id="graphicScreen" class="hidden glass-card rounded-3xl p-6 lg:p-8 border border-slate-800 flex flex-col min-h-[480px]">
+                <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4 border-b border-slate-800/50 pb-6">
+                    <div>
+                        <h2 class="text-2xl font-black text-white">Bản Đồ Họa Thông Dụng</h2>
+                        <p class="text-sm text-slate-400 mt-1">Hệ thống từ các bài học đang chọn</p>
+                    </div>
+                    <div class="flex bg-slate-900/50 p-1 rounded-xl border border-slate-800">
+                        <button id="lang-en" onclick="setGraphicLang('en')" class="px-4 py-2 rounded-lg text-sm font-bold bg-indigo-600 text-white shadow transition-all">EN</button>
+                        <button id="lang-vn" onclick="setGraphicLang('vn')" class="px-4 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-slate-200 transition-all">VN</button>
+                        <button id="lang-both" onclick="setGraphicLang('both')" class="px-4 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-slate-200 transition-all">Song Ngữ</button>
+                    </div>
+                </div>
+                
+                <!-- Responsive Columns Grid -->
+                <div id="graphicGrid" class="columns-1 md:columns-2 xl:columns-3 2xl:columns-4 gap-6 space-y-6">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+
             <!-- Practice Complete Dashboard Screen (Overlay / Hidden by default) -->
             <div id="resultsScreen" class="hidden glass-card rounded-3xl p-8 border border-slate-800 text-center space-y-6">
                 <div>
@@ -256,11 +279,101 @@
 
         // Load stats from localStorage
         function loadStats() {
-            const savedStats = localStorage.getItem('english_master_stats');
-            if (savedStats) {
-                stats = JSON.parse(savedStats);
+            if (!localStorage.getItem('englishMasterStats')) {
+                saveStats();
+            } else {
+                const savedStats = localStorage.getItem('english_master_stats');
+                if (savedStats) {
+                    stats = JSON.parse(savedStats);
+                }
             }
             updateStatsUI();
+        }
+
+        // --- GRAPHIC MODE LOGIC ---
+        let graphicLang = 'both'; // 'en', 'vn', 'both'
+        
+        function setGraphicLang(lang) {
+            graphicLang = lang;
+            document.querySelectorAll('[id^="lang-"]').forEach(btn => {
+                btn.className = "px-4 py-2 rounded-lg text-sm font-bold text-slate-400 hover:text-slate-200 transition-all";
+            });
+            document.getElementById(`lang-${lang}`).className = "px-4 py-2 rounded-lg text-sm font-bold bg-indigo-600 text-white shadow transition-all";
+            renderGraphicMode();
+        }
+
+        function renderGraphicMode() {
+            const grid = document.getElementById('graphicGrid');
+            grid.innerHTML = '';
+            
+            if (selectedLessons.length === 0) {
+                grid.innerHTML = '<div class="text-slate-500 italic py-4 col-span-full text-center w-full">Vui lòng chọn bài học ở cột bên trái</div>';
+                return;
+            }
+
+            // Colors for columns matching the original graphic
+            const colors = [
+                { bg: 'bg-blue-600', text: 'text-blue-600' },
+                { bg: 'bg-emerald-600', text: 'text-emerald-600' },
+                { bg: 'bg-amber-500', text: 'text-amber-500' },
+                { bg: 'bg-purple-600', text: 'text-purple-600' }
+            ];
+
+            // Sort selected lessons to display in order
+            const sortedLessons = [...selectedLessons].sort((a, b) => a - b);
+
+            let colorIndex = 0;
+            sortedLessons.forEach(partKey => {
+                const lesson = lessonsData[partKey];
+                const c = colors[colorIndex % colors.length];
+                colorIndex++;
+                
+                // Create Column Container
+                const colDiv = document.createElement('div');
+                colDiv.className = 'break-inside-avoid mb-6 bg-white rounded-2xl overflow-hidden border-2 border-slate-200 shadow-md transform transition hover:scale-[1.01]';
+                
+                // Column Header
+                const header = document.createElement('div');
+                header.className = `${c.bg} text-white px-5 py-4 font-black flex items-center justify-between shadow-sm`;
+                header.innerHTML = `<span>📖 PHẦN ${partKey}</span> <span class="text-xs uppercase opacity-90">${lesson.title}</span>`;
+                colDiv.appendChild(header);
+
+                // Sentences List
+                const list = document.createElement('div');
+                list.className = 'p-4 space-y-3';
+
+                lesson.sentences.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = `flex gap-4 p-3 rounded-xl hover:bg-slate-100 transition-colors border border-transparent hover:border-slate-200`;
+                    
+                    // Number Badge
+                    const badge = document.createElement('div');
+                    badge.className = `flex-shrink-0 w-8 h-8 rounded-full ${c.bg} text-white flex items-center justify-center font-black text-sm shadow-sm mt-0.5`;
+                    badge.innerText = index + 1;
+                    
+                    // Text Content
+                    const txtDiv = document.createElement('div');
+                    txtDiv.className = 'flex-1 pt-1';
+                    
+                    let html = '';
+                    if (graphicLang === 'en' || graphicLang === 'both') {
+                        html += `<div class="font-bold text-slate-800 text-base leading-snug">${item.en}</div>`;
+                    }
+                    if (graphicLang === 'vn' || graphicLang === 'both') {
+                        const style = (graphicLang === 'both') ? 'text-slate-500 text-sm mt-1.5' : 'font-bold text-slate-800 text-base leading-snug';
+                        html += `<div class="${style}">${item.vn}</div>`;
+                    }
+                    
+                    txtDiv.innerHTML = html;
+                    
+                    itemDiv.appendChild(badge);
+                    itemDiv.appendChild(txtDiv);
+                    list.appendChild(itemDiv);
+                });
+
+                colDiv.appendChild(list);
+                grid.appendChild(colDiv);
+            });
         }
 
         function saveStats() {
@@ -344,6 +457,9 @@
             } else {
                 selectedLessons = selectedLessons.filter(p => p !== part);
             }
+            if (activeMode === 'graphic') {
+                renderGraphicMode();
+            }
         }
 
         function selectAllLessons(selectAll) {
@@ -354,9 +470,12 @@
                 cb.checked = selectAll;
                 if (selectAll) selectedLessons.push(part);
             });
+            if (activeMode === 'graphic') {
+                renderGraphicMode();
+            }
         }
 
-        // Switch modes (Flashcard, Typing, Speaking)
+        // Switch modes (Flashcard, Typing, Speaking, Graphic)
         function switchMode(mode) {
             activeMode = mode;
             
@@ -365,7 +484,23 @@
                 btn.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200";
             });
             const activeTab = document.getElementById(`tab-${mode}`);
-            activeTab.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-950/50";
+            if (activeTab) {
+                activeTab.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-950/50";
+            }
+            
+            const mainCard = document.getElementById('mainPracticeCard');
+            const graphicScreen = document.getElementById('graphicScreen');
+            
+            if (mode === 'graphic') {
+                mainCard.classList.add('hidden');
+                document.getElementById('resultsScreen').classList.add('hidden');
+                graphicScreen.classList.remove('hidden');
+                renderGraphicMode();
+                return;
+            } else {
+                mainCard.classList.remove('hidden');
+                graphicScreen.classList.add('hidden');
+            }
             
             // Update mode badge
             const badge = document.getElementById('badgeMode');
