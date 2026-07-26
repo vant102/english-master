@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Master Pro - Flashcard & Phản Xạ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #101b3b, #070a13);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-input {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+        .timer-transition {
+            transition: width 1s linear;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 md:p-8 text-slate-200 overflow-x-hidden">
+
+    <div class="w-full max-w-6xl flex flex-col lg:flex-row gap-8 items-stretch justify-center">
+        
+        <!-- Left Panel: Lesson Selection & Stats -->
+        <div class="w-full lg:w-80 flex flex-col gap-6">
+            <!-- App Logo / Title -->
+            <div class="text-center lg:text-left">
+                <h1 class="text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                    English Master Pro
+                </h1>
+                <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest font-semibold">Học Sâu - Phản Xạ Thực Chiến</p>
+            </div>
+
+            <!-- Dashboard / Streak -->
+            <div class="glass-card rounded-2xl p-5 space-y-4">
+                <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider border-b border-slate-800 pb-2">Thống Kê Luyện Tập</h3>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-indigo-950/30 border border-indigo-500/15 p-3 rounded-xl text-center">
+                        <div class="text-xs text-slate-400 font-medium">Học liên tục</div>
+                        <div id="statsStreak" class="text-2xl font-black text-amber-400 mt-1">0 ngày</div>
+                    </div>
+                    <div class="bg-violet-950/30 border border-violet-500/15 p-3 rounded-xl text-center">
+                        <div class="text-xs text-slate-400 font-medium">Tổng số câu</div>
+                        <div id="statsTotalCards" class="text-2xl font-black text-indigo-400 mt-1">0 câu</div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Đã trả lời:</span>
+                        <span id="statsPracticed" class="font-semibold">0</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-slate-400">Tỷ lệ chính xác:</span>
+                        <span id="statsAccuracy" class="font-semibold text-emerald-400">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson Selector Card -->
+            <div class="glass-card rounded-2xl p-5 flex flex-col flex-1 max-h-[400px] lg:max-h-none overflow-hidden">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-2 mb-3">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider">Chọn Bài Ôn Luyện</h3>
+                    <div class="flex gap-2">
+                        <button onclick="selectAllLessons(true)" class="text-xs text-indigo-400 hover:text-indigo-300 transition-colors font-medium">Tất cả</button>
+                        <span class="text-slate-700 text-xs">|</span>
+                        <button onclick="selectAllLessons(false)" class="text-xs text-slate-400 hover:text-slate-300 transition-colors font-medium">Bỏ chọn</button>
+                    </div>
+                </div>
+                
+                <div id="lessonList" class="flex-1 overflow-y-auto custom-scrollbar space-y-2 pr-1 text-sm">
+                    <!-- Dynamic Lesson Checkboxes will go here -->
+                    <div class="text-slate-500 italic py-4 text-center">Đang tải danh sách bài học...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Practice Area -->
+        <div class="flex-1 flex flex-col gap-6">
+            <!-- Mode Selector Tabs -->
+            <div class="bg-slate-900/60 p-1.5 rounded-2xl border border-slate-800/80 flex gap-2">
+                <button id="tab-flashcard" onclick="switchMode('flashcard')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-950/50">
+                    <span>🎴</span> Flashcard (7s)
+                </button>
+                <button id="tab-typing" onclick="switchMode('typing')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200">
+                    <span>⌨️</span> Chế độ Gõ
+                </button>
+                <button id="tab-speaking" onclick="switchMode('speaking')" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200">
+                    <span>🎙️</span> Chế độ Nói
+                </button>
+            </div>
+
+            <!-- Main Interactive Card -->
+            <div class="glass-card rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[480px] relative border border-slate-800">
+                
+                <!-- Card Header -->
+                <div class="px-6 py-4 bg-slate-900/40 border-b border-slate-800/50 flex justify-between items-center text-sm font-medium">
+                    <span id="currentLessonName" class="text-slate-400">Chưa bắt đầu</span>
+                    <span id="cardCounter" class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs border border-indigo-500/30">0 / 0</span>
+                </div>
+
+                <!-- Progress Timer (Only visible in Flashcard mode) -->
+                <div id="timerContainer" class="w-full bg-slate-800/80 h-1.5 overflow-hidden">
+                    <div id="timerBar" class="bg-gradient-to-r from-orange-500 to-amber-400 h-1.5 w-full timer-transition"></div>
+                </div>
+
+                <!-- Display Text Area -->
+                <div class="p-8 flex-1 flex flex-col justify-center items-center text-center">
+                    <div id="displayArea" class="w-full max-w-lg space-y-6">
+                        <div>
+                            <span id="badgeMode" class="px-3 py-1 rounded-full text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 uppercase">
+                                Flashcard
+                            </span>
+                        </div>
+                        
+                        <!-- Vietnamese Prompt -->
+                        <h2 id="vietnameseTxt" class="text-2xl sm:text-3xl font-extrabold text-white leading-tight tracking-tight min-h-[90px] flex items-center justify-center px-4">
+                            Chọn bài học bên trái và nhấn BẮT ĐẦU
+                        </h2>
+                        
+                        <!-- Answer/Interaction Zone -->
+                        <div id="interactionZone" class="w-full space-y-4">
+                            <!-- 1. Flashcard Mode Answer -->
+                            <div id="flashcardAnswer" class="hidden transition-all duration-300 transform translate-y-2 opacity-0">
+                                <div class="h-[1px] bg-gradient-to-r from-transparent via-slate-700/50 to-transparent my-6"></div>
+                                <p class="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-2">Đáp án đúng</p>
+                                <p id="englishTxtFC" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-300 mb-6"></p>
+                                <button onclick="speakAnswer(currentCard.en)" class="mx-auto flex items-center justify-center gap-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 px-5 py-2.5 rounded-full border border-indigo-500/30 transition-all font-semibold text-sm">
+                                    🔊 Nghe phát âm mẫu
+                                </button>
+                            </div>
+
+                            <!-- 2. Typing Mode Input -->
+                            <div id="typingInteraction" class="hidden space-y-4">
+                                <div class="relative">
+                                    <input type="text" id="typingInput" onkeydown="handleTypingSubmit(event)" placeholder="Gõ câu dịch tiếng Anh tại đây và nhấn Enter..." class="w-full px-5 py-4 rounded-xl glass-input text-white text-lg placeholder-slate-500 focus:outline-none transition-all">
+                                    <button onclick="checkTypingAnswer()" class="absolute right-3 top-3 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all">Gửi</button>
+                                </div>
+                                <div id="typingResult" class="hidden p-4 rounded-xl text-left space-y-3">
+                                    <!-- Dynamic Diff Content -->
+                                </div>
+                            </div>
+
+                            <!-- 3. Speaking Mode Mic -->
+                            <div id="speakingInteraction" class="hidden space-y-4 flex flex-col items-center">
+                                <button id="micBtn" onclick="toggleSpeechRecognition()" class="w-24 h-24 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25 transition-all border-4 border-indigo-900/50 hover:scale-105 active:scale-95">
+                                    <span id="micIcon" class="text-3xl">🎙️</span>
+                                </button>
+                                <p id="speechStatus" class="text-sm text-slate-400 font-medium">Bấm mic để nói câu tiếng Anh</p>
+                                <div id="speechResult" class="hidden w-full p-4 rounded-xl text-left space-y-3">
+                                    <!-- Dynamic Speech Results -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Action Controls -->
+                <div class="p-6 bg-slate-900/60 border-t border-slate-800/50 flex flex-col sm:flex-row gap-4">
+                    <button id="mainBtn" onclick="nextQuestion()" class="flex-1 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-4 rounded-2xl shadow-xl shadow-indigo-950/30 transition-all active:scale-95 tracking-wide">
+                        BẮT ĐẦU
+                    </button>
+                    <button id="revealBtn" onclick="revealAnswer()" class="hidden flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-4 rounded-2xl border border-slate-700/50 transition-all active:scale-95 tracking-wide">
+                        XEM ĐÁP ÁN (PHÍM SPACE)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Practice Complete Dashboard Screen (Overlay / Hidden by default) -->
+            <div id="resultsScreen" class="hidden glass-card rounded-3xl p-8 border border-slate-800 text-center space-y-6">
+                <div>
+                    <span class="text-5xl">🏆</span>
+                    <h2 class="text-3xl font-black text-white mt-4">Hoàn Thành Bài Kiểm Tra!</h2>
+                    <p class="text-slate-400 text-sm mt-1">Kết quả ôn tập của bạn</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+                    <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl">
+                        <div class="text-xs text-slate-400 font-medium">Tổng số câu</div>
+                        <div id="resTotal" class="text-2xl font-bold text-white mt-1">0</div>
+                    </div>
+                    <div class="bg-emerald-950/20 border border-emerald-500/20 p-4 rounded-2xl">
+                        <div class="text-xs text-slate-400 font-medium">Chính xác</div>
+                        <div id="resCorrect" class="text-2xl font-bold text-emerald-400 mt-1">0</div>
+                    </div>
+                    <div class="bg-rose-950/20 border border-rose-500/20 p-4 rounded-2xl">
+                        <div class="text-xs text-slate-400 font-medium">Cần xem lại</div>
+                        <div id="resWrong" class="text-2xl font-bold text-rose-400 mt-1">0</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <button onclick="restartWithDeck(null)" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl transition-all">Luyện Lại Tất Cả</button>
+                    <button id="reviewWrongBtn" onclick="restartWithDeck(wrongDeck)" class="hidden flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-3.5 rounded-xl transition-all">Chỉ Ôn Câu Sai</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load lesson data -->
+    <script src="lessons_data.js"></script>
+
+    <script>
+        // App State
+        let activeMode = 'flashcard'; // 'flashcard', 'typing', 'speaking'
+        let selectedLessons = [1, 2, 3]; // default selected parts
+        let currentDeck = [];
+        let currentCard = null;
+        let currentIndex = -1;
+        let answeredCount = 0;
+        let correctCount = 0;
+        
+        let wrongDeck = []; // logs wrong answers in the current run
+        let timer = null;
+        let timeLeft = 7;
+        let recognition = null;
+        let isRecording = false;
+
+        // Statistics structure
+        let stats = {
+            totalPracticed: 0,
+            totalCorrect: 0,
+            streak: 0,
+            lastPracticeDate: ""
+        };
+
+        // Load stats from localStorage
+        function loadStats() {
+            const savedStats = localStorage.getItem('english_master_stats');
+            if (savedStats) {
+                stats = JSON.parse(savedStats);
+            }
+            updateStatsUI();
+        }
+
+        function saveStats() {
+            localStorage.setItem('english_master_stats', JSON.stringify(stats));
+            updateStatsUI();
+        }
+
+        function updateStatsUI() {
+            document.getElementById('statsStreak').innerText = `${stats.streak} ngày`;
+            document.getElementById('statsPracticed').innerText = stats.totalPracticed;
+            
+            const accuracy = stats.totalPracticed > 0 ? Math.round((stats.totalCorrect / stats.totalPracticed) * 100) : 0;
+            document.getElementById('statsAccuracy').innerText = `${accuracy}%`;
+            
+            // Calculate total cards in all notebook
+            let total = 0;
+            for (let part in lessonsData) {
+                total += lessonsData[part].sentences.length;
+            }
+            document.getElementById('statsTotalCards').innerText = `${total} câu`;
+        }
+
+        // Check and update study streak
+        function checkStreak() {
+            const today = new Date().toDateString();
+            if (stats.lastPracticeDate) {
+                const lastDate = new Date(stats.lastPracticeDate);
+                const diffTime = Math.abs(new Date(today) - lastDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                
+                if (diffDays === 1) {
+                    stats.streak++;
+                } else if (diffDays > 1) {
+                    stats.streak = 1; // reset streak if skipped more than 1 day
+                }
+            } else {
+                stats.streak = 1;
+            }
+            stats.lastPracticeDate = today;
+            saveStats();
+        }
+
+        // Initialize Lesson selection UI
+        function initLessonSelector() {
+            const container = document.getElementById('lessonList');
+            container.innerHTML = "";
+            
+            // Sort lesson keys numerically
+            const sortedKeys = Object.keys(lessonsData).map(Number).sort((a,b) => a - b);
+            
+            sortedKeys.forEach(part => {
+                const lesson = lessonsData[part];
+                const count = lesson.sentences.length;
+                
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between p-2.5 rounded-xl hover:bg-slate-800/40 border border-transparent hover:border-slate-800 transition-all cursor-pointer";
+                div.onclick = (e) => {
+                    if (e.target.tagName !== 'INPUT') {
+                        const cb = div.querySelector('input[type="checkbox"]');
+                        cb.checked = !cb.checked;
+                        toggleLesson(part, cb.checked);
+                    }
+                };
+
+                const isChecked = selectedLessons.includes(part);
+
+                div.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <input type="checkbox" id="cb-${part}" ${isChecked ? 'checked' : ''} onchange="toggleLesson(${part}, this.checked)" class="w-4 h-4 text-indigo-600 bg-slate-900 border-slate-700 rounded focus:ring-indigo-500 focus:ring-offset-slate-900">
+                        <label for="cb-${part}" class="font-medium text-slate-300 cursor-pointer select-none">Phần ${part}: ${lesson.title}</label>
+                    </div>
+                    <span class="text-xs text-slate-500 font-semibold bg-slate-800 px-2 py-0.5 rounded-full">${count} câu</span>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function toggleLesson(part, isChecked) {
+            if (isChecked) {
+                if (!selectedLessons.includes(part)) selectedLessons.push(part);
+            } else {
+                selectedLessons = selectedLessons.filter(p => p !== part);
+            }
+        }
+
+        function selectAllLessons(selectAll) {
+            selectedLessons = [];
+            const checkboxes = document.querySelectorAll('#lessonList input[type="checkbox"]');
+            checkboxes.forEach(cb => {
+                const part = Number(cb.id.replace('cb-', ''));
+                cb.checked = selectAll;
+                if (selectAll) selectedLessons.push(part);
+            });
+        }
+
+        // Switch modes (Flashcard, Typing, Speaking)
+        function switchMode(mode) {
+            activeMode = mode;
+            
+            // Update tabs UI
+            document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+                btn.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 text-slate-400 hover:text-slate-200";
+            });
+            const activeTab = document.getElementById(`tab-${mode}`);
+            activeTab.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-950/50";
+            
+            // Update mode badge
+            const badge = document.getElementById('badgeMode');
+            if (mode === 'flashcard') {
+                badge.innerText = "Flashcard";
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 uppercase";
+                document.getElementById('timerContainer').classList.remove('hidden');
+            } else if (mode === 'typing') {
+                badge.innerText = "Chế độ gõ";
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 uppercase";
+                document.getElementById('timerContainer').classList.add('hidden');
+            } else {
+                badge.innerText = "Chế độ nói";
+                badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-pink-400 bg-pink-400/10 border border-pink-400/20 uppercase";
+                document.getElementById('timerContainer').classList.add('hidden');
+            }
+
+            // Reset current question views
+            resetInteractionFields();
+            if (currentIndex !== -1) {
+                showInteractionField();
+            }
+        }
+
+        function resetInteractionFields() {
+            document.getElementById('flashcardAnswer').classList.add('hidden');
+            document.getElementById('typingInteraction').classList.add('hidden');
+            document.getElementById('speakingInteraction').classList.add('hidden');
+            document.getElementById('typingResult').classList.add('hidden');
+            document.getElementById('speechResult').classList.add('hidden');
+            document.getElementById('revealBtn').classList.add('hidden');
+            document.getElementById('mainBtn').classList.remove('hidden');
+            document.getElementById('typingInput').value = "";
+            clearInterval(timer);
+        }
+
+        // Fisher-Yates Shuffling Algorithm
+        function shuffleDeck(deck) {
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+            return deck;
+        }
+
+        // Start Test / Next Question
+        function nextQuestion() {
+            if (currentIndex === -1 && currentDeck.length === 0) {
+                // Initialize Deck from selected lessons
+                if (selectedLessons.length === 0) {
+                    alert("Vui lòng chọn ít nhất một bài học ở cột bên trái!");
+                    return;
+                }
+                
+                let combined = [];
+                selectedLessons.forEach(part => {
+                    const lesson = lessonsData[part];
+                    lesson.sentences.forEach(item => {
+                        combined.push({
+                            ...item,
+                            part: part,
+                            partTitle: lesson.title
+                        });
+                    });
+                });
+                
+                currentDeck = shuffleDeck([...combined]);
+                wrongDeck = [];
+                currentIndex = 0;
+                answeredCount = 0;
+                correctCount = 0;
+                
+                // Hide results screen if it was visible
+                document.getElementById('resultsScreen').classList.add('hidden');
+                document.getElementById('displayArea').parentElement.classList.remove('hidden');
+                document.getElementById('mainBtn').parentElement.classList.remove('hidden');
+            } else {
+                currentIndex++;
+            }
+
+            // Check if end of deck
+            if (currentIndex >= currentDeck.length) {
+                finishSession();
+                return;
+            }
+
+            currentCard = currentDeck[currentIndex];
+            
+            // Update Card Details
+            document.getElementById('vietnameseTxt').innerText = currentCard.vn;
+            document.getElementById('currentLessonName').innerText = `Phần ${currentCard.part}: ${currentCard.partTitle}`;
+            document.getElementById('cardCounter').innerText = `${currentIndex + 1} / ${currentDeck.length}`;
+            
+            showInteractionField();
+        }
+
+        function showInteractionField() {
+            resetInteractionFields();
+            
+            if (activeMode === 'flashcard') {
+                document.getElementById('englishTxtFC').innerText = currentCard.en;
+                document.getElementById('mainBtn').classList.add('hidden');
+                document.getElementById('revealBtn').classList.remove('hidden');
+                startTimer();
+            } else if (activeMode === 'typing') {
+                document.getElementById('typingInteraction').classList.remove('hidden');
+                document.getElementById('typingInput').focus();
+            } else if (activeMode === 'speaking') {
+                document.getElementById('speakingInteraction').classList.remove('hidden');
+            }
+        }
+
+        // 7-Second Timer for Flashcard Mode
+        function startTimer() {
+            timeLeft = 7;
+            const bar = document.getElementById('timerBar');
+            bar.style.width = '100%';
+            bar.classList.remove('bg-red-500');
+            bar.classList.add('bg-gradient-to-r', 'from-orange-500', 'to-amber-400');
+
+            timer = setInterval(() => {
+                timeLeft--;
+                bar.style.width = (timeLeft / 7 * 100) + '%';
+                
+                if (timeLeft <= 2) {
+                    bar.classList.remove('from-orange-500', 'to-amber-400');
+                    bar.classList.add('bg-red-500');
+                }
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    revealAnswer(true); // timed out counted as missed/wrong
+                }
+            }, 1000);
+        }
+
+        // Reveal Answer in Flashcard Mode
+        function revealAnswer(timedOut = false) {
+            clearInterval(timer);
+            
+            const answerArea = document.getElementById('flashcardAnswer');
+            answerArea.classList.remove('hidden');
+            setTimeout(() => {
+                answerArea.classList.remove('opacity-0', 'translate-y-2');
+                answerArea.classList.add('opacity-100', 'translate-y-0');
+            }, 50);
+
+            document.getElementById('revealBtn').classList.add('hidden');
+            
+            const mainBtn = document.getElementById('mainBtn');
+            mainBtn.classList.remove('hidden');
+            mainBtn.innerText = "CÂU TIẾP THEO";
+
+            answeredCount++;
+            stats.totalPracticed++;
+            
+            if (timedOut) {
+                wrongDeck.push(currentCard);
+            } else {
+                correctCount++;
+                stats.totalCorrect++;
+            }
+            saveStats();
+        }
+
+        // Typing Mode Comparison
+        function handleTypingSubmit(e) {
+            if (e.key === 'Enter') {
+                checkTypingAnswer();
+            }
+        }
+
+        // Simple text normalization to compare words
+        function cleanText(text) {
+            return text.toLowerCase()
+                       .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g,"")
+                       .replace(/\s+/g," ")
+                       .trim();
+        }
+
+        function checkTypingAnswer() {
+            const inputVal = document.getElementById('typingInput').value.trim();
+            if (!inputVal) return;
+
+            const cleanInput = cleanText(inputVal);
+            const cleanCorrect = cleanText(currentCard.en);
+
+            const resultDiv = document.getElementById('typingResult');
+            resultDiv.classList.remove('hidden');
+
+            const isCorrect = (cleanInput === cleanCorrect);
+            answeredCount++;
+            stats.totalPracticed++;
+
+            if (isCorrect) {
+                correctCount++;
+                stats.totalCorrect++;
+                resultDiv.className = "p-4 rounded-xl text-left bg-emerald-950/20 border border-emerald-500/20 text-emerald-400";
+                resultDiv.innerHTML = `
+                    <div class="font-bold flex items-center gap-2 text-sm">🟢 CHÍNH XÁC!</div>
+                    <div class="text-xl font-bold text-white mt-1">${currentCard.en}</div>
+                    <button onclick="speakAnswer('${currentCard.en.replace(/'/g, "\\'")}')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold mt-2">🔊 Nghe phát âm mẫu</button>
+                `;
+            } else {
+                wrongDeck.push(currentCard);
+                resultDiv.className = "p-4 rounded-xl text-left bg-rose-950/20 border border-rose-500/20 text-rose-400";
+                
+                // Diff Highlighting Logic (Word-by-word)
+                const userWords = inputVal.split(/\s+/);
+                const correctWords = currentCard.en.split(/\s+/);
+                
+                let diffHtml = "";
+                correctWords.forEach((word, idx) => {
+                    const cleanedW = cleanText(word);
+                    const userW = userWords[idx] ? cleanText(userWords[idx]) : "";
+                    
+                    if (cleanedW === userW) {
+                        diffHtml += `<span class="text-emerald-400">${word} </span>`;
+                    } else if (userW === "") {
+                        diffHtml += `<span class="text-rose-400 underline decoration-wavy decoration-rose-500 font-bold">${word} </span>`;
+                    } else {
+                        diffHtml += `<span class="text-rose-500 line-through">${userWords[idx]}</span> <span class="text-amber-400 font-bold">${word} </span>`;
+                    }
+                });
+
+                resultDiv.innerHTML = `
+                    <div class="font-bold text-sm">🔴 CẦN CẢI THIỆN</div>
+                    <div class="text-sm text-slate-400 mt-2">Bạn gõ: <span class="text-slate-300 italic">"${inputVal}"</span></div>
+                    <div class="text-sm text-slate-400 mt-1">So sánh gợi ý: <div class="bg-slate-900/60 p-2.5 rounded-lg mt-1 text-base leading-relaxed">${diffHtml}</div></div>
+                    <div class="text-sm text-slate-400 mt-2">Đáp án đúng: <span class="text-lg font-bold text-white">${currentCard.en}</span></div>
+                    <button onclick="speakAnswer('${currentCard.en.replace(/'/g, "\\'")}')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold mt-2">🔊 Nghe phát âm mẫu</button>
+                `;
+            }
+
+            document.getElementById('mainBtn').innerText = "CÂU TIẾP THEO";
+            saveStats();
+        }
+
+        // Web Speech API Integration
+        function initSpeechRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                document.getElementById('speechStatus').innerText = "Trình duyệt của bạn không hỗ trợ nhận diện giọng nói. Vui lòng dùng Chrome hoặc Edge.";
+                document.getElementById('micBtn').disabled = true;
+                document.getElementById('micBtn').classList.add('opacity-40');
+                return;
+            }
+
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = () => {
+                isRecording = true;
+                document.getElementById('micIcon').innerText = "🔴";
+                document.getElementById('speechStatus').innerText = "Đang lắng nghe... Hãy nói câu tiếng Anh!";
+                document.getElementById('micBtn').classList.replace('bg-indigo-600', 'bg-rose-600');
+            };
+
+            recognition.onend = () => {
+                isRecording = false;
+                document.getElementById('micIcon').innerText = "🎙️";
+                document.getElementById('micBtn').classList.replace('bg-rose-600', 'bg-indigo-600');
+            };
+
+            recognition.onresult = (event) => {
+                const speechResultText = event.results[0][0].transcript;
+                checkSpeechAnswer(speechResultText);
+            };
+
+            recognition.onerror = (event) => {
+                console.error("Speech recognition error", event.error);
+                document.getElementById('speechStatus').innerText = `Lỗi nhận diện: ${event.error}. Thử bấm lại mic.`;
+            };
+        }
+
+        function toggleSpeechRecognition() {
+            if (!recognition) initSpeechRecognition();
+            if (!recognition) return;
+
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                document.getElementById('speechResult').classList.add('hidden');
+                recognition.start();
+            }
+        }
+
+        function checkSpeechAnswer(speechText) {
+            const cleanSpeech = cleanText(speechText);
+            const cleanCorrect = cleanText(currentCard.en);
+
+            const resultDiv = document.getElementById('speechResult');
+            resultDiv.classList.remove('hidden');
+
+            const isCorrect = (cleanSpeech === cleanCorrect);
+            answeredCount++;
+            stats.totalPracticed++;
+
+            if (isCorrect) {
+                correctCount++;
+                stats.totalCorrect++;
+                resultDiv.className = "p-4 rounded-xl text-left bg-emerald-950/20 border border-emerald-500/20 text-emerald-400";
+                resultDiv.innerHTML = `
+                    <div class="font-bold flex items-center gap-2 text-sm">🟢 PHÁT ÂM CHUẨN XÁC!</div>
+                    <div class="text-xl font-bold text-white mt-1">${currentCard.en}</div>
+                `;
+                document.getElementById('speechStatus').innerText = "Bạn đã phát âm chính xác!";
+            } else {
+                wrongDeck.push(currentCard);
+                resultDiv.className = "p-4 rounded-xl text-left bg-rose-950/20 border border-rose-500/20 text-rose-400";
+                resultDiv.innerHTML = `
+                    <div class="font-bold text-sm">🔴 CÓ CHÚT SAI LỆCH</div>
+                    <div class="text-sm text-slate-400 mt-2">Hệ thống nhận diện được: <span class="text-rose-400 font-semibold italic">"${speechText}"</span></div>
+                    <div class="text-sm text-slate-400 mt-2">Câu chuẩn: <span class="text-lg font-bold text-white">${currentCard.en}</span></div>
+                    <button onclick="speakAnswer('${currentCard.en.replace(/'/g, "\\'")}')" class="text-xs text-indigo-400 hover:text-indigo-300 font-semibold mt-2">🔊 Nghe phát âm mẫu để chỉnh âm</button>
+                `;
+                document.getElementById('speechStatus').innerText = "Hãy nghe phát âm mẫu và thử lại.";
+            }
+
+            document.getElementById('mainBtn').innerText = "CÂU TIẾP THEO";
+            saveStats();
+        }
+
+        // Text-to-Speech (TTS) Pronunciation
+        function speakAnswer(text) {
+            const msg = new SpeechSynthesisUtterance();
+            msg.text = text;
+            msg.lang = 'en-US';
+            window.speechSynthesis.speak(msg);
+        }
+
+        // Finish Practice Session & Show Dashboard Score
+        function finishSession() {
+            clearInterval(timer);
+            
+            // Hide normal screen
+            document.getElementById('displayArea').parentElement.classList.add('hidden');
+            document.getElementById('mainBtn').parentElement.classList.add('hidden');
+            
+            // Show results
+            const resultsScreen = document.getElementById('resultsScreen');
+            resultsScreen.classList.remove('hidden');
+            
+            document.getElementById('resTotal').innerText = currentDeck.length;
+            document.getElementById('resCorrect').innerText = correctCount;
+            document.getElementById('resWrong').innerText = wrongDeck.length;
+            
+            const reviewWrongBtn = document.getElementById('reviewWrongBtn');
+            if (wrongDeck.length > 0) {
+                reviewWrongBtn.classList.remove('hidden');
+            } else {
+                reviewWrongBtn.classList.add('hidden');
+            }
+
+            checkStreak();
+            
+            // Reset states
+            currentIndex = -1;
+            currentDeck = [];
+        }
+
+        // Restart session with a specific deck (either wrong cards only or all selected cards)
+        function restartWithDeck(customDeck) {
+            if (customDeck && customDeck.length > 0) {
+                currentDeck = shuffleDeck([...customDeck]);
+            } else {
+                currentDeck = []; // triggers complete reload in nextQuestion()
+            }
+            wrongDeck = [];
+            currentIndex = -1;
+            
+            document.getElementById('resultsScreen').classList.add('hidden');
+            nextQuestion();
+        }
+
+        // Keyboard Shortcut Handler for Spacebar
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                // Prevent scrolling
+                e.preventDefault();
+                
+                // Only trigger Space shortcut in Flashcard mode
+                if (activeMode === 'flashcard') {
+                    if (!document.getElementById('revealBtn').classList.contains('hidden')) {
+                        revealAnswer();
+                    } else if (!document.getElementById('mainBtn').classList.contains('hidden')) {
+                        nextQuestion();
+                    }
+                }
+            }
+        });
+
+        // Initialize App on Page Load
+        window.onload = () => {
+            loadStats();
+            initLessonSelector();
+            initSpeechRecognition();
+        };
+    </script>
+</body>
+</html>
