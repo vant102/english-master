@@ -52,14 +52,14 @@ function downloadVideo(url, targetPath, title, forceOverwrite = false) {
     const hasCookies = fs.existsSync(cookiesPath);
 
     const args = [
-        '-f', 'bestvideo[height<=1080]+bestaudio/best/best',
+        '-f', 'best[height<=1080]/bestvideo[height<=1080]+bestaudio/best',
         '--merge-output-format', 'mp4',
         '--no-playlist',
         '--no-mtime',
         '--force-overwrites',
         '--js-runtimes', 'node',
         '--remote-components', 'ejs:github',
-        '--extractor-args', 'youtube:player_client=web,mweb,android,ios',
+        '--extractor-args', 'youtube:player_client=all',
         '--sleep-interval', '2',
         '-o', targetPath
     ];

@@ -1,14 +1,21 @@
-# Video files (offline storage - do not push to GitHub)
+﻿# Sensitive / large files - DO NOT commit
+cookies.txt
+ffmpeg.exe
+*.exe
+*.dll
+
+# Personal notes and working files
+Trao doi English Master/
+Lessions/
+B4-51.txt
+
+# Video files (too large)
 Videos/
 *.mp4
 *.mkv
-*.webm
+*.avi
 
-# Temporary & local development files
-scratch/
-sample_data.json
-contData.json
-lesson_videos.json
-test_videos.json
-all_test_videos.json
-video_mapping.json
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
