@@ -394,7 +394,7 @@ const lessonsData = {
             }
         ]
     },
-        "4": {
+    "4": {
         "title": "HÀNH ĐỘNG HẰNG NGÀY VÀ THÓI QUEN",
         "sentences": [
             {
@@ -6415,6 +6415,131 @@ const lessonsData = {
             {
                 "en": "Have you seen it yet?",
                 "vn": "Bạn đã xem nó chưa?"
+            }
+        ]
+    },
+    "52": {
+        "title": "ĐI TAXI",
+        "sentences": [
+            {
+                "en": "I'd like to book a taxi",
+                "vn": "Tôi muốn đặt một chiếc taxi"
+            },
+            {
+                "en": "It will be here in about five minutes",
+                "vn": "Nó sẽ đến đây trong khoảng 5 phút nữa"
+            },
+            {
+                "en": "Are you my driver?",
+                "vn": "Anh có phải tài xế của tôi không?"
+            },
+            {
+                "en": "Yes, that's me",
+                "vn": "Vâng, là tôi"
+            },
+            {
+                "en": "I'll sit in the back seat",
+                "vn": "Tôi sẽ ngồi ở ghế sau"
+            },
+            {
+                "en": "I'll sit in the front seat",
+                "vn": "Tôi sẽ ngồi ở ghế trước"
+            },
+            {
+                "en": "You can sit wherever you'd like",
+                "vn": "Bạn có thể ngồi bất cứ chỗ nào bạn thích nhé"
+            },
+            {
+                "en": "Where are you going?",
+                "vn": "Bạn đang đi đâu? (Bạn muốn đi đâu?)"
+            },
+            {
+                "en": "Where can I take you?",
+                "vn": "Tôi có thể chở bạn đi đâu?"
+            },
+            {
+                "en": "Where to?",
+                "vn": "Đi đâu? (Đi đến đâu?)"
+            },
+            {
+                "en": "Downtown, please",
+                "vn": "Trung tâm thành phố nhé"
+            },
+            {
+                "en": "Here's the address",
+                "vn": "Đây là địa chỉ"
+            },
+            {
+                "en": "It's on my phone",
+                "vn": "Nó ở trên điện thoại của tôi"
+            },
+            {
+                "en": "I don't know that place. Do you have a map?",
+                "vn": "Tôi không biết chỗ đó. Bạn có bản đồ không?"
+            },
+            {
+                "en": "Let me show you on Google Maps",
+                "vn": "Để tôi chỉ cho anh trên Google Maps"
+            },
+            {
+                "en": "Could you take me here?",
+                "vn": "Anh có thể chở tôi đến đây không?"
+            },
+            {
+                "en": "Are you in a hurry?",
+                "vn": "Bạn có đang vội không? (Anh có cần đi nhanh không?)"
+            },
+            {
+                "en": "I'm not in a hurry",
+                "vn": "Tôi không vội (Tôi không gấp)"
+            },
+            {
+                "en": "I'm in a bit of a hurry",
+                "vn": "Tôi hơi vội (Tôi hơi gấp)"
+            },
+            {
+                "en": "Could you drive faster?",
+                "vn": "Anh có thể lái xe nhanh hơn được không?"
+            },
+            {
+                "en": "It's very close",
+                "vn": "Nó rất gần"
+            },
+            {
+                "en": "It's pretty far away",
+                "vn": "Nó khá xa"
+            },
+            {
+                "en": "How long will it take?",
+                "vn": "Sẽ mất bao lâu?"
+            },
+            {
+                "en": "We can take the expressway, but there's a toll",
+                "vn": "Chúng ta có thể đi đường cao tốc, nhưng có phí đường bộ"
+            },
+            {
+                "en": "Do you know a shortcut?",
+                "vn": "Anh có biết đường tắt không?"
+            },
+            {
+                "en": "Do you have any luggage?",
+                "vn": "Anh có hành lý không?"
+            },
+            {
+                "en": "Yes, two suitcases",
+                "vn": "Vâng, hai chiếc vali"
+            },
+            {
+                "en": "Could you help me with the luggage?",
+                "vn": "Anh có thể giúp tôi với hành lý được không?"
+            },
+            {
+                "en": "Sure. I'll put them in the trunk",
+                "vn": "Chắc chắn rồi. Tôi sẽ để chúng vào cốp xe"
+            },
+            {
+                "en": "Be careful with that bag. It's very fragile",
+                "vn": "Cẩn thận với cái túi đó. Nó rất dễ vỡ"
             }
         ]
     }
