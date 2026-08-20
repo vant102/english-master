@@ -18,15 +18,12 @@ const testsDir = path.join(__dirname, 'Videos', 'Tests');
 fs.mkdirSync(lessonsDir, { recursive: true });
 fs.mkdirSync(testsDir, { recursive: true });
 
+// Local FFmpeg binary path
+const ffmpegPath = path.join(__dirname, 'ffmpeg.exe');
+const hasFfmpeg = fs.existsSync(ffmpegPath);
+
 function pad(num) {
     return String(num).padStart(2, '0');
-}
-
-// Check if a file exists and is a valid video (> 15MB)
-function isFileValid(targetPath) {
-    if (!fs.existsSync(targetPath)) return false;
-    const stats = fs.statSync(targetPath);
-    return stats.size > 1024 * 1024 * 15; // At least 15MB for a valid HD video
 }
 
 function getFileSizeMB(targetPath) {
@@ -35,11 +32,55 @@ function getFileSizeMB(targetPath) {
     return (stats.size / (1024 * 1024)).toFixed(1);
 }
 
+// Inspect actual video resolution using local ffmpeg
+function getVideoResolution(targetPath) {
+    if (!fs.existsSync(targetPath)) return null;
+    if (!hasFfmpeg) return null;
+    try {
+        const probe = spawnSync(ffmpegPath, ['-i', targetPath], { encoding: 'utf8', timeout: 5000 });
+        const match = (probe.stderr || '').match(/Video:.*,\s*(\d{3,4})x(\d{3,4})/);
+        if (match) {
+            const w = parseInt(match[1]);
+            const h = parseInt(match[2]);
+            return { width: w, height: h, label: h >= 1080 ? '1080p' : (h >= 720 ? '720p' : `${h}p`) };
+        }
+    } catch (e) {
+        // probe failed
+    }
+    return null;
+}
+
+// Check if a file exists AND is at least 720p/1080p HD
+function isFileValid(targetPath) {
+    if (!fs.existsSync(targetPath)) return false;
+    const stats = fs.statSync(targetPath);
+    if (stats.size < 1024 * 1024 * 5) return false; // less than 5MB is definitely broken/incomplete
+
+    // If FFmpeg is available, verify resolution is >= 720p (not 360p)
+    const res = getVideoResolution(targetPath);
+    if (res) {
+        return res.height >= 720;
+    }
+
+    // Fallback: estimate by file size (> 15MB)
+    return stats.size > 1024 * 1024 * 15;
+}
+
 function downloadVideo(url, targetPath, title, forceOverwrite = false) {
-    if (!forceOverwrite && isFileValid(targetPath)) {
-        const sizeMB = getFileSizeMB(targetPath);
-        console.log(`  [DA CO 1080p] ${path.basename(targetPath)} (${sizeMB} MB) - Bo qua.`);
-        return true;
+    const exists = fs.existsSync(targetPath);
+    const resInfo = exists ? getVideoResolution(targetPath) : null;
+    const sizeMB = exists ? getFileSizeMB(targetPath) : 0;
+
+    if (!forceOverwrite && exists) {
+        if (resInfo && resInfo.height >= 720) {
+            console.log(`  [DA CO ${resInfo.label}] ${path.basename(targetPath)} (${sizeMB} MB) - Bo qua.`);
+            return true;
+        } else if (resInfo && resInfo.height < 720) {
+            console.log(`\n  [!] PHAT HIEN BAN THAP ${resInfo.label} (${sizeMB} MB) -> Tu dong tai de ban Full HD 1080p...`);
+        } else if (isFileValid(targetPath)) {
+            console.log(`  [DA CO VIDEO] ${path.basename(targetPath)} (${sizeMB} MB) - Bo qua.`);
+            return true;
+        }
     }
 
     console.log(`\n------------------------------------------------------------`);
@@ -51,18 +92,23 @@ function downloadVideo(url, targetPath, title, forceOverwrite = false) {
     const cookiesPath = path.join(__dirname, 'cookies.txt');
     const hasCookies = fs.existsSync(cookiesPath);
 
+    // Prioritize 1080p separate video stream + best audio stream merged via ffmpeg
     const args = [
-        '-f', 'best[height<=1080]/bestvideo[height<=1080]+bestaudio/best',
+        '-f', 'bestvideo[height<=1080]+bestaudio/bestvideo+bestaudio/best',
         '--merge-output-format', 'mp4',
         '--no-playlist',
         '--no-mtime',
         '--force-overwrites',
         '--js-runtimes', 'node',
         '--remote-components', 'ejs:github',
-        '--extractor-args', 'youtube:player_client=all',
-        '--sleep-interval', '2',
+        '--extractor-args', 'youtube:player_client=android,web',
+        '--sleep-interval', '1',
         '-o', targetPath
     ];
+
+    if (hasFfmpeg) {
+        args.push('--ffmpeg-location', ffmpegPath);
+    }
 
     if (hasCookies) {
         args.push('--cookies', cookiesPath);
@@ -112,71 +158,97 @@ function downloadTest(part, force = false) {
 // ==============================================================
 function showHealthCheckReport() {
     console.clear();
-    console.log("=======================================================================");
-    console.log("       BAO CAO KIEM TRA KHO VIDEO CUC BO (HEALTH CHECK REPORT)");
-    console.log("=======================================================================\n");
+    console.log("===================================================================================");
+    console.log("             BAO CAO KIEM TRA KHO VIDEO CUC BO (HEALTH CHECK REPORT)");
+    console.log("===================================================================================\n");
 
-    let totalLessonsCount = 0;
-    let totalTestsCount = 0;
+    let totalLessonsHD = 0;
+    let totalTestsHD = 0;
+    let totalLowRes = 0;
     let missingLessons = [];
     let missingTests = [];
+    let lowResFiles = [];
     let totalSizeMB = 0;
 
-    console.log("PHAN | BAI GIANG (LESSON)       | BAI TEST (VIET-ANH / ANH-VIET)");
-    console.log("-----+--------------------------+--------------------------------------");
+    console.log("PHAN | BAI GIANG (LESSON)            | BAI TEST (VIET-ANH / ANH-VIET)");
+    console.log("-----+-------------------------------+----------------------------------------------");
 
     for (let i = 1; i <= 52; i++) {
         const item = videoMappingData.videos[i];
         const lessonTarget = path.join(lessonsDir, `Lesson_${pad(i)}.mp4`);
-        const hasLesson = isFileValid(lessonTarget);
-        let lessonStr = hasLesson ? `[x] ${getFileSizeMB(lessonTarget)} MB` : `[ ] Thieu`;
-        if (hasLesson) {
-            totalLessonsCount++;
-            totalSizeMB += parseFloat(getFileSizeMB(lessonTarget));
-        } else {
+        const lessonExists = fs.existsSync(lessonTarget);
+        const lessonRes = lessonExists ? getVideoResolution(lessonTarget) : null;
+        const lessonSize = lessonExists ? getFileSizeMB(lessonTarget) : 0;
+        
+        let lessonStr = "";
+        if (!lessonExists) {
+            lessonStr = "[ ] Thieu";
             missingLessons.push(i);
+        } else if (lessonRes && lessonRes.height >= 720) {
+            lessonStr = `[x] ${lessonRes.label} (${lessonSize}MB)`;
+            totalLessonsHD++;
+            totalSizeMB += parseFloat(lessonSize);
+        } else {
+            const lbl = lessonRes ? lessonRes.label : "360p";
+            lessonStr = `[!] ${lbl} (${lessonSize}MB) RE-DL`;
+            totalLowRes++;
+            lowResFiles.push(`Lesson_${pad(i)}.mp4 (${lbl})`);
+            totalSizeMB += parseFloat(lessonSize);
         }
 
         let testStrs = [];
-        let hasAllTests = true;
+        let hasAllTestsHD = true;
         if (item && item.testVideos && item.testVideos.length > 0) {
             item.testVideos.forEach(t => {
                 let fn = t.type === 'vn-en' ? `Test_${pad(i)}_VnEn.mp4` : (t.type === 'en-vn' ? `Test_${pad(i)}_EnVn.mp4` : `Test_${pad(i)}_General.mp4`);
                 let p = path.join(testsDir, fn);
-                if (isFileValid(p)) {
-                    totalTestsCount++;
-                    totalSizeMB += parseFloat(getFileSizeMB(p));
-                    testStrs.push(`${t.type}: [x]`);
-                } else {
-                    hasAllTests = false;
+                const testExists = fs.existsSync(p);
+                const testRes = testExists ? getVideoResolution(p) : null;
+                const testSize = testExists ? getFileSizeMB(p) : 0;
+
+                if (!testExists) {
+                    hasAllTestsHD = false;
                     testStrs.push(`${t.type}: [ ]`);
+                } else if (testRes && testRes.height >= 720) {
+                    totalTestsHD++;
+                    totalSizeMB += parseFloat(testSize);
+                    testStrs.push(`${t.type}: [x] ${testRes.label}`);
+                } else {
+                    hasAllTestsHD = false;
+                    totalLowRes++;
+                    const lbl = testRes ? testRes.label : "360p";
+                    lowResFiles.push(`${fn} (${lbl})`);
+                    totalSizeMB += parseFloat(testSize);
+                    testStrs.push(`${t.type}: [!] ${lbl}`);
                 }
             });
         }
 
-        if (!hasAllTests) missingTests.push(i);
+        if (!hasAllTestsHD) missingTests.push(i);
 
         const padP = String(i).padStart(2, '0');
-        const padLesson = lessonStr.padEnd(24, ' ');
+        const padLesson = lessonStr.padEnd(29, ' ');
         console.log(`P.${padP} | ${padLesson} | ${testStrs.join('  ')}`);
     }
 
-    console.log("-----+--------------------------+--------------------------------------");
-    console.log(`\nTONG KET:`);
-    console.log(`- Video Bai Giang: ${totalLessonsCount} / 52 bai (${Math.round(totalLessonsCount / 52 * 100)}%)`);
-    console.log(`- Video Bai Test:  ${totalTestsCount} / 104 video (${Math.round(totalTestsCount / 104 * 100)}%)`);
+    console.log("-----+-------------------------------+----------------------------------------------");
+    console.log(`\nTONG KET CHAT LUONG:`);
+    console.log(`- Video Bai Giang dat 1080p: ${totalLessonsHD} / 52 bai (${Math.round(totalLessonsHD / 52 * 100)}%)`);
+    console.log(`- Video Bai Test dat 1080p:  ${totalTestsHD} / 104 video (${Math.round(totalTestsHD / 104 * 100)}%)`);
     console.log(`- Tong dung luong tren o dia: ${(totalSizeMB / 1024).toFixed(2)} GB`);
     
+    if (lowResFiles.length > 0) {
+        console.log(`\n⚠️  CAN TAI LAI: Co ${lowResFiles.length} file dang bi luu o ban thap (360p):`);
+        console.log(`   ${lowResFiles.slice(0, 10).join(', ')}${lowResFiles.length > 10 ? ' ...' : ''}`);
+        console.log(`   -> Chon chuc nang [1] hoac [4] de cong cu tu dong tai de ban Full HD 1080p!`);
+    }
+
     if (missingLessons.length > 0) {
-        console.log(`- Bai giang con thieu: Phan ${missingLessons.join(', ')}`);
-    } else {
-        console.log(`- Bai giang: DA DU 100% 52 BAI!`);
+        console.log(`\n- Bai giang con thieu: Phan ${missingLessons.join(', ')}`);
     }
 
     if (missingTests.length > 0) {
-        console.log(`- Bai test con thieu:  Phan ${missingTests.join(', ')}`);
-    } else {
-        console.log(`- Bai test:  DA DU 100% 104 VIDEO!`);
+        console.log(`- Bai test con thieu/chua dat 1080p: Phan ${missingTests.join(', ')}`);
     }
 }
 
