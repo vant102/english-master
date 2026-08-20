@@ -1,0 +1,14 @@
+# Video files (offline storage - do not push to GitHub)
+Videos/
+*.mp4
+*.mkv
+*.webm
+
+# Temporary & local development files
+scratch/
+sample_data.json
+contData.json
+lesson_videos.json
+test_videos.json
+all_test_videos.json
+video_mapping.json
