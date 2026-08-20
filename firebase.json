@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      "**/node_modules/**",
+      "Videos/**",
+      "cookies.txt",
+      "ffmpeg.exe",
+      "*.bat",
+      "scratch/**"
+    ]
+  }
+}
