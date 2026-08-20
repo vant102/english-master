@@ -366,27 +366,43 @@
                         </div>
                     </div>
 
-                    <!-- Video Container (HTML5 Local Player with Smart Hub Fallback) -->
+                    <!-- Video Container: Local Player (offline) + Invidious Proxy (online) -->
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
-                            <!-- Local HTML5 Video Player -->
-                            <video id="offlineLearnPlayer" controls class="w-full h-full object-contain" preload="metadata" onloadeddata="hideLearnMissingNotice()" onerror="showLearnMissingNotice()"></video>
-                            
-                            <!-- Smart Video Hub Fallback -->
-                            <div id="learnVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
-                                <img id="learnThumbnailImg" src="" alt="Thumbnail Video" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
-                                <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
-                                    <a id="learnCenterPlayBtn" href="#" target="_blank" class="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
-                                        <span class="text-2xl ml-0.5">▶</span>
-                                    </a>
-                                    <div>
-                                        <h3 id="learnHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">5000 Câu - Học Xong Là Giỏi Không Cần Học Nữa</h3>
-                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Chưa có file video <code id="missingLearnFileName" class="text-amber-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Lesson_01.mp4</code> trong thư mục <code>Videos/Lessons/</code></p>
+                        <div id="learnVideoWrapper" class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
+
+                            <!-- MODE A: Local HTML5 Player (offline - file:// protocol) -->
+                            <video id="offlineLearnPlayer" controls class="w-full h-full object-contain" preload="metadata"
+                                onloadeddata="onLearnVideoLoaded()"
+                                onerror="onLearnVideoError()"></video>
+
+                            <!-- MODE B: Invidious iframe (online - GitHub Pages) -->
+                            <iframe id="invidiousLearnFrame" class="hidden w-full h-full absolute inset-0"
+                                frameborder="0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"
+                                src="about:blank"
+                                onload="onLearnIframeLoad(this)"
+                                onerror="tryNextInvidiousServer('learn')"></iframe>
+
+                            <!-- Loading Spinner (shown while Invidious loads) -->
+                            <div id="learnVideoLoadingOverlay" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center gap-4 z-20">
+                                <div class="w-12 h-12 rounded-full border-4 border-indigo-500/30 border-t-indigo-400 animate-spin"></div>
+                                <div class="text-center">
+                                    <p class="text-white font-bold text-sm" id="learnLoadingMsg">Đang kết nối server video...</p>
+                                    <p class="text-slate-400 text-xs mt-1" id="learnServerLabel"></p>
+                                </div>
+                                <button onclick="tryNextInvidiousServer('learn')" class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 border border-slate-700 transition-all">Thử server khác ↺</button>
+                            </div>
+
+                            <!-- Fallback: All servers failed -->
+                            <div id="learnAllFailedOverlay" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center gap-4 z-20 p-6 text-center">
+                                <img id="learnThumbnailImg" src="" alt="Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/60"></div>
+                                <div class="relative z-10 space-y-3">
+                                    <p class="text-slate-300 text-sm font-bold">⚠️ Không thể nhúng video (tất cả server Invidious bận)</p>
+                                    <div class="flex flex-wrap gap-2 justify-center">
+                                        <a id="learnYtPopupBtn" href="#" onclick="openYtPopup(event, 'learn')" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-all">▶ Xem trên YouTube (Popup)</a>
+                                        <a id="learnCenterPlayBtn" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold border border-slate-600 transition-all">↗ Mở tab mới</a>
                                     </div>
-                                    <div class="px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
-                                        <span>💡</span> Bấm nút để xem trên YouTube hoặc chạy <strong>Tai_Video_Bai_Hoc.bat</strong> để tải Full HD 1080p về máy
-                                    </div>
+                                    <p class="text-slate-500 text-[11px]">Hoặc tải về máy bằng <strong class="text-amber-400">Tai_Video_Bai_Hoc.bat</strong></p>
                                 </div>
                             </div>
                         </div>
@@ -441,12 +457,45 @@
                         </div>
                     </div>
 
-                    <!-- Video Container -->
+                    <!-- Video Container: Local Player (offline) + Invidious Proxy (online) -->
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
-                        <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
-                            <video id="offlineTestPlayer" controls class="w-full h-full object-contain" preload="metadata" onloadeddata="hideTestMissingNotice()" onerror="showTestMissingNotice()"></video>
-                            
-                            <!-- Fallback Hub -->
+                        <div id="testVideoWrapper" class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
+                            <video id="offlineTestPlayer" controls class="w-full h-full object-contain" preload="metadata"
+                                onloadeddata="onTestVideoLoaded()"
+                                onerror="onTestVideoError()"></video>
+
+                            <!-- MODE B: Invidious iframe -->
+                            <iframe id="invidiousTestFrame" class="hidden w-full h-full absolute inset-0"
+                                frameborder="0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"
+                                src="about:blank"
+                                onload="onTestIframeLoad(this)"
+                                onerror="tryNextInvidiousServer('test')"></iframe>
+
+                            <div id="testVideoLoadingOverlay" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center gap-4 z-20">
+                                <div class="w-12 h-12 rounded-full border-4 border-orange-500/30 border-t-orange-400 animate-spin"></div>
+                                <div class="text-center">
+                                    <p class="text-white font-bold text-sm" id="testLoadingMsg">Đang kết nối server video...</p>
+                                    <p class="text-slate-400 text-xs mt-1" id="testServerLabel"></p>
+                                </div>
+                                <button onclick="tryNextInvidiousServer('test')" class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 border border-slate-700 transition-all">Thử server khác ↺</button>
+                            </div>
+
+                            <div id="testAllFailedOverlay" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center gap-4 z-20 p-6 text-center">
+                                <img id="testThumbnailImg" src="" alt="Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/60"></div>
+                                <div class="relative z-10 space-y-3">
+                                    <p class="text-slate-300 text-sm font-bold">⚠️ Không thể nhúng video (tất cả server Invidious bận)</p>
+                                    <div class="flex flex-wrap gap-2 justify-center">
+                                        <a id="testYtPopupBtn" href="#" onclick="openYtPopup(event, 'test')" class="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-all">▶ Xem trên YouTube (Popup)</a>
+                                        <a id="testCenterPlayBtn" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold border border-slate-600 transition-all">↗ Mở tab mới</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hidden refs kept for JS compatibility -->
+                            <span id="missingTestFileName" class="hidden"></span>
+                            <span id="testHubVideoTitle" class="hidden"></span>
+                            <!-- Fallback Hub (legacy, now replaced) -->
                             <div id="testVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
                                 <img id="testThumbnailImg" src="" alt="Thumbnail Video Test" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
@@ -1936,6 +1985,228 @@
                 }
             }
         });
+
+        // ==============================================================
+        // INVIDIOUS PROXY ENGINE
+        // Embed YouTube videos via Invidious when running online (GitHub Pages)
+        // Bypasses YouTube's embedding restrictions set by the channel owner
+        // ==============================================================
+
+        // Detect if we are running online (GitHub Pages) or offline (local file)
+        const IS_ONLINE = window.location.protocol !== 'file:';
+
+        // Public Invidious instances - ordered by reliability
+        // Sources: https://api.invidious.io/instances.json
+        const INVIDIOUS_SERVERS = [
+            'https://yewtu.be',
+            'https://invidious.io',
+            'https://vid.puffyan.us',
+            'https://invidious.nerdvpn.de',
+            'https://inv.riverside.rocks',
+            'https://invidious.slipfox.xyz',
+            'https://invidious.privacydev.net',
+            'https://iv.melmac.space',
+        ];
+
+        // Track current server index for each player
+        let learnServerIndex = 0;
+        let testServerIndex = 0;
+        let currentLearnVideoId = null;
+        let currentTestVideoId = null;
+
+        // Build Invidious embed URL
+        function buildInvidiousUrl(videoId, serverIndex) {
+            const base = INVIDIOUS_SERVERS[serverIndex % INVIDIOUS_SERVERS.length];
+            return `${base}/embed/${videoId}?autoplay=0&rel=0&hl=vi&quality=hd720`;
+        }
+
+        // Trigger Invidious loading for a mode
+        function loadInvidiousVideo(mode, videoId) {
+            if (!videoId) return;
+            if (mode === 'learn') {
+                currentLearnVideoId = videoId;
+                learnServerIndex = 0;
+                _startInvidiousLoad('learn', videoId, 0);
+            } else {
+                currentTestVideoId = videoId;
+                testServerIndex = 0;
+                _startInvidiousLoad('test', videoId, 0);
+            }
+        }
+
+        function _startInvidiousLoad(mode, videoId, serverIdx) {
+            const frameId = mode === 'learn' ? 'invidiousLearnFrame' : 'invidiousTestFrame';
+            const loadingId = mode === 'learn' ? 'learnVideoLoadingOverlay' : 'testVideoLoadingOverlay';
+            const failedId = mode === 'learn' ? 'learnAllFailedOverlay' : 'testAllFailedOverlay';
+            const labelId = mode === 'learn' ? 'learnServerLabel' : 'testServerLabel';
+            const localPlayerId = mode === 'learn' ? 'offlineLearnPlayer' : 'offlineTestPlayer';
+
+            const frame = document.getElementById(frameId);
+            const loading = document.getElementById(loadingId);
+            const failed = document.getElementById(failedId);
+            const label = document.getElementById(labelId);
+            const localPlayer = document.getElementById(localPlayerId);
+
+            if (!frame) return;
+
+            // Hide local player, show loading
+            if (localPlayer) localPlayer.classList.add('hidden');
+            frame.classList.add('hidden');
+            if (failed) failed.classList.add('hidden');
+            if (loading) loading.classList.remove('hidden');
+
+            const serverName = INVIDIOUS_SERVERS[serverIdx % INVIDIOUS_SERVERS.length];
+            if (label) label.innerText = `Server: ${serverName.replace('https://', '')} (${serverIdx + 1}/${INVIDIOUS_SERVERS.length})`;
+
+            const url = buildInvidiousUrl(videoId, serverIdx);
+            frame.src = url;
+
+            // Set a timeout - if iframe doesn't report load in 10s, try next
+            clearTimeout(frame._loadTimeout);
+            frame._loadTimeout = setTimeout(() => {
+                tryNextInvidiousServer(mode);
+            }, 10000);
+        }
+
+        function tryNextInvidiousServer(mode) {
+            const frameId = mode === 'learn' ? 'invidiousLearnFrame' : 'invidiousTestFrame';
+            const frame = document.getElementById(frameId);
+
+            if (mode === 'learn') {
+                learnServerIndex++;
+                if (learnServerIndex >= INVIDIOUS_SERVERS.length) {
+                    showAllServersFailed('learn');
+                    return;
+                }
+                _startInvidiousLoad('learn', currentLearnVideoId, learnServerIndex);
+            } else {
+                testServerIndex++;
+                if (testServerIndex >= INVIDIOUS_SERVERS.length) {
+                    showAllServersFailed('test');
+                    return;
+                }
+                _startInvidiousLoad('test', currentTestVideoId, testServerIndex);
+            }
+        }
+
+        function showAllServersFailed(mode) {
+            const loadingId = mode === 'learn' ? 'learnVideoLoadingOverlay' : 'testVideoLoadingOverlay';
+            const failedId = mode === 'learn' ? 'learnAllFailedOverlay' : 'testAllFailedOverlay';
+            const frameId = mode === 'learn' ? 'invidiousLearnFrame' : 'invidiousTestFrame';
+            document.getElementById(loadingId)?.classList.add('hidden');
+            document.getElementById(failedId)?.classList.remove('hidden');
+            document.getElementById(frameId)?.classList.add('hidden');
+        }
+
+        // Called when iframe successfully loads
+        function onLearnIframeLoad(iframe) {
+            if (iframe.src === 'about:blank') return;
+            clearTimeout(iframe._loadTimeout);
+            document.getElementById('learnVideoLoadingOverlay')?.classList.add('hidden');
+            iframe.classList.remove('hidden');
+        }
+
+        function onTestIframeLoad(iframe) {
+            if (iframe.src === 'about:blank') return;
+            clearTimeout(iframe._loadTimeout);
+            document.getElementById('testVideoLoadingOverlay')?.classList.add('hidden');
+            iframe.classList.remove('hidden');
+        }
+
+        // Local video event handlers
+        function onLearnVideoLoaded() {
+            // Local file loaded successfully - hide overlays
+            document.getElementById('learnVideoLoadingOverlay')?.classList.add('hidden');
+            document.getElementById('learnAllFailedOverlay')?.classList.add('hidden');
+            document.getElementById('invidiousLearnFrame')?.classList.add('hidden');
+            document.getElementById('offlineLearnPlayer')?.classList.remove('hidden');
+        }
+
+        function onLearnVideoError() {
+            // Local file not found - use Invidious if online
+            if (IS_ONLINE && currentLearnVideoId) {
+                document.getElementById('offlineLearnPlayer')?.classList.add('hidden');
+                loadInvidiousVideo('learn', currentLearnVideoId);
+            } else if (!IS_ONLINE) {
+                // Offline and no local file
+                document.getElementById('learnVideoLoadingOverlay')?.classList.add('hidden');
+                document.getElementById('learnAllFailedOverlay')?.classList.remove('hidden');
+            }
+        }
+
+        function onTestVideoLoaded() {
+            document.getElementById('testVideoLoadingOverlay')?.classList.add('hidden');
+            document.getElementById('testAllFailedOverlay')?.classList.add('hidden');
+            document.getElementById('invidiousTestFrame')?.classList.add('hidden');
+            document.getElementById('offlineTestPlayer')?.classList.remove('hidden');
+        }
+
+        function onTestVideoError() {
+            if (IS_ONLINE && currentTestVideoId) {
+                document.getElementById('offlineTestPlayer')?.classList.add('hidden');
+                loadInvidiousVideo('test', currentTestVideoId);
+            } else if (!IS_ONLINE) {
+                document.getElementById('testVideoLoadingOverlay')?.classList.add('hidden');
+                document.getElementById('testAllFailedOverlay')?.classList.remove('hidden');
+            }
+        }
+
+        // Legacy compatibility stubs
+        function hideLearnMissingNotice() { onLearnVideoLoaded(); }
+        function showLearnMissingNotice() { onLearnVideoError(); }
+        function hideTestMissingNotice() { onTestVideoLoaded(); }
+        function showTestMissingNotice() { onTestVideoError(); }
+
+        // Open YouTube in a mini popup window (fallback)
+        function openYtPopup(e, mode) {
+            e.preventDefault();
+            const linkId = mode === 'learn' ? 'learnYtDirectLink' : 'testYtDirectLink';
+            const url = document.getElementById(linkId)?.href || '#';
+            if (url === '#') return;
+            window.open(url, 'ytPopup',
+                'width=900,height=560,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,resizable=yes'
+            );
+        }
+
+        // Override updateVideoScreen to also set video IDs for Invidious
+        const _origUpdateVideoScreen = updateVideoScreen;
+        updateVideoScreen = function(partNum) {
+            _origUpdateVideoScreen(partNum);
+
+            // Extract videoIds from mapping for Invidious
+            const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.videos)
+                ? videoMappingData.videos[activeVideoPart] : null;
+            if (!mapping) return;
+
+            if (mapping.lessonVideo) {
+                currentLearnVideoId = mapping.lessonVideo.videoId;
+                // If online, trigger Invidious immediately when Learn tab is visible
+                if (IS_ONLINE && !document.getElementById('screen-learn').classList.contains('hidden')) {
+                    setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 300);
+                }
+            }
+
+            if (mapping.testVideos && mapping.testVideos.length > 0) {
+                const tv = mapping.testVideos.find(t => t.type === currentTestType) || mapping.testVideos[0];
+                currentTestVideoId = tv.videoId;
+                if (IS_ONLINE && !document.getElementById('screen-test').classList.contains('hidden')) {
+                    setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 300);
+                }
+            }
+        };
+
+        // Also hook switchMode to trigger Invidious when switching to Learn/Test
+        const _origSwitchMode = switchMode;
+        switchMode = function(mode) {
+            _origSwitchMode(mode);
+            if (!IS_ONLINE) return;
+            if (mode === 'learn' && currentLearnVideoId) {
+                setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 300);
+            } else if (mode === 'test' && currentTestVideoId) {
+                setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 300);
+            }
+        };
+
     </script>
 </body>
 </html>
