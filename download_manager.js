@@ -7,7 +7,7 @@ const readline = require('readline');
 const lessonsDataContent = fs.readFileSync(path.join(__dirname, 'lessons_data.js'), 'utf8');
 const vmMatch = lessonsDataContent.match(/const videoMappingData = (\{[\s\S]*?\});/);
 if (!vmMatch) {
-    console.error("Khong tim thay du lieu videoMappingData trong lessons_data.js!");
+    console.error("Không tìm thấy dữ liệu videoMappingData trong lessons_data.js!");
     process.exit(1);
 }
 const videoMappingData = JSON.parse(vmMatch[1]);
@@ -22,14 +22,24 @@ function pad(num) {
     return String(num).padStart(2, '0');
 }
 
+// Check if a file exists and is a valid video (> 15MB)
+function isFileValid(targetPath) {
+    if (!fs.existsSync(targetPath)) return false;
+    const stats = fs.statSync(targetPath);
+    return stats.size > 1024 * 1024 * 15; // At least 15MB for a valid HD video
+}
+
+function getFileSizeMB(targetPath) {
+    if (!fs.existsSync(targetPath)) return 0;
+    const stats = fs.statSync(targetPath);
+    return (stats.size / (1024 * 1024)).toFixed(1);
+}
+
 function downloadVideo(url, targetPath, title, forceOverwrite = false) {
-    if (!forceOverwrite && fs.existsSync(targetPath)) {
-        const stats = fs.statSync(targetPath);
-        // If file > 50MB it's already a full 1080p download
-        if (stats.size > 1024 * 1024 * 50) {
-            console.log(`[DA CO 1080p] ${path.basename(targetPath)} (${(stats.size / 1024 / 1024).toFixed(1)} MB) - Bo qua.`);
-            return true;
-        }
+    if (!forceOverwrite && isFileValid(targetPath)) {
+        const sizeMB = getFileSizeMB(targetPath);
+        console.log(`  [DA CO 1080p] ${path.basename(targetPath)} (${sizeMB} MB) - Bo qua.`);
+        return true;
     }
 
     console.log(`\n------------------------------------------------------------`);
@@ -38,7 +48,6 @@ function downloadVideo(url, targetPath, title, forceOverwrite = false) {
     console.log(`Luu vao: ${targetPath}`);
     console.log(`------------------------------------------------------------`);
 
-    // Download in 1080p Full HD and merge with ffmpeg into crystal clear MP4
     const args = [
         '-f', 'bestvideo[height<=1080]+bestaudio/best',
         '--merge-output-format', 'mp4',
@@ -86,6 +95,119 @@ function downloadTest(part, force = false) {
     return success;
 }
 
+// ==============================================================
+// HEALTH CHECK REPORT
+// ==============================================================
+function showHealthCheckReport() {
+    console.clear();
+    console.log("=======================================================================");
+    console.log("       BAO CAO KIEM TRA KHO VIDEO CUC BO (HEALTH CHECK REPORT)");
+    console.log("=======================================================================\n");
+
+    let totalLessonsCount = 0;
+    let totalTestsCount = 0;
+    let missingLessons = [];
+    let missingTests = [];
+    let totalSizeMB = 0;
+
+    console.log("PHAN | BAI GIANG (LESSON)       | BAI TEST (VIET-ANH / ANH-VIET)");
+    console.log("-----+--------------------------+--------------------------------------");
+
+    for (let i = 1; i <= 52; i++) {
+        const item = videoMappingData.videos[i];
+        const lessonTarget = path.join(lessonsDir, `Lesson_${pad(i)}.mp4`);
+        const hasLesson = isFileValid(lessonTarget);
+        let lessonStr = hasLesson ? `[x] ${getFileSizeMB(lessonTarget)} MB` : `[ ] Thieu`;
+        if (hasLesson) {
+            totalLessonsCount++;
+            totalSizeMB += parseFloat(getFileSizeMB(lessonTarget));
+        } else {
+            missingLessons.push(i);
+        }
+
+        let testStrs = [];
+        let hasAllTests = true;
+        if (item && item.testVideos && item.testVideos.length > 0) {
+            item.testVideos.forEach(t => {
+                let fn = t.type === 'vn-en' ? `Test_${pad(i)}_VnEn.mp4` : (t.type === 'en-vn' ? `Test_${pad(i)}_EnVn.mp4` : `Test_${pad(i)}_General.mp4`);
+                let p = path.join(testsDir, fn);
+                if (isFileValid(p)) {
+                    totalTestsCount++;
+                    totalSizeMB += parseFloat(getFileSizeMB(p));
+                    testStrs.push(`${t.type}: [x]`);
+                } else {
+                    hasAllTests = false;
+                    testStrs.push(`${t.type}: [ ]`);
+                }
+            });
+        }
+
+        if (!hasAllTests) missingTests.push(i);
+
+        const padP = String(i).padStart(2, '0');
+        const padLesson = lessonStr.padEnd(24, ' ');
+        console.log(`P.${padP} | ${padLesson} | ${testStrs.join('  ')}`);
+    }
+
+    console.log("-----+--------------------------+--------------------------------------");
+    console.log(`\nTONG KET:`);
+    console.log(`- Video Bai Giang: ${totalLessonsCount} / 52 bai (${Math.round(totalLessonsCount / 52 * 100)}%)`);
+    console.log(`- Video Bai Test:  ${totalTestsCount} / 104 video (${Math.round(totalTestsCount / 104 * 100)}%)`);
+    console.log(`- Tong dung luong tren o dia: ${(totalSizeMB / 1024).toFixed(2)} GB`);
+    
+    if (missingLessons.length > 0) {
+        console.log(`- Bai giang con thieu: Phan ${missingLessons.join(', ')}`);
+    } else {
+        console.log(`- Bai giang: DA DU 100% 52 BAI!`);
+    }
+
+    if (missingTests.length > 0) {
+        console.log(`- Bai test con thieu:  Phan ${missingTests.join(', ')}`);
+    } else {
+        console.log(`- Bai test:  DA DU 100% 104 VIDEO!`);
+    }
+}
+
+// ==============================================================
+// SMART AUTO-RESUME (Only Download Missing Files)
+// ==============================================================
+function smartAutoResume() {
+    console.log("\n=======================================================================");
+    console.log("  DANG QUET VA TU DONG TAI BU CAC FILE CON THIEU (SMART AUTO-RESUME)");
+    console.log("=======================================================================");
+    
+    let downloadedCount = 0;
+
+    for (let i = 1; i <= 52; i++) {
+        const lessonTarget = path.join(lessonsDir, `Lesson_${pad(i)}.mp4`);
+        if (!isFileValid(lessonTarget)) {
+            console.log(`\n>>> [BAI GIANG THIEU] Dang tai Phan ${i}...`);
+            const res = downloadLesson(i, false);
+            if (res) downloadedCount++;
+        }
+
+        const item = videoMappingData.videos[i];
+        if (item && item.testVideos) {
+            item.testVideos.forEach(t => {
+                let fn = t.type === 'vn-en' ? `Test_${pad(i)}_VnEn.mp4` : (t.type === 'en-vn' ? `Test_${pad(i)}_EnVn.mp4` : `Test_${pad(i)}_General.mp4`);
+                let p = path.join(testsDir, fn);
+                if (!isFileValid(p)) {
+                    console.log(`\n>>> [BAI TEST THIEU] Dang tai Test Phan ${i} (${t.type})...`);
+                    const res = downloadVideo(`https://www.youtube.com/watch?v=${t.videoId}`, p, `Bai Test Phan ${i} (${t.type})`, false);
+                    if (res) downloadedCount++;
+                }
+            });
+        }
+    }
+
+    console.log(`\n=======================================================================`);
+    console.log(`  HOAN TAT QUET VA TAI BU! DA TAI THEM: ${downloadedCount} VIDEO MOI.`);
+    console.log(`=======================================================================`);
+}
+
+// ==============================================================
+// INTERACTIVE CLI MENU
+// ==============================================================
 function showInteractiveMenu() {
     const rl = readline.createInterface({
         input: process.stdin,
@@ -94,64 +216,125 @@ function showInteractiveMenu() {
 
     console.clear();
     console.log("=======================================================================");
-    console.log("  CONG CU TAI VIDEO FULL HD 1080p (CHO MAN HINH LON) - ENGLISH MASTER");
+    console.log("       CONG CU TAI VIDEO FULL HD 1080p - ENGLISH MASTER PRO");
     console.log("=======================================================================");
     console.log("");
-    console.log("  [1] Tai Full HD 1080p Phan 1 den Phan 5 (Xem cuc net tren man hinh 27\")");
-    console.log("  [2] Tai toan bo 52 Video Bai Giang (Full HD 1080p)");
-    console.log("  [3] Tai toan bo 104 Video Bai Test (Full HD 1080p)");
-    console.log("  [4] Tai TOAN BO 156 Video (Bai Giang + Test - Full HD 1080p)");
-    console.log("  [5] Tai mot Phan cu the (Chon so phan: 1 den 52)");
+    console.log("  --- [ TU DONG THONG MINH ] ---");
+    console.log("  [1] Tu dong quet & Tai bu toan bo file con thieu (Smart Auto-Resume)");
+    console.log("  [2] Bao cao kiem tra kho Video tren may (Health Check Report)");
+    console.log("");
+    console.log("  --- [ TAI THEO KHOANG TUY CHON (A -> B) ] ---");
+    console.log("  [3] Tai khoang Video BAI GIANG (Lessons) (Vi du: tu bai 7 den 51)");
+    console.log("  [4] Tai khoang Video BAI TEST (Tests)    (Vi du: tu bai 7 den 51)");
+    console.log("  [5] Tai khoang CA BAI GIANG & BAI TEST   (Vi du: tu bai 7 den 51)");
+    console.log("");
+    console.log("  --- [ TAI THEO PHAN DON LE HOAC TAT CA ] ---");
+    console.log("  [6] Tai 1 Phan cu the (Chon so phan: 1 den 52)");
+    console.log("  [7] Tai TOAN BO 156 Video (52 Bai giang + 104 Bai test - Full HD 1080p)");
     console.log("  [0] Thoat");
     console.log("");
     console.log("=======================================================================");
 
-    rl.question("Vui long nhap lua chon cua ban (0-5): ", (ans) => {
+    rl.question("Vui long nhap lua chon cua ban (0-7): ", (ans) => {
         const opt = ans.trim();
 
         if (opt === '1') {
-            console.log("\n>>> DANG TAI FULL HD 1080p PHAN 1 DEN PHAN 5...");
-            for (let i = 1; i <= 5; i++) {
-                downloadLesson(i, true);
-                downloadTest(i, true);
-            }
-            console.log("\n>>> HOAN TAT TAI FULL HD PHAN 1 DEN 5!");
+            smartAutoResume();
             promptReturn(rl);
         } else if (opt === '2') {
-            console.log("\n>>> DANG TAI TOAN BO 52 VIDEO BAI GIANG FULL HD 1080p...");
-            for (let i = 1; i <= 52; i++) {
-                downloadLesson(i, true);
-            }
-            console.log("\n>>> HOAN TAT TAI 52 VIDEO BAI GIANG!");
+            showHealthCheckReport();
             promptReturn(rl);
         } else if (opt === '3') {
-            console.log("\n>>> DANG TAI TOAN BO 104 VIDEO BAI TEST FULL HD 1080p...");
-            for (let i = 1; i <= 52; i++) {
-                downloadTest(i, true);
-            }
-            console.log("\n>>> HOAN TAT TAI 104 VIDEO BAI TEST!");
-            promptReturn(rl);
+            // Download Lessons Range
+            rl.question("\nNhap phan BAT DAU (1-52): ", (fromInput) => {
+                rl.question("Nhap phan KET THUC (1-52): ", (toInput) => {
+                    const from = parseInt(fromInput.trim());
+                    const to = parseInt(toInput.trim());
+                    if (from >= 1 && to <= 52 && from <= to) {
+                        console.log(`\n>>> DANG TAI VIDEO BAI GIANG (LESSONS) TU PHAN ${from} DEN PHAN ${to}...`);
+                        for (let i = from; i <= to; i++) {
+                            downloadLesson(i, false);
+                        }
+                        console.log(`\n>>> HOAN TAT TAI BAI GIANG PHAN ${from} DEN ${to}!`);
+                    } else {
+                        console.log("\n[!] Khoang phan khong hop le (vui long nhap tu 1 den 52).");
+                    }
+                    promptReturn(rl);
+                });
+            });
         } else if (opt === '4') {
-            console.log("\n>>> DANG TAI TOAN BO 156 VIDEO FULL HD 1080p...");
+            // Download Tests Range
+            rl.question("\nNhap phan BAT DAU (1-52): ", (fromInput) => {
+                rl.question("Nhap phan KET THUC (1-52): ", (toInput) => {
+                    const from = parseInt(fromInput.trim());
+                    const to = parseInt(toInput.trim());
+                    if (from >= 1 && to <= 52 && from <= to) {
+                        console.log(`\n>>> DANG TAI VIDEO BAI TEST (TESTS) TU PHAN ${from} DEN PHAN ${to}...`);
+                        for (let i = from; i <= to; i++) {
+                            downloadTest(i, false);
+                        }
+                        console.log(`\n>>> HOAN TAT TAI BAI TEST PHAN ${from} DEN ${to}!`);
+                    } else {
+                        console.log("\n[!] Khoang phan khong hop le (vui long nhap tu 1 den 52).");
+                    }
+                    promptReturn(rl);
+                });
+            });
+        } else if (opt === '5') {
+            // Download Both Range
+            rl.question("\nNhap phan BAT DAU (1-52): ", (fromInput) => {
+                rl.question("Nhap phan KET THUC (1-52): ", (toInput) => {
+                    const from = parseInt(fromInput.trim());
+                    const to = parseInt(toInput.trim());
+                    if (from >= 1 && to <= 52 && from <= to) {
+                        console.log(`\n>>> DANG TAI CA BAI GIANG & BAI TEST TU PHAN ${from} DEN PHAN ${to}...`);
+                        for (let i = from; i <= to; i++) {
+                            downloadLesson(i, false);
+                            downloadTest(i, false);
+                        }
+                        console.log(`\n>>> HOAN TAT TAI TOAN BO PHAN ${from} DEN ${to}!`);
+                    } else {
+                        console.log("\n[!] Khoang phan khong hop le (vui long nhap tu 1 den 52).");
+                    }
+                    promptReturn(rl);
+                });
+            });
+        } else if (opt === '6') {
+            // Download Single Part
+            rl.question("\nNhap so phan muon tai (1-52): ", (pInput) => {
+                const p = parseInt(pInput.trim());
+                if (p >= 1 && p <= 52) {
+                    console.log(`\n  Chon loai video muon tai cho Phan ${p}:`);
+                    console.log(`  [1] Chi tai Video Bai Giang`);
+                    console.log(`  [2] Chi tai Video Bai Test (Viet-Anh & Anh-Viet)`);
+                    console.log(`  [3] Tai Ca Bai Giang va Bai Test`);
+                    rl.question(`Lua chon cua ban (1-3): `, (subOpt) => {
+                        const s = subOpt.trim();
+                        if (s === '1') {
+                            downloadLesson(p, true);
+                        } else if (s === '2') {
+                            downloadTest(p, true);
+                        } else {
+                            downloadLesson(p, true);
+                            downloadTest(p, true);
+                        }
+                        console.log(`\n>>> HOAN TAT TAI PHAN ${p}!`);
+                        promptReturn(rl);
+                    });
+                } else {
+                    console.log("\n[!] So phan khong hop le!");
+                    promptReturn(rl);
+                }
+            });
+        } else if (opt === '7') {
+            // Download All 156 Videos
+            console.log("\n>>> DANG TAI TOAN BO 156 VIDEO FULL HD 1080p (52 Lessons + 104 Tests)...");
             for (let i = 1; i <= 52; i++) {
-                downloadLesson(i, true);
-                downloadTest(i, true);
+                downloadLesson(i, false);
+                downloadTest(i, false);
             }
             console.log("\n>>> HOAN TAT TOAN BO 156 VIDEO FULL HD!");
             promptReturn(rl);
-        } else if (opt === '5') {
-            rl.question("\nNhap so phan ban muon tai (1-52): ", (partInput) => {
-                const p = parseInt(partInput.trim());
-                if (p >= 1 && p <= 52) {
-                    console.log(`\n>>> DANG TAI FULL HD VIDEO PHAN ${p}...`);
-                    downloadLesson(p, true);
-                    downloadTest(p, true);
-                    console.log(`\n>>> HOAN TAT TAI PHAN ${p}!`);
-                } else {
-                    console.log("\n[!] So phan khong hop le (vui long nhap tu 1 den 52).");
-                }
-                promptReturn(rl);
-            });
         } else if (opt === '0') {
             rl.close();
             process.exit(0);
@@ -169,32 +352,30 @@ function promptReturn(rl) {
     });
 }
 
-// Check arguments or start menu
+// CLI args support
 const args = process.argv.slice(2);
 if (args.length === 0) {
     showInteractiveMenu();
 } else {
     const mode = args[0];
-    const targetPart = parseInt(args[1]);
-
-    if (mode === 'lesson_all') {
-        for (let i = 1; i <= 52; i++) downloadLesson(i, true);
-    } else if (mode === 'test_all') {
-        for (let i = 1; i <= 52; i++) downloadTest(i, true);
-    } else if (mode === 'all') {
-        for (let i = 1; i <= 52; i++) {
-            downloadLesson(i, true);
-            downloadTest(i, true);
-        }
-    } else if (mode === 'range') {
+    if (mode === 'report') {
+        showHealthCheckReport();
+    } else if (mode === 'resume') {
+        smartAutoResume();
+    } else if (mode === 'lessons_range') {
         const from = parseInt(args[1]) || 1;
-        const to = parseInt(args[2]) || 5;
+        const to = parseInt(args[2]) || 52;
+        for (let i = from; i <= to; i++) downloadLesson(i, false);
+    } else if (mode === 'tests_range') {
+        const from = parseInt(args[1]) || 1;
+        const to = parseInt(args[2]) || 52;
+        for (let i = from; i <= to; i++) downloadTest(i, false);
+    } else if (mode === 'both_range') {
+        const from = parseInt(args[1]) || 1;
+        const to = parseInt(args[2]) || 52;
         for (let i = from; i <= to; i++) {
-            downloadLesson(i, true);
-            downloadTest(i, true);
+            downloadLesson(i, false);
+            downloadTest(i, false);
         }
-    } else if (mode === 'part' && targetPart) {
-        downloadLesson(targetPart, true);
-        downloadTest(targetPart, true);
     }
 }
