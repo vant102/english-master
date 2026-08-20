@@ -1186,9 +1186,16 @@
             if (mode === 'learn') {
                 document.getElementById('screen-learn').classList.remove('hidden');
                 updateVideoScreen(activeVideoPart);
+                // Trigger Invidious if online and video ID is known
+                if (IS_ONLINE && currentLearnVideoId) {
+                    setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 300);
+                }
             } else if (mode === 'test') {
                 document.getElementById('screen-test').classList.remove('hidden');
                 updateVideoScreen(activeVideoPart);
+                if (IS_ONLINE && currentTestVideoId) {
+                    setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 300);
+                }
             } else if (mode === 'graphic') {
                 document.getElementById('screen-graphic').classList.remove('hidden');
                 renderGraphicMatrix();
@@ -1254,17 +1261,30 @@
                 if (learnHubVideoTitle) {
                     learnHubVideoTitle.innerText = mapping.lessonVideo.title;
                 }
+                // Set for Invidious engine
+                currentLearnVideoId = videoId;
             } else {
                 const ytUrl = `https://www.youtube.com/playlist?list=${videoMappingData.playlists.learn}`;
                 if (learnDirectLink) learnDirectLink.href = ytUrl;
                 if (learnCenterPlayBtn) learnCenterPlayBtn.href = ytUrl;
+                currentLearnVideoId = null;
             }
 
             if (learnPlayer) {
                 const localLearnPath = `Videos/Lessons/${expectedLearnFile}`;
-                if (learnPlayer.src !== new URL(localLearnPath, window.location.href).href) {
-                    learnPlayer.src = localLearnPath;
-                    learnPlayer.load();
+                if (IS_ONLINE) {
+                    // Online: skip local file, go straight to Invidious
+                    learnPlayer.classList.add('hidden');
+                    if (currentLearnVideoId && !document.getElementById('screen-learn').classList.contains('hidden')) {
+                        setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 200);
+                    }
+                } else {
+                    // Offline: try local file
+                    learnPlayer.classList.remove('hidden');
+                    if (learnPlayer.src !== new URL(localLearnPath, window.location.href).href) {
+                        learnPlayer.src = localLearnPath;
+                        learnPlayer.load();
+                    }
                 }
             }
 
@@ -1299,6 +1319,8 @@
                 if (testHubVideoTitle) {
                     testHubVideoTitle.innerText = targetTestVideo.title;
                 }
+                // Set for Invidious engine
+                currentTestVideoId = targetTestVideo.videoId;
 
                 if (testTypeSelector) {
                     if (mapping.testVideos.length === 1 && mapping.testVideos[0].type === 'general') {
@@ -1312,15 +1334,24 @@
                 const ytUrl = `https://www.youtube.com/playlist?list=${videoMappingData.playlists.test}`;
                 if (testDirectLink) testDirectLink.href = ytUrl;
                 if (testCenterPlayBtn) testCenterPlayBtn.href = ytUrl;
+                currentTestVideoId = null;
             }
 
             if (missingTestName) missingTestName.innerText = expectedTestFile;
 
             if (testPlayer) {
                 const localTestPath = `Videos/Tests/${expectedTestFile}`;
-                if (testPlayer.src !== new URL(localTestPath, window.location.href).href) {
-                    testPlayer.src = localTestPath;
-                    testPlayer.load();
+                if (IS_ONLINE) {
+                    testPlayer.classList.add('hidden');
+                    if (currentTestVideoId && !document.getElementById('screen-test').classList.contains('hidden')) {
+                        setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 200);
+                    }
+                } else {
+                    testPlayer.classList.remove('hidden');
+                    if (testPlayer.src !== new URL(localTestPath, window.location.href).href) {
+                        testPlayer.src = localTestPath;
+                        testPlayer.load();
+                    }
                 }
             }
 
@@ -2168,44 +2199,6 @@
             );
         }
 
-        // Override updateVideoScreen to also set video IDs for Invidious
-        const _origUpdateVideoScreen = updateVideoScreen;
-        updateVideoScreen = function(partNum) {
-            _origUpdateVideoScreen(partNum);
-
-            // Extract videoIds from mapping for Invidious
-            const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.videos)
-                ? videoMappingData.videos[activeVideoPart] : null;
-            if (!mapping) return;
-
-            if (mapping.lessonVideo) {
-                currentLearnVideoId = mapping.lessonVideo.videoId;
-                // If online, trigger Invidious immediately when Learn tab is visible
-                if (IS_ONLINE && !document.getElementById('screen-learn').classList.contains('hidden')) {
-                    setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 300);
-                }
-            }
-
-            if (mapping.testVideos && mapping.testVideos.length > 0) {
-                const tv = mapping.testVideos.find(t => t.type === currentTestType) || mapping.testVideos[0];
-                currentTestVideoId = tv.videoId;
-                if (IS_ONLINE && !document.getElementById('screen-test').classList.contains('hidden')) {
-                    setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 300);
-                }
-            }
-        };
-
-        // Also hook switchMode to trigger Invidious when switching to Learn/Test
-        const _origSwitchMode = switchMode;
-        switchMode = function(mode) {
-            _origSwitchMode(mode);
-            if (!IS_ONLINE) return;
-            if (mode === 'learn' && currentLearnVideoId) {
-                setTimeout(() => loadInvidiousVideo('learn', currentLearnVideoId), 300);
-            } else if (mode === 'test' && currentTestVideoId) {
-                setTimeout(() => loadInvidiousVideo('test', currentTestVideoId), 300);
-            }
-        };
 
     </script>
 </body>
