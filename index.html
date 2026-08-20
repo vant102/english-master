@@ -259,11 +259,6 @@
                 </div>
             </aside>
 
-            <!-- Floating Button to Open Left Sidebar when Hidden -->
-            <button id="floatingOpenSidebarBtn" onclick="toggleSidebar()" title="Mở bảng điều khiển bên trái" class="hidden fixed left-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
-                <span>▶ Menu</span>
-            </button>
-
             <!-- ============================================================== -->
             <!-- COLUMN 2: MAIN WORKSPACE (FULLSCREEN THEATER VIDEO & MODES)     -->
             <!-- ============================================================== -->
@@ -272,6 +267,12 @@
                 <!-- Top Header: Mode Navigation Tabs + Theme Switcher -->
                 <nav class="glass-panel p-1.5 rounded-2xl flex flex-wrap items-center justify-between gap-2 shadow-xl border border-slate-800/80">
                     
+                    <!-- Open Left Sidebar Button (visible only when left sidebar is collapsed) -->
+                    <button id="floatingOpenSidebarBtn" onclick="toggleSidebar()" title="Mở danh sách bài học bên trái" class="hidden px-2.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-indigo-400 hover:text-indigo-300 text-xs font-black flex items-center gap-1.5 border border-slate-700/80 shadow-md transition-all active:scale-95 flex-shrink-0">
+                        <span class="text-sm">☰</span>
+                        <span class="hidden sm:inline text-[11px] uppercase tracking-wider">Bài học</span>
+                    </button>
+
                     <!-- Tabs Group (Matching 002.jpg) -->
                     <div class="flex flex-wrap items-center gap-1.5 flex-1 min-w-0">
                         <!-- 1. Learn Tab -->
@@ -305,7 +306,7 @@
                         </button>
                     </div>
 
-                    <!-- Right Controls: Live Theme Switcher & Right Sidebar Trigger -->
+                    <!-- Right Controls: Live Theme Switcher & Open Sentences Trigger -->
                     <div class="flex items-center gap-1.5 flex-shrink-0">
                         <!-- Theme Switcher Dropdown Button -->
                         <div>
@@ -316,10 +317,10 @@
                             </button>
                         </div>
 
-                        <!-- Toggle Sentences List Button (Top Header) -->
-                        <button onclick="toggleSentenceListSidebar()" title="Ẩn / Hiện Danh Sách Câu Đối Chiếu" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1 border border-slate-700 transition-all active:scale-95">
+                        <!-- Open Right Sidebar Button (visible only when Sentences List is collapsed) -->
+                        <button id="floatingOpenSentencesBtn" onclick="toggleSentenceListSidebar()" title="Mở danh sách câu đối chiếu (Sentences List)" class="hidden px-2.5 py-1.5 rounded-xl bg-indigo-600/90 hover:bg-indigo-500 text-white text-xs font-bold flex items-center gap-1.5 border border-indigo-400/40 shadow-md transition-all active:scale-95 flex-shrink-0">
                             <span>📚</span>
-                            <span class="hidden md:inline">Sentences List</span>
+                            <span class="hidden sm:inline">Sentences List ◀</span>
                         </button>
                     </div>
                 </nav>
@@ -746,11 +747,6 @@
                     </div>
                 </div>
             </aside>
-
-            <!-- Floating Button to Open Right Sidebar when Hidden -->
-            <button id="floatingOpenSentencesBtn" onclick="toggleSentenceListSidebar()" title="Mở danh sách câu đối chiếu (Sentences List)" class="hidden fixed right-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
-                <span>📚 Sentences List ◀</span>
-            </button>
 
         </div>
     </div>
