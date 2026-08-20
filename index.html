@@ -214,7 +214,7 @@
                 </nav>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 1: VIDEO BÀI GIẢNG (LEARN MODE - SMART VIDEO HUB)        -->
+                <!-- SCREEN 1: VIDEO BÀI GIẢNG (LOCAL HTML5 + SMART HUB FALLBACK)    -->
                 <!-- ============================================================== -->
                 <section id="screen-learn" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[560px]">
                     <!-- Video Top Control Bar -->
@@ -234,35 +234,42 @@
                         </div>
                     </div>
 
-                    <!-- Smart Video Hub Card -->
+                    <!-- Video Container (HTML5 Local Player with Smart Hub Fallback) -->
                     <div class="p-4 sm:p-6 flex-1 flex flex-col justify-center items-center">
-                        <div class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-slate-950 border border-slate-800 relative group flex items-center justify-center">
-                            <!-- Background HD Thumbnail -->
-                            <img id="learnThumbnailImg" src="" alt="Thumbnail Video" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+                        <div class="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
+                            <!-- Local HTML5 Video Player -->
+                            <video id="offlineLearnPlayer" controls class="w-full h-full object-contain" preload="metadata" onloadeddata="hideLearnMissingNotice()" onerror="showLearnMissingNotice()"></video>
                             
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
-
-                            <!-- Center Play Overlay & Info -->
-                            <div class="relative z-10 flex flex-col items-center justify-center p-6 text-center space-y-4 max-w-xl">
-                                <a id="learnCenterPlayBtn" href="#" target="_blank" class="w-20 h-20 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
-                                    <span class="text-3xl ml-1">▶</span>
-                                </a>
-                                <div>
-                                    <h3 id="learnHubVideoTitle" class="text-lg sm:text-xl font-black text-white leading-snug drop-shadow-md">5000 Câu - Học Xong Là Giỏi Không Cần Học Nữa</h3>
-                                    <p class="text-xs text-slate-300 mt-1 font-medium drop-shadow">Nhấp để xem video bài giảng chất lượng Full HD trực tiếp trên YouTube</p>
-                                </div>
-                                <div class="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700/60 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
-                                    <span>💡</span> Tác giả tắt nhúng ngoài web — Bấm nút để xem ngay trên YouTube hoặc dùng Bản Offline trong máy
+                            <!-- Smart Video Hub Fallback (When Video File Missing or Running on GitHub Pages) -->
+                            <div id="learnVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
+                                <img id="learnThumbnailImg" src="" alt="Thumbnail Video" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+                                <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
+                                    <a id="learnCenterPlayBtn" href="#" target="_blank" class="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
+                                        <span class="text-2xl ml-0.5">▶</span>
+                                    </a>
+                                    <div>
+                                        <h3 id="learnHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md">5000 Câu - Học Xong Là Giỏi Không Cần Học Nữa</h3>
+                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Chưa có file video <code id="missingLearnFileName" class="text-amber-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Lesson_01.mp4</code> trong thư mục <code>Videos/Lessons/</code></p>
+                                    </div>
+                                    <div class="px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
+                                        <span>💡</span> Bấm nút để xem trên YouTube hoặc nhấp đúp <strong>Tai_Video_Bai_Hoc.bat</strong> để tải Full HD 1080p về máy
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Video Action Bottom Bar -->
+                    <!-- Video Action Bottom Bar with Speed Controls -->
                     <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-3">
-                        <div class="text-xs text-slate-400">
-                            💡 Xem kỹ bài giảng rồi chuyển sang <span class="text-indigo-400 font-bold">Video Test</span> hoặc <span class="text-indigo-400 font-bold">Flashcard</span> để rèn phản xạ.
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <span>Tốc độ phát:</span>
+                            <button onclick="setVideoSpeed('learn', 0.75)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">0.75x</button>
+                            <button onclick="setVideoSpeed('learn', 1.0)" class="px-2 py-1 rounded bg-indigo-600 text-white font-bold">1.0x</button>
+                            <button onclick="setVideoSpeed('learn', 1.25)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">1.25x</button>
+                            <button onclick="setVideoSpeed('learn', 1.5)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">1.5x</button>
+                            <span class="text-slate-600 ml-2">|</span>
+                            <span class="text-[11px] text-slate-500 ml-1">Phím tắt: ← / → tua 5s, K tạm dừng</span>
                         </div>
                         <div class="flex gap-3">
                             <button onclick="switchMode('test')" class="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs shadow-lg shadow-orange-950/40 transition-all">
@@ -276,7 +283,7 @@
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 2: VIDEO BÀI TEST (TEST MODE - SMART VIDEO HUB)         -->
+                <!-- SCREEN 2: VIDEO BÀI TEST (LOCAL HTML5 + SMART HUB FALLBACK)     -->
                 <!-- ============================================================== -->
                 <section id="screen-test" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[560px]">
                     <!-- Video Top Control Bar -->
@@ -302,35 +309,42 @@
                         </div>
                     </div>
 
-                    <!-- Smart Video Hub Card -->
+                    <!-- Video Container (HTML5 Local Player with Smart Hub Fallback) -->
                     <div class="p-4 sm:p-6 flex-1 flex flex-col justify-center items-center">
-                        <div class="w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-slate-950 border border-slate-800 relative group flex items-center justify-center">
-                            <!-- Background HD Thumbnail -->
-                            <img id="testThumbnailImg" src="" alt="Thumbnail Video Test" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:opacity-90 group-hover:scale-105 transition-all duration-500">
+                        <div class="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
+                            <!-- Local HTML5 Video Player -->
+                            <video id="offlineTestPlayer" controls class="w-full h-full object-contain" preload="metadata" onloadeddata="hideTestMissingNotice()" onerror="showTestMissingNotice()"></video>
                             
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
-
-                            <!-- Center Play Overlay & Info -->
-                            <div class="relative z-10 flex flex-col items-center justify-center p-6 text-center space-y-4 max-w-xl">
-                                <a id="testCenterPlayBtn" href="#" target="_blank" class="w-20 h-20 rounded-full bg-orange-600 hover:bg-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
-                                    <span class="text-3xl ml-1">▶</span>
-                                </a>
-                                <div>
-                                    <h3 id="testHubVideoTitle" class="text-lg sm:text-xl font-black text-white leading-snug drop-shadow-md">Bài Thi Phần 1 - 5000 Câu Tiếng Anh</h3>
-                                    <p class="text-xs text-slate-300 mt-1 font-medium drop-shadow">Nhấp để làm bài kiểm tra phản xạ video trực tiếp trên YouTube</p>
-                                </div>
-                                <div class="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-slate-700/60 text-[11px] text-orange-300 font-semibold flex items-center gap-1.5">
-                                    <span>⚡</span> Xem video kiểm tra hoặc bấm nút bên dưới để bật Thử Thách Phản Xạ 7s
+                            <!-- Smart Video Hub Fallback -->
+                            <div id="testVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
+                                <img id="testThumbnailImg" src="" alt="Thumbnail Video Test" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-all duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+                                <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
+                                    <a id="testCenterPlayBtn" href="#" target="_blank" class="w-16 h-16 rounded-full bg-orange-600 hover:bg-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
+                                        <span class="text-2xl ml-0.5">▶</span>
+                                    </a>
+                                    <div>
+                                        <h3 id="testHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md">Bài Thi Phần 1 - 5000 Câu Tiếng Anh</h3>
+                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Chưa có file video <code id="missingTestFileName" class="text-orange-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Test_01_VnEn.mp4</code> trong thư mục <code>Videos/Tests/</code></p>
+                                    </div>
+                                    <div class="px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-orange-300 font-semibold flex items-center gap-1.5">
+                                        <span>⚡</span> Bấm nút để xem trên YouTube hoặc nhấp đúp <strong>Tai_Video_Bai_Hoc.bat</strong> để tải về máy
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Video Action Bottom Bar -->
+                    <!-- Video Action Bottom Bar with Speed Controls -->
                     <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-3">
-                        <div class="text-xs text-slate-400">
-                            💡 Làm bài test video xong, bạn hãy thử thách với bộ đề ngẫu nhiên 7 giây.
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <span>Tốc độ phát:</span>
+                            <button onclick="setVideoSpeed('test', 0.75)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">0.75x</button>
+                            <button onclick="setVideoSpeed('test', 1.0)" class="px-2 py-1 rounded bg-indigo-600 text-white font-bold">1.0x</button>
+                            <button onclick="setVideoSpeed('test', 1.25)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">1.25x</button>
+                            <button onclick="setVideoSpeed('test', 1.5)" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 font-semibold">1.5x</button>
+                            <span class="text-slate-600 ml-2">|</span>
+                            <span class="text-[11px] text-slate-500 ml-1">Phím tắt: ← / → tua 5s, K tạm dừng</span>
                         </div>
                         <button onclick="switchMode('flashcard')" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-950/40 transition-all">
                             ⚡ Bật Thử Thách Phản Xạ 7 Giây Ngay
@@ -847,21 +861,29 @@
         }
 
         // ==============================================================
-        // VIDEO PLAYBACK MANAGEMENT (Learn & Test - Smart Video Hub)
+        // VIDEO PLAYBACK MANAGEMENT (Learn & Test - Hybrid Local & Hub)
         // ==============================================================
+        function pad(num) {
+            return String(num).padStart(2, '0');
+        }
+
         function updateVideoScreen(partNum) {
             activeVideoPart = Math.max(1, Math.min(52, Number(partNum)));
             const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.videos) ? videoMappingData.videos[activeVideoPart] : null;
             const lesson = lessonsData[activeVideoPart] || { title: `Phần ${activeVideoPart}` };
 
-            // 1. Learn Mode Video Hub
+            // 1. Learn Mode Video (Local file: Videos/Lessons/Lesson_XX.mp4)
             const learnTitleEl = document.getElementById('learnVideoTitle');
+            const learnPlayer = document.getElementById('offlineLearnPlayer');
             const learnDirectLink = document.getElementById('learnYtDirectLink');
             const learnCenterPlayBtn = document.getElementById('learnCenterPlayBtn');
             const learnThumbnailImg = document.getElementById('learnThumbnailImg');
             const learnHubVideoTitle = document.getElementById('learnHubVideoTitle');
+            const missingLearnName = document.getElementById('missingLearnFileName');
 
             if (learnTitleEl) learnTitleEl.innerText = `Phần ${activeVideoPart}: ${lesson.title}`;
+            const expectedLearnFile = `Lesson_${pad(activeVideoPart)}.mp4`;
+            if (missingLearnName) missingLearnName.innerText = expectedLearnFile;
 
             if (mapping && mapping.lessonVideo) {
                 const videoId = mapping.lessonVideo.videoId;
@@ -880,20 +902,37 @@
                 if (learnCenterPlayBtn) learnCenterPlayBtn.href = ytUrl;
             }
 
-            // 2. Test Mode Video Hub
+            if (learnPlayer) {
+                const localLearnPath = `Videos/Lessons/${expectedLearnFile}`;
+                if (learnPlayer.src !== new URL(localLearnPath, window.location.href).href) {
+                    learnPlayer.src = localLearnPath;
+                    learnPlayer.load();
+                }
+            }
+
+            // 2. Test Mode Video (Local file: Videos/Tests/...)
             const testTitleEl = document.getElementById('testVideoTitle');
+            const testPlayer = document.getElementById('offlineTestPlayer');
             const testDirectLink = document.getElementById('testYtDirectLink');
             const testCenterPlayBtn = document.getElementById('testCenterPlayBtn');
             const testThumbnailImg = document.getElementById('testThumbnailImg');
             const testHubVideoTitle = document.getElementById('testHubVideoTitle');
+            const missingTestName = document.getElementById('missingTestFileName');
             const testTypeSelector = document.getElementById('testTypeSelector');
 
             if (testTitleEl) testTitleEl.innerText = `Bài Thi Phần ${activeVideoPart}: ${lesson.title}`;
 
+            let expectedTestFile = '';
+            let targetTestVideo = null;
+
             if (mapping && mapping.testVideos && mapping.testVideos.length > 0) {
-                let targetTestVideo = mapping.testVideos.find(t => t.type === currentTestType) || mapping.testVideos[0];
-                const ytUrl = `https://www.youtube.com/watch?v=${targetTestVideo.videoId}&list=${videoMappingData.playlists.test}`;
+                targetTestVideo = mapping.testVideos.find(t => t.type === currentTestType) || mapping.testVideos[0];
                 
+                if (targetTestVideo.type === 'vn-en') expectedTestFile = `Test_${pad(activeVideoPart)}_VnEn.mp4`;
+                else if (targetTestVideo.type === 'en-vn') expectedTestFile = `Test_${pad(activeVideoPart)}_EnVn.mp4`;
+                else expectedTestFile = `Test_${pad(activeVideoPart)}_General.mp4`;
+
+                const ytUrl = `https://www.youtube.com/watch?v=${targetTestVideo.videoId}&list=${videoMappingData.playlists.test}`;
                 if (testDirectLink) testDirectLink.href = ytUrl;
                 if (testCenterPlayBtn) testCenterPlayBtn.href = ytUrl;
                 if (testThumbnailImg) {
@@ -911,12 +950,43 @@
                     }
                 }
             } else {
+                expectedTestFile = `Test_${pad(activeVideoPart)}_General.mp4`;
                 const ytUrl = `https://www.youtube.com/playlist?list=${videoMappingData.playlists.test}`;
                 if (testDirectLink) testDirectLink.href = ytUrl;
                 if (testCenterPlayBtn) testCenterPlayBtn.href = ytUrl;
             }
 
+            if (missingTestName) missingTestName.innerText = expectedTestFile;
+
+            if (testPlayer) {
+                const localTestPath = `Videos/Tests/${expectedTestFile}`;
+                if (testPlayer.src !== new URL(localTestPath, window.location.href).href) {
+                    testPlayer.src = localTestPath;
+                    testPlayer.load();
+                }
+            }
+
             updateLessonListHighlight();
+        }
+
+        function showLearnMissingNotice() {
+            document.getElementById('learnVideoMissingNotice')?.classList.remove('hidden');
+        }
+        function hideLearnMissingNotice() {
+            document.getElementById('learnVideoMissingNotice')?.classList.add('hidden');
+        }
+        function showTestMissingNotice() {
+            document.getElementById('testVideoMissingNotice')?.classList.remove('hidden');
+        }
+        function hideTestMissingNotice() {
+            document.getElementById('testVideoMissingNotice')?.classList.add('hidden');
+        }
+
+        function setVideoSpeed(mode, speed) {
+            const player = mode === 'learn' ? document.getElementById('offlineLearnPlayer') : document.getElementById('offlineTestPlayer');
+            if (player) {
+                player.playbackRate = speed;
+            }
         }
 
         function selectTestType(type) {
