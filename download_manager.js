@@ -48,15 +48,24 @@ function downloadVideo(url, targetPath, title, forceOverwrite = false) {
     console.log(`Luu vao: ${targetPath}`);
     console.log(`------------------------------------------------------------`);
 
+    const cookiesPath = path.join(__dirname, 'cookies.txt');
+    const hasCookies = fs.existsSync(cookiesPath);
+
     const args = [
         '-f', 'bestvideo[height<=1080]+bestaudio/best',
         '--merge-output-format', 'mp4',
         '--no-playlist',
         '--no-mtime',
         '--force-overwrites',
-        '-o', targetPath,
-        url
+        '--sleep-interval', '2',
+        '-o', targetPath
     ];
+
+    if (hasCookies) {
+        args.push('--cookies', cookiesPath);
+    }
+
+    args.push(url);
 
     const result = spawnSync('yt-dlp', args, { stdio: 'inherit', shell: false });
     return result.status === 0;
@@ -214,10 +223,15 @@ function showInteractiveMenu() {
         output: process.stdout
     });
 
+    const cookiesPath = path.join(__dirname, 'cookies.txt');
+    const hasCookies = fs.existsSync(cookiesPath);
+
     console.clear();
     console.log("=======================================================================");
     console.log("       CONG CU TAI VIDEO FULL HD 1080p - ENGLISH MASTER PRO");
     console.log("=======================================================================");
+    console.log(`  Trang thai Cookies: ${hasCookies ? "DA KICH HOAT (cookies.txt)" : "Chua co file cookies.txt"}`);
+    console.log("-----------------------------------------------------------------------");
     console.log("");
     console.log("  --- [ TU DONG THONG MINH ] ---");
     console.log("  [1] Tu dong quet & Tai bu toan bo file con thieu (Smart Auto-Resume)");
@@ -231,14 +245,32 @@ function showInteractiveMenu() {
     console.log("  --- [ TAI THEO PHAN DON LE HOAC TAT CA ] ---");
     console.log("  [6] Tai 1 Phan cu the (Chon so phan: 1 den 52)");
     console.log("  [7] Tai TOAN BO 156 Video (52 Bai giang + 104 Bai test - Full HD 1080p)");
+    console.log("");
+    console.log("  --- [ TRO GIUP & KHAC PHUC LOI ] ---");
+    console.log("  [8] Huong dan nap Cookies vuot loi 'Sign in to confirm you are not a bot'");
     console.log("  [0] Thoat");
     console.log("");
     console.log("=======================================================================");
 
-    rl.question("Vui long nhap lua chon cua ban (0-7): ", (ans) => {
+    rl.question("Vui long nhap lua chon cua ban (0-8): ", (ans) => {
         const opt = ans.trim();
 
-        if (opt === '1') {
+        if (opt === '8') {
+            console.clear();
+            console.log("=======================================================================");
+            console.log("   HUONG DAN NAP FILE COOKIES.TXT DE VUOT CHAN BOT YOUTUBE (1 PHUT)");
+            console.log("=======================================================================");
+            console.log("\nKhi tai nhieu video lien tiep, YouTube se yeu cau xac thuc ban khong phai bot.");
+            console.log("De tai tiep tuc cuc muot, ban chi can 2 buoc don gian:");
+            console.log("\n  Buoc 1: Cai tien ich 'Get cookies.txt LOCALLY' tren Chrome/Edge");
+            console.log("          (Link: https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)");
+            console.log("  Buoc 2: Mo trang web youtube.com tren trinh duyet -> Bam vao icon tien ich -> Bam 'Export'");
+            console.log("  Buoc 3: Luu file tai ve thanh ten 'cookies.txt' va bo vao thu muc:");
+            console.log(`          ${__dirname}`);
+            console.log("\nSau khi bo file cookies.txt vao, cong cu se tu dong nhan dien va tai 100% video khong bao gio bi chan!");
+            console.log("=======================================================================");
+            promptReturn(rl);
+        } else if (opt === '1') {
             smartAutoResume();
             promptReturn(rl);
         } else if (opt === '2') {
