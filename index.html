@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi" data-theme="indigo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Master Pro - Hß╗ìc S├óu & Phß║ún Xß║í Thß╗▒c Chiß║┐n</title>
+    <title>English Master Pro - Học Sâu & Phản Xạ Thực Chiến</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans, Inter, Outfit, Be Vietnam Pro -->
@@ -192,12 +192,12 @@
                             <h1 class="text-base font-black tracking-tight text-white flex items-center gap-1.5 heading-font">
                                 English Master <span class="text-[10px] bg-indigo-500/30 text-indigo-300 font-bold px-1.5 py-0.2 rounded-full border border-indigo-500/40">PRO</span>
                             </h1>
-                            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Hß╗ìc S├óu - Phß║ún Xß║í Thß╗▒c Chiß║┐n</p>
+                            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Học Sâu - Phản Xạ Thực Chiến</p>
                         </div>
                     </div>
                     <!-- Toggle Left Sidebar Button -->
-                    <button onclick="toggleSidebar()" title="Thu gß╗ìn / Mß╗ƒ rß╗Öng bß║úng ─æiß╗üu khiß╗ân" class="w-7 h-7 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center border border-slate-700 transition-all active:scale-95 text-xs">
-                        <span id="sidebarToggleIcon">ΓùÇ</span>
+                    <button onclick="toggleSidebar()" title="Thu gọn / Mở rộng bảng điều khiển" class="w-7 h-7 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center border border-slate-700 transition-all active:scale-95 text-xs">
+                        <span id="sidebarToggleIcon">◀</span>
                     </button>
                 </div>
 
@@ -205,29 +205,29 @@
                 <div class="glass-panel rounded-2xl p-3 space-y-2.5 shadow-xl">
                     <div class="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
                         <h3 class="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1">
-                            <span>ΓÜí</span> Thß╗æng K├¬ Luyß╗çn Tß║¡p
+                            <span>⚡</span> Thống Kê Luyện Tập
                         </h3>
                         <span id="headerTodayDate" class="text-[10px] text-indigo-400 font-semibold"></span>
                     </div>
                     
                     <div class="grid grid-cols-2 gap-2">
                         <div class="bg-gradient-to-br from-indigo-950/40 to-slate-900/60 border border-indigo-500/20 p-2 rounded-xl text-center">
-                            <div class="text-[10px] text-slate-400 font-medium">Hß╗ìc li├¬n tß╗Ñc</div>
-                            <div id="statsStreak" class="text-base font-black text-amber-400 mt-0.5">0 ng├áy</div>
+                            <div class="text-[10px] text-slate-400 font-medium">Học liên tục</div>
+                            <div id="statsStreak" class="text-base font-black text-amber-400 mt-0.5">0 ngày</div>
                         </div>
                         <div class="bg-gradient-to-br from-violet-950/40 to-slate-900/60 border border-violet-500/20 p-2 rounded-xl text-center">
-                            <div class="text-[10px] text-slate-400 font-medium">Tß╗òng sß╗æ c├óu</div>
-                            <div id="statsTotalCards" class="text-base font-black text-indigo-400 mt-0.5">1571 c├óu</div>
+                            <div class="text-[10px] text-slate-400 font-medium">Tổng số câu</div>
+                            <div id="statsTotalCards" class="text-base font-black text-indigo-400 mt-0.5">1571 câu</div>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-1.5 text-[11px] pt-1 border-t border-slate-800/60">
                         <div class="flex justify-between items-center bg-slate-900/40 px-2 py-1 rounded-lg">
-                            <span class="text-slate-400">─É├ú trß║ú lß╗¥i:</span>
+                            <span class="text-slate-400">Đã trả lời:</span>
                             <span id="statsPracticed" class="font-bold text-white">0</span>
                         </div>
                         <div class="flex justify-between items-center bg-slate-900/40 px-2 py-1 rounded-lg">
-                            <span class="text-slate-400">Tß╗╖ lß╗ç ─æ├║ng:</span>
+                            <span class="text-slate-400">Tỷ lệ đúng:</span>
                             <span id="statsAccuracy" class="font-bold text-emerald-400">0%</span>
                         </div>
                     </div>
@@ -237,31 +237,31 @@
                 <div class="glass-panel rounded-2xl p-3 flex flex-col shadow-xl border border-slate-800">
                     <div class="flex justify-between items-center pb-2 mb-2 border-b border-slate-800">
                         <div>
-                            <h3 class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Chß╗ìn B├ái ├ön Luyß╗çn</h3>
-                            <span id="selectedCountBadge" class="text-[10px] text-indigo-400 font-semibold">─É├ú chß╗ìn: 1 b├ái</span>
+                            <h3 class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Chọn Bài Ôn Luyện</h3>
+                            <span id="selectedCountBadge" class="text-[10px] text-indigo-400 font-semibold">Đã chọn: 1 bài</span>
                         </div>
                         <div class="flex gap-1.5">
-                            <button onclick="selectAllLessons(true)" class="text-[11px] text-indigo-400 hover:text-indigo-300 transition-colors font-bold">Tß║Ñt cß║ú</button>
+                            <button onclick="selectAllLessons(true)" class="text-[11px] text-indigo-400 hover:text-indigo-300 transition-colors font-bold">Tất cả</button>
                             <span class="text-slate-700 text-xs">|</span>
-                            <button onclick="selectAllLessons(false)" class="text-[11px] text-slate-400 hover:text-slate-300 transition-colors font-semibold">Bß╗Å chß╗ìn</button>
+                            <button onclick="selectAllLessons(false)" class="text-[11px] text-slate-400 hover:text-slate-300 transition-colors font-semibold">Bỏ chọn</button>
                         </div>
                     </div>
 
                     <!-- Search Filter for Lessons -->
                     <div class="relative mb-2">
-                        <input type="text" id="lessonSearchInput" oninput="filterLessonsList()" placeholder="≡ƒöì T├¼m phß║ºn hoß║╖c t├¬n b├ái..." class="w-full px-2.5 py-1.5 text-xs rounded-xl glass-input text-white placeholder-slate-500 focus:outline-none transition-all">
+                        <input type="text" id="lessonSearchInput" oninput="filterLessonsList()" placeholder="🔍 Tìm phần hoặc tên bài..." class="w-full px-2.5 py-1.5 text-xs rounded-xl glass-input text-white placeholder-slate-500 focus:outline-none transition-all">
                     </div>
                     
                     <!-- Independent Scrolling Container -->
                     <div id="lessonList" class="overflow-y-auto max-h-[420px] xl:max-h-[500px] 2xl:max-h-[560px] pr-1 space-y-1.5 custom-scrollbar overscroll-contain">
-                        <div class="text-slate-500 italic py-4 text-center text-xs">─Éang tß║úi danh s├ích b├ái hß╗ìc...</div>
+                        <div class="text-slate-500 italic py-4 text-center text-xs">Đang tải danh sách bài học...</div>
                     </div>
                 </div>
             </aside>
 
             <!-- Floating Button to Open Left Sidebar when Hidden -->
-            <button id="floatingOpenSidebarBtn" onclick="toggleSidebar()" title="Mß╗ƒ bß║úng ─æiß╗üu khiß╗ân b├¬n tr├íi" class="hidden fixed left-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
-                <span>Γû╢ Menu</span>
+            <button id="floatingOpenSidebarBtn" onclick="toggleSidebar()" title="Mở bảng điều khiển bên trái" class="hidden fixed left-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
+                <span>▶ Menu</span>
             </button>
 
             <!-- ============================================================== -->
@@ -276,32 +276,32 @@
                     <div class="flex flex-wrap items-center gap-1.5 flex-1 min-w-0">
                         <!-- 1. Learn Tab -->
                         <button id="tab-learn" onclick="switchMode('learn')" class="flex-1 min-w-[85px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-inactive">
-                            <span class="text-amber-400 text-sm">Γû╢∩╕Å</span> Learn
+                            <span class="text-amber-400 text-sm">▶️</span> Learn
                         </button>
 
                         <!-- 2. Test Tab -->
                         <button id="tab-test" onclick="switchMode('test')" class="flex-1 min-w-[85px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-inactive">
-                            <span class="text-orange-400 text-sm">≡ƒÄ»</span> Test
+                            <span class="text-orange-400 text-sm">🎯</span> Test
                         </button>
 
                         <!-- 3. Flashcard Tab -->
                         <button id="tab-flashcard" onclick="switchMode('flashcard')" class="flex-1 min-w-[95px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-active">
-                            <span class="text-indigo-400 text-sm">≡ƒÄ┤</span> Flashcard
+                            <span class="text-indigo-400 text-sm">🎴</span> Flashcard
                         </button>
 
                         <!-- 4. Type Tab -->
                         <button id="tab-typing" onclick="switchMode('typing')" class="flex-1 min-w-[85px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-inactive">
-                            <span class="text-cyan-400 text-sm">Γî¿∩╕Å</span> Type
+                            <span class="text-cyan-400 text-sm">⌨️</span> Type
                         </button>
 
                         <!-- 5. Speak Tab -->
                         <button id="tab-speaking" onclick="switchMode('speaking')" class="flex-1 min-w-[85px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-inactive">
-                            <span class="text-pink-400 text-sm">≡ƒùú∩╕Å</span> Speak
+                            <span class="text-pink-400 text-sm">🗣️</span> Speak
                         </button>
 
                         <!-- 6. Progress LMS Tab -->
                         <button id="tab-progress" onclick="switchMode('progress')" class="flex-1 min-w-[90px] py-2 px-2.5 rounded-xl text-xs font-extrabold transition-all flex items-center justify-center gap-1 tab-btn-inactive">
-                            <span class="text-purple-400 text-sm">≡ƒôè</span> Tiß║┐n ─Éß╗Ö
+                            <span class="text-purple-400 text-sm">📊</span> Tiến Độ
                         </button>
                     </div>
 
@@ -309,16 +309,16 @@
                     <div class="flex items-center gap-1.5 flex-shrink-0">
                         <!-- Theme Switcher Dropdown Button -->
                         <div>
-                            <button id="themeSwitcherBtn" onclick="toggleThemeDropdown()" title="Chß╗ìn bß╗Ö phß╗æi m├áu giao diß╗çn" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1.5 border border-slate-700 transition-all active:scale-95">
-                                <span>≡ƒÄ¿</span>
+                            <button id="themeSwitcherBtn" onclick="toggleThemeDropdown()" title="Chọn bộ phối màu giao diện" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1.5 border border-slate-700 transition-all active:scale-95">
+                                <span>🎨</span>
                                 <span id="currentThemeLabel" class="hidden sm:inline">Deep Indigo</span>
-                                <span class="text-[10px] text-slate-400">Γû╝</span>
+                                <span class="text-[10px] text-slate-400">▼</span>
                             </button>
                         </div>
 
                         <!-- Toggle Sentences List Button (Top Header) -->
-                        <button onclick="toggleSentenceListSidebar()" title="ß║¿n / Hiß╗çn Danh S├ích C├óu ─Éß╗æi Chiß║┐u" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1 border border-slate-700 transition-all active:scale-95">
-                            <span>≡ƒôÜ</span>
+                        <button onclick="toggleSentenceListSidebar()" title="Ẩn / Hiện Danh Sách Câu Đối Chiếu" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1 border border-slate-700 transition-all active:scale-95">
+                            <span>📚</span>
                             <span class="hidden md:inline">Sentences List</span>
                         </button>
                     </div>
@@ -326,7 +326,7 @@
 
                 <!-- Theme Dropdown (Fixed Portal - outside stacking context of nav/backdrop-filter) -->
                 <div id="themeDropdownMenu" class="hidden fixed w-52 rounded-2xl border border-slate-600 shadow-2xl p-2 space-y-1" style="background: rgba(18,28,52,0.97); backdrop-filter: blur(24px); z-index: 9999;">
-                    <div class="text-[10px] font-bold text-slate-400 uppercase px-2 py-1 border-b border-slate-700/60 mb-1">Bß╗Ö Phß╗æi M├áu Giao Diß╗çn</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase px-2 py-1 border-b border-slate-700/60 mb-1">Bộ Phối Màu Giao Diện</div>
                     <button onclick="switchTheme('indigo')" class="w-full text-left px-2.5 py-2.5 rounded-xl text-xs font-bold hover:bg-indigo-600/30 text-white flex items-center gap-2.5 transition-all">
                         <span class="w-3.5 h-3.5 rounded-full bg-indigo-500 flex-shrink-0 shadow shadow-indigo-500/50"></span>
                         <span>Deep Indigo Night</span>
@@ -346,22 +346,22 @@
                 </div>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 1: VIDEO B├ÇI GIß║óNG (THEATER VIEW MATCHING 002.jpg)      -->
+                <!-- SCREEN 1: VIDEO BÀI GIẢNG (THEATER VIEW MATCHING 002.jpg)      -->
                 <!-- ============================================================== -->
                 <section id="screen-learn" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[580px]">
                     <!-- Video Top Control Bar -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-b border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
                         <div class="flex items-center gap-2.5 min-w-0">
                             <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 uppercase flex-shrink-0">
-                                VIDEO B├ÇI GIß║óNG
+                                VIDEO BÀI GIẢNG
                             </span>
-                            <h2 id="learnVideoTitle" class="text-xs sm:text-sm font-extrabold text-white truncate heading-font">Phß║ºn 1: GIAO TIß║╛P C╞á Bß║óN V├Ç XIN PH├ëP</h2>
+                            <h2 id="learnVideoTitle" class="text-xs sm:text-sm font-extrabold text-white truncate heading-font">Phần 1: GIAO TIẾP CƠ BẢN VÀ XIN PHÉP</h2>
                         </div>
                         <div class="flex items-center gap-2 flex-shrink-0">
-                            <button onclick="navigateVideoPart('learn', -1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">ΓùÇ B├ái tr╞░ß╗¢c</button>
-                            <button onclick="navigateVideoPart('learn', 1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">B├ái tiß║┐p theo Γû╢</button>
+                            <button onclick="navigateVideoPart('learn', -1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">◀ Bài trước</button>
+                            <button onclick="navigateVideoPart('learn', 1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">Bài tiếp theo ▶</button>
                             <a id="learnYtDirectLink" href="#" target="_blank" class="px-2.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold shadow-md shadow-red-950/40 transition-all flex items-center gap-1">
-                                <span>Γû╢</span> Mß╗ƒ YouTube Γåù
+                                <span>▶</span> Mở YouTube ↗
                             </a>
                         </div>
                     </div>
@@ -378,14 +378,14 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
                                 <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
                                     <a id="learnCenterPlayBtn" href="#" target="_blank" class="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center shadow-2xl shadow-red-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
-                                        <span class="text-2xl ml-0.5">Γû╢</span>
+                                        <span class="text-2xl ml-0.5">▶</span>
                                     </a>
                                     <div>
-                                        <h3 id="learnHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">5000 C├óu - Hß╗ìc Xong L├á Giß╗Åi Kh├┤ng Cß║ºn Hß╗ìc Nß╗»a</h3>
-                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Ch╞░a c├│ file video <code id="missingLearnFileName" class="text-amber-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Lesson_01.mp4</code> trong th╞░ mß╗Ñc <code>Videos/Lessons/</code></p>
+                                        <h3 id="learnHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">5000 Câu - Học Xong Là Giỏi Không Cần Học Nữa</h3>
+                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Chưa có file video <code id="missingLearnFileName" class="text-amber-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Lesson_01.mp4</code> trong thư mục <code>Videos/Lessons/</code></p>
                                     </div>
                                     <div class="px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
-                                        <span>≡ƒÆí</span> Bß║Ñm n├║t ─æß╗â xem tr├¬n YouTube hoß║╖c chß║íy <strong>Tai_Video_Bai_Hoc.bat</strong> ─æß╗â tß║úi Full HD 1080p vß╗ü m├íy
+                                        <span>💡</span> Bấm nút để xem trên YouTube hoặc chạy <strong>Tai_Video_Bai_Hoc.bat</strong> để tải Full HD 1080p về máy
                                     </div>
                                 </div>
                             </div>
@@ -395,48 +395,48 @@
                     <!-- Video Action Bottom Bar with Speed Controls -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
                         <div class="flex items-center gap-1.5 text-xs text-slate-400">
-                            <span>Tß╗æc ─æß╗Ö:</span>
+                            <span>Tốc độ:</span>
                             <button onclick="setVideoSpeed('learn', 0.75)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">0.75x</button>
                             <button onclick="setVideoSpeed('learn', 1.0)" class="px-2 py-0.5 rounded bg-indigo-600 text-white font-bold text-xs">1.0x</button>
                             <button onclick="setVideoSpeed('learn', 1.25)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.25x</button>
                             <button onclick="setVideoSpeed('learn', 1.5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.5x</button>
                             <span class="text-slate-600 ml-1.5">|</span>
-                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Ph├¡m tß║»t: ΓåÉ / ΓåÆ tua 5s, K tß║ím dß╗½ng</span>
+                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Phím tắt: ← / → tua 5s, K tạm dừng</span>
                         </div>
                         <div class="flex gap-2">
                             <button onclick="switchMode('test')" class="px-3.5 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs shadow-lg shadow-orange-950/40 transition-all">
-                                ≡ƒÄ» Xem Video B├ái Test
+                                🎯 Xem Video Bài Test
                             </button>
                             <button onclick="switchMode('flashcard')" class="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-950/40 transition-all">
-                                ≡ƒÄ┤ Luyß╗çn Flashcard 7s
+                                🎴 Luyện Flashcard 7s
                             </button>
                         </div>
                     </div>
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 2: VIDEO B├ÇI TEST (THEATER VIEW)                        -->
+                <!-- SCREEN 2: VIDEO BÀI TEST (THEATER VIEW)                        -->
                 <!-- ============================================================== -->
                 <section id="screen-test" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[580px]">
                     <!-- Video Top Control Bar -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-b border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
                         <div class="flex items-center gap-2.5 min-w-0">
                             <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black tracking-wider text-orange-400 bg-orange-400/10 border border-orange-400/20 uppercase flex-shrink-0">
-                                VIDEO B├ÇI TEST
+                                VIDEO BÀI TEST
                             </span>
-                            <h2 id="testVideoTitle" class="text-xs sm:text-sm font-extrabold text-white truncate heading-font">B├ái Thi Phß║ºn 1: GIAO TIß║╛P C╞á Bß║óN V├Ç XIN PH├ëP</h2>
+                            <h2 id="testVideoTitle" class="text-xs sm:text-sm font-extrabold text-white truncate heading-font">Bài Thi Phần 1: GIAO TIẾP CƠ BẢN VÀ XIN PHÉP</h2>
                         </div>
                         
                         <!-- Test Type Selector & Links -->
                         <div class="flex items-center gap-2 flex-shrink-0">
                             <div id="testTypeSelector" class="flex bg-slate-900/80 p-0.5 rounded-xl border border-slate-800">
-                                <button id="btnTestVnEn" onclick="selectTestType('vn-en')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 text-white transition-all">≡ƒç╗≡ƒç│Γ₧ö≡ƒç¼≡ƒçº Viß╗çt - Anh</button>
-                                <button id="btnTestEnVn" onclick="selectTestType('en-vn')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition-all">≡ƒç¼≡ƒçºΓ₧ö≡ƒç╗≡ƒç│ Anh - Viß╗çt</button>
+                                <button id="btnTestVnEn" onclick="selectTestType('vn-en')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 text-white transition-all">🇻🇳➔🇬🇧 Việt - Anh</button>
+                                <button id="btnTestEnVn" onclick="selectTestType('en-vn')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition-all">🇬🇧➔🇻🇳 Anh - Việt</button>
                             </div>
-                            <button onclick="navigateVideoPart('test', -1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">ΓùÇ</button>
-                            <button onclick="navigateVideoPart('test', 1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">Γû╢</button>
+                            <button onclick="navigateVideoPart('test', -1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">◀</button>
+                            <button onclick="navigateVideoPart('test', 1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">▶</button>
                             <a id="testYtDirectLink" href="#" target="_blank" class="px-2.5 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold shadow-md shadow-red-950/40 transition-all flex items-center gap-1">
-                                <span>Γû╢</span> Mß╗ƒ YouTube Γåù
+                                <span>▶</span> Mở YouTube ↗
                             </a>
                         </div>
                     </div>
@@ -452,14 +452,14 @@
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
                                 <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
                                     <a id="testCenterPlayBtn" href="#" target="_blank" class="w-16 h-16 rounded-full bg-orange-600 hover:bg-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-600/50 hover:scale-110 active:scale-95 transition-all border-4 border-white/20">
-                                        <span class="text-2xl ml-0.5">Γû╢</span>
+                                        <span class="text-2xl ml-0.5">▶</span>
                                     </a>
                                     <div>
-                                        <h3 id="testHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">B├ái Thi Phß║ºn 1 - 5000 C├óu Tiß║┐ng Anh</h3>
-                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Ch╞░a c├│ file video <code id="missingTestFileName" class="text-orange-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Test_01_VnEn.mp4</code> trong th╞░ mß╗Ñc <code>Videos/Tests/</code></p>
+                                        <h3 id="testHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">Bài Thi Phần 1 - 5000 Câu Tiếng Anh</h3>
+                                        <p class="text-xs text-slate-300 mt-0.5 font-medium">Chưa có file video <code id="missingTestFileName" class="text-orange-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Test_01_VnEn.mp4</code> trong thư mục <code>Videos/Tests/</code></p>
                                     </div>
                                     <div class="px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-orange-300 font-semibold flex items-center gap-1.5">
-                                        <span>ΓÜí</span> Bß║Ñm n├║t ─æß╗â xem tr├¬n YouTube hoß║╖c chß║íy <strong>Tai_Video_Bai_Hoc.bat</strong> ─æß╗â tß║úi vß╗ü m├íy
+                                        <span>⚡</span> Bấm nút để xem trên YouTube hoặc chạy <strong>Tai_Video_Bai_Hoc.bat</strong> để tải về máy
                                     </div>
                                 </div>
                             </div>
@@ -469,16 +469,16 @@
                     <!-- Video Action Bottom Bar with Speed Controls -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
                         <div class="flex items-center gap-1.5 text-xs text-slate-400">
-                            <span>Tß╗æc ─æß╗Ö:</span>
+                            <span>Tốc độ:</span>
                             <button onclick="setVideoSpeed('test', 0.75)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">0.75x</button>
                             <button onclick="setVideoSpeed('test', 1.0)" class="px-2 py-0.5 rounded bg-indigo-600 text-white font-bold text-xs">1.0x</button>
                             <button onclick="setVideoSpeed('test', 1.25)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.25x</button>
                             <button onclick="setVideoSpeed('test', 1.5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.5x</button>
                             <span class="text-slate-600 ml-1.5">|</span>
-                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Ph├¡m tß║»t: ΓåÉ / ΓåÆ tua 5s, K tß║ím dß╗½ng</span>
+                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Phím tắt: ← / → tua 5s, K tạm dừng</span>
                         </div>
                         <button onclick="switchMode('flashcard')" class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-950/40 transition-all">
-                            ΓÜí Bß║¡t Thß╗¡ Th├ích Phß║ún Xß║í 7 Gi├óy Ngay
+                            ⚡ Bật Thử Thách Phản Xạ 7 Giây Ngay
                         </button>
                     </div>
                 </section>
@@ -494,7 +494,7 @@
                             <span id="badgeMode" class="px-3 py-1 rounded-full text-xs font-bold tracking-wider text-indigo-400 bg-indigo-400/10 border border-indigo-400/20 uppercase">
                                 FLASHCARD
                             </span>
-                            <span id="currentLessonName" class="text-slate-300 font-semibold heading-font">Ch╞░a bß║»t ─æß║ºu</span>
+                            <span id="currentLessonName" class="text-slate-300 font-semibold heading-font">Chưa bắt đầu</span>
                         </div>
                         <span id="cardCounter" class="bg-indigo-500/20 text-indigo-300 px-3 py-1 rounded-full text-xs font-bold border border-indigo-500/30">0 / 0</span>
                     </div>
@@ -510,7 +510,7 @@
                             
                             <!-- Vietnamese Prompt -->
                             <h2 id="vietnameseTxt" class="text-2xl sm:text-4xl font-extrabold text-white leading-snug tracking-tight min-h-[90px] flex items-center justify-center px-4 heading-font">
-                                Chß╗ìn b├ái hß╗ìc b├¬n tr├íi v├á nhß║Ñn Bß║«T ─Éß║ªU
+                                Chọn bài học bên trái và nhấn BẮT ĐẦU
                             </h2>
                             
                             <!-- Answer/Interaction Zone -->
@@ -519,18 +519,18 @@
                                 <!-- 1. Flashcard Mode Answer -->
                                 <div id="flashcardAnswer" class="hidden transition-all duration-300 transform translate-y-2 opacity-0">
                                     <div class="h-[1px] bg-gradient-to-r from-transparent via-slate-700/60 to-transparent my-4"></div>
-                                    <p class="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-1.5">─É├íp ├ín ─æ├║ng</p>
+                                    <p class="text-slate-400 text-xs font-semibold uppercase tracking-widest mb-1.5">Đáp án đúng</p>
                                     <p id="englishTxtFC" class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-sky-300 to-cyan-300 mb-5 heading-font"></p>
                                     <button onclick="speakAnswer(currentCard.en)" class="mx-auto flex items-center justify-center gap-2 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 px-5 py-2 rounded-full border border-indigo-500/30 transition-all font-semibold text-sm">
-                                        ≡ƒöè Nghe ph├ít ├óm mß║½u
+                                        🔊 Nghe phát âm mẫu
                                     </button>
                                 </div>
 
                                 <!-- 2. Typing Mode Input -->
                                 <div id="typingInteraction" class="hidden space-y-4">
                                     <div class="relative">
-                                        <input type="text" id="typingInput" onkeydown="handleTypingSubmit(event)" placeholder="G├╡ c├óu dß╗ïch tiß║┐ng Anh tß║íi ─æ├óy v├á nhß║Ñn Enter..." class="w-full px-5 py-3.5 rounded-xl glass-input text-white text-base placeholder-slate-500 focus:outline-none transition-all pr-24">
-                                        <button onclick="checkTypingAnswer()" class="absolute right-2.5 top-2.5 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shadow-md">Gß╗¡i</button>
+                                        <input type="text" id="typingInput" onkeydown="handleTypingSubmit(event)" placeholder="Gõ câu dịch tiếng Anh tại đây và nhấn Enter..." class="w-full px-5 py-3.5 rounded-xl glass-input text-white text-base placeholder-slate-500 focus:outline-none transition-all pr-24">
+                                        <button onclick="checkTypingAnswer()" class="absolute right-2.5 top-2.5 bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold transition-all shadow-md">Gửi</button>
                                     </div>
                                     <div id="typingResult" class="hidden p-4 rounded-xl text-left space-y-3">
                                         <!-- Dynamic Diff Content -->
@@ -540,9 +540,9 @@
                                 <!-- 3. Speaking Mode Mic -->
                                 <div id="speakingInteraction" class="hidden space-y-4 flex flex-col items-center">
                                     <button id="micBtn" onclick="toggleSpeechRecognition()" class="w-20 h-20 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white flex items-center justify-center shadow-2xl shadow-indigo-500/30 transition-all border-4 border-indigo-900/50 hover:scale-105 active:scale-95">
-                                        <span id="micIcon" class="text-3xl">≡ƒÄÖ∩╕Å</span>
+                                        <span id="micIcon" class="text-3xl">🎙️</span>
                                     </button>
-                                    <p id="speechStatus" class="text-xs text-slate-400 font-medium">Bß║Ñm mic ─æß╗â n├│i c├óu tiß║┐ng Anh</p>
+                                    <p id="speechStatus" class="text-xs text-slate-400 font-medium">Bấm mic để nói câu tiếng Anh</p>
                                     <div id="speechResult" class="hidden w-full p-4 rounded-xl text-left space-y-3">
                                         <!-- Dynamic Speech Results -->
                                     </div>
@@ -554,27 +554,27 @@
                     <!-- Footer Action Controls -->
                     <div class="p-5 bg-slate-900/60 border-t border-slate-800/60 flex flex-col sm:flex-row gap-3">
                         <button id="mainBtn" onclick="nextQuestion()" class="flex-1 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold py-3.5 rounded-2xl shadow-xl shadow-indigo-950/40 transition-all active:scale-98 tracking-wide text-base">
-                            Bß║«T ─Éß║ªU
+                            BẮT ĐẦU
                         </button>
                         <button id="revealBtn" onclick="revealAnswer()" class="hidden flex-1 bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold py-3.5 rounded-2xl border border-slate-700 transition-all active:scale-98 tracking-wide text-base">
-                            XEM ─É├üP ├üN (PH├ìM SPACE)
+                            XEM ĐÁP ÁN (PHÍM SPACE)
                         </button>
                     </div>
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 4: Bß║óN ─Éß╗Æ Hß╗îA (GRAPHIC MODE)                            -->
+                <!-- SCREEN 4: BẢN ĐỒ HỌA (GRAPHIC MODE)                            -->
                 <!-- ============================================================== -->
                 <section id="screen-graphic" class="hidden glass-card rounded-3xl p-6 lg:p-8 border border-slate-800 flex flex-col min-h-[560px] shadow-2xl">
                     <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 border-b border-slate-800/60 pb-4">
                         <div>
-                            <h2 class="text-xl sm:text-2xl font-black text-white heading-font">Bß║ún ─Éß╗ô Hß╗ìa Th├┤ng Dß╗Ñng</h2>
-                            <p class="text-xs text-slate-400 mt-0.5">Hß╗ç thß╗æng tß╗½ c├íc b├ái hß╗ìc ─æang chß╗ìn</p>
+                            <h2 class="text-xl sm:text-2xl font-black text-white heading-font">Bản Đồ Họa Thông Dụng</h2>
+                            <p class="text-xs text-slate-400 mt-0.5">Hệ thống từ các bài học đang chọn</p>
                         </div>
                         <div class="flex bg-slate-900/60 p-1 rounded-xl border border-slate-800">
                             <button id="lang-en" onclick="setGraphicLang('en')" class="px-3.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition-all">EN</button>
                             <button id="lang-vn" onclick="setGraphicLang('vn')" class="px-3.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition-all">VN</button>
-                            <button id="lang-both" onclick="setGraphicLang('both')" class="px-3.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow transition-all">Song Ngß╗»</button>
+                            <button id="lang-both" onclick="setGraphicLang('both')" class="px-3.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow transition-all">Song Ngữ</button>
                         </div>
                     </div>
                     
@@ -585,7 +585,7 @@
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 5: QUß║óN L├¥ TIß║╛N ─Éß╗ÿ & SPACED REPETITION (PROGRESS MODE)   -->
+                <!-- SCREEN 5: QUẢN LÝ TIẾN ĐỘ & SPACED REPETITION (PROGRESS MODE)   -->
                 <!-- ============================================================== -->
                 <section id="screen-progress" class="hidden glass-card rounded-3xl p-6 lg:p-8 border border-slate-800 flex flex-col min-h-[560px] shadow-2xl space-y-5">
                     
@@ -593,16 +593,16 @@
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800/80 pb-4">
                         <div>
                             <h2 class="text-xl sm:text-2xl font-black text-white flex items-center gap-2 heading-font">
-                                <span>≡ƒôê</span> Quß║ún L├╜ Tiß║┐n ─Éß╗Ö & Spaced Repetition
+                                <span>📈</span> Quản Lý Tiến Độ & Spaced Repetition
                             </h2>
-                            <p class="text-xs text-slate-400 mt-1">Chu tr├¼nh ├┤n tß║¡p ngß║»t qu├úng 5 cß║Ñp ─æß╗Ö: L1 (1d) Γ₧ö L2 (3d) Γ₧ö L3 (7d) Γ₧ö L4 (14d) Γ₧ö L5 (30d)</p>
+                            <p class="text-xs text-slate-400 mt-1">Chu trình ôn tập ngắt quãng 5 cấp độ: L1 (1d) ➔ L2 (3d) ➔ L3 (7d) ➔ L4 (14d) ➔ L5 (30d)</p>
                         </div>
                         <div class="flex gap-2">
                             <button onclick="exportProgressData()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition-all flex items-center gap-1.5">
-                                ≡ƒôÑ Xuß║Ñt file JSON
+                                📥 Xuất file JSON
                             </button>
                             <label class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-xs font-bold text-white transition-all flex items-center gap-1.5 cursor-pointer">
-                                ≡ƒôñ Nhß║¡p file JSON
+                                📤 Nhập file JSON
                                 <input type="file" id="importFileInput" accept=".json" onchange="importProgressData(event)" class="hidden">
                             </label>
                         </div>
@@ -613,50 +613,50 @@
                         <div class="bg-gradient-to-br from-indigo-950/50 to-slate-900/80 border border-indigo-500/30 p-4 rounded-2xl space-y-2.5">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-xs font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-1.5">
-                                    <span>ΓÅ░</span> Cß║ºn ├ön Tß║¡p H├┤m Nay
+                                    <span>⏰</span> Cần Ôn Tập Hôm Nay
                                 </h3>
-                                <span id="dueBadgeCount" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">0 b├ái</span>
+                                <span id="dueBadgeCount" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">0 bài</span>
                             </div>
                             <div id="dueLessonsList" class="space-y-1.5 max-h-[140px] overflow-y-auto custom-scrollbar pr-1">
-                                <div class="text-xs text-slate-400 italic">Kh├┤ng c├│ b├ái n├áo ─æß║┐n hß║ín ├┤n tß║¡p h├┤m nay!</div>
+                                <div class="text-xs text-slate-400 italic">Không có bài nào đến hạn ôn tập hôm nay!</div>
                             </div>
                             <button id="startDueReviewBtn" onclick="startDueReviews()" class="w-full py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-md transition-all hidden">
-                                ≡ƒÜÇ Bß║»t ─Éß║ºu ├ön Tß║¡p C├íc B├ái ─Éß║┐n Hß║ín
+                                🚀 Bắt Đầu Ôn Tập Các Bài Đến Hạn
                             </button>
                         </div>
 
                         <div class="bg-gradient-to-br from-rose-950/40 to-slate-900/80 border border-rose-500/30 p-4 rounded-2xl space-y-2.5">
                             <div class="flex items-center justify-between">
                                 <h3 class="text-xs font-bold text-rose-300 uppercase tracking-wider flex items-center gap-1.5">
-                                    <span>ΓÜá∩╕Å</span> Kho C├óu Cß║ºn ├ön Lß║íi (Bß╗ï Vß║Ñp)
+                                    <span>⚠️</span> Kho Câu Cần Ôn Lại (Bị Vấp)
                                 </h3>
-                                <span id="struggledCountBadge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">0 c├óu</span>
+                                <span id="struggledCountBadge" class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">0 câu</span>
                             </div>
                             <div id="struggledListPreview" class="space-y-1.5 max-h-[140px] overflow-y-auto custom-scrollbar pr-1 text-xs">
-                                <div class="text-slate-400 italic">Tuyß╗çt vß╗¥i! Hiß╗çn kh├┤ng c├│ c├óu n├áo bß╗ï vß║Ñp.</div>
+                                <div class="text-slate-400 italic">Tuyệt vời! Hiện không có câu nào bị vấp.</div>
                             </div>
                             <button id="practiceStruggledBtn" onclick="practiceStruggledSentences()" class="w-full py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shadow-md transition-all hidden">
-                                ΓÜí Luyß╗çn Ri├¬ng C├íc C├óu Bß╗ï Vß║Ñp
+                                ⚡ Luyện Riêng Các Câu Bị Vấp
                             </button>
                         </div>
                     </div>
 
                     <!-- Curriculum Matrix (Parts 1 to 52 Roadmap) -->
                     <div class="space-y-2.5 pt-2">
-                        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Lß╗Ö Tr├¼nh To├án Bß╗Ö 52 B├ái Hß╗ìc</h3>
+                        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Lộ Trình Toàn Bộ 52 Bài Học</h3>
                         <div class="overflow-x-auto rounded-2xl border border-slate-800">
                             <table class="w-full text-left text-xs text-slate-300">
                                 <thead class="bg-slate-900/90 text-slate-400 uppercase font-bold border-b border-slate-800">
                                     <tr>
-                                        <th class="p-3">Phß║ºn</th>
-                                        <th class="p-3">T├¬n B├ái Hß╗ìc</th>
-                                        <th class="p-3 text-center">Sß╗æ C├óu</th>
+                                        <th class="p-3">Phần</th>
+                                        <th class="p-3">Tên Bài Học</th>
+                                        <th class="p-3 text-center">Số Câu</th>
                                         <th class="p-3 text-center">L1 (1d)</th>
                                         <th class="p-3 text-center">L2 (3d)</th>
                                         <th class="p-3 text-center">L3 (7d)</th>
                                         <th class="p-3 text-center">L4 (14d)</th>
                                         <th class="p-3 text-center">L5 (30d)</th>
-                                        <th class="p-3 text-right">Thao T├íc</th>
+                                        <th class="p-3 text-right">Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tbody id="progressTableBody" class="divide-y divide-slate-800/60 bg-slate-900/40">
@@ -668,33 +668,33 @@
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 6: Kß║╛T QUß║ó B├ÇI KIß╗éM TRA (RESULTS DASHBOARD)             -->
+                <!-- SCREEN 6: KẾT QUẢ BÀI KIỂM TRA (RESULTS DASHBOARD)             -->
                 <!-- ============================================================== -->
                 <section id="resultsScreen" class="hidden glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 text-center space-y-5 shadow-2xl">
                     <div>
-                        <span class="text-5xl animate-bounce inline-block">≡ƒÅå</span>
-                        <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 heading-font">Ho├án Th├ánh Buß╗òi Luyß╗çn Tß║¡p!</h2>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Kß║┐t quß║ú r├¿n phß║ún xß║í thß╗▒c chiß║┐n cß╗ºa bß║ín</p>
+                        <span class="text-5xl animate-bounce inline-block">🏆</span>
+                        <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 heading-font">Hoàn Thành Buổi Luyện Tập!</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Kết quả rèn phản xạ thực chiến của bạn</p>
                     </div>
 
                     <div class="grid grid-cols-3 gap-3 max-w-md mx-auto">
                         <div class="bg-slate-900/70 border border-slate-800 p-3.5 rounded-2xl">
-                            <div class="text-[11px] text-slate-400 font-medium">Tß╗òng sß╗æ c├óu</div>
+                            <div class="text-[11px] text-slate-400 font-medium">Tổng số câu</div>
                             <div id="resTotal" class="text-xl font-bold text-white mt-1">0</div>
                         </div>
                         <div class="bg-emerald-950/30 border border-emerald-500/20 p-3.5 rounded-2xl">
-                            <div class="text-[11px] text-slate-400 font-medium">Ch├¡nh x├íc</div>
+                            <div class="text-[11px] text-slate-400 font-medium">Chính xác</div>
                             <div id="resCorrect" class="text-xl font-bold text-emerald-400 mt-1">0</div>
                         </div>
                         <div class="bg-rose-950/30 border border-rose-500/20 p-3.5 rounded-2xl">
-                            <div class="text-[11px] text-slate-400 font-medium">Cß║ºn xem lß║íi</div>
+                            <div class="text-[11px] text-slate-400 font-medium">Cần xem lại</div>
                             <div id="resWrong" class="text-xl font-bold text-rose-400 mt-1">0</div>
                         </div>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                        <button onclick="restartWithDeck(null)" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg text-sm">Luyß╗çn Lß║íi Tß║Ñt Cß║ú</button>
-                        <button id="reviewWrongBtn" onclick="restartWithDeck(wrongDeck)" class="hidden flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg text-sm">Chß╗ë ├ön C├óu Bß╗ï Vß║Ñp</button>
+                        <button onclick="restartWithDeck(null)" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg text-sm">Luyện Lại Tất Cả</button>
+                        <button id="reviewWrongBtn" onclick="restartWithDeck(wrongDeck)" class="hidden flex-1 bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg text-sm">Chỉ Ôn Câu Bị Vấp</button>
                     </div>
                 </section>
 
@@ -709,8 +709,8 @@
                 <div class="glass-panel rounded-2xl p-3 flex items-center justify-between shadow-xl border border-slate-800">
                     <div class="flex items-center gap-2">
                         <!-- Toggle Button (Collapse Right Sidebar) -->
-                        <button onclick="toggleSentenceListSidebar()" title="Thu gß╗ìn danh s├ích c├óu ─æß╗æi chiß║┐u" class="w-7 h-7 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center border border-slate-700 transition-all active:scale-95 text-xs">
-                            <span>Γû╢</span>
+                        <button onclick="toggleSentenceListSidebar()" title="Thu gọn danh sách câu đối chiếu" class="w-7 h-7 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center border border-slate-700 transition-all active:scale-95 text-xs">
+                            <span>▶</span>
                         </button>
                         <h2 class="text-base font-black text-white tracking-tight heading-font">Sentences List</h2>
                     </div>
@@ -718,7 +718,7 @@
                     <!-- Active Lesson Title & Count Badge -->
                     <div class="flex items-center gap-1.5">
                         <span id="sentenceListCountBadge" class="text-[11px] bg-indigo-500/20 text-indigo-300 font-bold px-2 py-0.5 rounded-full border border-indigo-500/30">
-                            30 c├óu
+                            30 câu
                         </span>
                     </div>
                 </div>
@@ -730,14 +730,14 @@
                         <div class="flex items-center gap-1.5">
                             <span class="w-2 h-2 rounded-sm bg-indigo-400 inline-block"></span>
                             <span id="sentenceListPartTitle" class="text-xs font-black text-white uppercase tracking-wider heading-font">
-                                PHß║ªN 1: GIAO TIß║╛P C╞á Bß║óN V├Ç XIN PH├ëP
+                                PHẦN 1: GIAO TIẾP CƠ BẢN VÀ XIN PHÉP
                             </span>
                         </div>
                     </div>
 
                     <!-- Search Input in Sentence List -->
                     <div class="relative">
-                        <input type="text" id="sentenceSearchInput" oninput="filterSentenceList()" placeholder="≡ƒöì T├¼m c├óu tiß║┐ng Anh hoß║╖c tiß║┐ng Viß╗çt..." class="w-full px-2.5 py-1.5 text-xs rounded-xl glass-input text-white placeholder-slate-500 focus:outline-none transition-all">
+                        <input type="text" id="sentenceSearchInput" oninput="filterSentenceList()" placeholder="🔍 Tìm câu tiếng Anh hoặc tiếng Việt..." class="w-full px-2.5 py-1.5 text-xs rounded-xl glass-input text-white placeholder-slate-500 focus:outline-none transition-all">
                     </div>
 
                     <!-- Independent Scrollable Sentence Items List (Matching 002.jpg) -->
@@ -748,8 +748,8 @@
             </aside>
 
             <!-- Floating Button to Open Right Sidebar when Hidden -->
-            <button id="floatingOpenSentencesBtn" onclick="toggleSentenceListSidebar()" title="Mß╗ƒ danh s├ích c├óu ─æß╗æi chiß║┐u (Sentences List)" class="hidden fixed right-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
-                <span>≡ƒôÜ Sentences List ΓùÇ</span>
+            <button id="floatingOpenSentencesBtn" onclick="toggleSentenceListSidebar()" title="Mở danh sách câu đối chiếu (Sentences List)" class="hidden fixed right-3 top-4 z-40 bg-slate-900/90 hover:bg-slate-800 text-white px-3 py-2 rounded-xl shadow-2xl border border-indigo-500/40 backdrop-blur-md transition-all active:scale-95 text-xs font-bold flex items-center gap-1.5">
+                <span>📚 Sentences List ◀</span>
             </button>
 
         </div>
@@ -884,12 +884,12 @@
             if (sidebarCollapsed) {
                 sidebar.classList.add('hidden', 'lg:hidden');
                 floatingBtn?.classList.remove('hidden');
-                if (toggleIcon) toggleIcon.innerText = "Γû╢";
+                if (toggleIcon) toggleIcon.innerText = "▶";
                 localStorage.setItem('em_left_sidebar', 'collapsed');
             } else {
                 sidebar.classList.remove('hidden', 'lg:hidden');
                 floatingBtn?.classList.add('hidden');
-                if (toggleIcon) toggleIcon.innerText = "ΓùÇ";
+                if (toggleIcon) toggleIcon.innerText = "◀";
                 localStorage.setItem('em_left_sidebar', 'expanded');
             }
         }
@@ -922,8 +922,8 @@
             const badgeEl = document.getElementById('sentenceListCountBadge');
             const container = document.getElementById('sentenceListItems');
 
-            if (titleEl) titleEl.innerText = `PHß║ªN ${partNum}: ${lesson.title.toUpperCase()}`;
-            if (badgeEl) badgeEl.innerText = `${lesson.sentences.length} c├óu`;
+            if (titleEl) titleEl.innerText = `PHẦN ${partNum}: ${lesson.title.toUpperCase()}`;
+            if (badgeEl) badgeEl.innerText = `${lesson.sentences.length} câu`;
 
             if (!container) return;
             container.innerHTML = "";
@@ -947,8 +947,8 @@
                     <div class="flex-1 min-w-0">
                         <div class="text-xs font-bold text-white leading-snug group-hover:text-indigo-200 transition-colors flex items-center justify-between gap-1">
                             <span>${s.en}</span>
-                            <button onclick="event.stopPropagation(); speakSentence('${s.en.replace(/'/g, "\\'")}')" title="Nghe ph├ít ├óm" class="opacity-0 group-hover:opacity-100 text-indigo-400 hover:text-white p-0.5 transition-all flex-shrink-0 text-xs">
-                                ≡ƒöè
+                            <button onclick="event.stopPropagation(); speakSentence('${s.en.replace(/'/g, "\\'")}')" title="Nghe phát âm" class="opacity-0 group-hover:opacity-100 text-indigo-400 hover:text-white p-0.5 transition-all flex-shrink-0 text-xs">
+                                🔊
                             </button>
                         </div>
                         <div class="text-[11px] text-slate-400 mt-0.5 leading-relaxed">
@@ -960,7 +960,7 @@
             });
 
             if (container.children.length === 0) {
-                container.innerHTML = `<div class="text-xs text-slate-500 italic text-center py-6">Kh├┤ng t├¼m thß║Ñy c├óu n├áo ph├╣ hß╗úp vß╗¢i tß╗½ kh├│a "${filterQuery}"</div>`;
+                container.innerHTML = `<div class="text-xs text-slate-500 italic text-center py-6">Không tìm thấy câu nào phù hợp với từ khóa "${filterQuery}"</div>`;
             }
         }
 
@@ -1009,11 +1009,11 @@
                 div.innerHTML = `
                     <div class="flex items-center gap-2 flex-1 min-w-0">
                         <input type="checkbox" id="cb-${part}" ${isChecked ? 'checked' : ''} onchange="toggleLesson(${part}, this.checked)" class="w-3.5 h-3.5 text-indigo-600 bg-slate-900 border-slate-700 rounded focus:ring-indigo-500 cursor-pointer">
-                        <label for="cb-${part}" class="font-medium text-slate-300 text-xs truncate cursor-pointer select-none">Phß║ºn ${part}: ${lesson.title}</label>
+                        <label for="cb-${part}" class="font-medium text-slate-300 text-xs truncate cursor-pointer select-none">Phần ${part}: ${lesson.title}</label>
                     </div>
                     <div class="flex items-center gap-1 flex-shrink-0">
-                        <span class="text-[9px] text-slate-400 font-bold bg-slate-800/80 px-1.5 py-0.5 rounded-full border border-slate-700">${count} c├óu</span>
-                        <button onclick="playPartDirectly(${part}, 'learn')" title="Xem Video B├ái Giß║úng" class="text-[10px] p-0.5 px-1 rounded bg-amber-500/20 text-amber-300 hover:bg-amber-500/40 font-bold transition-all">Γû╢</button>
+                        <span class="text-[9px] text-slate-400 font-bold bg-slate-800/80 px-1.5 py-0.5 rounded-full border border-slate-700">${count} câu</span>
+                        <button onclick="playPartDirectly(${part}, 'learn')" title="Xem Video Bài Giảng" class="text-[10px] p-0.5 px-1 rounded bg-amber-500/20 text-amber-300 hover:bg-amber-500/40 font-bold transition-all">▶</button>
                     </div>
                 `;
                 container.appendChild(div);
@@ -1057,7 +1057,7 @@
             sortedKeys.forEach(part => {
                 const lesson = lessonsData[part];
                 const row = document.getElementById(`lesson-row-${part}`);
-                const matches = lesson.title.toLowerCase().includes(query) || `phß║ºn ${part}`.includes(query) || `${part}` === query;
+                const matches = lesson.title.toLowerCase().includes(query) || `phần ${part}`.includes(query) || `${part}` === query;
                 if (matches) {
                     row?.classList.remove('hidden');
                 } else {
@@ -1091,7 +1091,7 @@
 
         function updateSelectedBadge() {
             const badge = document.getElementById('selectedCountBadge');
-            badge.innerText = `─É├ú chß╗ìn: ${selectedLessons.length} b├ái`;
+            badge.innerText = `Đã chọn: ${selectedLessons.length} bài`;
         }
 
         function playPartDirectly(part, mode = 'learn') {
@@ -1154,11 +1154,11 @@
                     badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-indigo-400 bg-indigo-400/10 border border-indigo-400/20 uppercase";
                     document.getElementById('timerContainer').classList.remove('hidden');
                 } else if (mode === 'typing') {
-                    badge.innerText = "CHß║╛ ─Éß╗ÿ G├ò PH├ìM";
+                    badge.innerText = "CHẾ ĐỘ GÕ PHÍM";
                     badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 uppercase";
                     document.getElementById('timerContainer').classList.add('hidden');
                 } else if (mode === 'speaking') {
-                    badge.innerText = "CHß║╛ ─Éß╗ÿ N├ôI";
+                    badge.innerText = "CHẾ ĐỘ NÓI";
                     badge.className = "px-3 py-1 rounded-full text-xs font-bold tracking-wider text-pink-400 bg-pink-400/10 border border-pink-400/20 uppercase";
                     document.getElementById('timerContainer').classList.add('hidden');
                 }
@@ -1179,7 +1179,7 @@
         function updateVideoScreen(partNum) {
             activeVideoPart = Math.max(1, Math.min(52, Number(partNum)));
             const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.videos) ? videoMappingData.videos[activeVideoPart] : null;
-            const lesson = lessonsData[activeVideoPart] || { title: `Phß║ºn ${activeVideoPart}` };
+            const lesson = lessonsData[activeVideoPart] || { title: `Phần ${activeVideoPart}` };
 
             // 1. Learn Mode Video (Local file: Videos/Lessons/Lesson_XX.mp4)
             const learnTitleEl = document.getElementById('learnVideoTitle');
@@ -1190,7 +1190,7 @@
             const learnHubVideoTitle = document.getElementById('learnHubVideoTitle');
             const missingLearnName = document.getElementById('missingLearnFileName');
 
-            if (learnTitleEl) learnTitleEl.innerText = `Phß║ºn ${activeVideoPart}: ${lesson.title}`;
+            if (learnTitleEl) learnTitleEl.innerText = `Phần ${activeVideoPart}: ${lesson.title}`;
             const expectedLearnFile = `Lesson_${pad(activeVideoPart)}.mp4`;
             if (missingLearnName) missingLearnName.innerText = expectedLearnFile;
 
@@ -1229,7 +1229,7 @@
             const missingTestName = document.getElementById('missingTestFileName');
             const testTypeSelector = document.getElementById('testTypeSelector');
 
-            if (testTitleEl) testTitleEl.innerText = `B├ái Thi Phß║ºn ${activeVideoPart}: ${lesson.title}`;
+            if (testTitleEl) testTitleEl.innerText = `Bài Thi Phần ${activeVideoPart}: ${lesson.title}`;
 
             let expectedTestFile = '';
             let targetTestVideo = null;
@@ -1326,7 +1326,7 @@
         // ==============================================================
         function nextQuestion() {
             if (selectedLessons.length === 0) {
-                alert("Vui l├▓ng chß╗ìn ├¡t nhß║Ñt mß╗Öt b├ái hß╗ìc ß╗ƒ bß║úng b├¬n tr├íi!");
+                alert("Vui lòng chọn ít nhất một bài học ở bảng bên trái!");
                 return;
             }
 
@@ -1368,7 +1368,7 @@
             wrongDeck = [];
             currentIndex = 0;
 
-            document.getElementById('mainBtn').innerText = "THUß╗ÿC Rß╗ÆI (TIß║╛P Tß╗ñC)";
+            document.getElementById('mainBtn').innerText = "THUỘC RỒI (TIẾP TỤC)";
             document.getElementById('mainBtn').className = "flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-3.5 rounded-2xl shadow-xl transition-all active:scale-98 tracking-wide text-base";
             
             showCurrentCard();
@@ -1387,7 +1387,7 @@
             updateSentenceListSidebar(activeVideoPart);
             updateLessonListHighlight();
 
-            document.getElementById('currentLessonName').innerText = `Phß║ºn ${currentCard.part}: ${currentCard.lessonTitle}`;
+            document.getElementById('currentLessonName').innerText = `Phần ${currentCard.part}: ${currentCard.lessonTitle}`;
             document.getElementById('cardCounter').innerText = `${currentIndex + 1} / ${currentDeck.length}`;
             document.getElementById('vietnameseTxt').innerText = currentCard.vn;
 
@@ -1422,7 +1422,7 @@
             
             // Speaking
             document.getElementById('speechResult').classList.add('hidden');
-            document.getElementById('speechStatus').innerText = 'Bß║Ñm mic ─æß╗â n├│i c├óu tiß║┐ng Anh';
+            document.getElementById('speechStatus').innerText = 'Bấm mic để nói câu tiếng Anh';
             document.getElementById('micBtn').classList.remove('pulse-mic', 'bg-rose-600');
             document.getElementById('micBtn').classList.add('bg-indigo-600');
         }
@@ -1503,7 +1503,7 @@
                 resultDiv.className = "p-4 rounded-xl text-left space-y-2 bg-emerald-950/40 border border-emerald-500/30";
                 resultDiv.innerHTML = `
                     <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-                        <span>Γ£à</span> CH├ìNH X├üC HO├ÇN Hß║óO!
+                        <span>✅</span> CHÍNH XÁC HOÀN HẢO!
                     </div>
                     <div class="text-sm font-bold text-white">${target}</div>
                 `;
@@ -1511,10 +1511,10 @@
                 resultDiv.className = "p-4 rounded-xl text-left space-y-2 bg-rose-950/40 border border-rose-500/30";
                 resultDiv.innerHTML = `
                     <div class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
-                        <span>Γ¥î</span> Cß║ªN Sß╗¼A Lß║áI:
+                        <span>❌</span> CẦN SỬA LẠI:
                     </div>
-                    <div class="text-xs text-slate-300">Bß║ín ─æ├ú g├╡: <span class="line-through text-rose-300 font-mono">${inputVal}</span></div>
-                    <div class="text-xs text-slate-300">─É├íp ├ín ─æ├║ng: <span class="text-emerald-400 font-bold font-mono">${target}</span></div>
+                    <div class="text-xs text-slate-300">Bạn đã gõ: <span class="line-through text-rose-300 font-mono">${inputVal}</span></div>
+                    <div class="text-xs text-slate-300">Đáp án đúng: <span class="text-emerald-400 font-bold font-mono">${target}</span></div>
                 `;
                 wrongDeck.push(currentCard);
             }
@@ -1533,7 +1533,7 @@
 
                 recognition.onstart = () => {
                     isRecording = true;
-                    document.getElementById('speechStatus').innerText = '─Éang lß║»ng nghe c├óu n├│i cß╗ºa bß║ín...';
+                    document.getElementById('speechStatus').innerText = 'Đang lắng nghe câu nói của bạn...';
                     document.getElementById('micBtn').classList.add('pulse-mic', 'bg-rose-600');
                     document.getElementById('micBtn').classList.remove('bg-indigo-600');
                 };
@@ -1544,7 +1544,7 @@
                 };
 
                 recognition.onerror = (event) => {
-                    document.getElementById('speechStatus').innerText = `Lß╗ùi nhß║¡n diß╗çn: ${event.error}`;
+                    document.getElementById('speechStatus').innerText = `Lỗi nhận diện: ${event.error}`;
                     isRecording = false;
                     document.getElementById('micBtn').classList.remove('pulse-mic', 'bg-rose-600');
                     document.getElementById('micBtn').classList.add('bg-indigo-600');
@@ -1560,7 +1560,7 @@
 
         function toggleSpeechRecognition() {
             if (!recognition) {
-                alert("Tr├¼nh duyß╗çt cß╗ºa bß║ín ch╞░a hß╗ù trß╗ú nhß║¡n diß╗çn giß╗ìng n├│i Web Speech API (H├úy d├╣ng Chrome hoß║╖c Edge)!");
+                alert("Trình duyệt của bạn chưa hỗ trợ nhận diện giọng nói Web Speech API (Hãy dùng Chrome hoặc Edge)!");
                 return;
             }
             if (isRecording) {
@@ -1588,7 +1588,7 @@
                 resultDiv.className = "p-4 rounded-xl text-left space-y-2 bg-emerald-950/40 border border-emerald-500/30 w-full";
                 resultDiv.innerHTML = `
                     <div class="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
-                        <span>≡ƒÄ»</span> PH├üT ├éM Rß║ñT CHUß║¿N!
+                        <span>🎯</span> PHÁT ÂM RẤT CHUẨN!
                     </div>
                     <div class="text-sm font-bold text-white">${transcript}</div>
                 `;
@@ -1596,9 +1596,9 @@
                 resultDiv.className = "p-4 rounded-xl text-left space-y-2 bg-rose-950/40 border border-rose-500/30 w-full";
                 resultDiv.innerHTML = `
                     <div class="text-xs font-bold text-rose-400 flex items-center gap-1.5">
-                        <span>≡ƒÄÖ∩╕Å</span> Bß║áN Vß╗¬A N├ôI: "${transcript}"
+                        <span>🎙️</span> BẠN VỪA NÓI: "${transcript}"
                     </div>
-                    <div class="text-xs text-slate-300">C├óu chuß║⌐n mß║½u: <span class="text-emerald-400 font-bold">${target}</span></div>
+                    <div class="text-xs text-slate-300">Câu chuẩn mẫu: <span class="text-emerald-400 font-bold">${target}</span></div>
                 `;
                 wrongDeck.push(currentCard);
             }
@@ -1638,7 +1638,7 @@
         }
 
         // ==============================================================
-        // GRAPHIC MODE MATRIX (Bß║óN ─Éß╗Æ Hß╗îA)
+        // GRAPHIC MODE MATRIX (BẢN ĐỒ HỌA)
         // ==============================================================
         function setGraphicLang(lang) {
             graphicLang = lang;
@@ -1674,15 +1674,15 @@
                                 ${graphicLang !== 'vn' ? `<div class="font-bold text-white">${s.en}</div>` : ''}
                                 ${graphicLang !== 'en' ? `<div class="text-slate-400 ${graphicLang === 'both' ? 'text-[11px] mt-0.5' : 'font-medium'}">${s.vn}</div>` : ''}
                             </div>
-                            <button onclick="speakSentence('${s.en.replace(/'/g, "\\'")}')" class="text-slate-500 hover:text-indigo-400 transition-colors p-0.5">≡ƒöè</button>
+                            <button onclick="speakSentence('${s.en.replace(/'/g, "\\'")}')" class="text-slate-500 hover:text-indigo-400 transition-colors p-0.5">🔊</button>
                         </div>
                     `;
                 });
 
                 card.innerHTML = `
                     <div class="flex justify-between items-center border-b border-slate-800 pb-2">
-                        <h3 class="text-sm font-black text-white heading-font">Phß║ºn ${part}: ${lesson.title}</h3>
-                        <span class="text-[10px] text-indigo-400 font-bold bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">${lesson.sentences.length} c├óu</span>
+                        <h3 class="text-sm font-black text-white heading-font">Phần ${part}: ${lesson.title}</h3>
+                        <span class="text-[10px] text-indigo-400 font-bold bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">${lesson.sentences.length} câu</span>
                     </div>
                     <div class="space-y-1.5 max-h-[400px] overflow-y-auto custom-scrollbar pr-1">
                         ${sentencesHtml}
@@ -1776,8 +1776,8 @@
                     const dueItem = document.createElement('div');
                     dueItem.className = "flex justify-between items-center p-2 rounded-lg bg-slate-900/60 border border-amber-500/20 text-xs";
                     dueItem.innerHTML = `
-                        <span class="font-bold text-white">Phß║ºn ${i}: ${lesson.title}</span>
-                        <button onclick="playPartDirectly(${i}, 'flashcard')" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 font-bold transition-all text-xs">├ön ngay Γ₧ö</button>
+                        <span class="font-bold text-white">Phần ${i}: ${lesson.title}</span>
+                        <button onclick="playPartDirectly(${i}, 'flashcard')" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 font-bold transition-all text-xs">Ôn ngay ➔</button>
                     `;
                     dueContainer.appendChild(dueItem);
                 }
@@ -1792,7 +1792,7 @@
                         <td class="p-2.5 text-center">
                             <span class="w-6 h-6 rounded-full inline-flex items-center justify-center text-[10px] font-bold ${
                                 isPassed ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-slate-800/40 text-slate-600'
-                            }">${isPassed ? 'Γ£ô' : lvl}</span>
+                            }">${isPassed ? '✓' : lvl}</span>
                         </td>
                     `;
                 }
@@ -1803,24 +1803,24 @@
                     <td class="p-2.5 text-center text-slate-400">${lesson.sentences.length}</td>
                     ${boxesHtml}
                     <td class="p-2.5 text-right">
-                        <button onclick="playPartDirectly(${i}, 'learn')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition-all text-xs mr-1">Hß╗ìc</button>
-                        <button onclick="playPartDirectly(${i}, 'flashcard')" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all text-xs">├ön</button>
+                        <button onclick="playPartDirectly(${i}, 'learn')" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition-all text-xs mr-1">Học</button>
+                        <button onclick="playPartDirectly(${i}, 'flashcard')" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition-all text-xs">Ôn</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
             }
 
-            document.getElementById('dueBadgeCount').innerText = `${dueCount} b├ái`;
+            document.getElementById('dueBadgeCount').innerText = `${dueCount} bài`;
             if (dueCount > 0) {
                 document.getElementById('startDueReviewBtn').classList.remove('hidden');
             } else {
                 document.getElementById('startDueReviewBtn').classList.add('hidden');
-                dueContainer.innerHTML = `<div class="text-xs text-slate-400 italic">Tuyß╗çt vß╗¥i! To├án bß╗Ö b├ái hß╗ìc ─æß╗üu ─æ├ú ho├án th├ánh chu kß╗│ ├┤n tß║¡p.</div>`;
+                dueContainer.innerHTML = `<div class="text-xs text-slate-400 italic">Tuyệt vời! Toàn bộ bài học đều đã hoàn thành chu kỳ ôn tập.</div>`;
             }
 
             // Struggled vault
             const struggled = progressData.struggledSentences || [];
-            document.getElementById('struggledCountBadge').innerText = `${struggled.length} c├óu`;
+            document.getElementById('struggledCountBadge').innerText = `${struggled.length} câu`;
             const struggledContainer = document.getElementById('struggledListPreview');
             struggledContainer.innerHTML = "";
 
@@ -1837,7 +1837,7 @@
                 });
             } else {
                 document.getElementById('practiceStruggledBtn').classList.add('hidden');
-                struggledContainer.innerHTML = `<div class="text-slate-400 italic">Tuyß╗çt vß╗¥i! Hiß╗çn kh├┤ng c├│ c├óu n├áo bß╗ï vß║Ñp.</div>`;
+                struggledContainer.innerHTML = `<div class="text-slate-400 italic">Tuyệt vời! Hiện không có câu nào bị vấp.</div>`;
             }
         }
 
@@ -1865,9 +1865,9 @@
                     saveProgressData();
                     saveStats();
                     renderProgressScreen();
-                    alert("Nhß║¡p dß╗» liß╗çu tiß║┐n ─æß╗Ö th├ánh c├┤ng!");
+                    alert("Nhập dữ liệu tiến độ thành công!");
                 } catch(err) {
-                    alert("Lß╗ùi ─æß╗ìc file dß╗» liß╗çu: " + err.message);
+                    alert("Lỗi đọc file dữ liệu: " + err.message);
                 }
             };
             reader.readAsText(file);
@@ -1890,7 +1890,7 @@
         }
 
         function updateStatsUI() {
-            document.getElementById('statsStreak').innerText = `${stats.streak} ng├áy`;
+            document.getElementById('statsStreak').innerText = `${stats.streak} ngày`;
             document.getElementById('statsPracticed').innerText = stats.totalPracticed;
             
             const accuracy = stats.totalPracticed > 0 ? Math.round((stats.totalCorrect / stats.totalPracticed) * 100) : 0;
@@ -1900,7 +1900,7 @@
             for (let part in lessonsData) {
                 total += lessonsData[part].sentences.length;
             }
-            document.getElementById('statsTotalCards').innerText = `${total} c├óu`;
+            document.getElementById('statsTotalCards').innerText = `${total} câu`;
         }
 
         function checkStreak() {
