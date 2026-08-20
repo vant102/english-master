@@ -101,7 +101,7 @@ function downloadVideo(url, targetPath, title, forceOverwrite = false) {
         '--force-overwrites',
         '--js-runtimes', 'node',
         '--remote-components', 'ejs:github',
-        '--extractor-args', 'youtube:player_client=android,web',
+        '--extractor-args', 'youtube:player_client=all',
         '--sleep-interval', '1',
         '-o', targetPath
     ];
