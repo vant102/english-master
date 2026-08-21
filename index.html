@@ -1207,10 +1207,23 @@
                 if (learnCenterPlayBtn) learnCenterPlayBtn.href = ytUrl;
             }
 
+            function resolveVideoSrc(type, part, fileName) {
+                // If running offline via file:// protocol, use relative local folder
+                if (window.location.protocol === 'file:') {
+                    const localFolder = type === 'lesson' ? 'Videos/Lessons' : 'Videos/Tests';
+                    return new URL(`${localFolder}/${fileName}`, window.location.href).href;
+                }
+                // Online (Firebase Hosting / GitHub Pages): Stream directly from GitHub Releases CDN
+                const tag = (type === 'lesson')
+                    ? (part <= 26 ? 'v-lessons-1-26' : 'v-lessons-27-52')
+                    : (part <= 26 ? 'v-tests-1-26' : 'v-tests-27-52');
+                return `https://github.com/vant102/english-master/releases/download/${tag}/${fileName}`;
+            }
+
             if (learnPlayer) {
-                const localLearnPath = `Videos/Lessons/${expectedLearnFile}`;
-                if (learnPlayer.src !== new URL(localLearnPath, window.location.href).href) {
-                    learnPlayer.src = localLearnPath;
+                const targetLearnSrc = resolveVideoSrc('lesson', activeVideoPart, expectedLearnFile);
+                if (learnPlayer.src !== targetLearnSrc) {
+                    learnPlayer.src = targetLearnSrc;
                     learnPlayer.load();
                 }
             }
@@ -1264,9 +1277,9 @@
             if (missingTestName) missingTestName.innerText = expectedTestFile;
 
             if (testPlayer) {
-                const localTestPath = `Videos/Tests/${expectedTestFile}`;
-                if (testPlayer.src !== new URL(localTestPath, window.location.href).href) {
-                    testPlayer.src = localTestPath;
+                const targetTestSrc = resolveVideoSrc('test', activeVideoPart, expectedTestFile);
+                if (testPlayer.src !== targetTestSrc) {
+                    testPlayer.src = targetTestSrc;
                     testPlayer.load();
                 }
             }
