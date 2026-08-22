@@ -1207,11 +1207,11 @@
                     const localFolder = type === 'lesson' ? 'Videos/Lessons' : 'Videos/Tests';
                     return new URL(`${localFolder}/${fileName}`, window.location.href).href;
                 }
-                // Online (Firebase Hosting / GitHub Pages): Stream directly from GitHub Releases CDN
+                // Online (Firebase Hosting / GitHub Pages / iPad / iPhone / Android): Stream via Edge CDN with native video/mp4 & inline headers
                 const tag = (type === 'lesson')
                     ? (part <= 26 ? 'v-lessons-1-26' : 'v-lessons-27-52')
                     : (part <= 26 ? 'v-tests-1-26' : 'v-tests-27-52');
-                return `https://github.com/vant102/english-master/releases/download/${tag}/${fileName}`;
+                return `https://english-master.vant102.deno.net/${tag}/${fileName}`;
             }
 
             if (learnPlayer) {
