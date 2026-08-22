@@ -368,7 +368,7 @@
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
                             <!-- Local/Cloud HTML5 Video Player -->
-                            <video id="offlineLearnPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadeddata="hideLearnMissingNotice()" onerror="showLearnMissingNotice()"></video>
+                            <video id="offlineLearnPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadedmetadata="hideLearnMissingNotice()" oncanplay="hideLearnMissingNotice()" onplay="hideLearnMissingNotice()" onloadeddata="hideLearnMissingNotice()" onerror="showLearnMissingNotice()"></video>
                             
                             <!-- Cloud Video Sync Notice -->
                             <div id="learnVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
@@ -439,7 +439,7 @@
                     <!-- Video Container -->
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
-                            <video id="offlineTestPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadeddata="hideTestMissingNotice()" onerror="showTestMissingNotice()"></video>
+                            <video id="offlineTestPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadedmetadata="hideTestMissingNotice()" oncanplay="hideTestMissingNotice()" onplay="hideTestMissingNotice()" onloadeddata="hideTestMissingNotice()" onerror="showTestMissingNotice()"></video>
                             
                             <!-- Fallback Hub -->
                             <div id="testVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
@@ -1278,6 +1278,8 @@
                 }
             }
 
+            hideLearnMissingNotice();
+            hideTestMissingNotice();
             updateLessonListHighlight();
             updateSentenceListSidebar(activeVideoPart);
         }
@@ -1287,7 +1289,10 @@
         }
 
         function showLearnMissingNotice() {
-            document.getElementById('learnVideoMissingNotice')?.classList.remove('hidden');
+            const p = document.getElementById('offlineLearnPlayer');
+            if (p && p.error) {
+                document.getElementById('learnVideoMissingNotice')?.classList.remove('hidden');
+            }
         }
 
         function hideTestMissingNotice() {
@@ -1295,7 +1300,10 @@
         }
 
         function showTestMissingNotice() {
-            document.getElementById('testVideoMissingNotice')?.classList.remove('hidden');
+            const p = document.getElementById('offlineTestPlayer');
+            if (p && p.error) {
+                document.getElementById('testVideoMissingNotice')?.classList.remove('hidden');
+            }
         }
 
         function selectTestType(type) {
