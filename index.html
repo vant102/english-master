@@ -347,7 +347,7 @@
                 </div>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 1: VIDEO BÀI GIẢNG (THEATER VIEW MATCHING 002.jpg)      -->
+                <!-- SCREEN 1: VIDEO BÀI GIẢNG (THEATER VIEW - YOUTUBE PLAYER)      -->
                 <!-- ============================================================== -->
                 <section id="screen-learn" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[580px]">
                     <!-- Video Top Control Bar -->
@@ -359,47 +359,28 @@
                             <h2 id="learnVideoTitle" class="text-xs sm:text-sm font-extrabold text-white truncate heading-font">Phần 1: GIAO TIẾP CƠ BẢN VÀ XIN PHÉP</h2>
                         </div>
                         <div class="flex items-center gap-2 flex-shrink-0">
+                            <a id="learnYtDirectLink" href="https://youtube.com/playlist?list=PLfUgGuAx0o64" target="_blank" class="px-3 py-1.5 rounded-xl bg-red-600/90 hover:bg-red-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-red-950/40 transition-all">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <span>Mở YouTube</span>
+                            </a>
                             <button onclick="navigateVideoPart('learn', -1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">◀ Bài trước</button>
                             <button onclick="navigateVideoPart('learn', 1)" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">Bài tiếp theo ▶</button>
                         </div>
                     </div>
 
-                    <!-- Video Container (HTML5 Player) -->
+                    <!-- Video Container (YouTube Embed Player) -->
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
-                            <!-- Local/Cloud HTML5 Video Player -->
-                            <video id="offlineLearnPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadedmetadata="hideLearnMissingNotice()" oncanplay="hideLearnMissingNotice()" onplay="hideLearnMissingNotice()" onloadeddata="hideLearnMissingNotice()" onerror="showLearnMissingNotice()"></video>
-                            
-                            <!-- Cloud Video Sync Notice -->
-                            <div id="learnVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
-                                <img id="learnThumbnailImg" src="" alt="Thumbnail Video" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
-                                <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
-                                    <div class="w-14 h-14 rounded-full bg-indigo-600/30 text-indigo-400 flex items-center justify-center shadow-xl border border-indigo-500/30">
-                                        <span class="text-2xl animate-pulse">☁️</span>
-                                    </div>
-                                    <div>
-                                        <h3 id="learnHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">5000 Câu - Học Xong Là Giỏi Không Cần Học Nữa</h3>
-                                        <p class="text-xs text-slate-300 mt-1 font-medium">Video <code id="missingLearnFileName" class="text-amber-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Lesson_01.mp4</code> đang được đồng bộ lên đám mây</p>
-                                    </div>
-                                    <div class="px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
-                                        <span>⏳</span> Vui lòng chờ quá trình upload hoàn tất hoặc chọn bài học khác để tiếp tục
-                                    </div>
-                                </div>
-                            </div>
+                            <iframe id="learnYtIframe" class="w-full h-full border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
 
-                    <!-- Video Action Bottom Bar with Speed Controls -->
+                    <!-- Video Action Bottom Bar -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
-                        <div class="flex items-center gap-1.5 text-xs text-slate-400">
-                            <span>Tốc độ:</span>
-                            <button onclick="setVideoSpeed('learn', 0.75)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">0.75x</button>
-                            <button onclick="setVideoSpeed('learn', 1.0)" class="px-2 py-0.5 rounded bg-indigo-600 text-white font-bold text-xs">1.0x</button>
-                            <button onclick="setVideoSpeed('learn', 1.25)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.25x</button>
-                            <button onclick="setVideoSpeed('learn', 1.5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.5x</button>
-                            <span class="text-slate-600 ml-1.5">|</span>
-                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Phím tắt: ← / → tua 5s, K tạm dừng</span>
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <span class="text-emerald-400 font-semibold">● YouTube 1080p Full HD</span>
+                            <span class="text-slate-600">|</span>
+                            <span class="text-slate-400">Tương thích 100% iPhone, iPad, Android & Máy tính</span>
                         </div>
                         <div class="flex gap-2">
                             <button onclick="switchMode('test')" class="px-3.5 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs shadow-lg shadow-orange-950/40 transition-all">
@@ -413,7 +394,7 @@
                 </section>
 
                 <!-- ============================================================== -->
-                <!-- SCREEN 2: VIDEO BÀI TEST (THEATER VIEW)                        -->
+                <!-- SCREEN 2: VIDEO BÀI TEST (THEATER VIEW - YOUTUBE PLAYER)       -->
                 <!-- ============================================================== -->
                 <section id="screen-test" class="hidden glass-card rounded-3xl overflow-hidden flex flex-col shadow-2xl border border-slate-800 min-h-[580px]">
                     <!-- Video Top Control Bar -->
@@ -431,46 +412,43 @@
                                 <button id="btnTestVnEn" onclick="selectTestType('vn-en')" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-600 text-white transition-all">🇻🇳➔🇬🇧 Việt - Anh</button>
                                 <button id="btnTestEnVn" onclick="selectTestType('en-vn')" class="px-2.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-slate-200 transition-all">🇬🇧➔🇻🇳 Anh - Việt</button>
                             </div>
+                            <a id="testYtDirectLink" href="https://youtube.com/playlist?list=PLUTtxelamwCE" target="_blank" class="px-3 py-1.5 rounded-xl bg-red-600/90 hover:bg-red-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-red-950/40 transition-all">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                <span>Mở YouTube</span>
+                            </a>
                             <button onclick="navigateVideoPart('test', -1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">◀</button>
                             <button onclick="navigateVideoPart('test', 1)" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 hover:text-white border border-slate-700 transition-all">▶</button>
                         </div>
                     </div>
 
-                    <!-- Video Container -->
+                    <!-- Video Container (YouTube Player or Fallback) -->
                     <div class="p-2 sm:p-4 flex-1 flex flex-col justify-center items-center">
                         <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-slate-800 relative flex items-center justify-center">
-                            <video id="offlineTestPlayer" controls playsinline webkit-playsinline class="w-full h-full object-contain" preload="metadata" onloadedmetadata="hideTestMissingNotice()" oncanplay="hideTestMissingNotice()" onplay="hideTestMissingNotice()" onloadeddata="hideTestMissingNotice()" onerror="showTestMissingNotice()"></video>
+                            <iframe id="testYtIframe" class="w-full h-full border-0" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             
-                            <!-- Fallback Hub -->
+                            <!-- Notice for Tests awaiting upload -->
                             <div id="testVideoMissingNotice" class="hidden absolute inset-0 bg-slate-950 flex flex-col items-center justify-center p-6 text-center z-10 overflow-hidden group">
-                                <img id="testThumbnailImg" src="" alt="Thumbnail Video Test" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-all duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
                                 <div class="relative z-10 flex flex-col items-center justify-center space-y-3 max-w-xl">
                                     <div class="w-14 h-14 rounded-full bg-orange-600/30 text-orange-400 flex items-center justify-center shadow-xl border border-orange-500/30">
-                                        <span class="text-2xl animate-pulse">☁️</span>
+                                        <span class="text-2xl animate-pulse">🎯</span>
                                     </div>
                                     <div>
-                                        <h3 id="testHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">Bài Thi Phần 1 - 5000 Câu Tiếng Anh</h3>
-                                        <p class="text-xs text-slate-300 mt-1 font-medium">Video bài test <code id="missingTestFileName" class="text-orange-300 font-mono bg-slate-900/80 px-1.5 py-0.5 rounded">Test_01_VnEn.mp4</code> đang được đồng bộ lên đám mây</p>
+                                        <h3 id="testHubVideoTitle" class="text-base sm:text-lg font-black text-white leading-snug drop-shadow-md heading-font">Bài Thi Phần 26 - 5000 Câu Tiếng Anh</h3>
+                                        <p class="text-xs text-slate-300 mt-1 font-medium">Video bài thi đang được cập nhật lên playlist YouTube</p>
                                     </div>
-                                    <div class="px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-[11px] text-orange-300 font-semibold flex items-center gap-1.5">
-                                        <span>⏳</span> Vui lòng chờ quá trình upload hoàn tất hoặc chọn bài học khác
-                                    </div>
+                                    <a id="testNoticePlaylistBtn" href="https://youtube.com/playlist?list=PLUTtxelamwCE" target="_blank" class="px-4 py-2 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs shadow-lg shadow-orange-950/40 flex items-center gap-2 transition-all">
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                        <span>Mở Playlist Bài Thi trên YouTube</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Video Action Bottom Bar with Speed Controls -->
+                    <!-- Video Action Bottom Bar -->
                     <div class="px-4 sm:px-6 py-3 bg-slate-900/60 border-t border-slate-800/80 flex flex-wrap justify-between items-center gap-2">
-                        <div class="flex items-center gap-1.5 text-xs text-slate-400">
-                            <span>Tốc độ:</span>
-                            <button onclick="setVideoSpeed('test', 0.75)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">0.75x</button>
-                            <button onclick="setVideoSpeed('test', 1.0)" class="px-2 py-0.5 rounded bg-indigo-600 text-white font-bold text-xs">1.0x</button>
-                            <button onclick="setVideoSpeed('test', 1.25)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.25x</button>
-                            <button onclick="setVideoSpeed('test', 1.5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 font-semibold text-xs">1.5x</button>
-                            <span class="text-slate-600 ml-1.5">|</span>
-                            <span class="text-[11px] text-slate-500 ml-1 hidden sm:inline">Phím tắt: ← / → tua 5s, K tạm dừng</span>
+                        <div class="flex items-center gap-2 text-xs text-slate-400">
+                            <span class="text-orange-400 font-semibold">● Thử thách phản xạ YouTube HD</span>
                         </div>
                         <button onclick="switchMode('flashcard')" class="px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs shadow-lg shadow-indigo-950/40 transition-all">
                             ⚡ Bật Thử Thách Phản Xạ 7 Giây Ngay
@@ -478,7 +456,6 @@
                     </div>
                 </section>
 
-                <!-- ============================================================== -->
                 <!-- SCREEN 3: FLASHCARD, TYPING & SPEAKING INTERACTIVE CARD        -->
                 <!-- ============================================================== -->
                 <section id="screen-interactive" class="glass-card rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[540px] relative border border-slate-800">
@@ -747,6 +724,7 @@
 
     <!-- Load lesson data & Video Mapping -->
     <script src="lessons_data.js"></script>
+    <script src="video_mapping.js"></script>
 
     <script>
         // ==============================================================
@@ -1160,99 +1138,61 @@
         }
 
         // ==============================================================
-        // VIDEO PLAYBACK MANAGEMENT (Learn & Test - Hybrid Local & Hub)
+        // VIDEO PLAYBACK MANAGEMENT (YouTube Responsive Embedded Player)
         // ==============================================================
-        function pad(num) {
-            return String(num).padStart(2, '0');
-        }
-
         function updateVideoScreen(partNum) {
             activeVideoPart = Math.max(1, Math.min(52, Number(partNum)));
-            const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.videos) ? videoMappingData.videos[activeVideoPart] : null;
-            const lesson = lessonsData[activeVideoPart] || { title: `Phần ${activeVideoPart}` };
+            const mapping = (typeof videoMappingData !== 'undefined' && videoMappingData.lessons) ? videoMappingData.lessons[activeVideoPart] : null;
+            const lesson = (typeof lessonsData !== 'undefined' && lessonsData[activeVideoPart]) ? lessonsData[activeVideoPart] : { title: `Phần ${activeVideoPart}` };
 
-            // 1. Learn Mode Video (Local file: Videos/Lessons/Lesson_XX.mp4)
+            // 1. Learn Mode Video (YouTube Embed)
             const learnTitleEl = document.getElementById('learnVideoTitle');
-            const learnPlayer = document.getElementById('offlineLearnPlayer');
+            const learnIframe = document.getElementById('learnYtIframe');
             const learnDirectLink = document.getElementById('learnYtDirectLink');
-            const learnCenterPlayBtn = document.getElementById('learnCenterPlayBtn');
-            const learnThumbnailImg = document.getElementById('learnThumbnailImg');
-            const learnHubVideoTitle = document.getElementById('learnHubVideoTitle');
-            const missingLearnName = document.getElementById('missingLearnFileName');
 
             if (learnTitleEl) learnTitleEl.innerText = `Phần ${activeVideoPart}: ${lesson.title}`;
-            const expectedLearnFile = `Lesson_${pad(activeVideoPart)}.mp4`;
-            if (missingLearnName) missingLearnName.innerText = expectedLearnFile;
 
-            if (mapping && mapping.lessonVideo) {
+            if (mapping && mapping.lessonVideo && mapping.lessonVideo.videoId) {
                 const videoId = mapping.lessonVideo.videoId;
+                const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`;
                 const ytUrl = `https://www.youtube.com/watch?v=${videoId}&list=${videoMappingData.playlists.learn}`;
+                if (learnIframe && learnIframe.src !== embedUrl) {
+                    learnIframe.src = embedUrl;
+                }
                 if (learnDirectLink) learnDirectLink.href = ytUrl;
-                if (learnCenterPlayBtn) learnCenterPlayBtn.href = ytUrl;
-                if (learnThumbnailImg) {
-                    learnThumbnailImg.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-                }
-                if (learnHubVideoTitle) {
-                    learnHubVideoTitle.innerText = mapping.lessonVideo.title;
-                }
             } else {
-                const ytUrl = `https://www.youtube.com/playlist?list=${videoMappingData.playlists.learn}`;
-                if (learnDirectLink) learnDirectLink.href = ytUrl;
-                if (learnCenterPlayBtn) learnCenterPlayBtn.href = ytUrl;
+                const defaultListUrl = `https://youtube.com/playlist?list=${(videoMappingData && videoMappingData.playlists) ? videoMappingData.playlists.learn : 'PLfUgGuAx0o64'}`;
+                if (learnDirectLink) learnDirectLink.href = defaultListUrl;
             }
 
-            function resolveVideoSrc(type, part, fileName) {
-                // If running offline via file:// protocol, use relative local folder
-                if (window.location.protocol === 'file:') {
-                    const localFolder = type === 'lesson' ? 'Videos/Lessons' : 'Videos/Tests';
-                    return new URL(`${localFolder}/${fileName}`, window.location.href).href;
-                }
-                // Online (Firebase Hosting / GitHub Pages / iPad / iPhone / Android): Stream via Edge CDN with native video/mp4 & inline headers
-                const tag = (type === 'lesson')
-                    ? (part <= 26 ? 'v-lessons-1-26' : 'v-lessons-27-52')
-                    : (part <= 26 ? 'v-tests-1-26' : 'v-tests-27-52');
-                return `https://english-master.vant102.deno.net/${tag}/${fileName}`;
-            }
-
-            if (learnPlayer) {
-                const targetLearnSrc = resolveVideoSrc('lesson', activeVideoPart, expectedLearnFile);
-                if (learnPlayer.src !== targetLearnSrc) {
-                    learnPlayer.src = targetLearnSrc;
-                    learnPlayer.load();
-                }
-            }
-
-            // 2. Test Mode Video (Local file: Videos/Tests/...)
+            // 2. Test Mode Video (YouTube Embed or Notice)
             const testTitleEl = document.getElementById('testVideoTitle');
-            const testPlayer = document.getElementById('offlineTestPlayer');
+            const testIframe = document.getElementById('testYtIframe');
             const testDirectLink = document.getElementById('testYtDirectLink');
-            const testCenterPlayBtn = document.getElementById('testCenterPlayBtn');
-            const testThumbnailImg = document.getElementById('testThumbnailImg');
+            const testNotice = document.getElementById('testVideoMissingNotice');
             const testHubVideoTitle = document.getElementById('testHubVideoTitle');
-            const missingTestName = document.getElementById('missingTestFileName');
             const testTypeSelector = document.getElementById('testTypeSelector');
 
             if (testTitleEl) testTitleEl.innerText = `Bài Thi Phần ${activeVideoPart}: ${lesson.title}`;
 
-            let expectedTestFile = '';
             let targetTestVideo = null;
-
             if (mapping && mapping.testVideos && mapping.testVideos.length > 0) {
                 targetTestVideo = mapping.testVideos.find(t => t.type === currentTestType) || mapping.testVideos[0];
-                
-                if (targetTestVideo.type === 'vn-en') expectedTestFile = `Test_${pad(activeVideoPart)}_VnEn.mp4`;
-                else if (targetTestVideo.type === 'en-vn') expectedTestFile = `Test_${pad(activeVideoPart)}_EnVn.mp4`;
-                else expectedTestFile = `Test_${pad(activeVideoPart)}_General.mp4`;
+            }
 
-                const ytUrl = `https://www.youtube.com/watch?v=${targetTestVideo.videoId}&list=${videoMappingData.playlists.test}`;
+            if (targetTestVideo && targetTestVideo.videoId) {
+                const videoId = targetTestVideo.videoId;
+                const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1`;
+                const ytUrl = `https://www.youtube.com/watch?v=${videoId}&list=${videoMappingData.playlists.test}`;
+                
+                if (testIframe) {
+                    testIframe.classList.remove('hidden');
+                    if (testIframe.src !== embedUrl) {
+                        testIframe.src = embedUrl;
+                    }
+                }
+                if (testNotice) testNotice.classList.add('hidden');
                 if (testDirectLink) testDirectLink.href = ytUrl;
-                if (testCenterPlayBtn) testCenterPlayBtn.href = ytUrl;
-                if (testThumbnailImg) {
-                    testThumbnailImg.src = `https://img.youtube.com/vi/${targetTestVideo.videoId}/hqdefault.jpg`;
-                }
-                if (testHubVideoTitle) {
-                    testHubVideoTitle.innerText = targetTestVideo.title;
-                }
 
                 if (testTypeSelector) {
                     if (mapping.testVideos.length === 1 && mapping.testVideos[0].type === 'general') {
@@ -1262,48 +1202,22 @@
                     }
                 }
             } else {
-                expectedTestFile = `Test_${pad(activeVideoPart)}_General.mp4`;
-                const ytUrl = `https://www.youtube.com/playlist?list=${videoMappingData.playlists.test}`;
-                if (testDirectLink) testDirectLink.href = ytUrl;
-                if (testCenterPlayBtn) testCenterPlayBtn.href = ytUrl;
-            }
-
-            if (missingTestName) missingTestName.innerText = expectedTestFile;
-
-            if (testPlayer) {
-                const targetTestSrc = resolveVideoSrc('test', activeVideoPart, expectedTestFile);
-                if (testPlayer.src !== targetTestSrc) {
-                    testPlayer.src = targetTestSrc;
-                    testPlayer.load();
+                // Test video not yet uploaded in YouTube playlist
+                if (testIframe) {
+                    testIframe.classList.add('hidden');
+                    testIframe.src = '';
+                }
+                if (testNotice) testNotice.classList.remove('hidden');
+                if (testHubVideoTitle) {
+                    testHubVideoTitle.innerText = `Bài Thi Phần ${activeVideoPart}: ${lesson.title}`;
+                }
+                if (testDirectLink) {
+                    testDirectLink.href = `https://youtube.com/playlist?list=${(videoMappingData && videoMappingData.playlists) ? videoMappingData.playlists.test : 'PLUTtxelamwCE'}`;
                 }
             }
 
-            hideLearnMissingNotice();
-            hideTestMissingNotice();
             updateLessonListHighlight();
             updateSentenceListSidebar(activeVideoPart);
-        }
-
-        function hideLearnMissingNotice() {
-            document.getElementById('learnVideoMissingNotice')?.classList.add('hidden');
-        }
-
-        function showLearnMissingNotice() {
-            const p = document.getElementById('offlineLearnPlayer');
-            if (p && p.error) {
-                document.getElementById('learnVideoMissingNotice')?.classList.remove('hidden');
-            }
-        }
-
-        function hideTestMissingNotice() {
-            document.getElementById('testVideoMissingNotice')?.classList.add('hidden');
-        }
-
-        function showTestMissingNotice() {
-            const p = document.getElementById('offlineTestPlayer');
-            if (p && p.error) {
-                document.getElementById('testVideoMissingNotice')?.classList.remove('hidden');
-            }
         }
 
         function selectTestType(type) {
