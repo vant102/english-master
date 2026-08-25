@@ -1,5 +1,5 @@
 // Video mapping data from YouTube playlists
-const videoMappingData = {
+var videoMappingData = window.videoMappingData = {
   "playlists": {
     "learn": "PLfUgGuAx0o64",
     "test": "PLUTtxelamwCE"
