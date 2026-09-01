@@ -1,4 +1,4 @@
-const lessonsData = {
+var lessonsData = window.lessonsData = {
     "1": {
         "title": "GIAO TIẾP CƠ BẢN VÀ XIN PHÉP",
         "sentences": [
@@ -6548,8 +6548,8 @@ const lessonsData = {
 
 const videoMappingData = {
     "playlists": {
-        "learn": "PLB73Es7xIjyNDHmKQcrgdMtPYVsnFUsRg",
-        "test": "PLB73Es7xIjyNa8IEUaV8CYRuxaE3uF1Kr"
+        "learn": "PLfUgGuAx0o64",
+        "test": "PLUTtxelamwCE"
     },
     "videos": {
         "1": {

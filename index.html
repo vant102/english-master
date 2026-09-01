@@ -2175,12 +2175,6 @@
         // ==============================================================
         function switchMode(mode) {
             activeMode = mode;
-            
-            // Pause any running videos when switching modes
-            const learnPlayer = document.getElementById('offlineLearnPlayer');
-            const testPlayer = document.getElementById('offlineTestPlayer');
-            if (learnPlayer && mode !== 'learn') learnPlayer.pause();
-            if (testPlayer && mode !== 'test') testPlayer.pause();
 
             // Update Tab UI
             const tabs = ['learn', 'test', 'flashcard', 'typing', 'speaking', 'graphic', 'progress'];
@@ -2554,37 +2548,37 @@
 
         // Speaking Mode with Web Speech Recognition
         function initSpeechRecognition() {
-            window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if ('SpeechRecognition' in window) {
-                recognition = new SpeechRecognition();
-                recognition.continuous = false;
-                recognition.interimResults = false;
-                recognition.lang = 'en-US';
+            try {
+                const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+                if (typeof SpeechRec === 'function') {
+                    recognition = new SpeechRec();
+                    recognition.continuous = false;
+                    recognition.interimResults = false;
+                    recognition.lang = 'en-US';
 
-                recognition.onstart = () => {
-                    isRecording = true;
-                    document.getElementById('speechStatus').innerText = 'Đang lắng nghe câu nói của bạn...';
-                    document.getElementById('micBtn').classList.add('pulse-mic', 'bg-rose-600');
-                    document.getElementById('micBtn').classList.remove('bg-indigo-600');
-                };
+                    recognition.onstart = () => {
+                        isRecording = true;
+                        updateMicUI(true);
+                    };
 
-                recognition.onresult = (event) => {
-                    const transcript = event.results[0][0].transcript;
-                    handleSpeechResult(transcript);
-                };
+                    recognition.onresult = (event) => {
+                        const transcript = event.results[0][0].transcript;
+                        handleSpeechResult(transcript);
+                    };
 
-                recognition.onerror = (event) => {
-                    document.getElementById('speechStatus').innerText = `Lỗi nhận diện: ${event.error}`;
-                    isRecording = false;
-                    document.getElementById('micBtn').classList.remove('pulse-mic', 'bg-rose-600');
-                    document.getElementById('micBtn').classList.add('bg-indigo-600');
-                };
+                    recognition.onerror = (event) => {
+                        console.warn('Speech recognition error:', event.error);
+                        isRecording = false;
+                        updateMicUI(false);
+                    };
 
-                recognition.onend = () => {
-                    isRecording = false;
-                    document.getElementById('micBtn').classList.remove('pulse-mic', 'bg-rose-600');
-                    document.getElementById('micBtn').classList.add('bg-indigo-600');
-                };
+                    recognition.onend = () => {
+                        isRecording = false;
+                        updateMicUI(false);
+                    };
+                }
+            } catch(e) {
+                console.warn('Speech recognition initialization skipped:', e.message);
             }
         }
 
